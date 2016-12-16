@@ -1,0 +1,5 @@
+/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Evolutionary_Computation/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Evolutionary_Computation/bin/Debug/Evolutionary_Computation.exe.mdb
+/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Evolutionary_Computation/bin/Debug/Evolutionary_Computation.exe
+/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Evolutionary_Computation/obj/x86/Debug/Evolutionary_Computation.exe
+/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Evolutionary_Computation/obj/x86/Debug/Evolutionary_Computation.exe.mdb

@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{DE6F07C8-317D-4AD6-B629-47E6B1E8DBFD}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Genetic_Algorithms/Gene.cs">
+    <Files>
+      <File FileName="Genetic_Algorithms/Program.cs" Line="10" Column="32" />
+      <File FileName="Genetic_Algorithms/GeneticAlgorithm.cs" Line="69" Column="41" />
+      <File FileName="Genetic_Algorithms/IGene.cs" Line="5" Column="3" />
+      <File FileName="Genetic_Algorithms/MinimizeSumEvaluator.cs" Line="15" Column="11" />
+      <File FileName="Genetic_Algorithms/Chromosome.cs" Line="70" Column="66" />
+      <File FileName="Genetic_Algorithms/Gene.cs" Line="20" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Evolutionary_Computation" expanded="True">
+            <Node name="Evolutionary_Computation" expanded="True" />
+            <Node name="Genetic_Algorithms" expanded="True">
+              <Node name="Gene.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.ItemProperties.Genetic__Algorithms PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Evolutionary__Computation PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
