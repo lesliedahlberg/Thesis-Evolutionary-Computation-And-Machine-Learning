@@ -11,7 +11,7 @@ namespace Genetic_Algorithms
 		{
 			double x = chromosome.Get(0);
 			double y = chromosome.Get(1);
-			double cost = Math.Sqrt((x) * (x) + (y) * (y));
+			double cost = Math.Sqrt((x+2783) * (x+2783) + (y-1223) * (y-1223));
 			return cost;
 		}
 

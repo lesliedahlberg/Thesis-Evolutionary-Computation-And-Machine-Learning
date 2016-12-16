@@ -55,7 +55,7 @@ namespace Genetic_Algorithms
 			double lowest;
 			int index;
 			lowest = currentGeneration[0].fitness;
-			currentGeneration[0].Print();
+			//currentGeneration[0].Print();
 			index = 0;
 			for (int i = 1; i < numberOfChromosomes; i++)
 			{
@@ -65,6 +65,7 @@ namespace Genetic_Algorithms
 					lowest = currentGeneration[i].fitness;
 				}
 			}
+			//Console.WriteLine("["+lowest+"]");
 			if (lowest <= margin)
 			{
 				return index;
@@ -82,10 +83,10 @@ namespace Genetic_Algorithms
 				currentGeneration[i].Evaluate(evaluator);
 			}
 			Array.Sort(currentGeneration);
-			Print();
+			//Print();
 
 
-			int l = Done(0.1f);
+			int l = Done(1);
 			if (l != -1)
 			{
 				return l;

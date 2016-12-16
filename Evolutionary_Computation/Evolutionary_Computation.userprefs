@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{DE6F07C8-317D-4AD6-B629-47E6B1E8DBFD}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Genetic_Algorithms/Gene.cs">
     <Files>
-      <File FileName="Genetic_Algorithms/Program.cs" Line="10" Column="32" />
-      <File FileName="Genetic_Algorithms/GeneticAlgorithm.cs" Line="69" Column="41" />
-      <File FileName="Genetic_Algorithms/IGene.cs" Line="5" Column="3" />
-      <File FileName="Genetic_Algorithms/MinimizeSumEvaluator.cs" Line="15" Column="11" />
-      <File FileName="Genetic_Algorithms/Chromosome.cs" Line="70" Column="66" />
-      <File FileName="Genetic_Algorithms/Gene.cs" Line="20" Column="4" />
+      <File FileName="Genetic_Algorithms/Program.cs" Line="9" Column="86" />
+      <File FileName="Genetic_Algorithms/GeneticAlgorithm.cs" Line="73" Column="10" />
+      <File FileName="Genetic_Algorithms/MinimizeSumEvaluator.cs" Line="14" Column="59" />
+      <File FileName="Genetic_Algorithms/Chromosome.cs" Line="48" Column="42" />
+      <File FileName="Genetic_Algorithms/Gene.cs" Line="24" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

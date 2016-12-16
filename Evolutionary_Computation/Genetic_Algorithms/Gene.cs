@@ -21,7 +21,7 @@ namespace Genetic_Algorithms
 			//double mantissa = (StaticRandom.Instance.NextDouble() * 2.0) - 1.0;
 			//double exponent = Math.Pow(2.0, StaticRandom.Instance.Next(-126, 128));
 			//value = mantissa * exponent;
-			value = RandomNumberBetween(-1000, 1000);
+			value = RandomNumberBetween(-1000000, 1000000);
 		}
 
 		public void Mutate(float probability)
@@ -30,7 +30,7 @@ namespace Genetic_Algorithms
 			float r = StaticRandom.Instance.Next(0, 100);
 			if (r <= p)
 			{
-				double change = RandomNumberBetween(-value, value);
+				double change = RandomNumberBetween(-1000, 1000);
 				value += change;
 			}
 		}
