@@ -1,4 +1,4 @@
-function PlotSurface(f, IPR, OVR, prec)
+function PlotSurfaceWithMin(f, IPR, OVR, prec, MIN)
 %PLOTSURFACE Display graph of any function f(x,y)
 %IPR is parameter range
 %OVR is output value range
@@ -17,7 +17,8 @@ function PlotSurface(f, IPR, OVR, prec)
     
     figure;
     mesh(X,Y,Z);
-    
+    hold on;
+    scatter3(MIN(1),MIN(2),MIN(3),'fill','ro');
     axis([IPR(1) IPR(2) IPR(1) IPR(2) OVR(1) OVR(2)]);
    
 end
