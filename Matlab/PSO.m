@@ -22,10 +22,12 @@ function [MIN,iter,found] = PSO(Eval, IPR, vtr, n, maxi, d)
     globalBest = zeros(n, d);
     
     for i = 1:n
-        position(1,:) = random(IPR(1),IPR(2),d);
+        position(i,:) = random(IPR(1),IPR(2),d);
         best(i,:) = position(i,:);
         globalBest(i,:) = best(i,:);
     end
+    
+    position
     
     for i = 1:n
         velocity(i,:) = random(-vmax,vmax,d);
