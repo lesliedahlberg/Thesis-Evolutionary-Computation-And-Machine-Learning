@@ -10,7 +10,7 @@ function [MIN,iter,found] = EDA(Eval, IPR, vtr, n, maxi, d)
     
 
     t = 0.5;
-    select_count = t * n;
+    select_count = floor(t * n);
     P = ones(n, d);
     function R = random_vector(a, b, N)
         R = a + (b - a) * rand(N, 1);

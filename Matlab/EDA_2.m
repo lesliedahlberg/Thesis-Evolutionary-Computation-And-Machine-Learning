@@ -1,4 +1,4 @@
-function [MIN,iter,found] = EDA(Eval, IPR, vtr, n, maxi, d)
+function [MIN,iter,found] = EDA_2(Eval, IPR, vtr, n, maxi, d)
 %EDA Estimation of distribution minimization function
 %   Eval is the objective function
 %   IPR is the initial parameter range
@@ -17,28 +17,21 @@ function [MIN,iter,found] = EDA(Eval, IPR, vtr, n, maxi, d)
         P(i,:) = random_vector(IPR(1), IPR(2), d);
     end
     
+    iter = 0;
     
     best_i = 1;
     best_v = Eval(P(best_i,:));
     for i = 1:n
         v = Eval(P(i,:));
         if v < best_v
-            best_i = i
-            best_v = v
+            best_i = i;
+            best_v = v;
         end
     end
     
     while best_v > vtr && iter <= maxi
         
-        best_i = 1;
-        best_v = Eval(P(best_i,:));
-        for i = 1:n
-            v = Eval(P(i,:));
-            if v < best_v
-                best_i = i
-                best_v = v
-            end
-        end
+        
 
         for i = 1:n
             sort_list(i) = Eval(P(i,:));
@@ -49,7 +42,7 @@ function [MIN,iter,found] = EDA(Eval, IPR, vtr, n, maxi, d)
             PP(i,:) = P(ii,:);
         end
         for i = 1:d
-            cc(:,i) = PP(:,i)
+            cc(:,i) = PP(1:select_count,i);
             pd(i) = fitdist(cc(:,i), 'Normal');
         end
         for i = (select_count+1):n
@@ -60,12 +53,25 @@ function [MIN,iter,found] = EDA(Eval, IPR, vtr, n, maxi, d)
         P = PP;
     
         iter = iter + 1;
+        
+        best_i = 1;
+        best_v = Eval(P(best_i,:));
+        for i = 1:n
+            v = Eval(P(i,:));
+            if v < best_v
+                best_i = i;
+                best_v = v;
+            end
+        end
+        
     end
     
-    
-    iter = 1;
     found = false;
-    MIN = 1;
+    if best_v <= vtr
+        found = true;
+    end
+    
+    MIN = P(best_i,:);
     
 end
 
