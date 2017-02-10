@@ -1,4 +1,4 @@
-function [MIN,iter,found] = PSO(Eval, IPR, vtr, n, maxi, d)
+function [MIN,iter,found, value] = PSO(Eval, IPR, vtr, n, maxi, d)
 %PSO Particle swarm minimization function
 %   Eval is the objective function
 %   IPR is the initial parameter range
@@ -47,6 +47,8 @@ function [MIN,iter,found] = PSO(Eval, IPR, vtr, n, maxi, d)
             globalBest(i,:) = gBest;
         end
         
+        %disp(Eval(gBest));
+        
         for i = 1:n
             for j = 1:d
                 f1 = rand();
@@ -61,10 +63,10 @@ function [MIN,iter,found] = PSO(Eval, IPR, vtr, n, maxi, d)
     if Eval(globalBest(1,:)) <= vtr
         found = true;
     else
-        found = false
+        found = false;
     end
     MIN = globalBest(1,:);
-    
+    value = Eval(MIN);
     
     
     

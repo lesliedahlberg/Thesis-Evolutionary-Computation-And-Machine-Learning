@@ -1,4 +1,5 @@
-function [MIN,iter,found] = DE(Eval, IPR, vtr, n, maxi, d)
+function [found, iter, MIN, value] = DE(Eval, IPR, vtr, n, maxi, d)
+
 %DE Differential evolution minimization function
 %   Eval is the objective function
 %   IPR is the initial parameter range
@@ -9,6 +10,7 @@ function [MIN,iter,found] = DE(Eval, IPR, vtr, n, maxi, d)
 
     X = ones(n, d);
 
+    F = zeros(d);
     for i = 1:d
         F(i) = 1;
     end
@@ -38,6 +40,7 @@ function [MIN,iter,found] = DE(Eval, IPR, vtr, n, maxi, d)
     iter = 0;
     
     while Eval(X(best,:)) > vtr && iter < maxi
+       
        for i = 1:n
            I = uniqueRandom3(n, i);
            V = X(I(1),:) + F.*(X(I(2),:) - X(I(3),:));
@@ -60,6 +63,7 @@ function [MIN,iter,found] = DE(Eval, IPR, vtr, n, maxi, d)
            end
        end
        iter = iter + 1;
+       %disp(vbest);
     end
     if Eval(X(best,:)) <= vtr
         found = true;
@@ -67,6 +71,8 @@ function [MIN,iter,found] = DE(Eval, IPR, vtr, n, maxi, d)
         found = false;
     end
     MIN = X(best,:);
+    value = Eval(MIN);
+   
     
 end
 

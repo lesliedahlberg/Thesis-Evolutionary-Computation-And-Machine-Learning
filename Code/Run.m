@@ -4,7 +4,7 @@ dimension = 2;
 individuals = 25;
 maxi = 10000*dimension;
 
-opt_functions = {@DE, @PSO, @EDA};
+opt_functions = {@PSO, @PSO, @EDA};
 opt_names = {'DE' 'PSO' 'EDA'};
 opt_count = 3;
 
