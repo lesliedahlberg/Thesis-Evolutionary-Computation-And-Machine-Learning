@@ -1,15 +1,15 @@
 clc
 dimension = 2;
-individuals = 250;
-maxi = 100*dimension;
+individuals = 50;
+maxi = 1000*dimension;
 
 margin = 0;
-
-opt_functions = {@DifferentialEvolution @ParticleSwarmOptimization @EstimationOfGaussianMixtures, @QuantumSwarmOptimization};
-opt_names = {'DE' 'PSO' 'EDA' 'QSO'};
+    
+opt_functions = {@DifferentialEvolution @ParticleSwarmOptimization @EDA_UnivMargGaus @EDA_FullGaus @EDA_GN};
+opt_names = {'DE' 'PSO' 'EDA_UMG' 'EDA_FG' 'EDA_GN'};
 opt_count = 4;
 
-functions = 2;
+functions = 10;
 function_names = {'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10'};
 
 i = zeros(functions, opt_count);

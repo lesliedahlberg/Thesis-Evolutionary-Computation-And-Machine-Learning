@@ -2,14 +2,13 @@ clc
 dimension = 2;
 individuals = 100;
 maxi = 100*dimension;
-
 margin = 0;
 
-opt_functions = {@ParticleSwarmOptimization, @QuantumSwarm};
-opt_names = {'PSO' 'QS'};
-opt_count = 2;
+opt_functions = {@EDA_GN};
+opt_names = {'EDA_GN'};
+opt_count = 1;
 
-functions = 1;
+functions = 3;
 function_names = {'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10'};
 
 i = zeros(functions, opt_count);

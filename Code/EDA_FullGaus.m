@@ -1,6 +1,6 @@
-function [ success, iterations, minimum, value ] = EstimationOfGaussianMixtures( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
-    mixtureCount = 1;
+function [ success, iterations, minimum, value ] = EDA_FullGaus( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
     selectionThreshold = 0.5;
+    scaleFactor = 2;
     selectionCount = floor(selectionThreshold * populationSize);
     population = lowerBound + (upperBound - lowerBound) * rand(populationSize, dimension);
     value = inf;
@@ -21,10 +21,11 @@ function [ success, iterations, minimum, value ] = EstimationOfGaussianMixtures(
             population2(i,:) = population(ii,:);
         end
         
-        warning('off','all')
-        GM = fitgmdist(population2,mixtureCount, 'CovType', 'diagonal', 'Regularize', 1.4013e-40);
-        warning('on','all')
-        NG = random(GM, populationSize-selectionCount);
+        m = mean(population2);
+        c = cov(population2) * scaleFactor;
+        size = populationSize-selectionCount;
+        
+        NG = mvnrnd(m, c, size);
         population = [population2; NG];
         
         iterations = iterations + 1;

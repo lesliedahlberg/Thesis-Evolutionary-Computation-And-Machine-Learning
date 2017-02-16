@@ -1,5 +1,4 @@
-function [ success, iterations, minimum, value ] = EstimationOfGaussianMixtures( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
-    mixtureCount = 1;
+function [ success, iterations, minimum, value ] = EDA_UnivMargGaus( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
     selectionThreshold = 0.5;
     selectionCount = floor(selectionThreshold * populationSize);
     population = lowerBound + (upperBound - lowerBound) * rand(populationSize, dimension);
@@ -7,8 +6,6 @@ function [ success, iterations, minimum, value ] = EstimationOfGaussianMixtures(
     bestIndividualIndex = -1;
     sort_list = zeros(populationSize);
     population2 = zeros(selectionCount, dimension);
-        
-    
     
     iterations = 0;
     while value > objectiveValue && iterations <= maxIterations
@@ -21,10 +18,11 @@ function [ success, iterations, minimum, value ] = EstimationOfGaussianMixtures(
             population2(i,:) = population(ii,:);
         end
         
-        warning('off','all')
-        GM = fitgmdist(population2,mixtureCount, 'CovType', 'diagonal', 'Regularize', 1.4013e-40);
-        warning('on','all')
-        NG = random(GM, populationSize-selectionCount);
+        m = mean(population2);
+        s = std(population2);
+        size = populationSize-selectionCount;
+        
+        NG = normrnd(repmat(m,size,1),repmat(s,size,1));
         population = [population2; NG];
         
         iterations = iterations + 1;

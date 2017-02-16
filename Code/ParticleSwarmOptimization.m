@@ -1,8 +1,8 @@
 function [ success, iterations, minimum, value ] = ParticleSwarmOptimization( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
-    vmax = (abs(upperBound)+abs(lowerBound))/2/100;
+    vmax = (abs(upperBound)+abs(lowerBound))/2;
     omega = 0.8;
-    c1 = 2;
-    c2 = 2;
+    c1 = 1;
+    c2 = 1;
     
     %Init population
     position = lowerBound + (upperBound - lowerBound) * rand(populationSize, dimension);

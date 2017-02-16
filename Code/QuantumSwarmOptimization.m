@@ -1,13 +1,13 @@
 function [ success, iterations, minimum, value ] = QuantumSwarmOptimization( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
-    vmax = (abs(upperBound)+abs(lowerBound))/2/100;
+    vmax = (abs(upperBound)+abs(lowerBound))/2;
     omega = 0.8;
-    c1 = 2;
-    c2 = 2;
+    c1 = 1;
+    c2 = 1;
     plateau = 0;
     plateauCutoff = 25;
     mixtureCount = 2;
     
-    selectionThreshold = 0.1;
+    selectionThreshold = 0.5;
     selectionCount = floor(selectionThreshold * populationSize);
     
     population2 = zeros(selectionCount, dimension);
