@@ -1,13 +1,13 @@
-%clc
+clc
 algorithms = 2;
 functions = 10;
-counts = 3;
+counts = 5;
 dim = 2;
 
-ALG = {@DifferentialEvolution @NormalEvolution};
+ALG = {@ParticleSwarmOptimization @QPSO};
 
 individualsPerDim = 50;
-generationsPerDim = 100;
+generationsPerDim = 50;
 
 
 data_mean = ones(functions,algorithms);
@@ -35,8 +35,8 @@ for alg=1:algorithms
     end
 end
 
-m = table(data_mean(:,1), data_mean(:,2), 'RowNames', {'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10'}, 'VariableNames', { 'DE' 'NE'})
-%d = table(data_dev(:,1), data_dev(:,2), 'RowNames', {'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10'}, 'VariableNames', { 'DE' 'NE'})
+m = table(data_mean(:,1), data_mean(:,2), 'RowNames', {'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10'}, 'VariableNames', { 'PSO' 'QPSO'})
+%d = table(data_dev(:,1), data_dev(:,2), 'RowNames', {'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10'}, 'VariableNames', { 'PSO' 'QPSO'})
 
 %writetable(m,strcat('CMP_mean_', num2str(dim), '.xlsx'));
 %writetable(d,strcat('CMP_dev_', num2str(dim), '.xlsx'));

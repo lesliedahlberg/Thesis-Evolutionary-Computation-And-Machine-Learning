@@ -1,13 +1,16 @@
 clc
-algorithms = 5;
-functions = 10;
+algorithms = 10;
+functions = 5;
 counts = 5;
-dim = 2;
+dim = 10;
 
-ALG = {@DifferentialEvolution @ParticleSwarmOptimization @EDA_UnivMargGaus @EDA_FullGaus @EDA_GN @NormalEvolution};
+f_names = {'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10'};
+a_names = { 'DE' 'PSO' 'EDA_UMG' 'EDA_FG' 'QPSO'};
 
-individualsPerDim = 50;
-generationsPerDim = 100;
+ALG = {@ALG_DE @ParticleSwarmOptimization @EDA_UnivMargGaus @EDA_FullGaus @QPSO};
+
+individualsPerDim = 25;
+generationsPerDim = 25;
 
 
 data_mean = ones(functions,algorithms);
@@ -34,8 +37,10 @@ for alg=1:algorithms
     end
 end
 
-m = table(data_mean(:,1), data_mean(:,2), data_mean(:,3), data_mean(:,4), 'RowNames', {'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10'}, 'VariableNames', { 'DE' 'PSO' 'EDA_UMG' 'EDA_FG'})
-d = table(data_dev(:,1), data_dev(:,2), data_dev(:,3), data_dev(:,4), 'RowNames', {'f1' 'f2' 'f3' 'f4' 'f5' 'f6' 'f7' 'f8' 'f9' 'f10'}, 'VariableNames', { 'DE' 'PSO' 'EDA_UMG' 'EDA_FG'})
+
+
+m = table(data_mean(:,1), data_mean(:,2), data_mean(:,3), data_mean(:,4), data_mean(:,5), 'RowNames', f_names(1:functions), 'VariableNames', a_names(1:algorithms))
+%d = table(data_dev(:,1), data_dev(:,2), data_dev(:,3), data_dev(:,4), data_dev(:,5), 'RowNames',  f_names(1:functions), 'VariableNames', a_names(1:algorithms))
 
 writetable(m,strcat('mean_', num2str(dim), '.xlsx'));
 writetable(d,strcat('dev_', num2str(dim), '.xlsx'));

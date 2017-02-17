@@ -4,22 +4,26 @@ function [ success, iterations, minimum, value ] = ParticleSwarmOptimization( Co
     c1 = 1;
     c2 = 1;
     
+   
+    
     %Init population
     position = lowerBound + (upperBound - lowerBound) * rand(populationSize, dimension);
     best = position;
     bestValue = zeros(1,populationSize);
     for i=1:populationSize
-        bestValue = CostFunction(best);
+        bestValue(i) = CostFunction(best(i,:));
     end
     globalBest = best(1,:);
     globalBestValue = CostFunction(globalBest);
     velocity = -vmax + (vmax + vmax) * rand(populationSize, dimension);
+    
     
     iterations = 0;
     while (globalBestValue > objectiveValue) && (iterations < maxIterations)
         %track(iterations+1) = globalBestValue;
         for i = 1:populationSize
             cost = CostFunction(position(i,:));
+            
             if cost <= bestValue(i)
                 best(i,:) = position(i,:);
                 bestValue(i) = cost;
@@ -40,6 +44,8 @@ function [ success, iterations, minimum, value ] = ParticleSwarmOptimization( Co
         end
         
         iterations = iterations + 1;
+        %disp(globalBestValue);
+        %track(iterations) = globalBestValue;
     end
     
     if globalBestValue <= objectiveValue
@@ -49,6 +55,7 @@ function [ success, iterations, minimum, value ] = ParticleSwarmOptimization( Co
     end
     minimum = globalBest(1,:);
     value = globalBestValue;
+    
     
     %plot(1:iterations, track)
     
