@@ -1,74 +1,65 @@
-function [MIN,iter,found, value] = PSO(Eval, IPR, vtr, n, maxi, d)
-%PSO Particle swarm minimization function
-%   Eval is the objective function
-%   IPR is the initial parameter range
-%   vtr is value to reach
-%   n is the number of individuals
-%   i the max iteration count
-%   d is the dimension of the problem
-
-    vmax = (abs(IPR(2))+abs(IPR(1)))/2/100;
+function [ success, iterations, minimum, value ] = PSO( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
+    vmax = (abs(upperBound)+abs(lowerBound))/2;
     omega = 0.8;
-    c1 = 2;
-    c2 = 2;
+    c1 = 1;
+    c2 = 1;
     
-    function R = random(a, b, N)
-        R = a + (b - a) * rand(N, 1);
+   
+    
+    %Init population
+    position = lowerBound + (upperBound - lowerBound) * rand(populationSize, dimension);
+    best = position;
+    bestValue = zeros(1,populationSize);
+    for i=1:populationSize
+        bestValue(i) = CostFunction(best(i,:));
     end
+    globalBest = best(1,:);
+    globalBestValue = CostFunction(globalBest);
+    velocity = -vmax + (vmax + vmax) * rand(populationSize, dimension);
     
-    position = zeros(n, d);
-    velocity = zeros(n, d);
-    best = zeros(n, d);
-    globalBest = zeros(n, d);
     
-    for i = 1:n
-        position(i,:) = random(IPR(1),IPR(2),d);
-        best(i,:) = position(i,:);
-        globalBest(i,:) = best(i,:);
-    end
-    
-    for i = 1:n
-        velocity(i,:) = random(-vmax,vmax,d);
-    end
-    
-    iter = 0;
-    while Eval(globalBest(1,:)) > vtr && iter < maxi
-        gBest = globalBest(1,:);
-        for i = 1:n
-            f_x = Eval(position(i,:));
-            if f_x <= Eval(best(i,:))
+    iterations = 0;
+    while (globalBestValue > objectiveValue) && (iterations < maxIterations)
+        %track(iterations+1) = globalBestValue;
+        for i = 1:populationSize
+            cost = CostFunction(position(i,:));
+            
+            if cost <= bestValue(i)
                 best(i,:) = position(i,:);
+                bestValue(i) = cost;
+                if cost <= globalBestValue
+                    globalBest = best(i,:);
+                    globalBestValue = bestValue(i);
+                    %disp(globalBestValue);
+                end
             end
-            if f_x <= Eval(gBest)
-                gBest = position(i,:);
-            end
-        end
-        for i = 1:n
-            globalBest(i,:) = gBest;
         end
         
-        %disp(Eval(gBest));
-        
-        for i = 1:n
-            for j = 1:d
-                f1 = rand();
-                f2 = rand();
-                velocity(i,j) = omega * velocity(i,j) + c1 * f1 * (best(i,j) - position(i,j)) + c2 * f2 * (globalBest(i,j) - position(i,j));
-                position(i,j) = position(i,j) + velocity(i,j);
-            end
+        %Update
+        for i = 1:populationSize
+            f1 = rand(1,dimension);
+            f2 = rand(1,dimension);
+            velocity(i,:) = omega * velocity(i,:) + c1 * f1 .* (best(i,:) - position(i,:)) + c2 * f2 .* (globalBest - position(i,:));
+            position(i,:) = position(i,:) + velocity(i,:);
         end
-        iter = iter + 1;
+        
+        iterations = iterations + 1;
+        disp(strcat(num2str(iterations),'=',num2str(globalBestValue)));
+        
+        %disp(globalBestValue);
+        %track(iterations) = globalBestValue;
     end
     
-    if Eval(globalBest(1,:)) <= vtr
-        found = true;
+    if globalBestValue <= objectiveValue
+        success = true;
     else
-        found = false;
+        success = false;
     end
-    MIN = globalBest(1,:);
-    value = Eval(MIN);
+    minimum = globalBest(1,:);
+    value = globalBestValue;
     
     
+    %plot(1:iterations, track)
     
 end
 
