@@ -1,8 +1,9 @@
 clc
-ALG = {@EDA_FullGaus @ALG_DE @ParticleSwarmOptimization };
-algorithms = 3;
+ALG = {@QPSO @ParticleSwarmOptimization @EDA_FullGaus @ALG_DE  };
+algorithms = 4;
 
-[xx,t] = simplefit_dataset;
+%[xx,t] = crab_dataset;
+[xx,t] = crab_dataset;
 
 inputSize = size(xx,1);
 hiddenSize = inputSize;
@@ -13,13 +14,13 @@ dim = NeuralNetworkSize(layers)
 
 objectiveValue = 0;
 individuals = 25;
-generations = 250;
+generations = 100;
 lower = -1;
 upper = 1;
 
 v = ones(1,algorithms);
 for alg=1:algorithms
-    
+    A = alg
     eval = @(x)simpleFFNN(x, layers, xx, t);
     [success, iterations, minimum, value] = ALG{alg}(eval, dim, lower, upper, generations, individuals, objectiveValue);
     %disp(strcat('ALG:', num2str(alg), '->', num2str(value)));

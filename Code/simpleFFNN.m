@@ -9,5 +9,5 @@ function fit = simpleFFNN(weights, layers, train_input, train_output)
         sse = sse + sum((train_output(:,i)' - output).^2);
     end
     
-    fit = sse/c;
+    fit = sse/c/2;
 end

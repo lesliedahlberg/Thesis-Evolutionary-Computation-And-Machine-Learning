@@ -44,6 +44,8 @@ function [ success, iterations, minimum, value ] = ParticleSwarmOptimization( Co
         end
         
         iterations = iterations + 1;
+        disp(strcat(num2str(iterations),'=',num2str(globalBestValue)));
+        
         %disp(globalBestValue);
         %track(iterations) = globalBestValue;
     end

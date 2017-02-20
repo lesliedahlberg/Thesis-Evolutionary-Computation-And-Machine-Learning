@@ -41,6 +41,8 @@ function [ success, iterations, minimum, value ] = EDA_FullGaus( CostFunction, d
         graph_x(iterations) = iterations;
         graph_y(iterations) = value;
         
+        disp(strcat(num2str(iterations),'=',num2str(value)));
+        
         %disp(strcat(num2str(iterations),'=',num2str(value)));
         %track(iterations) = value;
         

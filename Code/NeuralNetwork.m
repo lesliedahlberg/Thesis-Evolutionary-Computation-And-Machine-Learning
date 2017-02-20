@@ -24,6 +24,9 @@ function [output] = NeuralNetwork(input, weights, layers)
     
     
     input = [input -1];
+    
+    
+    
     hidden = [input*input_weights -1];
     output = hidden*output_weights;
 end

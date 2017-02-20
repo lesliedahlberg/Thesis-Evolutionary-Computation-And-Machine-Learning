@@ -77,7 +77,7 @@ function [ success, iterations, minimum, value ] = ALG_DE( CostFunction, dimensi
         minimum = bestIndividualPosition;
         value = bestIndividualCost;
         
-        %disp(strcat(num2str(iterations),'=',num2str(value)));
+        disp(strcat(num2str(iterations),'=',num2str(value)));
         %track(iterations) = value;
     end
     

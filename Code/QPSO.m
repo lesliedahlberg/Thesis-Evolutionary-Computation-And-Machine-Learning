@@ -119,6 +119,8 @@ function [ success, iterations, minimum, value ] = QPSO( CostFunction, dimension
         end
         
         iterations = iterations + 1;
+        disp(strcat(num2str(iterations),'=',num2str(globalBestValue)));
+        
         %disp(globalBestValue);
         %track(iterations) = globalBestValue;
     end

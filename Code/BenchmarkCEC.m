@@ -40,7 +40,7 @@ end
 
 
 m = table(data_mean(:,1), data_mean(:,2), data_mean(:,3), data_mean(:,4), data_mean(:,5), 'RowNames', f_names(1:functions), 'VariableNames', a_names(1:algorithms))
-%d = table(data_dev(:,1), data_dev(:,2), data_dev(:,3), data_dev(:,4), data_dev(:,5), 'RowNames',  f_names(1:functions), 'VariableNames', a_names(1:algorithms))
+d = table(data_dev(:,1), data_dev(:,2), data_dev(:,3), data_dev(:,4), data_dev(:,5), 'RowNames',  f_names(1:functions), 'VariableNames', a_names(1:algorithms))
 
 writetable(m,strcat('mean_', num2str(dim), '.xlsx'));
 writetable(d,strcat('dev_', num2str(dim), '.xlsx'));
