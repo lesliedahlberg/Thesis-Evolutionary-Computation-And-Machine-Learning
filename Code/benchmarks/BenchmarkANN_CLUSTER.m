@@ -10,7 +10,7 @@ datasets = 1;
 
 objectiveValue = 0;
 individuals = 25;
-generations = 1;
+generations = 100;
 lower = -1;
 upper = 1;
 

@@ -27,7 +27,8 @@ function [output] = NeuralNetwork(input, weights, layers)
     
     
     
-    hidden = [input*input_weights -1];
-    output = hidden*output_weights;
+    hidden = [sigmoid(input*input_weights) -1];
+    
+    output = sigmoid(hidden*output_weights);
 end
 

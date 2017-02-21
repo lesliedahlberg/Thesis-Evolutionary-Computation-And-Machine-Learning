@@ -1,0 +1,42 @@
+clc
+ALG = {@DE @PSO @EDA_FGDA };
+algorithms = 3;
+algNames = { 'DE' 'PSO' 'EDA_FGDA'};
+
+setNames = {'simple' 'abalone' 'bodyfat' 'building' 'chemical' 'cho' 'engine' 'house'};
+
+objectiveValue = 0;
+individuals = 25;
+generations = 10;
+lower = -1;
+upper = 1;
+
+v = ones(1,algorithms);
+
+snakeDimension = 10;
+
+
+inputSize = 9;
+hiddenSize = 7;
+outputSize = 4;
+
+layers = [inputSize,hiddenSize,outputSize];
+dim = NeuralNetworkSize(layers)
+
+
+
+for alg=1:algorithms
+    A = alg
+    eval = @(x)ann_dataset_sse(x, layers, xx, t);
+    [success, iterations, minimum, value] = ALG{alg}(eval, dim, lower, upper, generations, individuals, objectiveValue);
+    v(ds,alg) = value;
+end
+
+
+table(v(:,1), v(:,2), v(:,3), 'RowNames', setNames, 'VariableNames', algNames)
+
+
+
+
+
+
