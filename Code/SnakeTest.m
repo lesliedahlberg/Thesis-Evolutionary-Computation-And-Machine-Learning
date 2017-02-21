@@ -1,4 +1,4 @@
-function x = SnakeTest(weights, dimension, verbose)
+function x = SnakeTest(weights, dimension, layers, verbose)
     %dimension = [5, 5];
     snake_length = 1;
     snake_init_head = [dimension(1)/2, dimension(2)/2];
@@ -6,7 +6,6 @@ function x = SnakeTest(weights, dimension, verbose)
     direction = [-1, 0];
     alive = true;
     grow = false;
-    %food = zeros(dimension(1), dimension(2));
     
     food_eaten = 0;
     moves_made = 0;
@@ -14,18 +13,7 @@ function x = SnakeTest(weights, dimension, verbose)
     starv_th = dimension(1)*dimension(2);
     starvation = starv_th;
     
-    %new_food = randi(10, 1, 2);
-    %food(new_food(1), new_food(2)) = 1;
     food = randi(min(dimension(1), dimension(2)), 1, 2);
-    
-    
-    
-    inputSize = 9;
-    hiddenSize = floor(inputSize/2);
-    outputSize = 4;
-    layers = [inputSize,hiddenSize,outputSize];
-    dim = NeuralNetworkSize(layers);
-    %weights = rand(1, dim);
     
     function l = render_snake()
         game = zeros(dimension(1), dimension(2));
@@ -46,58 +34,111 @@ function x = SnakeTest(weights, dimension, verbose)
 
     function d = get_ai_direction(rep)
         
-        rep_t = reshape(rep, [1 9]);
-        output = NeuralNetwork(rep_t, weights, layers);
+        %rep_t = reshape(rep, [1 9]);
+        output = NeuralNetwork(rep, weights, layers);
         
         d = [ 0, 0 ];
         
         [m,mi] = max(output);
-        
+        %L
         if mi == 1
-            d = [ 1, 0];
-        end
-        
-        if mi == 2
-            d = [ -1, 0];
-        end
-        
-        if mi == 3
-            d = [ 0, 1];
-        end
-        
-        if mi == 4
             d = [ 0, -1];
         end
+        %R
+        if mi == 2
+            d = [ 0, 1];
+        end
+        %U
+        if mi == 3
+            d = [ -1, 0];
+        end
+        %D
+        if mi == 4
+            d = [ 1, 0];
+        end
        
+        
+        
     end
 
     function rep = get_representation()
-        rep = zeros(3,3);
-        if food(1) <= snake(1,1)
-            if food(2) <= snake(1,2)
-                rep(1,1) = 1;
-            else
-                rep(1,3) = 1;
+        food_rep = 1;
+        snake_rep = 1;
+        snake_rep_diagonal = 1/snake_length;
+        
+        rep = zeros(1,12);
+        
+        %LRUD
+        for k=2:snake_length
+            %left
+            if (snake(k,1) == snake(1,1)) && (snake(k,2) == snake(1,2)-1)
+                rep(1) = snake_rep;
             end
-        else
-            if food(2) <= snake(1,2)
-                rep(3,1) = 1;
-            else
-                rep(3,3) = 1;
+            %right
+            if (snake(k,1) == snake(1,1)) && (snake(k,2) == snake(1,2)+1)
+                rep(2) = snake_rep;
+            end
+            %up
+            if (snake(k,1) == snake(1,1)-1) && (snake(k,2) == snake(1,2))
+                rep(3) = snake_rep;
+            end
+            %down
+            if (snake(k,1) == snake(1,1)+1) && (snake(k,2) == snake(1,2)-1)
+                rep(4) = snake_rep;
             end
         end
         
+        %wall
+        %left
+        if snake(1,2) == 1
+            rep(1) = snake_rep;
+        end
+        
+        %right
+        if snake(1,2) == dimension(2)
+            rep(2) = snake_rep;
+        end
+        
+        %up
+        if snake(1,1) == 1
+            rep(3) = snake_rep;
+        end
+        
+        %right
+        if snake(1,1) == dimension(1)
+            rep(4) = snake_rep;
+        end
+        
+        
+        %QUADRANT
         for k=2:snake_length
             if snake(k,1) <= snake(1,1)
-                rep(1,2) = -1;
+                if snake(k,2) <= snake(1,2)
+                    rep(4) = rep(4) + snake_rep_diagonal;
+                else
+                    rep(5) = rep(5) + snake_rep_diagonal;
+                end
             else
-                rep(3,2) = -1;
+                if snake(k,2) <= snake(1,2)
+                    rep(6) = rep(6) + snake_rep_diagonal;
+                else
+                    rep(7) = rep(7) + snake_rep_diagonal;
+                end
             end
-            
-            if snake(k,2) <= snake(1,2)
-                rep(2,1) = -1;
+        end
+        
+        %FOOD
+        if food(1) <= snake(1,1)
+            if food(2) <= snake(1,2)
+                rep(8) = rep(8) + food_rep;
             else
-                rep(2,3) = -1;
+                rep(9) = rep(9) + food_rep;
+            end
+        else
+            if food(2) <= snake(1,2)
+                rep(10) = rep(10) + food_rep;
+            else
+                rep(11) = rep(11) + food_rep;
             end
         end
     end
@@ -111,13 +152,12 @@ function x = SnakeTest(weights, dimension, verbose)
         
         self_invert = false;
         
-        %if (direction(1) == -old_direction(1) && direction(2) == old_direction(2)) ||  (direction(2) == -old_direction(2) && direction(1) == old_direction(1)) && snake_length > 1
-            if snake_length > 1
-                if (direction(1) == -old_direction(1) && direction(2) == old_direction(2) && direction(1) ~= 0) || (direction(2) == -old_direction(2) && direction(1) == old_direction(1) && direction(2) ~= 0)
-                    self_invert = true;
-                end
+        if snake_length > 1
+            if (direction(1) == -old_direction(1) && direction(2) == old_direction(2) && direction(1) ~= 0) || (direction(2) == -old_direction(2) && direction(1) == old_direction(1) && direction(2) ~= 0)
+                %self_invert = true;
+                direction = old_direction;
             end
-        %end
+        end
         
         new_head = snake(1,:) + direction;
         if new_head(1) < 1 || new_head(1) > dimension(1) || new_head(2) < 1 || new_head(2) > dimension(2) || self_invert == true
@@ -156,8 +196,10 @@ function x = SnakeTest(weights, dimension, verbose)
         end
     end
     
-    %x = food_eaten + min(moves_made, max(dimension));
-    x = food_eaten + sigmoid(moves_made)-0.5;
+    %x = food_eaten^2 + sigmoid(moves_made)-0.5;
+    %x = 1/2 * moves_made * food_eaten^2;
+    %x = sigmoid(moves_made)-0.5 + sigmoid(food_eaten)-0.5;
+    x = food_eaten^1.25 + sigmoid(moves_made)-0.5;
     
 end
 

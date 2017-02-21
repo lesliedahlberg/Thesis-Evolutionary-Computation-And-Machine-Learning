@@ -1,13 +1,13 @@
 clc
 ALG = {@PSO @DE @EDA_FGDA };
 algorithms = 3;
-algNames = { 'PSO' 'DE'  'EDA_FGDA'};
+algNames = { 'PSO' 'DE' 'EDA_FGDA'};
 
 setNames = {'snake'};
 
 objectiveValue = -inf;
-individuals = 50;
-generations = 500;
+individuals = 60;
+generations = 300;
 lower = -1;
 upper = 1;
 
@@ -16,8 +16,8 @@ v = ones(1,algorithms);
 snakeDimension = [10, 10];
 
 
-inputSize = 9;
-hiddenSize = 14;
+inputSize = 12;
+hiddenSize = 8;
 outputSize = 4;
 
 layers = [inputSize,hiddenSize,outputSize];
@@ -27,7 +27,7 @@ dim = NeuralNetworkSize(layers)
 
 for alg=1:algorithms
     A = alg
-    eval = @(x)ann_snake_fitness(x, snakeDimension, false);
+    eval = @(x)ann_snake_fitness(x, snakeDimension, layers, false);
     [success, iterations, minimum, value] = ALG{alg}(eval, dim, lower, upper, generations, individuals, objectiveValue);
     v(alg) = value;
     m{alg} = minimum;
