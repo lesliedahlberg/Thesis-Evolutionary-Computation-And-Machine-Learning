@@ -1,12 +1,13 @@
 # Fdb version 3
-["pdflatex"] 1484829524 "Background.tex" "Background.pdf" "Background" 1484829524
+["pdflatex"] 1488213917 "work.tex" "work.pdf" "work" 1488213917
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1463093894 31953 b9489e6e586f798610c60aec1f5ec548 ""
+  "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1484655401 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1484655427 3873397 2dffff4dcab4481d2e276181a9566caa ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "Background.aux" 1484752905 8 a94a2480d3289e625eea47cd1b285758 ""
-  "Background.tex" 1484829523 16395 ff39ba27f331b6da97a51311415c802a ""
+  "work.aux" 1488213917 8 a94a2480d3289e625eea47cd1b285758 ""
+  "work.tex" 1488213851 17066 a54688721ccb77207685d038a904b4fd ""
   (generated)
-  "Background.log"
-  "Background.pdf"
+  "work.pdf"
+  "work.log"

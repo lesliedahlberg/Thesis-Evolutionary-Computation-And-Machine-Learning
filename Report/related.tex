@@ -1,0 +1,22 @@
+\section{Related Work}
+
+Ideas around evolutionary computation began emerging in 1950s. Several researchers independently from each-other created algorithms which were inspired by natural Darwinian principles, these include Hollands Genetic Algorithms, Schwefel's and Rechenberg's Evolution Strategies and Fogel's Evolutionary Programming. These pioneering algorithms shared the concepts of populations, individuals, offspring and fitness and compared to natural systems they were quite simplistic, lacking gender, maturation processes, migration, etc.
+
+Research has shown that no single algorithm can perform better than all other algorithms on average. This has been referred to as the `no-free-lunch' and current solutions instead aim at finding better solutions to specific problems by exploiting inherent biases in the problem. This has led to the desire to classify different algorithms in order to decide which algorithms should be used which situations, a problem which is not easy.
+
+Recent research has focused, among others, on parallelism, multi-population models, multi-objective optimization, dynamic environments and evolving executable code. Parallelism can easily be exploited in EC because of it's inherently parallel nature, e.g each individual in a population can be evaluated, mutated and crossed-over independently. Multi-core CPUs, massively parallel GPUs, clusters and networks can be used to achieve this. Multi-populations models mimic the way species depend on each-other in nature. Examples of this include host-parasite and predator-prey relationships where the the individual's fitness is connected to the fitness of another individual. Multi-objective optimization aims to solve problems where conflicting interests exist, a good example would be optimizing for power and fuel-consumption simultaneously. In such problems the optimization algorithm has to keep two or more interests in mind simultaneously and find intersections points which offer the best trade-offs between them. Dynamic environments include things like the stock markets and traffic systems. Traditional EAs perform badly in these situations but they can perform well when slightly modified to fit the task. Evolving executable code, as in Genetic Programming and Evolutionary Programming, is a hard problem with very interesting potential applications. Most often low-level code such as assembly, lisp or generic rules are evolved \cite{dejong2009EC}.
+
+
+
+
+{\color{blue}
+\begin{itemize}
+  \item Syftet med detta avsnitt \"ar att placera in ditt arbete i ett sammanhang och j\"amf\"ora det med tidigare publicerade arbeten och resultat inom omr\r{a}det. Denna del ska vara grundlig. Du beskriver h\"ar existerande kunskap och hur denna ut\"okas av ditt arbete. Den ska inneh\r{a}lla analyser av tidigare arbeten som exempelvis beskriver hur olika metoder skiljer sig \r{a}t. Du ska visa p\r{a} de viktigaste likheterna och skillnaderna betr\"affande uppgift, angreppss\"att/metodologi samt resultat. Det \"ar viktigt att du p\r{a} ett neutralt s\"att diskuterar f\"or- och nackdelar med ditt eget arbete j\"amf\"ort med andras.
+  \item Detta skapar ocks\r{a} en f\"orv\"antan p\r{a} bidraget f\"or ditt arbete, l\"asaren l\"ar sig h\"ar om begr\"ansningar hos tidigare arbeten och varf\"or din uppgift \"ar en utmaning..
+  \item Tillsammans kommer detta avsnitt tillsammans med bakgrund att introducera ``state of the art''/``state of practice'' och dess brister, betydelsen av uppgiften samt vad ditt arbete ska j\"amf\"oras med.
+\end{itemize}
+
+
+
+
+}

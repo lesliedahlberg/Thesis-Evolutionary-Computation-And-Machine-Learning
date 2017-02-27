@@ -1,16 +1,17 @@
 % Document type
 \documentclass[10pt, titlepage, a4paper]{article}
 	% Packages
-  \usepackage{graphicx}
-  \usepackage[utf8]{inputenc}
+        \usepackage{graphicx}
 	\usepackage{amsmath}
+  \usepackage[utf8]{inputenc}
 	\usepackage{amsfonts}
 	\usepackage{fancyhdr}
 	\usepackage{enumerate}
 	\usepackage{listings}
 	\usepackage[titletoc]{appendix}
+	\usepackage[pdfborder={0 0 0},colorlinks=true, urlcolor=blue, citecolor=red, bookmarks=false]{hyperref}
 	\usepackage[margin=3cm]{geometry}
-  \usepackage[absolute]{textpos}
+\usepackage[absolute]{textpos}
 	\usepackage[section]{placeins}
 	\usepackage{url}
 	\usepackage{tabularx}
@@ -19,13 +20,7 @@
   \usepackage{subcaption}
   \usepackage{float}
   \usepackage{mathtools}
-
   \usepackage{algpseudocode}
-
-  \usepackage[pdfborder={0 0 0},colorlinks=true, urlcolor=blue, citecolor=red, bookmarks=false]{hyperref}
-  \hypersetup{pdftex,colorlinks=true,allcolors=blue}
-  \usepackage{hypcap}
-
 %	\usepackage{xltxtra}
 	% Page style
 	\pagestyle{fancy}
@@ -35,8 +30,10 @@
 	% Set font
 	%\setromanfont{Calibri}
 
-	\renewcommand\contentsname{Table of Contents}
+	\renewcommand\contentsname{Contents}
 	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+	\renewcommand{\abstractname}{Abstract}
+
 
 	\newcommand{\circR}{\textsuperscript{\textregistered}}
 
@@ -64,7 +61,7 @@
 
 % Page style
 \thispagestyle{fancy}
-\fancyhead[R]{Bachelor Thesis}
+\fancyhead[R]{Leslie Dahlberg}
 \fancyhead[L]{M\"{a}lardalen University}
 \fancyfoot[L]{}
 %\fancyfoot[LE,RO]{\thepage}
@@ -83,9 +80,28 @@
 
 \def\endabstract{\par
 }
+
+
+\newpage
+
+
 % ============================= Abstract ==============================
 \begin{abstract}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit eu ante id aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris condimentum iaculis erat, eget pretium leo consequat eget. Donec eu aliquam purus. Quisque scelerisque feugiat ligula, non vehicula urna blandit nec. Etiam a dignissim purus, at molestie dui. Vestibulum a venenatis mi, id hendrerit sem. Cras purus elit, dapibus eget est id, lacinia tincidunt neque. Mauris eu arcu ipsum. Sed enim leo, iaculis vitae nisl tincidunt, ultricies accumsan diam. Donec neque urna, pellentesque sit amet interdum a, pretium ac enim. Proin quis ante nunc. Fusce vitae lorem condimentum, porta velit blandit, commodo nisi.
+{\color{blue} Det h\"ar avsnittet ska helt enkelt vara just detta: en sammanfattning av hela rapporten. En l\"amplig omfattning \"ar c:a 200 - 250 ord.  En bra tumregel \"ar att sammanfattningen ska h\r{a}llas s\r{a} kort det g\r{a}r, den ska vara kompakt men fortfarande tydlig, informativ och v\"acka intresse. Ge de viktigaste fakta och summera allt det som \"ar v\"asentligt i rapporten.  F\"oljande b\"or ing\r{a}:
+\begin{itemize}
+\item Presentation/introduktion av omr\r{a}det f\"or arbetet,
+\item \"Oversiktlig presentation av uppgiften inklusive syfte och fr\r{a}gest\"allning,
+\item Motivation till varf\"or omr\r{a}det och uppgiften \"ar viktiga och intressanta,
+\item Generell beskrivning av hur du angripit uppgiften, vad du har gjort,
+\item Sammanfattning av resultat och slutsatser och vad ditt arbete bidrar med.
+\end{itemize}
+
+Inga detaljer ska vara med i sammanfattningen, inte heller beskrivning av hur rapporten \"ar uppst\"alld.
+
+Sammanfattningen ska kunna l\"asas helt frist\r{a}ende fr\r{a}n resten av rapporten, och av en ganska bred grupp av l\"asare. Den ska ge en bra grund f\"or att en l\"asare ska kunna bed\"oma om hen \"ar intresserad av att l\"asa hela rapporten.
+
+Sammanfattningen \"ar den del av en rapport som l\"ases allra mest och av flest personer. D\"arf\"or \"ar det extra viktigt att du skriver en bra sammanfattning. Du beh\"over ha ett ordentligt grepp om inneh\r{a}llet i rapporten n\"ar du skriver sammanfattningen, och n\"ar hela rapporten \"ar klar b\"or du granska och vid behov revidera sammanfattningen s\r{a} att den \"overensst\"ammer med rapporten.}
+
 \end{abstract}
 \newpage
 % ========================== Document version ===========================
@@ -113,41 +129,45 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit eu ante id
 
 % ============================== Intro ===============================
 
-\input{./Introduction}
-\newpage
-\input{./Background} %SOTA
-\newpage
-\input{./Method}
-\newpage
+\input{./introduction}
+
+\input{./background}
+
+\input{./related}
+
+\input{./problem}
+
+\input{./method}
+
+\input{./ethics}
+
 % =========================== Actual Content ==========================
 
-\input{./Theory}
-\newpage
-%\input{./Testing}
-%\newpage
+\input{./work}
 
+\input{./results}
 
 % ============================= Final words ============================
-\newpage
-\input{./Results}
-\newpage
-\input{./Discussions}
-\newpage
-\input{./Conclusion}
-\newpage
-\input{./Acknowledgments}
 
-%\input{./outcome}
+\input{./discussions}
 
-%\input{./timeplan}
+\input{./conclusion}
+
+\input{./future}
+
+
+%\input{./Acknowledgments}
+
 % ============================= References ============================
 \newpage
+%\input{./references_info}
+
 \bibliographystyle{IEEEtran}
 \bibliography{./references}
 \addcontentsline{toc}{section}{References}
 
 % ============================ Appendices =============================
-%\newpage
+\newpage
 %\begin{appendices}
 
 	%\input{./Appendices/appendices1}

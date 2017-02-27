@@ -1,22 +1,23 @@
 \section{Introduction}
 
-Optimization is a problem-solving method which aims to find the most advantageous parameters for a given model. The model is known to the optimizer and accepts inputs while producing outputs. Usually the problem is formulated in such a manner that the desired output is the smallest possible one, therefore the process is referred to as minimization. The practicality of this is apparent when considering, for example, optimizing a circuit's power consumption since the desired power consumption is the lowest one possible. To achieve this the optimizer looks for combinations of inputs which produce this desirable output \cite{Eiben2015_origins}.
+Optimization is a problem-solving method which aims to find the most advantageous parameters for a given model. The model is known to the optimizer and accepts inputs while producing outputs. Usually the problem can be formulated in such a way that we seek to minimize the output value of the model or the output of some function which transforms the models output into a fitness score. Because of this the process is often referred to as minimization. It becomes obvious that this is useful when considering optimizing the layout of a circuit in order to minimize the power consumption. To achieve this the optimizer looks for combinations of parameters which let the model produce the best output to a given input \cite{Eiben2015_origins}.
 
-When dealing with simple mathematical models, optimization can be achieved using analytical methods, often calculating the derivative of the functional model, but these methods prove difficult to adapt to complex models which exhibit noisy behavior. The field of evolutionary computation (EC), a subset of computational intelligence (CI), which is further a subset of artificial intelligence (AI), contains algorithms which are well suited to solving these kinds of optimization problems \cite{Michalewicz1997,zhang2015comprehensive}.
+
+When dealing with simple mathematical models, optimization can be achieved using analytical methods, often calculating the derivative of the functional model, but these methods prove difficult to adapt to complex models which exhibit noisy behavior. Additionally, the analytical model is not always known, which makes it impossible to use such methods. The field of evolutionary computation (EC), a subset of computational intelligence (CI), which is further a subset of artificial intelligence (AI), contains algorithms which are well suited to solving these kinds of optimization problems \cite{Michalewicz1997,zhang2015comprehensive}.
 
 Evolutionary computation focuses on problem solving algorithms which draw inspiration from natural processes. It is closely related to the neighboring field of swarm intelligence (SI), which often is, and in this thesis will be, included as a subset of EC. The basic rationale of the field is to adapt the mathematical models of biological Darwinian evolution to optimization problems. The usefulness of this can be illustrated by imagining that an organism acts as an ``input'' to the ``model'' of it's natural environment and produces an ``output'' in the form of offspring. Through multiple iterations biological evolution culls the population of organisms, only keeping the fit specimen, to produce organisms which become continuously better adapted to their environments. Evolutionary computation is, however, not merely confined to Darwinian evolution, but also includes a multitude of methods which draw from other natural processes such as cultural evolution and animal behavior \cite{engelbrecht2007computational}.
 
-\subsection{Problem formulation}
+The purpose of this thesis is to explore the performance and usefulness of three emerging evolutionary algorithms: differential evolution, particle swarm optimization and estimation of distribution algorithms. The intention is to test and compare these against each other on a set of benchmark functions and practical problems in machine learning and then, if possible, develop a new or modified algorithm which improves upon the aforementioned ones in some aspect. The research questions are summarized bellow:
 
-The purpose of this thesis is to explore the performance and usefulness of three emerging evolutionary algorithms: differential evolution, particle swarm optimization and estimation of distribution algorithms. The intention is to test compare these against each other on a set of benchmark functions and practical problems in machine learning and then, if possible, develop a new or modified algorithm which improves upon then aforementioned ones in some aspect. The research questions are summarized bellow:
-
-\begin{enumerate}
-  \item Benchmark differential evolution, particle swarm optimization and estimation of distribution algorithms on standard benchmark functions
-  \item Benchmark differential evolution, particle swarm optimization and estimation of distribution algorithms on machine learning problems
-  \item Develop an improved algorithm which is inspired by the three aforementioned algorithms
-  \item Include the new algorithm in the first two benchmarks
-\end{enumerate}
-
-\subsection{Limitations}
-
-The scope of this work limits the number of algorithms which can be included in the testing. The individual algorithms also have numerous variations and parameters which can dramatically affect their behavior and it will not be possible to take all these considerations into account. Furthermore, the benchmarking will be restricted to a standard set of testing functions which may or may not provide reliable information regarding the general usability the algorithms. Since evolutionary algorithms have a large number of potential and actual use cases the practical testing will only concern a small subset of the these and may therefore not provide accurate data for all possible use cases.
+{\color{blue}
+\begin{itemize}
+\item Presentation av omr\r{a}det och \"amnet f\"or arbetet. Detta b\"or komma tidigt och ska f\r{a}nga intresset. H\"ar kan ing\r{a} kort om bakgrund och eventuellt viktiga definitioner av begrepp,
+\item	Du kan kort beskriva t\"ankt m\r{a}lgrupp f\"or rapporten, vilka har du skrivit f\"or?,
+\item	Kort \"oversikt \"over tidigare arbeten och dessas begr\"ansningar,
+\item	Presentation av uppgiften inklusive syfte och fr\r{a}gest\"allning,
+\item	Beskrivning av hur du angripit uppgiften, metod och varf\"or denna \"ar l\"amplig,
+\item	Motivation: varf\"or uppgiften \"ar intressant, vilka de relevanta fr\r{a}gest\"allningarna \"ar, varf\"or ditt angreppss\"att \"ar bra och varf\"or resultaten \"ar viktiga,
+\item	Beskrivning av de viktigaste resultaten och dessas begr\"ansningar samt vad som \"ar nytt i ditt arbete,
+\item	\"Oversikt av rapporten.
+\end{itemize}
+}
