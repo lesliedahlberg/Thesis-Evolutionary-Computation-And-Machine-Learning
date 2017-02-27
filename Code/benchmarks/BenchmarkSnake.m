@@ -1,13 +1,13 @@
 clc
 ALG = {@PSO @DE @EDA_FGDA };
-algorithms = 3;
+algorithms = 1;
 algNames = { 'PSO' 'DE' 'EDA_FGDA'};
 
 setNames = {'snake'};
 
 objectiveValue = -inf;
-individuals = 60;
-generations = 300;
+individuals = 50;
+generations = 10000;
 lower = -1;
 upper = 1;
 
@@ -34,7 +34,8 @@ for alg=1:algorithms
 end
 
 
-table(v(1)', v(2)', v(3)', 'RowNames', setNames, 'VariableNames', algNames)
+%table(v(1)', v(2)', v(3)', 'RowNames', setNames, 'VariableNames', algNames)
+table(v(1)')
 
 %ann_snake_fitness(m{1}, snakeDimension, true);
 
