@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.17)  27 FEB 2017 18:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.17)  27 FEB 2017 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -905,62 +905,62 @@ or ditt ar-bete, l^^?asaren l^^?ar sig h^^?ar om begr^^?ansningar
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10] [11] [12] <figures/f1.png, id=256, 1124.2pt x 843.15pt>
+[10] [11] [12] <figures/f1.png, id=261, 1124.2pt x 843.15pt>
 File: figures/f1.png Graphic file (type png)
 
 <use figures/f1.png>
 Package pdftex.def Info: figures/f1.png used on input line 145.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
- <figures/f2.png, id=257, 1124.2pt x 843.15pt>
+ <figures/f2.png, id=262, 1124.2pt x 843.15pt>
 File: figures/f2.png Graphic file (type png)
 
 <use figures/f2.png>
 Package pdftex.def Info: figures/f2.png used on input line 160.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
- <figures/f3.png, id=258, 1124.2pt x 843.15pt>
+ <figures/f3.png, id=263, 1124.2pt x 843.15pt>
 File: figures/f3.png Graphic file (type png)
 
 <use figures/f3.png>
 Package pdftex.def Info: figures/f3.png used on input line 175.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
  [13 <./figures/f1.png (PNG copy)> <./figures/f2.png (PNG copy)>] <figures/f4.p
-ng, id=277, 1124.2pt x 843.15pt>
+ng, id=283, 1124.2pt x 843.15pt>
 File: figures/f4.png Graphic file (type png)
  <use figures/f4.png>
 Package pdftex.def Info: figures/f4.png used on input line 190.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
 
-<figures/f5.png, id=278, 1124.2pt x 843.15pt>
+<figures/f5.png, id=284, 1124.2pt x 843.15pt>
 File: figures/f5.png Graphic file (type png)
  <use figures/f5.png>
 Package pdftex.def Info: figures/f5.png used on input line 207.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
  [14 <./figures/f3.png (PNG copy)> <./figures/f4.png (PNG copy)>]
-<figures/f6.png, id=290, 1124.2pt x 843.15pt>
+<figures/f6.png, id=295, 1124.2pt x 843.15pt>
 File: figures/f6.png Graphic file (type png)
  <use figures/f6.png>
 Package pdftex.def Info: figures/f6.png used on input line 222.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
 
-<figures/f7.png, id=291, 1124.2pt x 843.15pt>
+<figures/f7.png, id=296, 1124.2pt x 843.15pt>
 File: figures/f7.png Graphic file (type png)
  <use figures/f7.png>
 Package pdftex.def Info: figures/f7.png used on input line 237.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
 
-<figures/f8.png, id=292, 1124.2pt x 843.15pt>
+<figures/f8.png, id=297, 1124.2pt x 843.15pt>
 File: figures/f8.png Graphic file (type png)
  <use figures/f8.png>
 Package pdftex.def Info: figures/f8.png used on input line 252.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
  [15 <./figures/f5.png (PNG copy)> <./figures/f6.png (PNG copy)> <./figures/f7.
-png (PNG copy)>] <figures/f9.png, id=301, 1124.2pt x 843.15pt>
+png (PNG copy)>] <figures/f9.png, id=306, 1124.2pt x 843.15pt>
 File: figures/f9.png Graphic file (type png)
  <use figures/f9.png>
 Package pdftex.def Info: figures/f9.png used on input line 267.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
 
-<figures/f10.png, id=302, 1124.2pt x 843.15pt>
+<figures/f10.png, id=307, 1124.2pt x 843.15pt>
 File: figures/f10.png Graphic file (type png)
  <use figures/f10.png>
 Package pdftex.def Info: figures/f10.png used on input line 282.
@@ -1027,10 +1027,10 @@ e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
 6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (23 pages, 2593398 bytes).
+Output written on main.pdf (23 pages, 2593577 bytes).
 PDF statistics:
- 450 PDF objects out of 1000 (max. 8388607)
- 394 compressed objects within 4 object streams
+ 455 PDF objects out of 1000 (max. 8388607)
+ 399 compressed objects within 4 object streams
  156 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

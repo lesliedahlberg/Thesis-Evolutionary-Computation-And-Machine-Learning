@@ -1,6 +1,6 @@
 \section{Background}
 
-This section will aim to provide a general overview of the field of evolutionary compution. General terms and procedured which are often utizilied in EC will be explained and the most well known traditional approaches will be presented. Current research will also be introduced. %The emerging algorithms relevant to this thesis can be found in the section ``Theory''.
+This section will aim to provide a general overview of the field of evolutionary compution. General terms and procedured which are often utizilied in EC will be explained and the most well known traditional approaches will be presented. Current research will also be introduced. The emerging algorithms relevant to this thesis can be found in the section ``Algorithms''.
 
 \subsection{The basic structure of evolutionary algorithms}
 
@@ -119,10 +119,10 @@ Each FSM creates one offspring which is mutated by one or more of the following 
 
 \subsubsection{Genetic programming}
 
-Genetic programming (GP) differs from traditional genetic algorithms by evolving computer programs which solve problems instead of directly finding the solution to a problem. The individuals in the population are therefore data-structures which encode computer programs, usually rooted trees representing expressions.
+Genetic programming (GP) differs from traditional genetic algorithms by evolving computer programs which solve problems instead of directly finding the solution to a problem. The individuals in the population are therefore data-structures which encode computer programs, usually rooted trees representing expressions \cite{Michalewicz1997}.
 
-At it's most basic the programs are defines as functions which take a set of input parameters and produce an output. The programs are constructed from building block such as variables, numbers and operators. The initial population contains a set of such programs which have been as random trees.
+At it's most basic the programs are defines as functions which take a set of input parameters and produce an output. The programs are constructed from building block such as variables, numbers and operators. The initial population contains a set of such programs which have been as random trees \cite{Michalewicz1997}.
 
-The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test cases and the programs undergo cross-over and other mutation. Cross-over is defines as the exchange of subtrees between programs and produces two offspring from two parents.
+The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test cases and the programs undergo cross-over and other mutation. Cross-over is defines as the exchange of subtrees between programs and produces two offspring from two parents \cite{Michalewicz1997}.
 
 More advanced versions of GP include function calls which enable the programs to remember useful symmetries and regularities and facilitate code reuse \cite{Michalewicz1997}.
