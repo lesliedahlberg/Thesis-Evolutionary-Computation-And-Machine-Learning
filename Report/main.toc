@@ -1,0 +1,51 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Problem formulation}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Limitations}{4}{subsection.1.2}
+\contentsline {section}{\numberline {2}Background}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}The basic structure of evolutionary algorithms}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Components of evolutionary algortihms}{5}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Representation}{5}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Evaluation function}{5}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Population}{6}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Parent selection mechanism}{6}{subsubsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.5}Variation operators}{6}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.6}Survivor selection mechanism}{6}{subsubsection.2.2.6}
+\contentsline {subsubsection}{\numberline {2.2.7}Initatilization}{6}{subsubsection.2.2.7}
+\contentsline {subsubsection}{\numberline {2.2.8}Termination condition}{6}{subsubsection.2.2.8}
+\contentsline {subsection}{\numberline {2.3}Main paradighms of evolutionary computation}{7}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Genetic algorithms}{7}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Evolution strategy}{7}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Evolutionary programming}{8}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Genetic programming}{8}{subsubsection.2.3.4}
+\contentsline {subsection}{\numberline {2.4}Current research}{8}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Applications and use-cases}{9}{subsection.2.5}
+\contentsline {section}{\numberline {3}Method}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Tools and environments}{10}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Benchmarking functions}{10}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}$F_1$: Shifted Sphere Function}{10}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}$F_2$: Shifted Schwefel\IeC {\textquoteright }s Problem}{10}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}$F_3$: Shifted Rotated High Conditioned Elliptic Function}{11}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}$F_4$: Shifted Schwefel\IeC {\textquoteright }s Problem with Noise in Fitness}{11}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}$F_5$: Schwefel\IeC {\textquoteright }s Problem with Global Optimum on Bounds}{12}{subsubsection.3.2.5}
+\contentsline {subsubsection}{\numberline {3.2.6}$F_6$: Shifted Rosenbrock\IeC {\textquoteright }s Function}{12}{subsubsection.3.2.6}
+\contentsline {subsubsection}{\numberline {3.2.7}$F_7$: Shifted Rotated Griewank\IeC {\textquoteright }s Function without Bounds}{13}{subsubsection.3.2.7}
+\contentsline {subsubsection}{\numberline {3.2.8}$F_8$: Shifted Rotated Ackley\IeC {\textquoteright }s Function with Global Optimum on Bounds}{13}{subsubsection.3.2.8}
+\contentsline {subsubsection}{\numberline {3.2.9}$F_9$: Shifted Rastrigin\IeC {\textquoteright }s Function}{14}{subsubsection.3.2.9}
+\contentsline {subsubsection}{\numberline {3.2.10}$F_{10}$: Shifted Rotated Rastrigin\IeC {\textquoteright }s Function}{14}{subsubsection.3.2.10}
+\contentsline {subsection}{\numberline {3.3}Machine learning problem set}{15}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}$ML_{1}$: Training FFNNs to do function approximation}{15}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}$ML_{2}$: Training FFNNs to do classification}{16}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}$ML_{3}$: Training FFNNs to do clustering}{16}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}$ML_{4}$: Training a FFNN to play a simple snake game}{16}{subsubsection.3.3.4}
+\contentsline {section}{\numberline {4}Theory}{17}{section.4}
+\contentsline {subsection}{\numberline {4.1}Differential Evolution}{17}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Particle Swarm Optimization}{18}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Estimation of Distribution Algorithm}{18}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}An improved evolutionary algorithm}{19}{subsection.4.4}
+\contentsline {section}{\numberline {5}Results}{20}{section.5}
+\contentsline {subsection}{\numberline {5.1}Function optimization}{20}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Machine learning}{21}{subsection.5.2}
+\contentsline {section}{\numberline {6}Discussions}{23}{section.6}
+\contentsline {section}{\numberline {7}Conclusion}{24}{section.7}
+\contentsline {section}{\numberline {8}Acknowledgments}{25}{section.8}
+\contentsline {section}{References}{27}{section*.2}

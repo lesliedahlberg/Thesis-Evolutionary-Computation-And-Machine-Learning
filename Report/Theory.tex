@@ -1,0 +1,126 @@
+\section{Theory}
+
+This section describes the three algorithms which were benchmarked together with my own algortihm contribution.
+
+\subsection{Differential Evolution}
+
+Differential evolution is a stochastic optimization algorithm which works on populations of parameter vectors. The problem to minimize will be denoted by $f(x)$ where $X=[x_1,x_2,x_3,...x_D]$ and $D$ is equal to the number of variables taken as input parameters by $f(x)$. The algorithm consists of multiple steps which will be described in detail below, the flow of the algorithm is illustrated in figure \ref{figure:DE}.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{5cm}
+    \begin{algorithmic}
+      \State Initialize population
+      \Repeat
+        \State Cross-over
+        \State Selection
+        \State Create new generation
+      \Until{Solution is found}
+    \end{algorithmic}
+  \end{minipage}
+  \caption{Overview of differential evolution algorithm.}
+  \label{figure:DE}
+\end{figure}
+
+The first step in DE is to create an initial population, the size of the population is $N$ and it will be represented by a matrix $x$ where $g$ is the generation and $n=1,2,3,...,N$:
+
+\begin{equation}
+x_{n,i}^{g} = [ x_{n,1}^{g}, x_{n,2}^{g}, x_{n,3}^{g}, ..., x_{n,D}^{g} ]
+\end{equation}
+
+The population is randomly generated to uniformly fill the entire parameter space ($x_{n,i}^U$ is the upper bound for parameter $x_i$ and $x_{n,i}^L$ is the lower bound for parameter $x_i$):
+
+Mutation is the first step when creating a new generation from the population. Mutation is performed individually for every vector $x$ in the population. The mutation procedure is as follows: select three random vectors for each parameter vector (this requires that the population has a size of $N > 3$) and create a set of new vectors $v$ called mutant vectors according to the formula below where $n=1,2,3,...,N$:
+
+\begin{equation}
+v_{n}^{g+1} = [ x_{r1n}^{g} + F(x_{r2n}^{g} - x_{r3n}^{g})
+\end{equation}
+
+The value of $F$ can be chosen from the interval $[0,2]$ and determines the influence of the differential weight $(x_{r2n}^{g} - x_{r3n}^{g})$.
+
+Crossover occurs after mutation and is applied individually to every vector $x$. A new vector $u$ called the trial vector is constructed from the mutant vector $v$ and the original vector $x$. The trial vector is produces according to the formula below with $i=1,2,3,...,D$ and $n=1,2,3,...,N$:
+
+\begin{equation}
+    u_{n,i}^{g+1} =
+    \begin{cases}
+      v_{n,i}^{g+1}, & \text{if}\ rand() \leq CR \wedge i = I_{\text{rand}} \\
+      x_{n,i}^{g}, & \text{otherwise}
+\end{cases}
+\end{equation}
+
+$I_{\text{rand}}$ is a randomly selected index from the interval $[1,D]$ and $CR$ is the crossover constant which determines the probability that an element is selected from the mutant vector.
+
+Selection is the last step in creating a new generation. The trial vector $u$ is compared with the original vector $x$ for fitness and the vector with the lost cost is selected for the generation according to the formula below where $n=1,2,3,...,N$:
+
+\begin{equation}
+    x_{n}^{g+1} =
+    \begin{cases}
+      u_{n}^{g+1}, & \text{if} f(u_{n}^{g+1}) < f(x_{n}^{g}) \\
+      x_{n,i}^{g}, & \text{otherwise}
+\end{cases}
+\end{equation}
+
+After selection is performed for every vector in the population the population is evaluated to determine if an acceptable solution has been generated. If a solution has been found the algorithm terminates, otherwise the mutation, crossover and selection is performed again until a solution is found or a maximum number of iterations has been reached \cite{Storn1997}.
+
+\subsection{Particle Swarm Optimization}
+
+Particle Swarm Optimization (PSO) was introduced in 19XX by Kenneth and Ebenhart [reference needed]. The optimization problem is represented by an n-dimensional function
+
+\begin{equation}
+  f(x_1,x_2,x_3,...x_n) = f(\vec{X})
+\end{equation}
+
+where $\vec{X}$ is a vector which represents the real parameters given to the function. The intent is to find a point in the n-dimensional parameter hyperspace that minimizes the function.
+
+PSO is a parallel search technique where a set of particles  fly through the n-dimensional search space and probe solutions along the way. Each particle $P$ has a current position $\vec{x}(t)$, a current velocity $\vec{v}(t)$, a personal best position $\vec{p}(t)$ and the neighborhoods best position $\vec{g}(t)$. A neighborhood $N$ is a collection of particles, the neighborhood is often set to be identical to the whole swarm of particles, denoted $S$.
+
+The algorithm has a set of general properties: $v_{max}$ restricts the velocity of each particle to the interval $[-v_{max},v_{max}]$, an inertial factor $\omega$, two random numbers $\phi_1$ and $\phi_2$ which affect the velocity update formula by modulating the influence of $\vec{p}(t)$ and $\vec{g}(t)$, and two constants $C^2$ and $C^1$ which are termed particle “self-confidence” and “swarm confidence”.
+
+The initial values of $\vec{p}(t)$ and $\vec{g}(t)$ are equal to $\vec{x}(0)$ for each particle. After the particle have been initialized an iterative update process is started which modifies the positions and velocities of the particles. The formula below describes the process ($d$ is the dimension of the position and velocity and $i$ is the index of the particle):
+
+\begin{equation}
+  v_{id} (t+1) = \omega v_{id} (t) + C_1 \phi_1 (p_{id} (t) - x_{id} (t)) + C_2 \phi_2 (g_{id} (t) - x_{id} (t))
+\end{equation}
+
+\begin{equation}
+  x_{id} (t+1) = x_{id} (t) + v_{id} (t+1)
+\end{equation}
+
+The “self-confidence” constant affects how much self-exploration a particle is allowed to do while “swarm-confidence” affects how much a particle follows the swarm. $\phi_1$ and $\phi_2$ are random numbers which push the particle in a new direction while $\omega$ keeps a particle on the path it’s currently on \cite{Das2008}. The PSO algorithm is described in figure \ref{algo:pso}.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{12.5cm}
+    \begin{algorithmic}
+      \State Initialize particles with random positions $\vec{x}(0)$ and velocities $\vec{v}(0)$
+      \Repeat
+        \ForAll{Particles $i$}
+          \State Evaluate fitness $f(\vec{x_i})$
+          \State Update $\vec{p}(t)$ and $\vec{g}(t)$
+          \State Adapt the velocity of the particle using the above-mentioned equation
+          \State Update the position of the particle
+        \EndFor
+      \Until{$\vec{g}(t)$ is a suitable solution}
+    \end{algorithmic}
+  \end{minipage}
+  \caption{PSO algorithm}
+  \label{algo:pso}
+\end{figure}
+
+\subsection{Estimation of Distribution Algorithm}
+
+Estimation of distribution algorithms are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best  of solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found \cite{Hauschild2011111}.
+
+The hardest part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Gaussian nets (GN) must be used \cite{povsik2004estimation}.
+
+
+The UMDA is an EDA algorithm which uses a set of independent probability distributions to sample new solution vectors. The probability model can be expressed as a product of the individual probabilities
+
+\begin{equation}
+  p(x) = \prod _{d=1}^D {p_d(x_d)}
+\end{equation}
+
+where  is the global multivariate density, D is the vector length and  are the individual univariate marginal densities. Equi-width histograms (EHW) can be used to capture the probability spread \cite{povsik2004estimation}.
+
+
+\subsection{An improved evolutionary algorithm}

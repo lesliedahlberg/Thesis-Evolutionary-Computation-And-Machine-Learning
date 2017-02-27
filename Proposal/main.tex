@@ -1,0 +1,106 @@
+% Document type
+\documentclass[12pt, titlepage, a4paper]{article}
+	% Packages
+  \usepackage{graphicx}
+	\usepackage{amsmath}
+	\usepackage{amsfonts}
+	\usepackage{enumerate}
+	\usepackage{listings}
+	\usepackage[margin=3cm]{geometry}
+  \usepackage[absolute]{textpos}
+	\usepackage[section]{placeins}
+	\usepackage{url}
+	\usepackage{tabularx}
+%	\usepackage{gensymb}
+	\usepackage{caption}
+  \usepackage{subcaption}
+  \usepackage{float}
+
+
+\begin{document}
+
+\begin{center}
+  \LARGE
+  Thesis Proposal
+
+  \LARGE
+  \textbf{Evolutionary computing in continuous optimization and machine learning}
+
+\end{center}
+
+\vspace{1cm}
+
+\large
+\noindent
+\textbf{Course code:} DVA331
+
+\large
+\noindent
+\textbf{Student name:} Leslie Dahlberg
+
+\large
+\noindent
+\textbf{Student ids:} ldg14001
+
+\large
+\noindent
+\textbf{Supervisor:} Ning Xiong
+
+\large
+\noindent
+\textbf{Examiner:}
+
+\normalsize
+
+
+\section{Background and motivations}
+
+Optimization is a problem-solving method which aims to find the most advantageous parameters for a given model. The model is known to the optimizer and accepts inputs while producing outputs. Usually the problem can be formulated in such a way that we seek to minimize the output value of the model or the output of some function which transforms the models output into a fitness score. Because of this the process is often referred to as minimization. It becomes obvious that this is useful when considering optimizing the layout of a circuit in order to minimize the power consumption. To achieve this the optimizer looks for combinations of parameters which let the model produce the best output to a given input \cite{Eiben2015_origins}.
+
+
+When dealing with simple mathematical models, optimization can be achieved using analytical methods, often calculating the derivative of the functional model, but these methods prove difficult to adapt to complex models which exhibit noisy behavior. Additionally, the analytical model is not always known, which makes it impossible to use such methods. The field of evolutionary computation (EC), a subset of computational intelligence (CI), which is further a subset of artificial intelligence (AI), contains algorithms which are well suited to solving these kinds of optimization problems \cite{Michalewicz1997,zhang2015comprehensive}.
+
+Evolutionary computation focuses on problem solving algorithms which draw inspiration from natural processes. It is closely related to the neighboring field of swarm intelligence (SI), which often is, and in this thesis will be, included as a subset of EC. The basic rationale of the field is to adapt the mathematical models of biological Darwinian evolution to optimization problems. The usefulness of this can be illustrated by imagining that an organism acts as an ``input'' to the ``model'' of it's natural environment and produces an ``output'' in the form of offspring. Through multiple iterations biological evolution culls the population of organisms, only keeping the fit specimen, to produce organisms which become continuously better adapted to their environments. Evolutionary computation is, however, not merely confined to Darwinian evolution, but also includes a multitude of methods which draw from other natural processes such as cultural evolution and animal behavior \cite{engelbrecht2007computational}.
+
+\section{Problem formulation}
+
+The purpose of this thesis is to explore the performance and usefulness of three emerging evolutionary algorithms: differential evolution, particle swarm optimization and estimation of distribution algorithms. The intention is to test and compare these against each other on a set of benchmark functions and practical problems in machine learning and then, if possible, develop a new or modified algorithm which improves upon the aforementioned ones in some aspect. The research questions are summarized bellow:
+
+\begin{enumerate}
+  \item Benchmark differential evolution, particle swarm optimization and estimation of distribution algorithms on standard mathematical benchmark functions
+  \item Benchmark differential evolution, particle swarm optimization and estimation of distribution algorithms on machine learning problems (neural networks, etc.)
+  \item Develop an improved algorithm which is inspired by the three aforementioned algorithms
+  \item Include the new algorithm in the first two benchmarks
+\end{enumerate}
+
+\section{Method}
+
+The initial research phase will focus on acquiring the knowledge and skills necessary to understand the problem at hand and implement a solution. The second stage of research will be centered around emerging evolutionary algorithms, their testing and their applicability to machine learning.
+
+Matlab will be the main tool used to develop and test the solutions as it is widely used by researchers in the field of evolutionary algorithms. The testbed for benchmarking will be assembled from the widely used De Jong test suite \cite{Whitley1996245} and the problem definition paper for CEC 2005 \cite{suganthan2005problem}.
+
+\section{Outcomes}
+
+The desired outcomes are:
+
+\begin{enumerate}
+  \item A benchmark of differential evolution, particle swarm optimization and estimation of distribution on a set of standard benchmark problems
+  \item A benchmark of differential evolution, particle swarm optimization and estimation of distribution on a set of machine learning problems
+  \item A novel evolutionary algorithm which hopefully outperforms the aforementioned three in some manner
+  \item A comparison of the novel algorithm with the aforementioned three algorithms
+\end{enumerate}
+
+\section{Initial time plan}
+
+The thesis work planing will be based upon the structure of the written report to ensure that the final product is delivered in time. The first two weeks will serve as an introduction to the topic and the introduction and background section of the report will be completed during this period. This will guarantee that they will be available in time for the status and planning seminary. After this, deeper inquiry into the main algorithms of the thesis will be conducted and the first implementation prototypes will be constructed. During this time a benchmark methodology will also be decided. This phase might occupy 1 - 3 weeks and will be followed by a benchmark and an investigation of how to apply the algorithms to machine learning problems. This will probably occupy one week and will be followed by the development of an improved algorithm and the implementation of the machine learning benchmarks. After this a complete benchmark of all four algorithms on both standard functions and machine learning problems will be conducted. This should leave enough time over to fine tune the new algorithm and finalize the report before the end of the course/project period.
+
+\section{Limitations}
+
+The scope of this work limits the number of algorithms which can be included in the testing. The individual algorithms also have numerous variations and parameters which can dramatically affect their behavior and it will not be possible to take all these considerations into account. Furthermore, the benchmarking will be restricted to a standard set of testing functions which may or may not provide reliable information regarding the general usability the algorithms. Since evolutionary algorithms have a large number of potential and actual use cases the practical testing will only concern a small subset of the these and may therefore not provide accurate data for all possible use cases.
+
+% ============================= References ============================
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{./references}
+
+\end{document}

@@ -1,0 +1,196 @@
+\section{Results}
+
+This section presents benchmarks and measurements of the four main algorithms presented in this thesis. It is divided into parts: the function optimization benchmark and the machine learning benchmark.
+
+\subsection{Function optimization}
+
+The function test-bed was tested with dimension size $D=2$, $D=10$, $D=30$ and $D=50$. The parameters for different dimension sizes are presented in figure \ref{t1}.
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | l | c | r | }
+      \hline
+      Dimension & Max. Generations & Population size \\ \hline
+      2 & 500 & 100 \\ \hline
+      10 & 1500 & 150 \\ \hline
+      30 & 2000 & 200 \\ \hline
+      50 & 2500 & 250 \\
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{Parameters for different dimension size in benchmark}
+  \label{t1}
+\end{figure}
+
+The benchmark ran each test-case 50 times and recorded the average minimum value of the function and the standard deviation. The results are presented in figure \ref{r2}, \ref{r10}, \ref{r30} and \ref{r50}. The lowest value if marked in bold font.
+
+
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{---} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+       1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       8 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       10 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $D=2$}
+  \label{r2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{---} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+       1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       8 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       10 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $D=10$}
+  \label{r10}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{---} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+       1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       8 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       10 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $D=30$}
+  \label{r30}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{---} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+       1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       3 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       4 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       6 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       8 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       10 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $D=50$}
+  \label{r50}
+\end{figure}
+
+
+
+
+\subsection{Machine learning}
+
+The algorithms were tested on four machine learning benchmarks: $ML_{1}$, $ML_{2}$, $ML_{3}$ and $ML_{4}$ as described in the section ``Method''. The dimensionality of the problem depends on the size of the input and output vectors of the data-sets and the size of the hidden layer of the neural networks. The hidden layer size was defines as the mean of the input- and output-layer sizes. The population size was set to $50$, the max. number of generations was set to $2000$ and every measurement was made $50$ times. The figures \ref{ml1}, \ref{ml2}, \ref{ml3} and \ref{ml4} show the results obtained for problems (average minimum value and standard deviation).
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{---} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      simplefit\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      abalone\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      bodyfat\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      building\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      chemical\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      cho\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      engine\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      house\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $ML_{1}$}
+  \label{ml1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{QSA} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      simpleclass\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      cancer\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      crab\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      glass\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      iris\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      thyroid\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      wine\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $ML_{2}$}
+  \label{ml2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{QSA} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      simplecluster\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $ML_{3}$}
+  \label{ml3}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{QSA} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      snake\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $ML_{4}$}
+  \label{ml4}
+\end{figure}

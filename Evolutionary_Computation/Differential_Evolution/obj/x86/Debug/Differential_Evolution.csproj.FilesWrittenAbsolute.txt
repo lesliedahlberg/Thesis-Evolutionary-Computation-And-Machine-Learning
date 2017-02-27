@@ -1,5 +1,0 @@
-/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Differential_Evolution/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Differential_Evolution/bin/Debug/Differential_Evolution.exe.mdb
-/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Differential_Evolution/bin/Debug/Differential_Evolution.exe
-/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Differential_Evolution/obj/x86/Debug/Differential_Evolution.exe
-/Users/lesliedahlberg/GIT LOCAL/Evolutionary-Computation/Evolutionary_Computation/Differential_Evolution/obj/x86/Debug/Differential_Evolution.exe.mdb

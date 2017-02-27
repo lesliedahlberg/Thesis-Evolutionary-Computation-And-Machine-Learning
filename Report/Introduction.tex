@@ -1,0 +1,22 @@
+\section{Introduction}
+
+Optimization is a problem-solving method which aims to find the most advantageous parameters for a given model. The model is known to the optimizer and accepts inputs while producing outputs. Usually the problem is formulated in such a manner that the desired output is the smallest possible one, therefore the process is referred to as minimization. The practicality of this is apparent when considering, for example, optimizing a circuit's power consumption since the desired power consumption is the lowest one possible. To achieve this the optimizer looks for combinations of inputs which produce this desirable output \cite{Eiben2015_origins}.
+
+When dealing with simple mathematical models, optimization can be achieved using analytical methods, often calculating the derivative of the functional model, but these methods prove difficult to adapt to complex models which exhibit noisy behavior. The field of evolutionary computation (EC), a subset of computational intelligence (CI), which is further a subset of artificial intelligence (AI), contains algorithms which are well suited to solving these kinds of optimization problems \cite{Michalewicz1997,zhang2015comprehensive}.
+
+Evolutionary computation focuses on problem solving algorithms which draw inspiration from natural processes. It is closely related to the neighboring field of swarm intelligence (SI), which often is, and in this thesis will be, included as a subset of EC. The basic rationale of the field is to adapt the mathematical models of biological Darwinian evolution to optimization problems. The usefulness of this can be illustrated by imagining that an organism acts as an ``input'' to the ``model'' of it's natural environment and produces an ``output'' in the form of offspring. Through multiple iterations biological evolution culls the population of organisms, only keeping the fit specimen, to produce organisms which become continuously better adapted to their environments. Evolutionary computation is, however, not merely confined to Darwinian evolution, but also includes a multitude of methods which draw from other natural processes such as cultural evolution and animal behavior \cite{engelbrecht2007computational}.
+
+\subsection{Problem formulation}
+
+The purpose of this thesis is to explore the performance and usefulness of three emerging evolutionary algorithms: differential evolution, particle swarm optimization and estimation of distribution algorithms. The intention is to test compare these against each other on a set of benchmark functions and practical problems in machine learning and then, if possible, develop a new or modified algorithm which improves upon then aforementioned ones in some aspect. The research questions are summarized bellow:
+
+\begin{enumerate}
+  \item Benchmark differential evolution, particle swarm optimization and estimation of distribution algorithms on standard benchmark functions
+  \item Benchmark differential evolution, particle swarm optimization and estimation of distribution algorithms on machine learning problems
+  \item Develop an improved algorithm which is inspired by the three aforementioned algorithms
+  \item Include the new algorithm in the first two benchmarks
+\end{enumerate}
+
+\subsection{Limitations}
+
+The scope of this work limits the number of algorithms which can be included in the testing. The individual algorithms also have numerous variations and parameters which can dramatically affect their behavior and it will not be possible to take all these considerations into account. Furthermore, the benchmarking will be restricted to a standard set of testing functions which may or may not provide reliable information regarding the general usability the algorithms. Since evolutionary algorithms have a large number of potential and actual use cases the practical testing will only concern a small subset of the these and may therefore not provide accurate data for all possible use cases.

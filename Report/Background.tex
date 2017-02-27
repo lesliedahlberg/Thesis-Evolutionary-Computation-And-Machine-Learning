@@ -1,0 +1,151 @@
+\section{Background}
+
+This section will aim to provide a general overview of the field of evolutionary compution. General terms and procedured which are often utizilied in EC will be explained and the most well known traditional approaches will be presented. Current research will also be introduced. The emerging algorithms relevant to this thesis can be found in the section ``Theory''.
+
+\subsection{The basic structure of evolutionary algorithms}
+
+Evolutionary algorithms work on the concept of populations. A population is a set of individuals which in the case of optimization problems contain a vector of parameters which the model we wish to optimize can accept and transform into an output. The population is initialize by some procedure to contain a random set of parameter vectors, these should cover the whole parameter range of the model uniformely. The inital population is evaluated and an iterative process is started which continues as long as no suitable solution is found. During this iterative process the current population is selected, altered and evaluated. During selection a set of individuals which display promising characterisitcs are selected to live on to the next generation of the population. They are then altered randomly to create diversity in the population and evaluated. This process created a new generation of the population on each iteration and continues until a solution is found or some other restriction is encoutered \cite{Eiben20021}. The concept is demonstrated in figure \ref{algo:basicevolution} with $P(t)$ representing the population at generation $t$.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{7.5cm}
+    \begin{algorithmic}
+       \State $t\gets 0$
+       \State initialize $P(t)$
+       \State evaluate $P(t)$
+       \While{termination-condition not fulfilled}
+        \State $t\gets t + 1$
+        \State select $P(t)$ from $P(t-1)$
+        \State alter $P(t)$
+        \State evaluate $P(t)$
+       \EndWhile
+    \end{algorithmic}
+  \end{minipage}
+  \caption{Basic evolutionary algorithm}
+  \label{algo:basicevolution}
+\end{figure}
+
+\subsection{Components of evolutionary algortihms}
+
+Here the fundamental builing blocks of evolutionary algorithms will be presented and explained. Most of these term are universal to all approaches which will be covered in this thesis and neccesary to properly understand them.
+
+\subsubsection{Representation}
+
+The first step in using evolutionary algorithms is creating a representation which can encode all possible solutions to the problem at hand. Here two different terms are distinguished. The term phenotype denotes the representation that can be directly applied to the problem and the genotype denotes the specific encoding of the phenotype which is manipulated inside the evolutionary algorithm. In optimization tasks a valid phenotype could be a vector of integer numbers which act as parameters to a function while the genotype would be a binary representation of the numbers which can be altered by manipulating individuals bits. The terms phenotype, candidate solution and individual are used interchangably to denote the representation as used by the model while chromosome, genotype and individual are used to refer to the representation inside the evolutionary algorithm \cite{Eiben2015_whatevolutionary}.
+
+\subsubsection{Evaluation function}
+
+The evalutation function is responsible for improvement in the population. It is a function which assings a fitness or cost value to every genotype and thus enables us to compare the quality of the genotypes in the population. It also the only information about the problem that it available to the evolutionary algorithm and should therefore include all domain knowledge that's available about the problem \cite{Eiben2015_whatevolutionary}. The evaluation is also the process which takes up the most computational resources, 99\% of the total computational cost in real-world problems \cite{Eiben20021}.
+
+\subsubsection{Population}
+
+The population is a set of genotypes which contain the current best solutions to a problem. While genotypes remain stable and unchanging, the population continually changes through the application of selection mechanisms which decide which genotypes are allow into the next generaiton of the population. The size of the population almost always remains constant during the lifetype of the algorithm. This in turn creates selection pressure which pushes the population to improve. A populations diversity is the measure of difference amoung the genotypes, phenotypes or fitness values \cite{Eiben2015_whatevolutionary}.
+
+\subsubsection{Parent selection mechanism}
+
+Parent selection serves to improve the quality of a population by selecting which individuals will survive to the next generation. The selected individuals are called parents as they usualy undergo some form of alteration or combination with other individuals before progressing to the next generation. The selection method is usually probabilistic and given better solutions a higher probability and worse solutions a lower probability to survive. It's important that bad solutions still recieve a positive probabilty since the population might otherwise lose diversity and coalesce around a false local optimimum \cite{Eiben2015_whatevolutionary}.
+
+\subsubsection{Variation operators}
+
+Variation operator introduce new features into the genotypes of a population by modifying or mixing existing genotypes. They can be divided into two types: unary operators which take one genotype and stochastically alter it to introduce random change and n-ary operators which mix the features of 2 or more genotypes. Unary operators called mutation operators while n-ary operators are called cross-over or recombination operators. The biological equivalents to the are random mutation and sexual reproduction. Mutation operators allow evolutionary algorithms to theoretically span the whole continuum of the search space by giving a non-zero probability that a genotype mutates into any other other genotype. This has been used to formally prove that evolutionary algorithms will always reach the desired optimum given enough time. Recombination tries to create new superior individuals by combining the genes of two good parent genotypes \cite{Eiben2015_whatevolutionary, Eiben20021}.
+
+\subsubsection{Survivor selection mechanism}
+
+Survivor selection takes placa after new offspring have been generated determines which individuals are allowed to live on into the next generation. It is often refered to as the replacement strategy and contrary to parent selection it is usually deterministic. Two popular mechanisms are fitness-based selection and age-based selection. Fitness-based selection determines the next generation by selecting the individuals with the highest fitness while age-based selection allows only the offspring to survive \cite{Eiben2015_whatevolutionary}.
+
+\subsubsection{Initatilization}
+
+Initialization is the process during which the intial population is generater. The genotypes are usually generated randomly from a uniform distribution based on some range of acceptable input values. If a good solution is known before hand variations of it can be include in the initial population as a bias, but this can sometimes cause more problems than it solves \cite{Eiben20021}.
+
+\subsubsection{Termination condition}
+
+The terminatin condidion determines for how long the algorithm is run. Four criteria are used to determine when to stop \cite{Eiben2015_whatevolutionary}:
+
+\begin{enumerate}
+  \item If a maximum number CPU-cycles or iterations is reached
+  \item If a known optimum is reached
+  \item If the fitness value does not imrove for a considerable amount of time
+  \item If the diversity of the polation drops below a given threshold
+\end{enumerate}
+
+\subsection{Main paradighms of evolutionary computation}
+
+Below the main paradighms of evolutionary computation will be discussed. They include genetic algorithms, evolution strategy, evolutionary programming and genetic programming.
+
+\subsubsection{Genetic algorithms}
+
+Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attempt to apply biological adaptation to computational problems. GAs are multidemensional search algorithms which use populations of binary strings called chromosomes to evolve a solution to a problem. GAs use a selection operator, a mutation operator and a cross-over operator. The selection operator select individuals which are subjected to cross-over based on their fitness and cross-over combines their genetic material to form new individuals which are then randomly mutated \cite{mitchel1999evolutionary}. See figure \ref{algo:geneticalgorithm} for a simple GA.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{12.5cm}
+    \begin{algorithmic}
+       \State Initialize a population of N binary chromosome with L bits
+       \While{termination-condition not fulfilled}
+        \State Evaluate the fitness $F(x)$ of each chromosome $x$
+        \Repeat
+          \State Select two chromosomes probabilistally from the population
+          \State based on their fitness
+          \State With the cross-over probability $P_c$ create two new offspring
+          \State from the two selected chromosomes using the crossover operator.
+          \State Otherwise create two new offspring identical to their parent chromosomes.
+          \State Mutate the two chromosomes using the mutation probability $P_m$
+          \State and place the resulting chromosomes into the new population
+        \Until{N offspring have been created}
+        \State Replace the old population with the new population
+       \EndWhile
+    \end{algorithmic}
+  \end{minipage}
+  \caption{Basic genetic algorithm}
+  \label{algo:geneticalgorithm}
+\end{figure}
+
+\subsubsection{Evolution strategy}
+
+Evolution strategies (ES) were first developed to solve parameter optimization tasks. They differ from GAs by representing individuals using a pair of vectors $\vec{v} = (\vec{x},\vec{\sigma})$. The earliest versions of ES used a population of only one individual and only utilized the mutation operator. New individuals were only introduced into the population if the performed better than their parents. The vector $\vec{x}$ represents the position in the search space and $\vec{\sigma}$ represents a vector standard deviations used to generate new individuals. Mutation occurs according to equation \ref{eq:evolutionstrategy1} where $N(0,\vec{\sigma})$ is a vector containing random Gaussian numbers with the mean $0$ and a standard deviation of $\vec{\sigma}$ \cite{Michalewicz1997}.
+
+\begin{equation}
+  \vec{x}^{t+1} =  \vec{x}^{t} + N(0,\vec{\sigma})
+  \label{eq:evolutionstrategy1}
+\end{equation}
+
+Newer versions of the algorithm include $(\mu + \lambda)-\text{ES}$ and $(\mu,\lambda)-\text{ES}$. The main point of these it that their parameters like mutation variance adapt automatically to the problem. In $(\mu + \lambda)-\text{ES}$ $\mu$ parents generate $\lambda$ offspring and the new generation is selected from $\mu$ and $\lambda$ while in $(\mu,\lambda)-\text{ES}$ $\mu$ parents generate $\lambda$ offspring ($\lambda > \mu$) and the new generation is only selected from $\lambda$. These algorithms produce offspring by first applying cross-over to combine two parent chromosomes (including their deviation vectors $\vec{\sigma}$) and then mutating $\vec{x}$ and $\vec{\sigma}$ \cite{Michalewicz1997}.
+
+\subsubsection{Evolutionary programming}
+
+Evolutionary programming (EP) was created as an alternative approach to artificial intelligence. The idea was to evolve finite state machines (FSM) which observe the environment and elicit appropriate responses \cite{Fogel1996}. The environmet is modeled as a sequence of input characters select from an alphabet and the role of the FSM is to produce the next character in sequence. The fitness of an FSM is measured by function which tests the FSM an a sequence of input characters, starting with the first character and the progressing to include on more addition character on each iteration. The function measures the correct prediction rate of the FSM and determines it's score \cite{Michalewicz1997}.
+
+Each FSM creates one offspring which is mutated by one or more of the following operators: change of input symbol, change of state transition, addition of state, deletion of state and change of initial state. The next generation is then selected from the pool of parents and offspring, selecting the best 50\% of all available solutions. A general form of EP has recently been devised which can tackle continuous optimization tasks \cite{Michalewicz1997}.
+
+\subsubsection{Genetic programming}
+
+Genetic programming (GP) differs from traditional genetic algorithms by evolving computer programs which solve problems instead of directly finding the solution to a problem. The individuals in the population are therefore data-structures which encode computer programs, usually rooted trees representing expressions.
+
+At it's most basic the programs are defines as functions which take a set of input parameters and produce an output. The programs are constructed from building block such as variables, numbers and operators. The initial population contains a set of such programs which have been as random trees.
+
+The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test cases and the programs undergo cross-over and other mutation. Cross-over is defines as the exchange of subtrees between programs and produces two offspring from two parents.
+
+More advanced versions of GP include function calls which enable the programs to remember useful symmetries and regularities and facilitate code reuse \cite{Michalewicz1997}.
+
+\subsection{Current research}
+
+Ideas around evolutionary computation began emerging in 1950s. Several researchers independently from each-other created algorithms which were inspired by natural Darwinian principles, these include Hollands Genetic Algorithms, Schwefel's and Rechenberg's Evolution Strategies and Fogel's Evolutionary Programming. These pioneering algorithms shared the concepts of populations, individuals, offspring and fitness and compared to natural systems they were quite simplistic, lacking gender, maturation processes, migration, etc.
+
+Research has shown that no single algorithm can perform better than all other algorithms on average. This has been referred to as the `no-free-lunch' and current solutions instead aim at finding better solutions to specific problems by exploiting inherent biases in the problem. This has led to the desire to classify different algorithms in order to decide which algorithms should be used which situations, a problem which is not easy.
+
+Recent research has focused, among others, on parallelism, multi-population models, multi-objective optimization, dynamic environments and evolving executable code. Parallelism can easily be exploited in EC because of it's inherently parallel nature, e.g each individual in a population can be evaluated, mutated and crossed-over independently. Multi-core CPUs, massively parallel GPUs, clusters and networks can be used to achieve this. Multi-populations models mimic the way species depend on each-other in nature. Examples of this include host-parasite and predator-prey relationships where the the individual's fitness is connected to the fitness of another individual. Multi-objective optimization aims to solve problems where conflicting interests exist, a good example would be optimizing for power and fuel-consumption simultaneously. In such problems the optimization algorithm has to keep two or more interests in mind simultaneously and find intersections points which offer the best trade-offs between them. Dynamic environments include things like the stock markets and traffic systems. Traditional EAs perform badly in these situations but they can perform well when slightly modified to fit the task. Evolving executable code, as in Genetic Programming and Evolutionary Programming, is a hard problem with very interesting potential applications. Most often low-level code such as assembly, lisp or generic rules are evolved \cite{dejong2009EC}.
+
+\subsection{Applications and use-cases}
+
+Evolutionary computing has found uses in a variety of fields. Some of them include include
+
+\begin{enumerate}
+  \item Power-Systems (planning, voltage-control, load-forecasting, maintenance scheduling, fault-diagnosis, control and configuration) \cite{bansal2006bibliographical}
+  \item Cloud-Computing (resource management) \cite{guzek2015survey}
+  \item Finance (portfolio optimization) \cite{ponsich2013survey, aguilar2015genetic}
+  \item Biology (protein structure prediction) \cite{Krasnogor:1999:PSP:2934046.2934162, xiu2003evolutionary}
+  \item Economics (evolutionary economic models) \cite{safarzynska2010evolutionary}
+  \item Disaster planning (planning, scheduling) \cite{zheng2015evolutionary}
+  \item Medicine (image processing) \cite{damas2011medical}
+  \item Intrusion Detection Systems \cite{wu2010use}
+\end{enumerate}

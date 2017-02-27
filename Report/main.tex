@@ -1,0 +1,161 @@
+% Document type
+\documentclass[10pt, titlepage, a4paper]{article}
+	% Packages
+  \usepackage{graphicx}
+  \usepackage[utf8]{inputenc}
+	\usepackage{amsmath}
+	\usepackage{amsfonts}
+	\usepackage{fancyhdr}
+	\usepackage{enumerate}
+	\usepackage{listings}
+	\usepackage[titletoc]{appendix}
+	\usepackage[margin=3cm]{geometry}
+  \usepackage[absolute]{textpos}
+	\usepackage[section]{placeins}
+	\usepackage{url}
+	\usepackage{tabularx}
+%	\usepackage{gensymb}
+	\usepackage{caption}
+  \usepackage{subcaption}
+  \usepackage{float}
+  \usepackage{mathtools}
+
+  \usepackage{algpseudocode}
+
+  \usepackage[pdfborder={0 0 0},colorlinks=true, urlcolor=blue, citecolor=red, bookmarks=false]{hyperref}
+  \hypersetup{pdftex,colorlinks=true,allcolors=blue}
+  \usepackage{hypcap}
+
+%	\usepackage{xltxtra}
+	% Page style
+	\pagestyle{fancy}
+	\marginparsep = 0pt
+  \graphicspath{ {figures/} }
+
+	% Set font
+	%\setromanfont{Calibri}
+
+	\renewcommand\contentsname{Table of Contents}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+	\newcommand{\circR}{\textsuperscript{\textregistered}}
+
+	% Code style
+	\lstset{
+		backgroundcolor=\color[rgb]{0.92,0.92,0.92},
+		basicstyle=\footnotesize,
+		showspaces=false,
+		showstringspaces=false,
+		showtabs=false,
+		tabsize=2,
+		captionpos=b,
+		breaklines=false,
+		keywordstyle=\color[rgb]{0,0,1},
+		commentstyle=\color[rgb]{0.133,0.545,0.133}
+	}
+
+\begin{document}
+\begin{titlepage}
+% Title
+\input{./title.tex}
+\end{titlepage}
+%\date{}
+%\maketitle
+
+% Page style
+\thispagestyle{fancy}
+\fancyhead[R]{Bachelor Thesis}
+\fancyhead[L]{M\"{a}lardalen University}
+\fancyfoot[L]{}
+%\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Begin actual text
+
+\def\abstract{
+   \vfil
+\begin{center}%
+{\bfseries\abstractname\vspace{-.5em}}
+\end{center}
+\itshape
+}
+
+\def\endabstract{\par
+}
+% ============================= Abstract ==============================
+\begin{abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit eu ante id aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris condimentum iaculis erat, eget pretium leo consequat eget. Donec eu aliquam purus. Quisque scelerisque feugiat ligula, non vehicula urna blandit nec. Etiam a dignissim purus, at molestie dui. Vestibulum a venenatis mi, id hendrerit sem. Cras purus elit, dapibus eget est id, lacinia tincidunt neque. Mauris eu arcu ipsum. Sed enim leo, iaculis vitae nisl tincidunt, ultricies accumsan diam. Donec neque urna, pellentesque sit amet interdum a, pretium ac enim. Proin quis ante nunc. Fusce vitae lorem condimentum, porta velit blandit, commodo nisi.
+\end{abstract}
+\newpage
+% ========================== Document version ===========================
+%\begin{center}
+%	\begin{tabular}{|l|l|l|}
+ %
+	%	\multicolumn{3}{c}{\textbf{{\large Document version}}} \\
+	%	\hline
+ 	%	Version & Date & Note \\ \hline
+ 	%	 &  &  \\ \hline
+	%	 &  &  \\ \hline
+	%	 &  &  \\ \hline
+	%	 &  &   \\ \hline
+	%	 &  &   \\ \hline
+	%	 &  &   \\ \hline
+%	\end{tabular}
+%\end{center}
+%\newpage
+%========================== Table of contents ===========================
+\hypersetup{linkcolor=black}
+\tableofcontents
+\hypersetup{linkcolor=red}
+
+\newpage
+
+% ============================== Intro ===============================
+
+\input{./Introduction}
+\newpage
+\input{./Background} %SOTA
+\newpage
+\input{./Method}
+\newpage
+% =========================== Actual Content ==========================
+
+\input{./Theory}
+\newpage
+%\input{./Testing}
+%\newpage
+
+
+% ============================= Final words ============================
+\newpage
+\input{./Results}
+\newpage
+\input{./Discussions}
+\newpage
+\input{./Conclusion}
+\newpage
+\input{./Acknowledgments}
+
+%\input{./outcome}
+
+%\input{./timeplan}
+% ============================= References ============================
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{./references}
+\addcontentsline{toc}{section}{References}
+
+% ============================ Appendices =============================
+%\newpage
+%\begin{appendices}
+
+	%\input{./Appendices/appendices1}
+	%\clearpage
+
+	%\input{./Appendices/appendices2}
+	%\clearpage
+
+%\end{appendices}
+
+\end{document}
