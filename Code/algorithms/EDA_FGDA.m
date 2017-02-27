@@ -38,8 +38,8 @@ function [ success, iterations, minimum, value ] = EDA_FGDA( CostFunction, dimen
             end
         end
         
-        graph_x(iterations) = iterations;
-        graph_y(iterations) = value;
+        %graph_x(iterations) = iterations;
+        %graph_y(iterations) = value;
         
         %disp(strcat(num2str(iterations),'=',num2str(value)));
         

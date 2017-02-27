@@ -44,7 +44,7 @@ function [ success, iterations, minimum, value ] = PSO( CostFunction, dimension,
         end
         
         iterations = iterations + 1;
-        disp(strcat(num2str(iterations),'=',num2str(globalBestValue)));
+        %disp(strcat(num2str(iterations),'=',num2str(globalBestValue)));
         
         %disp(globalBestValue);
         %track(iterations) = globalBestValue;
