@@ -63,6 +63,81 @@ D.~B. Fogel and L.~J. Fogel, \emph{An introduction to evolutionary
 K.~D. Jong, ``Evolutionary computation,'' \emph{Wiley Interdisciplinary
   Reviews: Computational Statistics}, vol.~1, no.~1, pp. 52--56, 2009.
 
+\bibitem{storn1995differential}
+R.~Storn and K.~Price, ``Differential evolution—a simple and efficient
+  adaptive scheme for global optimization over continuous spaces, berkeley,''
+  \emph{CA: International Computer Science Institute}, 1995.
+
+\bibitem{price1997differential}
+K.~Price, ``Differential evolution vs. the functions of the 2nd icec,'' in
+  \emph{Proceeding of 1997 IEEE International Conference on Evolutionary
+  Computation}, 1997.
+
+\bibitem{5601760}
+S.~Das and P.~N. Suganthan, ``Differential evolution: A survey of the
+  state-of-the-art,'' \emph{IEEE Transactions on Evolutionary Computation},
+  vol.~15, no.~1, pp. 4--31, Feb 2011.
+
+\bibitem{qin2009differential}
+A.~K. Qin, V.~L. Huang, and P.~N. Suganthan, ``Differential evolution algorithm
+  with strategy adaptation for global numerical optimization,'' \emph{IEEE
+  transactions on Evolutionary Computation}, vol.~13, no.~2, pp. 398--417,
+  2009.
+
+\bibitem{rahnamayan2008opposition}
+S.~Rahnamayan, H.~R. Tizhoosh, and M.~M. Salama, ``Opposition-based
+  differential evolution,'' \emph{IEEE Transactions on Evolutionary
+  computation}, vol.~12, no.~1, pp. 64--79, 2008.
+
+\bibitem{das2009differential}
+S.~Das, A.~Abraham, U.~K. Chakraborty, and A.~Konar, ``Differential evolution
+  using a neighborhood-based mutation operator,'' \emph{IEEE Transactions on
+  Evolutionary Computation}, vol.~13, no.~3, pp. 526--553, 2009.
+
+\bibitem{vesterstrom2004comparative}
+J.~Vesterstrom and R.~Thomsen, ``A comparative study of differential evolution,
+  particle swarm optimization, and evolutionary algorithms on numerical
+  benchmark problems,'' in \emph{Evolutionary Computation, 2004. CEC2004.
+  Congress on}, vol.~2.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2004, pp.
+  1980--1987.
+
+\bibitem{price2006differential}
+K.~Price, R.~M. Storn, and J.~A. Lampinen, \emph{Differential evolution: a
+  practical approach to global optimization}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer Science \& Business Media, 2006.
+
+\bibitem{mezura2006comparative}
+E.~Mezura-Montes, J.~Vel{\'a}zquez-Reyes, and C.~A. Coello~Coello, ``A
+  comparative study of differential evolution variants for global
+  optimization,'' in \emph{Proceedings of the 8th annual conference on Genetic
+  and evolutionary computation}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
+  2006, pp. 485--492.
+
+\bibitem{gamperle2002parameter}
+R.~G{\"a}mperle, S.~D. M{\"u}ller, and P.~Koumoutsakos, ``A parameter study for
+  differential evolution,'' \emph{Advances in intelligent systems, fuzzy
+  systems, evolutionary computation}, vol.~10, pp. 293--298, 2002.
+
+\bibitem{liu2005fuzzy}
+J.~Liu and J.~Lampinen, ``A fuzzy adaptive differential evolution algorithm,''
+  \emph{Soft Computing}, vol.~9, no.~6, pp. 448--462, 2005.
+
+\bibitem{dang2012selection}
+W.~Dang-she, W.~Hai-jiao, and Z.~Jian-ke, ``Selection of the pso parameters for
+  inverting of ellipsometry,'' in \emph{Industrial Control and Electronics
+  Engineering (ICICEE), 2012 International Conference on}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, 2012, pp. 776--780.
+
+\bibitem{zhang2011simple}
+W.~Zhang, Y.~Jin, X.~Li, and X.~Zhang, ``A simple way for parameter selection
+  of standard particle swarm optimization,'' in \emph{International Conference
+  on Artificial Intelligence and Computational Intelligence}.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer, 2011, pp. 436--443.
+
+\bibitem{yang2011particle}
+H.~Yang, ``Particle swarm optimization with modified velocity strategy,''
+  \emph{Energy Procedia}, no.~11, pp. 1074--1079, 2011.
+
 \bibitem{Storn1997}
 R.~Storn and K.~Price, ``Differential evolution -- a simple and efficient
   heuristic for global optimization over continuous spaces,'' \emph{Journal of

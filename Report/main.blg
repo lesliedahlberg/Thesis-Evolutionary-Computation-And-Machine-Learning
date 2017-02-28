@@ -8,49 +8,58 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ./references.bib
+Repeated entry---line 140 of file ./references.bib
+ : @article{rahnamayan2008opposition
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 416 of file ./references.bib
+ : @article{zhang2015comprehensive
+ :                                ,
+I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 15 entries,
+You've used 29 entries,
             4087 wiz_defined-function locations,
-            930 strings with 10249 characters,
-and the built_in function-call counts, 10835 in all, are:
-= -- 887
-> -- 232
-< -- 97
-+ -- 122
-- -- 37
-* -- 506
-:= -- 1645
-add.period$ -- 30
-call.type$ -- 15
-change.case$ -- 10
-chr.to.int$ -- 216
-cite$ -- 15
-duplicate$ -- 764
-empty$ -- 879
-format.name$ -- 49
-if$ -- 2540
+            1006 strings with 12982 characters,
+and the built_in function-call counts, 22057 in all, are:
+= -- 1808
+> -- 474
+< -- 207
++ -- 259
+- -- 73
+* -- 1035
+:= -- 3283
+add.period$ -- 62
+call.type$ -- 29
+change.case$ -- 23
+chr.to.int$ -- 474
+cite$ -- 29
+duplicate$ -- 1556
+empty$ -- 1790
+format.name$ -- 97
+if$ -- 5190
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 123
-newline$ -- 68
-num.names$ -- 15
-pop$ -- 284
+int.to.str$ -- 29
+missing$ -- 249
+newline$ -- 110
+num.names$ -- 29
+pop$ -- 563
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 845
+skip$ -- 1722
 stack$ -- 0
-substring$ -- 521
-swap$ -- 637
-text.length$ -- 25
+substring$ -- 1135
+swap$ -- 1304
+text.length$ -- 49
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 15
+type$ -- 29
 warning$ -- 0
-while$ -- 56
-width$ -- 17
-write$ -- 162
+while$ -- 113
+width$ -- 31
+write$ -- 297
+(There were 2 error messages)
