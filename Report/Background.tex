@@ -4,7 +4,7 @@ This section will aim to provide a general overview of the field of evolutionary
 
 \subsection{The basic structure of evolutionary algorithms}
 
-Evolutionary algorithms work on the concept of populations. A population is a set of individuals which in the case of optimization problems contain a vector of parameters which the model we wish to optimize can accept and transform into an output. The population is initialize by some procedure to contain a random set of parameter vectors, these should cover the whole parameter range of the model uniformely. The inital population is evaluated and an iterative process is started which continues as long as no suitable solution is found. During this iterative process the current population is selected, altered and evaluated. During selection a set of individuals which display promising characterisitcs are selected to live on to the next generation of the population. They are then altered randomly to create diversity in the population and evaluated. This process created a new generation of the population on each iteration and continues until a solution is found or some other restriction is encoutered \cite{Eiben20021}. The concept is demonstrated in figure \ref{algo:basicevolution} with $P(t)$ representing the population at generation $t$.
+Evolutionary algorithms work on the concept of populations. A population is a set of individuals which in the case of optimization problems contain a vector of parameters which the model we wish to optimize can accept and transform into an output. The population is initialized by some procedure to contain a random set of parameter vectors, these should cover the whole parameter range of the model uniformely. The inital population is evaluated and an iterative process is started which continues as long as no suitable solution is found. During this iterative process the current population is selected, altered and evaluated. During selection a set of individuals which display promising characterisitcs are selected to live on to the next generation of the population. They are then altered randomly to create diversity in the population and evaluated. This process creates a new generation of the population on each iteration and continues until a solution is found or some other restriction is encoutered \cite{Eiben20021}. The concept is demonstrated in figure \ref{algo:basicevolution} with $P(t)$ representing the population at generation $t$.
 
 \begin{figure}[h]
   \centering
@@ -25,7 +25,7 @@ Evolutionary algorithms work on the concept of populations. A population is a se
   \label{algo:basicevolution}
 \end{figure}
 
-\subsection{Components of evolutionary algortihms}
+\subsection{Components of evolutionary algorithms}
 
 Here the fundamental builing blocks of evolutionary algorithms will be presented and explained. Most of these term are universal to all approaches which will be covered in this thesis and neccesary to properly understand them.
 
@@ -35,36 +35,36 @@ The first step in using evolutionary algorithms is creating a representation whi
 
 \subsubsection{Evaluation function}
 
-The evalutation function is responsible for improvement in the population. It is a function which assings a fitness or cost value to every genotype and thus enables us to compare the quality of the genotypes in the population. It also the only information about the problem that it available to the evolutionary algorithm and should therefore include all domain knowledge that's available about the problem \cite{Eiben2015_whatevolutionary}. The evaluation is also the process which takes up the most computational resources, 99\% of the total computational cost in real-world problems \cite{Eiben20021}.
+The evalutation function is responsible for improvement in the population. It is a function which assigns a fitness or cost value to every genotype and thus enables us to compare the quality of the genotypes in the population. It is also the only information about the problem that is available to the evolutionary algorithm and should therefore include all domain knowledge which is available about the problem \cite{Eiben2015_whatevolutionary}. The evaluation is also the process which takes up the most computational resources, 99\% of the total computational cost in real-world problems \cite{Eiben20021}.
 
 \subsubsection{Population}
 
-The population is a set of genotypes which contain the current best solutions to a problem. While genotypes remain stable and unchanging, the population continually changes through the application of selection mechanisms which decide which genotypes are allow into the next generaiton of the population. The size of the population almost always remains constant during the lifetype of the algorithm. This in turn creates selection pressure which pushes the population to improve. A populations diversity is the measure of difference amoung the genotypes, phenotypes or fitness values \cite{Eiben2015_whatevolutionary}.
+The population is a set of genotypes which contain the current best solutions to a problem. While genotypes remain stable and unchanging, the population continually changes through the application of selection mechanisms which decide which genotypes are allowed into the next generation of the population. The size of the population almost always remains constant during the lifetime of the algorithm. This in turn creates selection pressure which pushes the population to improve. A population's diversity is the measure of difference amoung the genotypes, phenotypes and fitness values \cite{Eiben2015_whatevolutionary}.
 
 \subsubsection{Parent selection mechanism}
 
-Parent selection serves to improve the quality of a population by selecting which individuals will survive to the next generation. The selected individuals are called parents as they usualy undergo some form of alteration or combination with other individuals before progressing to the next generation. The selection method is usually probabilistic and given better solutions a higher probability and worse solutions a lower probability to survive. It's important that bad solutions still recieve a positive probabilty since the population might otherwise lose diversity and coalesce around a false local optimimum \cite{Eiben2015_whatevolutionary}.
+Parent selection serves to improve the quality of a population by selecting which individuals will survive into the next generation. The selected individuals are called parents as they usually undergo some form of alteration or combination with other individuals before progressing to the next generation. The selection method is usually probabilistic and gives better solutions a higher probability and worse solutions a lower probability to survive. It's important that bad solutions still recieve a positive probabilty since the population might otherwise lose diversity and coalesce around a false local optimimum \cite{Eiben2015_whatevolutionary}.
 
 \subsubsection{Variation operators}
 
-Variation operator introduce new features into the genotypes of a population by modifying or mixing existing genotypes. They can be divided into two types: unary operators which take one genotype and stochastically alter it to introduce random change and n-ary operators which mix the features of 2 or more genotypes. Unary operators called mutation operators while n-ary operators are called cross-over or recombination operators. The biological equivalents to the are random mutation and sexual reproduction. Mutation operators allow evolutionary algorithms to theoretically span the whole continuum of the search space by giving a non-zero probability that a genotype mutates into any other other genotype. This has been used to formally prove that evolutionary algorithms will always reach the desired optimum given enough time. Recombination tries to create new superior individuals by combining the genes of two good parent genotypes \cite{Eiben2015_whatevolutionary, Eiben20021}.
+Variation operators introduce new features into the genotypes of a population by modifying or mixing existing genotypes. They can be divided into two types: unary operators which take one genotype and stochastically alter it to introduce random change and n-ary operators which mix the features of 2 or more genotypes. Unary operators are called mutation operators while n-ary operators are called cross-over or recombination operators. The biological equivalents to these are random mutation and sexual reproduction. Mutation operators allow evolutionary algorithms to theoretically span the whole continuum of the search space by giving a non-zero probability that a genotype mutates into any other other genotype. This has been used to formally prove that evolutionary algorithms will always reach the desired optimum given enough time. Recombination tries to create new superior individuals by combining the genes of two good parent genotypes \cite{Eiben2015_whatevolutionary, Eiben20021}.
 
 \subsubsection{Survivor selection mechanism}
 
-Survivor selection takes placa after new offspring have been generated determines which individuals are allowed to live on into the next generation. It is often refered to as the replacement strategy and contrary to parent selection it is usually deterministic. Two popular mechanisms are fitness-based selection and age-based selection. Fitness-based selection determines the next generation by selecting the individuals with the highest fitness while age-based selection allows only the offspring to survive \cite{Eiben2015_whatevolutionary}.
+Survivor selection takes place after new offspring have been generated and determines which individuals are allowed to live on into the next generation. It is often refered to as the replacement strategy and contrary to parent selection it is usually deterministic. Two popular mechanisms are fitness-based selection and age-based selection. Fitness-based selection determines the next generation by selecting the individuals with the highest fitness while age-based selection allows only the offspring to survive \cite{Eiben2015_whatevolutionary}.
 
 \subsubsection{Initatilization}
 
-Initialization is the process during which the intial population is generater. The genotypes are usually generated randomly from a uniform distribution based on some range of acceptable input values. If a good solution is known before hand variations of it can be include in the initial population as a bias, but this can sometimes cause more problems than it solves \cite{Eiben20021}.
+Initialization is the process during which the intial population is generated. The genotypes are usually generated randomly from a uniform distribution based on some range of acceptable input values. If a good solution is known before hand variations of it can be include in the initial population as a bias, but this can sometimes cause more problems than it solves \cite{Eiben20021}.
 
 \subsubsection{Termination condition}
 
-The terminatin condidion determines for how long the algorithm is run. Four criteria are used to determine when to stop \cite{Eiben2015_whatevolutionary}:
+The termination condidion determines for how long the algorithm is run. Four criteria are used to determine when to stop \cite{Eiben2015_whatevolutionary}:
 
 \begin{enumerate}
   \item If a maximum number CPU-cycles or iterations is reached
   \item If a known optimum is reached
-  \item If the fitness value does not imrove for a considerable amount of time
+  \item If the fitness value does not improve for a considerable amount of time
   \item If the diversity of the polation drops below a given threshold
 \end{enumerate}
 
@@ -102,7 +102,7 @@ Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attem
 
 \subsubsection{Evolution strategy}
 
-Evolution strategies (ES) were first developed to solve parameter optimization tasks. They differ from GAs by representing individuals using a pair of vectors $\vec{v} = (\vec{x},\vec{\sigma})$. The earliest versions of ES used a population of only one individual and only utilized the mutation operator. New individuals were only introduced into the population if the performed better than their parents. The vector $\vec{x}$ represents the position in the search space and $\vec{\sigma}$ represents a vector standard deviations used to generate new individuals. Mutation occurs according to equation \ref{eq:evolutionstrategy1} where $N(0,\vec{\sigma})$ is a vector containing random Gaussian numbers with the mean $0$ and a standard deviation of $\vec{\sigma}$ \cite{Michalewicz1997}.
+Evolution strategies (ES) were first developed to solve parameter optimization tasks. They differ from GAs by representing individuals using a pair of vectors $\vec{v} = (\vec{x},\vec{\sigma})$. The earliest versions of ES used a population of only one individual and only utilized the mutation operator. New individuals were only introduced into the population if they performed better than their parents. The vector $\vec{x}$ represents the position in the search space and $\vec{\sigma}$ represents a vector of standard deviations used to generate new individuals. Mutation occurs according to equation \ref{eq:evolutionstrategy1} where $N(0,\vec{\sigma})$ is a vector containing random Gaussian numbers with the mean $0$ and a standard deviation of $\vec{\sigma}$ \cite{Michalewicz1997}.
 
 \begin{equation}
   \vec{x}^{t+1} =  \vec{x}^{t} + N(0,\vec{\sigma})
@@ -113,7 +113,7 @@ Newer versions of the algorithm include $(\mu + \lambda)-\text{ES}$ and $(\mu,\l
 
 \subsubsection{Evolutionary programming}
 
-Evolutionary programming (EP) was created as an alternative approach to artificial intelligence. The idea was to evolve finite state machines (FSM) which observe the environment and elicit appropriate responses \cite{Fogel1996}. The environmet is modeled as a sequence of input characters select from an alphabet and the role of the FSM is to produce the next character in sequence. The fitness of an FSM is measured by function which tests the FSM an a sequence of input characters, starting with the first character and the progressing to include on more addition character on each iteration. The function measures the correct prediction rate of the FSM and determines it's score \cite{Michalewicz1997}.
+Evolutionary programming (EP) was created as an alternative approach to artificial intelligence. The idea was to evolve finite state machines (FSM) which observe the environment and elicit appropriate responses \cite{Fogel1996}. The environmet is modeled as a sequence of input characters selected from an alphabet and the role of the FSM is to produce the next character in sequence. The fitness of an FSM is measured by a function which tests the FSM on a sequence of input characters, starting with the first character and then progressing to include one more addition character on each iteration. The function measures the correct prediction rate of the FSM and determines it's score \cite{Michalewicz1997}.
 
 Each FSM creates one offspring which is mutated by one or more of the following operators: change of input symbol, change of state transition, addition of state, deletion of state and change of initial state. The next generation is then selected from the pool of parents and offspring, selecting the best 50\% of all available solutions. A general form of EP has recently been devised which can tackle continuous optimization tasks \cite{Michalewicz1997}.
 
@@ -121,8 +121,8 @@ Each FSM creates one offspring which is mutated by one or more of the following 
 
 Genetic programming (GP) differs from traditional genetic algorithms by evolving computer programs which solve problems instead of directly finding the solution to a problem. The individuals in the population are therefore data-structures which encode computer programs, usually rooted trees representing expressions \cite{Michalewicz1997}.
 
-At it's most basic the programs are defines as functions which take a set of input parameters and produce an output. The programs are constructed from building block such as variables, numbers and operators. The initial population contains a set of such programs which have been as random trees \cite{Michalewicz1997}.
+At it's most basic the programs are defines as functions which take a set of input parameters and produce an output. The programs are constructed from building blocks such as variables, numbers and operators. The initial population contains a set of such programs which have been initialized as random trees \cite{Michalewicz1997}.
 
-The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test cases and the programs undergo cross-over and other mutation. Cross-over is defines as the exchange of subtrees between programs and produces two offspring from two parents \cite{Michalewicz1997}.
+The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test cases and the programs undergo cross-over and other mutations. Cross-over is defined as the exchange of subtrees between programs and produces two offspring from two parents \cite{Michalewicz1997}.
 
 More advanced versions of GP include function calls which enable the programs to remember useful symmetries and regularities and facilitate code reuse \cite{Michalewicz1997}.

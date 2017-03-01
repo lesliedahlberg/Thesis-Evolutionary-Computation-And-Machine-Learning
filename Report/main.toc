@@ -1,7 +1,7 @@
 \contentsline {section}{\numberline {1}Introduction}{4}{section.1}
 \contentsline {section}{\numberline {2}Background}{4}{section.2}
 \contentsline {subsection}{\numberline {2.1}The basic structure of evolutionary algorithms}{5}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Components of evolutionary algortihms}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Components of evolutionary algorithms}{5}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Representation}{5}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Evaluation function}{5}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Population}{6}{subsubsection.2.2.3}
@@ -33,22 +33,22 @@
 \contentsline {subsection}{\numberline {7.3}Estimation of Distribution Algorithm}{13}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}An improved evolutionary algorithm}{13}{subsection.7.4}
 \contentsline {section}{\numberline {8}Mathematical Problem Set}{13}{section.8}
-\contentsline {subsubsection}{\numberline {8.0.1}$F_1$: Shifted Sphere Function}{13}{subsubsection.8.0.1}
-\contentsline {subsubsection}{\numberline {8.0.2}$F_2$: Shifted Schwefel\IeC {\textquoteright }s Problem}{14}{subsubsection.8.0.2}
-\contentsline {subsubsection}{\numberline {8.0.3}$F_3$: Shifted Rotated High Conditioned Elliptic Function}{14}{subsubsection.8.0.3}
-\contentsline {subsubsection}{\numberline {8.0.4}$F_4$: Shifted Schwefel\IeC {\textquoteright }s Problem with Noise in Fitness}{15}{subsubsection.8.0.4}
-\contentsline {subsubsection}{\numberline {8.0.5}$F_5$: Schwefel\IeC {\textquoteright }s Problem with Global Optimum on Bounds}{15}{subsubsection.8.0.5}
-\contentsline {subsubsection}{\numberline {8.0.6}$F_6$: Shifted Rosenbrock\IeC {\textquoteright }s Function}{15}{subsubsection.8.0.6}
-\contentsline {subsubsection}{\numberline {8.0.7}$F_7$: Shifted Rotated Griewank\IeC {\textquoteright }s Function without Bounds}{16}{subsubsection.8.0.7}
-\contentsline {subsubsection}{\numberline {8.0.8}$F_8$: Shifted Rotated Ackley\IeC {\textquoteright }s Function with Global Optimum on Bounds}{16}{subsubsection.8.0.8}
-\contentsline {subsubsection}{\numberline {8.0.9}$F_9$: Shifted Rastrigin\IeC {\textquoteright }s Function}{16}{subsubsection.8.0.9}
-\contentsline {subsubsection}{\numberline {8.0.10}$F_{10}$: Shifted Rotated Rastrigin\IeC {\textquoteright }s Function}{17}{subsubsection.8.0.10}
+\contentsline {subsection}{\numberline {8.1}$F_1$: Shifted Sphere Function}{13}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}$F_2$: Shifted Schwefel\IeC {\textquoteright }s Problem}{14}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}$F_3$: Shifted Rotated High Conditioned Elliptic Function}{14}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}$F_4$: Shifted Schwefel\IeC {\textquoteright }s Problem with Noise in Fitness}{15}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.5}$F_5$: Schwefel\IeC {\textquoteright }s Problem with Global Optimum on Bounds}{15}{subsection.8.5}
+\contentsline {subsection}{\numberline {8.6}$F_6$: Shifted Rosenbrock\IeC {\textquoteright }s Function}{15}{subsection.8.6}
+\contentsline {subsection}{\numberline {8.7}$F_7$: Shifted Rotated Griewank\IeC {\textquoteright }s Function without Bounds}{16}{subsection.8.7}
+\contentsline {subsection}{\numberline {8.8}$F_8$: Shifted Rotated Ackley\IeC {\textquoteright }s Function with Global Optimum on Bounds}{16}{subsection.8.8}
+\contentsline {subsection}{\numberline {8.9}$F_9$: Shifted Rastrigin\IeC {\textquoteright }s Function}{17}{subsection.8.9}
+\contentsline {subsection}{\numberline {8.10}$F_{10}$: Shifted Rotated Rastrigin\IeC {\textquoteright }s Function}{17}{subsection.8.10}
 \contentsline {section}{\numberline {9}Machine Learning Problem Set}{17}{section.9}
-\contentsline {subsubsection}{\numberline {9.0.1}$ML_{1}$: Training FFNNs to do function approximation}{17}{subsubsection.9.0.1}
-\contentsline {subsubsection}{\numberline {9.0.2}$ML_{2}$: Training FFNNs to do classification}{18}{subsubsection.9.0.2}
-\contentsline {subsubsection}{\numberline {9.0.3}$ML_{3}$: Training FFNNs to do clustering}{18}{subsubsection.9.0.3}
-\contentsline {subsubsection}{\numberline {9.0.4}$ML_{4}$: Training a FFNN to play a simple snake game}{18}{subsubsection.9.0.4}
-\contentsline {section}{\numberline {10}Results}{18}{section.10}
+\contentsline {subsection}{\numberline {9.1}$ML_{1}$: Training FFNNs to do function approximation}{17}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}$ML_{2}$: Training FFNNs to do classification}{18}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}$ML_{3}$: Training FFNNs to do clustering}{18}{subsection.9.3}
+\contentsline {subsection}{\numberline {9.4}$ML_{4}$: Training a FFNN to play a simple snake game}{18}{subsection.9.4}
+\contentsline {section}{\numberline {10}Results}{19}{section.10}
 \contentsline {subsection}{\numberline {10.1}Mathematical Problem Set}{19}{subsection.10.1}
 \contentsline {subsection}{\numberline {10.2}Machine Learning Problem Set}{20}{subsection.10.2}
 \contentsline {section}{\numberline {11}Discussion}{21}{section.11}

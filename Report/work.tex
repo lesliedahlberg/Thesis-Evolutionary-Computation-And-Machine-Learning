@@ -38,7 +38,7 @@ v_{n}^{g+1} = [ x_{r1n}^{g} + F(x_{r2n}^{g} - x_{r3n}^{g})
 
 The value of $F$ can be chosen from the interval $[0,2]$ and determines the influence of the differential weight $(x_{r2n}^{g} - x_{r3n}^{g})$.
 
-Crossover occurs after mutation and is applied individually to every vector $x$. A new vector $u$ called the trial vector is constructed from the mutant vector $v$ and the original vector $x$. The trial vector is produces according to the formula below with $i=1,2,3,...,D$ and $n=1,2,3,...,N$:
+Crossover occurs after mutation and is applied individually to every vector $x$. A new vector $u$ called the trial vector is constructed from the mutant vector $v$ and the original vector $x$. The trial vector is produced according to the formula below with $i=1,2,3,...,D$ and $n=1,2,3,...,N$:
 
 \begin{equation}
     u_{n,i}^{g+1} =
@@ -110,9 +110,9 @@ The “self-confidence” constant affects how much self-exploration a particle 
 
 \subsection{Estimation of Distribution Algorithm}
 
-Estimation of distribution algorithms are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best  of solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found \cite{Hauschild2011111}.
+Estimation of distribution algorithms are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best 50\% of the solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found \cite{Hauschild2011111}.
 
-The hardest part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Gaussian nets (GN) must be used \cite{povsik2004estimation}.
+The most difficult part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Gaussian nets (GN) can be used \cite{povsik2004estimation}.
 
 
 The UMDA is an EDA algorithm which uses a set of independent probability distributions to sample new solution vectors. The probability model can be expressed as a product of the individual probabilities
@@ -121,7 +121,7 @@ The UMDA is an EDA algorithm which uses a set of independent probability distrib
   p(x) = \prod _{d=1}^D {p_d(x_d)}
 \end{equation}
 
-where  is the global multivariate density, D is the vector length and  are the individual univariate marginal densities. Equi-width histograms (EHW) can be used to capture the probability spread \cite{povsik2004estimation}.
+where $p(x)$ is the global multivariate density, D is the vector length and $p_d(x_d)$ are the individual univariate marginal densities \cite{povsik2004estimation}.
 
 
 \subsection{An improved evolutionary algorithm}
@@ -130,9 +130,9 @@ where  is the global multivariate density, D is the vector length and  are the i
 
 The functions for the benchmark are taken from the 2005 CEC conference on continuous evolutionary optimization \cite{suganthan2005problem}. The functions are losely based on the popular optimization benchmark suite created by DeJong \cite{Whitley1996245}.
 
-For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_2,o_3,...,o_D]$ is the global optimum, $D$ is the dimension and $M$ is an orthogonal matrix with parameters unique to each function. The matrices for $o$ and $M$ can be obtained  Illustrations of the functions can be found in figures \ref{f1}, \ref{f2}, \ref{f3}, \ref{f4}, \ref{f5}, \ref{f6}, \ref{f7}, \ref{f8}, \ref{f9} and \ref{f10}.
+For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_2,o_3,...,o_D]$ is the global optimum, $D$ is the dimension and $M$ is an orthogonal matrix with parameters unique to each function. The matrices for $o$ and $M$ can be obtained from \cite{suganthan2005problem}. Illustrations of the functions can be found in figures \ref{f1}, \ref{f2}, \ref{f3}, \ref{f4}, \ref{f5}, \ref{f6}, \ref{f7}, \ref{f8}, \ref{f9} and \ref{f10}.
 
-\subsubsection{$F_1$: Shifted Sphere Function}
+\subsection{$F_1$: Shifted Sphere Function}
 
 \begin{equation}
   F_1(x)=\sum_{i=1}^{D}{z_i^2}
@@ -147,7 +147,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
   \label{f1}
 \end{figure}
 
-\subsubsection{$F_2$: Shifted Schwefel’s Problem}
+\subsection{$F_2$: Shifted Schwefel’s Problem}
 
 \begin{equation}
   F_2(x)=\sum_{i=1}^{D}{(\sum_{j=1}^{i}{z_j})^2}
@@ -162,7 +162,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
   \label{f2}
 \end{figure}
 
-\subsubsection{$F_3$: Shifted Rotated High Conditioned Elliptic Function}
+\subsection{$F_3$: Shifted Rotated High Conditioned Elliptic Function}
 
 \begin{equation}
   F_3(x)=\sum_{i=1}^{D}{(10^6)^{\frac{i-1}{D-1}}z_i^2}
@@ -177,7 +177,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
   \label{f3}
 \end{figure}
 
-\subsubsection{$F_4$: Shifted Schwefel’s Problem with Noise in Fitness}
+\subsection{$F_4$: Shifted Schwefel’s Problem with Noise in Fitness}
 
 \begin{equation}
   F_4(x)=(\sum_{i=1}^{D}{(\sum_{j=1}^{i}{z_j})^2})*(1+0.4|N(0,1)|)
@@ -192,7 +192,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
   \label{f4}
 \end{figure}
 
-\subsubsection{$F_5$: Schwefel’s Problem with Global Optimum on Bounds}
+\subsection{$F_5$: Schwefel’s Problem with Global Optimum on Bounds}
 
 \begin{equation}
   F_5(x)=max\{|A_ix-B_i|\}
@@ -209,7 +209,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
   \label{f5}
 \end{figure}
 
-\subsubsection{$F_6$: Shifted Rosenbrock’s Function}
+\subsection{$F_6$: Shifted Rosenbrock’s Function}
 
 \begin{equation}
   F_6(x)=\sum_{i=1}^{D-1}{(100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2)}
@@ -224,7 +224,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
   \label{f6}
 \end{figure}
 
-\subsubsection{$F_7$: Shifted Rotated Griewank’s Function without Bounds}
+\subsection{$F_7$: Shifted Rotated Griewank’s Function without Bounds}
 
 \begin{equation}
   F_7(x)=\sum_{i=1}^{D}{\frac{z_i^2}{4000}}-\prod_{i=1}^{D}{\cos{\frac{z_i}{\sqrt{i}}}}+1
@@ -239,7 +239,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
   \label{f7}
 \end{figure}
 
-\subsubsection{$F_8$: Shifted Rotated Ackley’s Function with Global Optimum on Bounds}
+\subsection{$F_8$: Shifted Rotated Ackley’s Function with Global Optimum on Bounds}
 
 \begin{equation}
   F_8(x)=-20\exp{(-0.2\sqrt{\frac{1}{D}\sum_{i=1}^{D}{z_i^2}})}-\exp{(\frac{1}{D}\sum_{i=1}^{D}{\cos{(2\pi z_i)}})} + 20 + e
@@ -254,7 +254,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
   \label{f8}
 \end{figure}
 
-\subsubsection{$F_9$: Shifted Rastrigin’s Function}
+\subsection{$F_9$: Shifted Rastrigin’s Function}
 
 \begin{equation}
   F_9(x)=\sum_{i=1}^{D}{z_i^2 - 10\cos{(2\pi z_i)} + 10}
@@ -269,7 +269,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
   \label{f9}
 \end{figure}
 
-\subsubsection{$F_{10}$: Shifted Rotated Rastrigin’s Function}
+\subsection{$F_{10}$: Shifted Rotated Rastrigin’s Function}
 
 \begin{equation}
   F_{10}(x)=\sum_{i=1}^{D}{z_i^2 - 10\cos{(2\pi z_i)} + 10}
@@ -288,9 +288,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
 
 To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN).
 
-To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN).
-
-\subsubsection{$ML_{1}$: Training FFNNs to do function approximation}
+\subsection{$ML_{1}$: Training FFNNs to do function approximation}
 
 The optimization algorithm were used to train FFNNs to perform function approximation and curve-fitting on seven sample data-sets which are available in Matlab's Neural Network Toolbox. The data-sets used are the following
 
@@ -313,7 +311,7 @@ The data sets contain two matrices. One with sample input vectors to the neural 
 
 where $x$ is the input vector to neural network $y$, $t$ is the correct expected output which $y(x)$ should produce and n is the length of vector $x$.
 
-\subsubsection{$ML_{2}$: Training FFNNs to do classification}
+\subsection{$ML_{2}$: Training FFNNs to do classification}
 
 The optimization algorithm were used to train FFNNs to perform classification tasks on eight sample data-sets which are available in Matlab's Neural Network Toolbox. The data-sets used are the following
 
@@ -329,7 +327,7 @@ The optimization algorithm were used to train FFNNs to perform classification ta
 
 The evaluation procedure is the same as for $ML_{1}$.
 
-\subsubsection{$ML_{3}$: Training FFNNs to do clustering}
+\subsection{$ML_{3}$: Training FFNNs to do clustering}
 
 The optimization algorithm were used to train FFNNs to perform clustering tasks on one sample data-sets which is available in Matlab's Neural Network Toolbox. The data-sets used is the following
 
@@ -339,13 +337,13 @@ The optimization algorithm were used to train FFNNs to perform clustering tasks 
 
 The evaluation procedure is the same as for $ML_{1}$ and $ML_{2}$.
 
-\subsubsection{$ML_{4}$: Training a FFNN to play a simple snake game}
+\subsection{$ML_{4}$: Training a FFNN to play a simple snake game}
 
 A simple ``Snake'' game was designed for testing the evolutionary algorithms on neural networks as applied to games. The game takes it's width and height as input parameters and constructs a square-grid which the snake will be able to move in. The snake is initialized to the center of the grid and is able to move left, right, up and down. A food square is initialized to a random square and replaced with a new random food square when it is consumed by the snake. After consuming a food square the snake gain an additional tail square. The snake dies if it runs into the edge of the grid or into itself.
 
 The neural network controlling the snake takes a 12-dimensional representation of the snake, food and playing field and outputs a 4-dimensional vector which helps the snake decide in which direction it should move next.
 
-Once the snake dies and the game is over a fitness score will be returned to the optimizing algorithm. The score is combination of how long the snake managed to live and how much food it ate. It is described by the equation below:
+Once the snake dies and the game is over a fitness score will be returned to the optimization algorithm. The score is combination of how long the snake managed to live and how much food it ate. It is described by the equation below:
 
 \begin{equation}
   fitness = food^{1.5} +  \frac{1}{1-e^{-lifetime}}  - 0.5
