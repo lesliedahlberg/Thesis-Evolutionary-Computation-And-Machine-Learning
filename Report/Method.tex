@@ -2,7 +2,7 @@
 
 A benchmark was constructed to compare the algorithms. Two distict problem sets were used: 1. Mathematical functions and 2. Machine learning problems. The algorithms, the problem sets and the benchmark program were developed in Matlab. Matlab was chosen because it works well for scientific computation and provides convenient access to features which are needed to solve the problems at hand (manipulating matrices, measuring performance, parallel computing, dynamic data-structures, probability distributions, etc.).
 
-To ensure that the results are accurate and usefull the benchmark was run in the following way:
+To ensure that the results are accurate and usefull the mathematical function benchmark was run in the following way:
 
 \begin{itemize}
   \item Benchmark at dimension 10, 30 and 50
@@ -10,3 +10,5 @@ To ensure that the results are accurate and usefull the benchmark was run in the
   \item Set maximum number of generations to $10000 * dimension / population size$ to ensure the number of evaluations remains constant throughout the benchmark
   \item Run each algorithm 30 times on each problem and record averages and standard deviations
 \end{itemize}
+
+The machine learning benchmark is less uniform and the parameters used are described in ``Results''

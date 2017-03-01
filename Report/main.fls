@@ -227,6 +227,9 @@ INPUT ./figures/f9.png
 INPUT figures/f10.png
 INPUT ./figures/f10.png
 INPUT ./figures/f10.png
+INPUT figures/snake.png
+INPUT ./figures/snake.png
+INPUT ./figures/snake.png
 INPUT ./results.tex
 INPUT ./results.tex
 INPUT ./discussions.tex

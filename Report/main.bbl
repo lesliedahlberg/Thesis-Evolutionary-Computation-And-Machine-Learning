@@ -144,6 +144,43 @@ W.~Zhang, Y.~Jin, X.~Li, and X.~Zhang, ``A simple way for parameter selection
 H.~Yang, ``Particle swarm optimization with modified velocity strategy,''
   \emph{Energy Procedia}, no.~11, pp. 1074--1079, 2011.
 
+\bibitem{Hauschild2011111}
+M.~Hauschild and M.~Pelikan, ``An introduction and survey of estimation of
+  distribution algorithms,'' \emph{Swarm and Evolutionary Computation}, vol.~1,
+  no.~3, pp. 111 -- 128, 2011.
+
+\bibitem{sastry2007towards}
+K.~Sastry, D.~E. Goldberg, and X.~Llora, ``Towards billion-bit optimization via
+  a parallel estimation of distribution algorithm,'' in \emph{Proceedings of
+  the 9th annual conference on Genetic and evolutionary computation}.\hskip 1em
+  plus 0.5em minus 0.4em\relax ACM, 2007, pp. 577--584.
+
+\bibitem{hart1994adaptive}
+W.~E. Hart, ``Adaptive global optimization with local search,'' Ph.D.
+  dissertation, Citeseer, 1994.
+
+\bibitem{6052374}
+J.~Zhang, Z.~h.~Zhan, Y.~Lin, N.~Chen, Y.~j.~Gong, J.~h.~Zhong, H.~S.~H. Chung,
+  Y.~Li, and Y.~h.~Shi, ``Evolutionary computation meets machine learning: A
+  survey,'' \emph{IEEE Computational Intelligence Magazine}, vol.~6, no.~4, pp.
+  68--75, Nov 2011.
+
+\bibitem{ilonen2003differential}
+J.~Ilonen, J.-K. Kamarainen, and J.~Lampinen, ``Differential evolution training
+  algorithm for feed-forward neural networks,'' \emph{Neural Processing
+  Letters}, vol.~17, no.~1, pp. 93--105, 2003.
+
+\bibitem{hajare2015feed}
+P.~R. Hajare and N.~G. Bawane, ``Feed forward neural network optimization by
+  particle swarm intelligence,'' in \emph{Emerging Trends in Engineering and
+  Technology (ICETET), 2015 7th International Conference on}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2015, pp. 40--45.
+
+\bibitem{larranaga2001estimation}
+P.~Larra{\~n}aga and J.~A. Lozano, \emph{Estimation of distribution algorithms:
+  A new tool for evolutionary computation}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer Science \& Business Media, 2001, vol.~2.
+
 \bibitem{Storn1997}
 R.~Storn and K.~Price, ``Differential evolution -- a simple and efficient
   heuristic for global optimization over continuous spaces,'' \emph{Journal of
@@ -154,11 +191,6 @@ S.~Das, A.~Abraham, and A.~Konar, \emph{Particle Swarm Optimization and
   Differential Evolution Algorithms: Technical Analysis, Applications and
   Hybridization Perspectives}.\hskip 1em plus 0.5em minus 0.4em\relax Berlin,
   Heidelberg: Springer Berlin Heidelberg, 2008, pp. 1--38.
-
-\bibitem{Hauschild2011111}
-M.~Hauschild and M.~Pelikan, ``An introduction and survey of estimation of
-  distribution algorithms,'' \emph{Swarm and Evolutionary Computation}, vol.~1,
-  no.~3, pp. 111 -- 128, 2011.
 
 \bibitem{povsik2004estimation}
 P.~Po{\v{s}}{\i}k, ``Estimation of distribution algorithms,'' \emph{Czech
@@ -175,5 +207,9 @@ P.~N. Suganthan, N.~Hansen, J.~J. Liang, K.~Deb, Y.-P. Chen, A.~Auger, and
 D.~Whitley, S.~Rana, J.~Dzubera, and K.~E. Mathias, ``Evaluating evolutionary
   algorithms,'' \emph{Artificial Intelligence}, vol.~85, no. 1â2, pp. 245
   -- 276, 1996.
+
+\bibitem{329294}
+G.~Bebis and M.~Georgiopoulos, ``Feed-forward neural networks,'' \emph{IEEE
+  Potentials}, vol.~13, no.~4, pp. 27--31, Oct 1994.
 
 \end{thebibliography}

@@ -25,22 +25,14 @@ Wang et al. \cite{dang2012selection} have compared the performance of different 
 
 Estimation of distribution algorithms (EDA) use probabilitic models to solve complex optimization problems. They have been successfull at many engineering problems which at which other algorithms have failed, for instance: millitary antenna design, protein structure prediction, clustering of genes, chemotherapy optimization, portfolio management, etc \cite{Hauschild2011111}.
 
-Several techniques have been proposed to make EDA more efficient. Parallelization of fitness evaluation and model building has proven effective \cite{sastry2007towards}. Local op
-
+Several techniques have been proposed to make EDA more efficient. Parallelization of fitness evaluation and model building has proven effective \cite{sastry2007towards}. Local optimization techniques such as deterministic hill climbing (DHC) has been shown to make EDA faster \cite{hart1994adaptive}.
 
 \subsection{Evolutionary Algorithms in Machine Learning}
 
+Evolutionary algorithms (EC) and machine learning (ML) are two growing and promising field in computer science and many attempts have therefore been made to combine the two. ML has been used to improve EC optimization algorithms with so called MLEC-algorithms where various techniques from AI and ML, such as artificial neural networks (ANN), cluster analysis (CA), support vector machines (SVM), etc. help EC algorithms to learn important features of the search space \cite{6052374}.
 
+The opposite use case has also been proposed, using EC to improve ML techniques. An example of this is using DE to optimize feed-forward neural networks (FFNN). Here DE seems to perform similarly to traditional gradient based techniques \cite{ilonen2003differential}. Hajare and Bawane showed that using PSO to initialize weights and biases in a neural network before training yields better results than using random weights and help avoid local minima which backpropagation (BP) algorithms often get stuck in \cite{hajare2015feed}. Larra{\~n}aga and Lozano \cite{larranaga2001estimation} tested various EC algorithms (GA, EDA and ES) agains BP and concluded that EC is a competetive alternative to traditional approaches.
 
+\subsection{Contributions}
 
-{\color{blue}
-\begin{itemize}
-  \item Syftet med detta avsnitt \"ar att placera in ditt arbete i ett sammanhang och j\"amf\"ora det med tidigare publicerade arbeten och resultat inom omr\r{a}det. Denna del ska vara grundlig. Du beskriver h\"ar existerande kunskap och hur denna ut\"okas av ditt arbete. Den ska inneh\r{a}lla analyser av tidigare arbeten som exempelvis beskriver hur olika metoder skiljer sig \r{a}t. Du ska visa p\r{a} de viktigaste likheterna och skillnaderna betr\"affande uppgift, angreppss\"att/metodologi samt resultat. Det \"ar viktigt att du p\r{a} ett neutralt s\"att diskuterar f\"or- och nackdelar med ditt eget arbete j\"amf\"ort med andras.
-  \item Detta skapar ocks\r{a} en f\"orv\"antan p\r{a} bidraget f\"or ditt arbete, l\"asaren l\"ar sig h\"ar om begr\"ansningar hos tidigare arbeten och varf\"or din uppgift \"ar en utmaning..
-  \item Tillsammans kommer detta avsnitt tillsammans med bakgrund att introducera ``state of the art''/``state of practice'' och dess brister, betydelsen av uppgiften samt vad ditt arbete ska j\"amf\"oras med.
-\end{itemize}
-
-
-
-
-}
+EC is a an interesting alternative to traditional approaches in machine learning and continuous optimization and while algorithms such as DE, PSO, etc. have been compared on mathematical benchmarks before \cite{vesterstrom2004comparative, price1997differential}, the application of EC to machine learning has not been studied with as much details. My primary contribution to the field will be to find what algorithms work best for different ML problems och based on this propose ML-specific improvements.

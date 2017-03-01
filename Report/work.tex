@@ -286,7 +286,7 @@ For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_
 
 \section{Machine Learning Problem Set}
 
-To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN).
+To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN). The design of the neural network is one input layer with a size based on the problem dimension, two hidden layers and one output layer. I have chosen to use two hidden layers to make sure a good solution can be found quickly \cite{329294}. The size of the hidden layers was set to $2/3$ and $1/3$ of the mean of the size of the input and output layers.
 
 \subsection{$ML_{1}$: Training FFNNs to do function approximation}
 
@@ -343,7 +343,14 @@ A simple ``Snake'' game was designed for testing the evolutionary algorithms on 
 
 The neural network controlling the snake takes a 12-dimensional representation of the snake, food and playing field and outputs a 4-dimensional vector which helps the snake decide in which direction it should move next.
 
-Once the snake dies and the game is over a fitness score will be returned to the optimization algorithm. The score is combination of how long the snake managed to live and how much food it ate. It is described by the equation below:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.3\linewidth]{snake}
+  \caption{Snake $8*8$ game-field with snake hunting after food (black dot)}
+  \label{snake}
+\end{figure}
+
+Once the snake dies and the game is over a fitness score will be returned to the optimization algorithm. The game-field is illustrated in figure \ref{snake} The score is combination of how long the snake managed to live and how much food it ate. It is described by the equation below:
 
 \begin{equation}
   fitness = food^{1.5} +  \frac{1}{1-e^{-lifetime}}  - 0.5
