@@ -1,0 +1,25 @@
+SUBJECT:
+[DVA331] leslieDahlberg - Thesis Application
+
+RECP:
+exjobb_idt_v@mdh.se
+
+ATTCH:
+proposal.pdf
+
+CONTENT:
+
+Thesis data
+
+DVA331
+Evolutionary computation in continuous optimization and machine learning
+Ning Xiong
+
+Student data
+
+Leslie Dahlberg
+ldg14001
+950209-4957
+ldg14001@student.mdh.se
+070 221 55 32
+Bachelor's programme in computer science 180 credits

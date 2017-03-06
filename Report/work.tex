@@ -48,6 +48,14 @@ After selection is performed for every vector in the population the population i
 
 In the benchmark the parameters for DE have been set to $F = 0.6$ and $CR=0.9$ as recommended by Gamperle et al.\cite{gamperle2002parameter}.
 
+\paragraph{Variants}
+
+Different DE schemes are classified as DE/x/y, where x symbolizes the vector which is mutated and y is the number of differential vectors used. The value of x can be ``rand'' for random vector or ``best''' for the best vector in the population. The algorithm abose is therefore classified as DE/rand/1. The variant DE/best/2 is considered to be a good alternative to DE/rand/1 \cite{qin2009differential}. It's mutation equation is described below:
+
+\begin{equation}
+v_{n}^{g+1} = [ x_{best}^{g} + F(x_{r1n}^{g} - x_{r2n}^{g}) + F(x_{r3n}^{g} - x_{r4n}^{g})
+\end{equation}
+
 \subsection{Particle Swarm Optimization}
 
 Particle Swarm Optimization (PSO) \cite{Das2008} was introduced in 1995 by Kenneth and Ebenhart \cite{eberhart1995new}. The optimization problem is represented by an n-dimensional function
@@ -58,7 +66,7 @@ Particle Swarm Optimization (PSO) \cite{Das2008} was introduced in 1995 by Kenne
 
 where $\vec{X}$ is a vector which represents the real parameters given to the function. The intent is to find a point in the n-dimensional parameter hyperspace that minimizes the function.
 
-PSO is a parallel search technique where a set of particles  fly through the n-dimensional search space and probe solutions along the way. Each particle $P$ has a current position $\vec{x}(t)$, a current velocity $\vec{v}(t)$, a personal best position $\vec{p}(t)$ and the neighborhoods best position $\vec{g}(t)$. A neighborhood $N$ is a collection of particles, the neighborhood is often set to be identical to the whole swarm of particles, denoted $S$.
+PSO is a parallel search technique where a set of particles  fly through the n-dimensional search space and probe solutions along the way. Each particle $P$ has a current position $\vec{x}(t)$, a current velocity $\vec{v}(t)$, a personal best position $\vec{p}(t)$ and the neighborhoods best position $\vec{g}(t)$. A neighborhood $N$ is a collection of particles which act as independent swarms. Neigborhoods can be social or geographical. Social neigborhoods do not change and contain the same particles during the entire optimization process, while geographical neighborhoods are dynamic and consist only of particles which are near to one another. The neighborhood is often set to be identical to the whole swarm of particles, denoted $S$.
 
 The algorithm has a set of general properties: $v_{max}$ restricts the velocity of each particle to the interval $[-v_{max},v_{max}]$, an inertial factor $\omega$, two random numbers $\phi_1$ and $\phi_2$ which affect the velocity update formula by modulating the influence of $\vec{p}(t)$ and $\vec{g}(t)$, and two constants $C^2$ and $C^1$ which are termed particle “self-confidence” and “swarm confidence”.
 
@@ -111,13 +119,63 @@ The UMDA is an EDA algorithm which uses a set of independent probability distrib
 where $p(x)$ is the global multivariate density, D is the vector length and $p_d(x_d)$ are the individual univariate marginal densities \cite{povsik2004estimation}.
 
 
-\subsection{An improved evolutionary algorithm}
+\subsection{Improved Algorithm: Differential EDA}
+
+My improved algorithm, differential EDA (DEDA), draws upon DE and EDA, applying differential mutation to the selection population of the EDA algorithm. The algorithm is described in figure \ref{algo:my}.
+
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{12.5cm}
+    \begin{algorithmic}
+      \State Initialize random population $P$
+      \Repeat
+        \State Sort population $P$
+        \State Select $S$ from $P$
+        \State Build probabilistic model $M$ from $S$
+        \State Sample $P'$ from $M$
+        \State Let $S_{DE}$ be DE applied to $S$
+        \State Create new generation $P$ from $P'$ and $S_{DE}$
+      \Until{Termination condition}
+    \end{algorithmic}
+  \end{minipage}
+  \caption{Improved algorithm}
+  \label{algo:my}
+\end{figure}
+
+
 
 \section{Mathematical Problem Set}
 
 The functions for the benchmark are taken from the 2005 CEC conference on continuous evolutionary optimization \cite{suganthan2005problem}. The functions are losely based on the popular optimization benchmark suite created by DeJong \cite{Whitley1996245}.
 
 For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_2,o_3,...,o_D]$ is the global optimum, $D$ is the dimension and $M$ is an orthogonal matrix with parameters unique to each function. The matrices for $o$ and $M$ can be obtained from \cite{suganthan2005problem}. Illustrations of the functions can be found in figures \ref{f1}, \ref{f2}, \ref{f3}, \ref{f4}, \ref{f5}, \ref{f6}, \ref{f7}, \ref{f8}, \ref{f9} and \ref{f10}.
+
+The function properties are described in figure \ref{math:prop}.
+
+\begin{figure}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | c | }
+      \hline
+      Function & Modal & Separable \\ \hline
+      $F_{1}$ & Uni & Yes \\ \hline
+      $F_{2}$ & Uni & No \\ \hline
+      $F_{3}$ & Uni & No \\ \hline
+      $F_{4}$ & Uni & No \\ \hline
+      $F_{5}$ & Uni & No \\ \hline
+      $F_{6}$ & Multi & No \\ \hline
+      $F_{7}$ & Multi & No \\ \hline
+      $F_{8}$ & Multi & No \\ \hline
+      $F_{9}$ & Multi & Yes \\ \hline
+      $F_{10}$ & Multi & No \\
+
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{Function properties}
+  \label{math:prop}
+\end{figure}
 
 \subsection{$F_1$: Shifted Sphere Function}
 

@@ -1,4 +1,4 @@
-function [ success, iterations, minimum, value ] = EDA_UMDA( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
+function [ success, iterations, minimum, value ] = MY( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
     selectionThreshold = 0.5;
     selectionCount = floor(selectionThreshold * populationSize);
     population = lowerBound + (upperBound - lowerBound) * rand(populationSize, dimension);
@@ -6,6 +6,13 @@ function [ success, iterations, minimum, value ] = EDA_UMDA( CostFunction, dimen
     bestIndividualIndex = -1;
     sort_list = zeros(populationSize);
     population2 = zeros(selectionCount, dimension);
+
+    % DE_BEGIN
+
+    F = 0.6;
+    pCR=0.9; 
+
+    % DE_END
     
     iterations = 0;
     while value > objectiveValue && iterations <= maxIterations
@@ -23,6 +30,43 @@ function [ success, iterations, minimum, value ] = EDA_UMDA( CostFunction, dimen
         size = populationSize-selectionCount;
         
         NG = normrnd(repmat(m,size,1),repmat(s,size,1));
+        
+        % DE_BEGIN
+
+        for i=1:selectionCount
+            x = population2(i,:);
+            
+            A = randperm(selectionCount);
+            A(A==i)=[];
+            a=A(1);
+            b=A(2);
+            c=A(3);
+            
+            y = population2(a,:) + F*(population2(b,:) - population2(c,:));
+            
+            y = max(y, lowerBound);
+            y = min(y, upperBound);
+            
+            
+            z = zeros(1, dimension);
+            j0 = randi([1 numel(x)]);
+            for j=1:numel(x)
+                if j==j0 || rand <= pCR
+                    z(j) = y(j);
+                else
+                    z(j) = x(j);
+                end
+            end
+            
+            if CostFunction(z) < CostFunction(population2(i,:))
+                population2(i,:) = z;
+            end
+        end
+
+        % DE_END
+
+
+
         population = [population2; NG];
         
         iterations = iterations + 1;

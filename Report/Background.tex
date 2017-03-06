@@ -33,6 +33,23 @@ Here the fundamental builing blocks of evolutionary algorithms will be presented
 
 The first step in using evolutionary algorithms is creating a representation which can encode all possible solutions to the problem at hand. Here two different terms are distinguished. The term phenotype denotes the representation that can be directly applied to the problem and the genotype denotes the specific encoding of the phenotype which is manipulated inside the evolutionary algorithm. In optimization tasks a valid phenotype could be a vector of integer numbers which act as parameters to a function while the genotype would be a binary representation of the numbers which can be altered by manipulating individuals bits. The terms phenotype, candidate solution and individual are used interchangably to denote the representation as used by the model while chromosome, genotype and individual are used to refer to the representation inside the evolutionary algorithm \cite{Eiben2015_whatevolutionary}.
 
+\paragraph{Binary representation}
+
+Genetic algorithms (GA) traditionally use a binary representation to store individual genotypes. The representations is a string of fixed length over the alphabet $\{0,1\}$. The problem thus becomes a boolean optimziation problem of the form $ f:\{0,1\}^l \rightarrow \mathbb{R}$, where the mappings $h:M \rightarrow \{0,1\}^l$ and $h':\{0,1\}^l \rightarrow M$ are used to encode and decode the parameters and solutions \cite{back1997evolutionary}.
+
+\paragraph{Integer representation}
+
+Integer representations have been proposed by some researches \cite{unter611evolutionary}. This approach is usefull when dealing with problems where we need to select certain elements in a particular order, e.g. graph-problems, path-finding problems, the knapsack problem, etc. \cite{Eiben201511}.
+
+
+\paragraph{Real-valued representation}
+
+Real-valued or floating-point representations were originally used in evolutionary programming and evolution strategies and work well for problems located in continuous search-spaces. The problems take the form $f:M\subseteq \mathbb{R}^n \rightarrow \mathbb{R} $ \cite{back1997evolutionary}.
+
+\paragraph{Tree representation}
+
+Tree representations are mainly used in genetic programming to capture the structure of programs. The econding varies but S-expressions are generally used. The tree structure is defined by a function-set and a terminal-set. The function-set defines the types of nodes in the tree, while the terminal-set contains the types of leaves the tree can contain \cite{Eiben201511}.
+
 \subsubsection{Evaluation function}
 
 The evalutation function is responsible for improvement in the population. It is a function which assigns a fitness or cost value to every genotype and thus enables us to compare the quality of the genotypes in the population. It is also the only information about the problem that is available to the evolutionary algorithm and should therefore include all domain knowledge which is available about the problem \cite{Eiben2015_whatevolutionary}. The evaluation is also the process which takes up the most computational resources, 99\% of the total computational cost in real-world problems \cite{Eiben20021}.
@@ -41,17 +58,58 @@ The evalutation function is responsible for improvement in the population. It is
 
 The population is a set of genotypes which contain the current best solutions to a problem. While genotypes remain stable and unchanging, the population continually changes through the application of selection mechanisms which decide which genotypes are allowed into the next generation of the population. The size of the population almost always remains constant during the lifetime of the algorithm. This in turn creates selection pressure which pushes the population to improve. A population's diversity is the measure of difference amoung the genotypes, phenotypes and fitness values \cite{Eiben2015_whatevolutionary}.
 
+\paragraph{Steady-state model}
+
+In the steady-state model the entire population isn't replaces at once, rather only a fraction of the population is replaces a one time.
+
+\paragraph{Generational model}
+
+In the generational model the entire population is replaces at once.
+
 \subsubsection{Parent selection mechanism}
 
 Parent selection serves to improve the quality of a population by selecting which individuals will survive into the next generation. The selected individuals are called parents as they usually undergo some form of alteration or combination with other individuals before progressing to the next generation. The selection method is usually probabilistic and gives better solutions a higher probability and worse solutions a lower probability to survive. It's important that bad solutions still recieve a positive probabilty since the population might otherwise lose diversity and coalesce around a false local optimimum \cite{Eiben2015_whatevolutionary}.
+
+\paragraph{Fitness Proportional Selection}
+
+\paragraph{Ranking Selection}
+
+\paragraph{Tournament Selection}
+
+\paragraph{Uniform Parent Selection}
+
+
 
 \subsubsection{Variation operators}
 
 Variation operators introduce new features into the genotypes of a population by modifying or mixing existing genotypes. They can be divided into two types: unary operators which take one genotype and stochastically alter it to introduce random change and n-ary operators which mix the features of 2 or more genotypes. Unary operators are called mutation operators while n-ary operators are called cross-over or recombination operators. The biological equivalents to these are random mutation and sexual reproduction. Mutation operators allow evolutionary algorithms to theoretically span the whole continuum of the search space by giving a non-zero probability that a genotype mutates into any other other genotype. This has been used to formally prove that evolutionary algorithms will always reach the desired optimum given enough time. Recombination tries to create new superior individuals by combining the genes of two good parent genotypes \cite{Eiben2015_whatevolutionary, Eiben20021}.
 
+\paragraph{Binary mutation}
+
+\paragraph{Binary cross-over}
+
+\paragraph{Integer mutation}
+
+\paragraph{Integer cross-over}
+
+\paragraph{Real-valued mutation}
+
+\paragraph{Real-valued cross-over}
+
+\paragraph{Tree mutation}
+
+\paragraph{Tree cross-over}
+
+
 \subsubsection{Survivor selection mechanism}
 
 Survivor selection takes place after new offspring have been generated and determines which individuals are allowed to live on into the next generation. It is often refered to as the replacement strategy and contrary to parent selection it is usually deterministic. Two popular mechanisms are fitness-based selection and age-based selection. Fitness-based selection determines the next generation by selecting the individuals with the highest fitness while age-based selection allows only the offspring to survive \cite{Eiben2015_whatevolutionary}.
+
+\paragraph{Age-Based Replacement}
+
+\paragraph{Fitness-Based Replacement}
+
+
 
 \subsubsection{Initatilization}
 
