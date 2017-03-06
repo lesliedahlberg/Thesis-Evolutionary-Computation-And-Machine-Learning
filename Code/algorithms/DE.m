@@ -2,8 +2,8 @@ function [ success, iterations, minimum, value ] = DE( CostFunction, dimension, 
     
     success = false;
 
-    F = 1;
-    pCR=0.5;        % Crossover Probability
+    F = 0.6;
+    pCR=0.9;        % Crossover Probability
 
     dimensionSize = [1 dimension];
     

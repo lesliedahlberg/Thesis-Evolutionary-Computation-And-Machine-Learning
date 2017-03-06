@@ -1,8 +1,8 @@
 function [ success, iterations, minimum, value ] = PSO( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
-    vmax = (abs(upperBound)+abs(lowerBound))/2;
+    vmax = (abs(upperBound)+abs(lowerBound));
     omega = 0.8;
-    c1 = 1;
-    c2 = 1;
+    c1 = 1.494;
+    c2 = c1;
     
    
     

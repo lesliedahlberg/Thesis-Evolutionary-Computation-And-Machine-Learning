@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.17)  1 MAR 2017 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.17)  6 MAR 2017 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -896,80 +896,76 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 14.
 ) (./background.tex [4] [5] [6] [7]) (./related.tex [8]
-[9]) (./problem.tex) [10] (./method.tex) (./ethics.tex) (./work.tex
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11] [12] [13] <figures/f1.png, id=326, 1124.2pt x 843.15pt>
+[9]) (./problem.tex) [10] (./method.tex) (./ethics.tex) (./work.tex [11]
+[12] [13] <figures/f1.png, id=335, 1124.2pt x 843.15pt>
 File: figures/f1.png Graphic file (type png)
-
-<use figures/f1.png>
-Package pdftex.def Info: figures/f1.png used on input line 145.
+ <use figures/f1.png>
+Package pdftex.def Info: figures/f1.png used on input line 132.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
- <figures/f2.png, id=327, 1124.2pt x 843.15pt>
+
+<figures/f2.png, id=336, 1124.2pt x 843.15pt>
 File: figures/f2.png Graphic file (type png)
-
-<use figures/f2.png>
-Package pdftex.def Info: figures/f2.png used on input line 160.
+ <use figures/f2.png>
+Package pdftex.def Info: figures/f2.png used on input line 147.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
- [14 <./figures/f1.png (PNG copy)> <./figures/f2.png (PNG copy)>] <figures/f3.p
-ng, id=348, 1124.2pt x 843.15pt>
+
+<figures/f3.png, id=337, 1124.2pt x 843.15pt>
 File: figures/f3.png Graphic file (type png)
  <use figures/f3.png>
-Package pdftex.def Info: figures/f3.png used on input line 175.
+Package pdftex.def Info: figures/f3.png used on input line 162.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
-
-<figures/f4.png, id=349, 1124.2pt x 843.15pt>
+ [14 <./figures/f1.png (PNG copy)> <./figures/f2.png (PNG copy)>]
+<figures/f4.png, id=360, 1124.2pt x 843.15pt>
 File: figures/f4.png Graphic file (type png)
  <use figures/f4.png>
-Package pdftex.def Info: figures/f4.png used on input line 190.
+Package pdftex.def Info: figures/f4.png used on input line 177.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
 
-<figures/f5.png, id=350, 1124.2pt x 843.15pt>
+<figures/f5.png, id=361, 1124.2pt x 843.15pt>
 File: figures/f5.png Graphic file (type png)
  <use figures/f5.png>
-Package pdftex.def Info: figures/f5.png used on input line 207.
+Package pdftex.def Info: figures/f5.png used on input line 194.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
- [15 <./figures/f3.png (PNG copy)> <./figures/f4.png (PNG copy)>]
-<figures/f6.png, id=361, 1124.2pt x 843.15pt>
+ [15 <./figures/f3.png (PNG copy)> <./figures/f4.png (PNG copy)> <./figures/f5.
+png (PNG copy)>] <figures/f6.png, id=368, 1124.2pt x 843.15pt>
 File: figures/f6.png Graphic file (type png)
  <use figures/f6.png>
-Package pdftex.def Info: figures/f6.png used on input line 222.
+Package pdftex.def Info: figures/f6.png used on input line 209.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
 
-<figures/f7.png, id=362, 1124.2pt x 843.15pt>
+<figures/f7.png, id=369, 1124.2pt x 843.15pt>
 File: figures/f7.png Graphic file (type png)
  <use figures/f7.png>
-Package pdftex.def Info: figures/f7.png used on input line 237.
+Package pdftex.def Info: figures/f7.png used on input line 224.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
- [16 <./figures/f5.png (PNG copy)> <./figures/f6.png (PNG copy)> <./figures/f7.
-png (PNG copy)>] <figures/f8.png, id=370, 1124.2pt x 843.15pt>
+
+<figures/f8.png, id=370, 1124.2pt x 843.15pt>
 File: figures/f8.png Graphic file (type png)
  <use figures/f8.png>
-Package pdftex.def Info: figures/f8.png used on input line 252.
+Package pdftex.def Info: figures/f8.png used on input line 239.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
-
-<figures/f9.png, id=371, 1124.2pt x 843.15pt>
+ [16 <./figures/f6.png (PNG copy)> <./figures/f7.png (PNG copy)>]
+<figures/f9.png, id=379, 1124.2pt x 843.15pt>
 File: figures/f9.png Graphic file (type png)
  <use figures/f9.png>
-Package pdftex.def Info: figures/f9.png used on input line 267.
+Package pdftex.def Info: figures/f9.png used on input line 254.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
 
-<figures/f10.png, id=372, 1124.2pt x 843.15pt>
+<figures/f10.png, id=380, 1124.2pt x 843.15pt>
 File: figures/f10.png Graphic file (type png)
  <use figures/f10.png>
-Package pdftex.def Info: figures/f10.png used on input line 282.
+Package pdftex.def Info: figures/f10.png used on input line 269.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
- [17 <./figures/f8.png (PNG copy)> <./figures/f9.png (PNG copy)>] [18 <./figure
-s/f10.png (PNG copy)>] <figures/snake.png, id=397, 445.665pt x 443.6575pt>
+ [17 <./figures/f8.png (PNG copy)> <./figures/f9.png (PNG copy)> <./figures/f10
+.png (PNG copy)>] [18] <figures/snake.png, id=411, 445.665pt x 443.6575pt>
 File: figures/snake.png Graphic file (type png)
 
 <use figures/snake.png>
-Package pdftex.def Info: figures/snake.png used on input line 348.
+Package pdftex.def Info: figures/snake.png used on input line 335.
 (pdftex.def)             Requested size: 128.0387pt x 127.45914pt.
 ) (./results.tex [19 <./figures/snake.png>] [20]
 [21]) (./discussions.tex) (./conclusion.tex) (./future.tex) [22] (./main.bbl
-[23]
+[23] [24]
 
 ! Package inputenc Error: Unicode char  (U+80)
 (inputenc)                not set up for use with LaTeX.
@@ -978,7 +974,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.208 ...ificial Intelligence}, vol.~85, no. 1â
+l.231 ...ificial Intelligence}, vol.~85, no. 1â
                                                   2, pp. 245
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -992,13 +988,13 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.208 ...icial Intelligence}, vol.~85, no. 1â
+l.231 ...icial Intelligence}, vol.~85, no. 1â
                                                   2, pp. 245
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) [24]
+) [25]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
  (./main.aux)
@@ -1007,10 +1003,10 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 181.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 181.
  ) 
 Here is how much of TeX's memory you used:
- 10820 strings out of 493014
- 160299 string characters out of 6133351
- 275540 words of memory out of 5000000
- 13981 multiletter control sequences out of 15000+600000
+ 10827 strings out of 493014
+ 160436 string characters out of 6133351
+ 275618 words of memory out of 5000000
+ 13984 multiletter control sequences out of 15000+600000
  12455 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,13n,43p,1507b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1031,10 +1027,10 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 6/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (25 pages, 2628655 bytes).
+Output written on main.pdf (26 pages, 2630766 bytes).
 PDF statistics:
- 545 PDF objects out of 1000 (max. 8388607)
- 482 compressed objects within 5 object streams
- 186 named destinations out of 1000 (max. 500000)
+ 557 PDF objects out of 1000 (max. 8388607)
+ 493 compressed objects within 5 object streams
+ 190 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

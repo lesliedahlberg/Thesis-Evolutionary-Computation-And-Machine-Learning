@@ -1,7 +1,7 @@
 clc
-ALG = {@PSO @DE @EDA_FGDA };
+ALG = {@PSO @DE @EDA_UMDA };
 algorithms = 1;
-algNames = { 'PSO' 'DE' 'EDA_FGDA'};
+algNames = { 'PSO' 'DE' 'EDA_UMDA'};
 
 setNames = {'snake'};
 
@@ -38,7 +38,3 @@ end
 table(v(1)')
 
 %ann_snake_fitness(m{1}, snakeDimension, true);
-
-
-
-

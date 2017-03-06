@@ -4,23 +4,7 @@ This section describes the three algorithms which were benchmarked together with
 
 \subsection{Differential Evolution}
 
-Differential evolution is a stochastic optimization algorithm which works on populations of parameter vectors. The problem to minimize will be denoted by $f(x)$ where $X=[x_1,x_2,x_3,...x_D]$ and $D$ is equal to the number of variables taken as input parameters by $f(x)$. The algorithm consists of multiple steps which will be described in detail below, the flow of the algorithm is illustrated in figure \ref{figure:DE}.
-
-\begin{figure}[h]
-  \centering
-  \begin{minipage}{5cm}
-    \begin{algorithmic}
-      \State Initialize population
-      \Repeat
-        \State Cross-over
-        \State Selection
-        \State Create new generation
-      \Until{Solution is found}
-    \end{algorithmic}
-  \end{minipage}
-  \caption{Overview of differential evolution algorithm.}
-  \label{figure:DE}
-\end{figure}
+Differential evolution \cite{Storn1997} is a stochastic optimization algorithm which works on populations of parameter vectors. The problem to minimize will be denoted by $f(x)$ where $X=[x_1,x_2,x_3,...x_D]$ and $D$ is equal to the number of variables taken as input parameters by $f(x)$. The algorithm consists of multiple steps which will be described in detail below.
 
 The first step in DE is to create an initial population, the size of the population is $N$ and it will be represented by a matrix $x$ where $g$ is the generation and $n=1,2,3,...,N$:
 
@@ -60,11 +44,13 @@ Selection is the last step in creating a new generation. The trial vector $u$ is
 \end{cases}
 \end{equation}
 
-After selection is performed for every vector in the population the population is evaluated to determine if an acceptable solution has been generated. If a solution has been found the algorithm terminates, otherwise the mutation, crossover and selection is performed again until a solution is found or a maximum number of iterations has been reached \cite{Storn1997}.
+After selection is performed for every vector in the population the population is evaluated to determine if an acceptable solution has been generated. If a solution has been found the algorithm terminates, otherwise the mutation, crossover and selection is performed again until a solution is found or a maximum number of iterations has been reached.
+
+In the benchmark the parameters for DE have been set to $F = 0.6$ and $CR=0.9$ as recommended by Gamperle et al.\cite{gamperle2002parameter}.
 
 \subsection{Particle Swarm Optimization}
 
-Particle Swarm Optimization (PSO) was introduced in 19XX by Kenneth and Ebenhart [reference needed]. The optimization problem is represented by an n-dimensional function
+Particle Swarm Optimization (PSO) \cite{Das2008} was introduced in 1995 by Kenneth and Ebenhart \cite{eberhart1995new}. The optimization problem is represented by an n-dimensional function
 
 \begin{equation}
   f(x_1,x_2,x_3,...x_n) = f(\vec{X})
@@ -86,7 +72,7 @@ The initial values of $\vec{p}(t)$ and $\vec{g}(t)$ are equal to $\vec{x}(0)$ fo
   x_{id} (t+1) = x_{id} (t) + v_{id} (t+1)
 \end{equation}
 
-The “self-confidence” constant affects how much self-exploration a particle is allowed to do while “swarm-confidence” affects how much a particle follows the swarm. $\phi_1$ and $\phi_2$ are random numbers which push the particle in a new direction while $\omega$ keeps a particle on the path it’s currently on \cite{Das2008}. The PSO algorithm is described in figure \ref{algo:pso}.
+The “self-confidence” constant affects how much self-exploration a particle is allowed to do while “swarm-confidence” affects how much a particle follows the swarm. $\phi_1$ and $\phi_2$ are random numbers which push the particle in a new direction while $\omega$ keeps a particle on the path it’s currently on. The PSO algorithm is described in figure \ref{algo:pso}.
 
 \begin{figure}[h]
   \centering
@@ -108,12 +94,13 @@ The “self-confidence” constant affects how much self-exploration a particle 
   \label{algo:pso}
 \end{figure}
 
+In the benchmark the parameters for PSO have been set to $\omega = 0.8$ \cite{shi1998modified}, $c_1 = c_2 = 1.494$ \cite{kennedy1999small} and $v_{max} = \text{parameter range size}$ \cite{Das2008}.
+
 \subsection{Estimation of Distribution Algorithm}
 
 Estimation of distribution algorithms are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best 50\% of the solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found \cite{Hauschild2011111}.
 
-The most difficult part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Gaussian nets (GN) can be used \cite{povsik2004estimation}.
-
+The most difficult part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Estimation of Baysian Networks (EBNA) can be used \cite{larranaga2012review}.
 
 The UMDA is an EDA algorithm which uses a set of independent probability distributions to sample new solution vectors. The probability model can be expressed as a product of the individual probabilities
 

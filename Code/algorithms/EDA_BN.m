@@ -36,21 +36,9 @@ function [ success, iterations, minimum, value ] = EDA_BN( CostFunction, dimensi
         
         selPop = population2'+1;
         
+        % MWST based tree algorithm
         root = fix(rand*dimension)+1;
-        order = randperm(dimension);
-        dag =  learn_struct_K2(selPop,Card,order,'max_fan_in',MaxParent,'scoring_fn',scoring_fn); 
-        
-        %root = fix(rand*dimension)+1;
-        %dag = full(learn_struct_mwst(selPop,[],ones(dimension,1),nodetype,'bic',root));
-        
-        %root = fix(rand*dimension)+1;
-        %order = randperm(dimension);
-        %dag =  learn_struct_K2(selPop,ones(1,dimension),order,'type',nodetype,'max_fan_in',MaxParent,'discrete',[],'scoring_fn',scoring_fn,'params',[]); 
-
-        %root = fix(rand*dimension)+1;
-        %dag = full(learn_struct_mwst(selPop,[],ones(dimension,1),nodetype,'bic',root));
-        %order = topological_sort(dag);
-        %dag =  learn_struct_K2(selPop,ones(dimension,1),order,'type',nodetype,'max_fan_in',MaxParent,'discrete',[],'scoring_fn',scoring_fn,'params',[]);   
+        dag = full(learn_struct_mwst(selPop,[],ones(1,dimension),nodetype,'mutual_info',root));
         
         
         init_bnet = mk_bnet(dag,Card);

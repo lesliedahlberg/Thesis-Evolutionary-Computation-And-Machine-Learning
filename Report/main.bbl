@@ -192,6 +192,29 @@ S.~Das, A.~Abraham, and A.~Konar, \emph{Particle Swarm Optimization and
   Hybridization Perspectives}.\hskip 1em plus 0.5em minus 0.4em\relax Berlin,
   Heidelberg: Springer Berlin Heidelberg, 2008, pp. 1--38.
 
+\bibitem{eberhart1995new}
+R.~Eberhart and J.~Kennedy, ``A new optimizer using particle swarm theory,'' in
+  \emph{Micro Machine and Human Science, 1995. MHS'95., Proceedings of the
+  Sixth International Symposium on}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 1995, pp. 39--43.
+
+\bibitem{shi1998modified}
+Y.~Shi and R.~Eberhart, ``A modified particle swarm optimizer,'' in
+  \emph{Evolutionary Computation Proceedings, 1998. IEEE World Congress on
+  Computational Intelligence., The 1998 IEEE International Conference
+  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 1998, pp. 69--73.
+
+\bibitem{kennedy1999small}
+J.~Kennedy, ``Small worlds and mega-minds: effects of neighborhood topology on
+  particle swarm performance,'' in \emph{Evolutionary Computation, 1999. CEC
+  99. Proceedings of the 1999 Congress on}, vol.~3.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 1999, pp. 1931--1938.
+
+\bibitem{larranaga2012review}
+P.~Larra{\~n}aga, H.~Karshenas, C.~Bielza, and R.~Santana, ``A review on
+  probabilistic graphical models in evolutionary computation,'' \emph{Journal
+  of Heuristics}, vol.~18, no.~5, pp. 795--819, 2012.
+
 \bibitem{povsik2004estimation}
 P.~Po{\v{s}}{\i}k, ``Estimation of distribution algorithms,'' \emph{Czech
   Technical University, Faculty of Electrical Engineering, Dept. of
