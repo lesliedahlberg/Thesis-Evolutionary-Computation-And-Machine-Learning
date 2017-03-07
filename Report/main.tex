@@ -29,6 +29,7 @@
   \usepackage{mathtools}
   \usepackage{amssymb}
   \usepackage{algpseudocode}
+  \usepackage{listings}
 
 %	\usepackage{xltxtra}
 	% Page style
@@ -179,14 +180,16 @@ Sammanfattningen \"ar den del av en rapport som l\"ases allra mest och av flest 
 
 % ============================ Appendices =============================
 \newpage
-%\begin{appendices}
+\begin{appendices}
 
-	%\input{./Appendices/appendices1}
-	%\clearpage
 
-	%\input{./Appendices/appendices2}
-	%\clearpage
 
-%\end{appendices}
+	\input{./Appendices/algorithms}
+	\clearpage
+
+	\input{./Appendices/benchmarks}
+	\clearpage
+
+\end{appendices}
 
 \end{document}

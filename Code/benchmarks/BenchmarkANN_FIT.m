@@ -17,10 +17,10 @@ datasets = 8;
 
 objectiveValue = 0;
 individuals = 50;
-generations = 250;
+generations = 100;
 lower = -1;
 upper = 1;
-repeat = 10;
+repeat = 5;
 
 v = ones(datasets,algorithms);
 s = ones(datasets,algorithms);
