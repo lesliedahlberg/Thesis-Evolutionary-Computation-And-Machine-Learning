@@ -72,7 +72,7 @@
 \contentsline {subsection}{\numberline {9.4}$ML_{4}$: Training a FFNN to play a simple snake game}{21}{subsection.9.4}
 \contentsline {section}{\numberline {10}Results}{21}{section.10}
 \contentsline {subsection}{\numberline {10.1}Mathematical Problem Set}{21}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}Machine Learning Problem Set}{23}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.2}Machine Learning Problem Set}{22}{subsection.10.2}
 \contentsline {section}{\numberline {11}Discussion}{23}{section.11}
 \contentsline {section}{\numberline {12}Conclusions}{24}{section.12}
 \contentsline {section}{\numberline {13}Future Work}{24}{section.13}

@@ -273,6 +273,7 @@ INPUT ./figures/snake.png
 INPUT ./figures/snake.png
 INPUT ./results.tex
 INPUT ./results.tex
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT ./discussions.tex
 INPUT ./discussions.tex
 INPUT ./conclusion.tex
@@ -284,6 +285,7 @@ INPUT main.bbl
 INPUT main.aux
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
