@@ -69,9 +69,3 @@
 \contentsline {subsection}{\numberline {A.2}Particle Swarm Optimization}{28}{subsection.a.A.2}
 \contentsline {subsection}{\numberline {A.3}Estimation of Distribution}{29}{subsection.a.A.3}
 \contentsline {subsection}{\numberline {A.4}Differential Estimation of Distribution}{30}{subsection.a.A.4}
-\contentsline {section}{Appendix \numberline {B}Benchmarks}{32}{Appendix.a.B}
-\contentsline {subsection}{\numberline {B.1}Mathematical problem set}{32}{subsection.a.B.1}
-\contentsline {subsection}{\numberline {B.2}ANN Fitting problem set}{32}{subsection.a.B.2}
-\contentsline {subsection}{\numberline {B.3}ANN Classification problem set}{33}{subsection.a.B.3}
-\contentsline {subsection}{\numberline {B.4}ANN Cluster problem set}{34}{subsection.a.B.4}
-\contentsline {subsection}{\numberline {B.5}Snake problem set}{35}{subsection.a.B.5}

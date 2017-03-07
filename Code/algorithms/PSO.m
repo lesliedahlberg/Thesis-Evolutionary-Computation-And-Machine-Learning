@@ -1,41 +1,42 @@
 function [ success, iterations, minimum, value ] = PSO( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
+    
+    %% Parameters
     vmax = (abs(upperBound)+abs(lowerBound));
     omega = 0.8;
     c1 = 1.494;
     c2 = c1;
-    
-   
-    
-    %Init population
+
+    %% Initialization
     position = lowerBound + (upperBound - lowerBound) * rand(populationSize, dimension);
+    velocity = -vmax + (vmax + vmax) * rand(populationSize, dimension);
     best = position;
     bestValue = zeros(1,populationSize);
+    globalBest = best(1,:);
+    globalBestValue = CostFunction(globalBest);
+
+    %% Pre-Evaluation
     for i=1:populationSize
         bestValue(i) = CostFunction(best(i,:));
     end
-    globalBest = best(1,:);
-    globalBestValue = CostFunction(globalBest);
-    velocity = -vmax + (vmax + vmax) * rand(populationSize, dimension);
-    
-    
+
+    %% Iteration
     iterations = 0;
     while (globalBestValue > objectiveValue) && (iterations < maxIterations)
-        %track(iterations+1) = globalBestValue;
+        
+        %% Evaluation
         for i = 1:populationSize
             cost = CostFunction(position(i,:));
-            
             if cost <= bestValue(i)
                 best(i,:) = position(i,:);
                 bestValue(i) = cost;
                 if cost <= globalBestValue
                     globalBest = best(i,:);
                     globalBestValue = bestValue(i);
-                    %disp(globalBestValue);
                 end
             end
         end
         
-        %Update
+        %% Update
         for i = 1:populationSize
             f1 = rand(1,dimension);
             f2 = rand(1,dimension);
@@ -44,22 +45,16 @@ function [ success, iterations, minimum, value ] = PSO( CostFunction, dimension,
         end
         
         iterations = iterations + 1;
-        %disp(strcat(num2str(iterations),'=',num2str(globalBestValue)));
-        
-        %disp(globalBestValue);
-        %track(iterations) = globalBestValue;
     end
-    
+
+    %% Success
     if globalBestValue <= objectiveValue
         success = true;
     else
         success = false;
     end
+
+    %% Return
     minimum = globalBest(1,:);
     value = globalBestValue;
-    
-    
-    %plot(1:iterations, track)
-    
 end
-
