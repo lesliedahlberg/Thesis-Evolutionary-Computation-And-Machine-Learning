@@ -4,7 +4,7 @@ This section describes the three algorithms which were benchmarked together with
 
 \subsection{Differential Evolution}
 
-Differential evolution \cite{Storn1997} is a stochastic optimization algorithm which works on populations of parameter vectors. The problem to minimize will be denoted by $f(x)$ where $X=[x_1,x_2,x_3,...x_D]$ and $D$ is equal to the number of variables taken as input parameters by $f(x)$. The algorithm consists of multiple steps which will be described in detail below.
+Differential evolution~\cite{Storn1997} is a stochastic optimization algorithm which works on populations of parameter vectors. The problem to minimize will be denoted by $f(x)$ where $X=[x_1,x_2,x_3,...x_D]$ and $D$ is equal to the number of variables taken as input parameters by $f(x)$. The algorithm consists of multiple steps which will be described in detail below.
 
 The first step in DE is to create an initial population, the size of the population is $N$ and it will be represented by a matrix $x$ where $g$ is the generation and $n=1,2,3,...,N$:
 
@@ -46,11 +46,11 @@ Selection is the last step in creating a new generation. The trial vector $u$ is
 
 After selection is performed for every vector in the population the population is evaluated to determine if an acceptable solution has been generated. If a solution has been found the algorithm terminates, otherwise the mutation, crossover and selection is performed again until a solution is found or a maximum number of iterations has been reached.
 
-In the benchmark the parameters for DE have been set to $F = 0.6$ and $CR=0.9$ as recommended by Gamperle et al.\cite{gamperle2002parameter}.
+In the benchmark the parameters for DE have been set to $F = 0.6$ and $CR=0.9$ as recommended by Gamperle et al.~\cite{gamperle2002parameter}.
 
 \paragraph{Variants}
 
-Different DE schemes are classified as DE/x/y, where x symbolizes the vector which is mutated and y is the number of differential vectors used. The value of x can be ``rand'' for random vector or ``best''' for the best vector in the population. The algorithm abose is therefore classified as DE/rand/1. The variant DE/best/2 is considered to be a good alternative to DE/rand/1 \cite{qin2009differential}. It's mutation equation is described below:
+Different DE schemes are classified as DE/x/y, where x symbolizes the vector which is mutated and y is the number of differential vectors used. The value of x can be ``rand'' for random vector or ``best''' for the best vector in the population. The algorithm abose is therefore classified as DE/rand/1. The variant DE/best/2 is considered to be a good alternative to DE/rand/1~\cite{qin2009differential}. It's mutation equation is described below:
 
 \begin{equation}
 v_{n}^{g+1} = [ x_{best}^{g} + F(x_{r1n}^{g} - x_{r2n}^{g}) + F(x_{r3n}^{g} - x_{r4n}^{g})
@@ -58,7 +58,7 @@ v_{n}^{g+1} = [ x_{best}^{g} + F(x_{r1n}^{g} - x_{r2n}^{g}) + F(x_{r3n}^{g} - x_
 
 \subsection{Particle Swarm Optimization}
 
-Particle Swarm Optimization (PSO) \cite{Das2008} was introduced in 1995 by Kenneth and Ebenhart \cite{eberhart1995new}. The optimization problem is represented by an n-dimensional function
+Particle Swarm Optimization (PSO)~\cite{Das2008} was introduced in 1995 by Kenneth and Ebenhart~\cite{eberhart1995new}. The optimization problem is represented by an n-dimensional function
 
 \begin{equation}
   f(x_1,x_2,x_3,...x_n) = f(\vec{X})
@@ -67,6 +67,13 @@ Particle Swarm Optimization (PSO) \cite{Das2008} was introduced in 1995 by Kenne
 where $\vec{X}$ is a vector which represents the real parameters given to the function. The intent is to find a point in the n-dimensional parameter hyperspace that minimizes the function.
 
 PSO is a parallel search technique where a set of particles  fly through the n-dimensional search space and probe solutions along the way. Each particle $P$ has a current position $\vec{x}(t)$, a current velocity $\vec{v}(t)$, a personal best position $\vec{p}(t)$ and the neighborhoods best position $\vec{g}(t)$. A neighborhood $N$ is a collection of particles which act as independent swarms. Neigborhoods can be social or geographical. Social neigborhoods do not change and contain the same particles during the entire optimization process, while geographical neighborhoods are dynamic and consist only of particles which are near to one another. The neighborhood is often set to be identical to the whole swarm of particles, denoted $S$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.3\linewidth]{pso}
+  \caption{Illustration of particles in PSO (red represents the best particle)}
+  \label{fig:pso}
+\end{figure}
 
 The algorithm has a set of general properties: $v_{max}$ restricts the velocity of each particle to the interval $[-v_{max},v_{max}]$, an inertial factor $\omega$, two random numbers $\phi_1$ and $\phi_2$ which affect the velocity update formula by modulating the influence of $\vec{p}(t)$ and $\vec{g}(t)$, and two constants $C^2$ and $C^1$ which are termed particle “self-confidence” and “swarm confidence”.
 
@@ -80,7 +87,7 @@ The initial values of $\vec{p}(t)$ and $\vec{g}(t)$ are equal to $\vec{x}(0)$ fo
   x_{id} (t+1) = x_{id} (t) + v_{id} (t+1)
 \end{equation}
 
-The “self-confidence” constant affects how much self-exploration a particle is allowed to do while “swarm-confidence” affects how much a particle follows the swarm. $\phi_1$ and $\phi_2$ are random numbers which push the particle in a new direction while $\omega$ keeps a particle on the path it’s currently on. The PSO algorithm is described in figure \ref{algo:pso}.
+The “self-confidence” constant affects how much self-exploration a particle is allowed to do while “swarm-confidence” affects how much a particle follows the swarm. $\phi_1$ and $\phi_2$ are random numbers which push the particle in a new direction while $\omega$ keeps a particle on the path it’s currently on. The PSO algorithm is described in figure~\ref{algo:pso}. See figure~\ref{fig:pso} for an illustration of PSO.
 
 \begin{figure}[h]
   \centering
@@ -102,26 +109,48 @@ The “self-confidence” constant affects how much self-exploration a particle 
   \label{algo:pso}
 \end{figure}
 
-In the benchmark the parameters for PSO have been set to $\omega = 0.8$ \cite{shi1998modified}, $c_1 = c_2 = 1.494$ \cite{kennedy1999small} and $v_{max} = \text{parameter range size}$ \cite{Das2008}.
+
+
+In the benchmark the parameters for PSO have been set to $\omega = 0.8$~\cite{shi1998modified}, $c_1 = c_2 = 1.494$~\cite{kennedy1999small} and $v_{max} = \text{parameter range size}$~\cite{Das2008}.
 
 \subsection{Estimation of Distribution Algorithm}
 
-Estimation of distribution algorithms are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best 50\% of the solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found \cite{Hauschild2011111}.
+Estimation of distribution algorithms are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best 50\% of the solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found~\cite{Hauschild2011111}.
 
-The most difficult part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Estimation of Baysian Networks (EBNA) can be used \cite{larranaga2012review}.
+The most difficult part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Estimation of Baysian Networks (EBNA) can be used~\cite{larranaga2012review}.
 
-The UMDA is an EDA algorithm which uses a set of independent probability distributions to sample new solution vectors. The probability model can be expressed as a product of the individual probabilities
+\paragraph{UMDA}
+The UMDA algorithm is an EDA algorithm which uses a set of independent probability distributions to sample new solution vectors. The probability model can be expressed as a product of the individual probabilities
 
 \begin{equation}
   p(x) = \prod _{d=1}^D {p_d(x_d)}
 \end{equation}
 
-where $p(x)$ is the global multivariate density, D is the vector length and $p_d(x_d)$ are the individual univariate marginal densities \cite{povsik2004estimation}.
+where $p(x)$ is the global multivariate density, D is the vector length and $p_d(x_d)$ are the individual univariate marginal densities~\cite{povsik2004estimation}. The algorithm is described in figure~\ref{algo:umda}.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{12.5cm}
+    \begin{algorithmic}
+      \State Initialize population P
+      \Repeat
+        \State Evaluate P
+        \State Select the best t\% of P into S
+        \State Let m be the mean S
+        \State Let s be the standard deviation of S
+        \State Sample S' from normal distribution using m and s
+        \State Create new generation of P from S' and S
+      \Until{Termination condition}
+    \end{algorithmic}
+  \end{minipage}
+  \caption{UMDA algorithm}
+  \label{algo:umda}
+\end{figure}
 
 
 \subsection{Improved Algorithm: Differential EDA}
 
-My improved algorithm, differential EDA (DEDA), draws upon DE and EDA, applying differential mutation to the selection population of the EDA algorithm. The algorithm is described in figure \ref{algo:my}.
+My improved algorithm, differential EDA (DEDA), draws upon DE and EDA, applying differential mutation to the selection population of the EDA algorithm. The algorithm is described in figure~\ref{algo:my}.
 
 
 \begin{figure}[h]
@@ -147,11 +176,11 @@ My improved algorithm, differential EDA (DEDA), draws upon DE and EDA, applying 
 
 \section{Mathematical Problem Set}
 
-The functions for the benchmark are taken from the 2005 CEC conference on continuous evolutionary optimization \cite{suganthan2005problem}. The functions are losely based on the popular optimization benchmark suite created by DeJong \cite{Whitley1996245}.
+The functions for the benchmark are taken from the 2005 CEC conference on continuous evolutionary optimization~\cite{suganthan2005problem}. The functions are losely based on the popular optimization benchmark suite created by DeJong~\cite{Whitley1996245}.
 
-For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_2,o_3,...,o_D]$ is the global optimum, $D$ is the dimension and $M$ is an orthogonal matrix with parameters unique to each function. The matrices for $o$ and $M$ can be obtained from \cite{suganthan2005problem}. Illustrations of the functions can be found in figures \ref{f1}, \ref{f2}, \ref{f3}, \ref{f4}, \ref{f5}, \ref{f6}, \ref{f7}, \ref{f8}, \ref{f9} and \ref{f10}.
+For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_2,o_3,...,o_D]$ is the global optimum, $D$ is the dimension and $M$ is an orthogonal matrix with parameters unique to each function. The matrices for $o$ and $M$ can be obtained from~\cite{suganthan2005problem}. Illustrations of the functions can be found in figures~\ref{f1},~\ref{f2},~\ref{f3},~\ref{f4},~\ref{f5},~\ref{f6},~\ref{f7},~\ref{f8},~\ref{f9} and~\ref{f10}.
 
-The function properties are described in figure \ref{math:prop}.
+The function properties are described in figure~\ref{math:prop}.
 
 \begin{figure}[H]
   \centering
@@ -331,7 +360,7 @@ The function properties are described in figure \ref{math:prop}.
 
 \section{Machine Learning Problem Set}
 
-To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN). The design of the neural network is one input layer with a size based on the problem dimension, two hidden layers and one output layer. I have chosen to use two hidden layers to make sure a good solution can be found quickly \cite{329294}. The size of the hidden layers was set to $2/3$ and $1/3$ of the mean of the size of the input and output layers.
+To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN). The design of the neural network is one input layer with a size based on the problem dimension, two hidden layers and one output layer. I have chosen to use two hidden layers to make sure a good solution can be found quickly~\cite{329294}. The size of the hidden layers was set to $2/3$ and $1/3$ of the mean of the size of the input and output layers.
 
 \subsection{$ML_{1}$: Training FFNNs to do function approximation}
 
@@ -395,7 +424,7 @@ The neural network controlling the snake takes a 12-dimensional representation o
   \label{snake}
 \end{figure}
 
-Once the snake dies and the game is over a fitness score will be returned to the optimization algorithm. The game-field is illustrated in figure \ref{snake} The score is combination of how long the snake managed to live and how much food it ate. It is described by the equation below:
+Once the snake dies and the game is over a fitness score will be returned to the optimization algorithm. The game-field is illustrated in figure~\ref{snake} The score is combination of how long the snake managed to live and how much food it ate. It is described by the equation below:
 
 \begin{equation}
   fitness = food^{1.5} +  \frac{1}{1-e^{-lifetime}}  - 0.5

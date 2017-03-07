@@ -12,68 +12,55 @@
 \contentsline {paragraph}{Steady-state model}{6}{section*.8}
 \contentsline {paragraph}{Generational model}{6}{section*.9}
 \contentsline {subsubsection}{\numberline {2.2.4}Parent selection mechanism}{6}{subsubsection.2.2.4}
-\contentsline {paragraph}{Fitness Proportional Selection}{6}{section*.10}
-\contentsline {paragraph}{Ranking Selection}{6}{section*.11}
-\contentsline {paragraph}{Tournament Selection}{6}{section*.12}
-\contentsline {paragraph}{Uniform Parent Selection}{6}{section*.13}
 \contentsline {subsubsection}{\numberline {2.2.5}Variation operators}{6}{subsubsection.2.2.5}
-\contentsline {paragraph}{Binary mutation}{6}{section*.14}
-\contentsline {paragraph}{Binary cross-over}{7}{section*.15}
-\contentsline {paragraph}{Integer mutation}{7}{section*.16}
-\contentsline {paragraph}{Integer cross-over}{7}{section*.17}
-\contentsline {paragraph}{Real-valued mutation}{7}{section*.18}
-\contentsline {paragraph}{Real-valued cross-over}{7}{section*.19}
-\contentsline {paragraph}{Tree mutation}{7}{section*.20}
-\contentsline {paragraph}{Tree cross-over}{7}{section*.21}
-\contentsline {subsubsection}{\numberline {2.2.6}Survivor selection mechanism}{7}{subsubsection.2.2.6}
-\contentsline {paragraph}{Age-Based Replacement}{7}{section*.22}
-\contentsline {paragraph}{Fitness-Based Replacement}{7}{section*.23}
+\contentsline {subsubsection}{\numberline {2.2.6}Survivor selection mechanism}{6}{subsubsection.2.2.6}
 \contentsline {subsubsection}{\numberline {2.2.7}Initatilization}{7}{subsubsection.2.2.7}
 \contentsline {subsubsection}{\numberline {2.2.8}Termination condition}{7}{subsubsection.2.2.8}
 \contentsline {subsection}{\numberline {2.3}Main paradighms of evolutionary computation}{7}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Genetic algorithms}{8}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Evolution strategy}{8}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.1}Genetic algorithms}{7}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Evolution strategy}{7}{subsubsection.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}Evolutionary programming}{8}{subsubsection.2.3.3}
-\contentsline {subsubsection}{\numberline {2.3.4}Genetic programming}{9}{subsubsection.2.3.4}
-\contentsline {section}{\numberline {3}Related Work}{9}{section.3}
-\contentsline {subsection}{\numberline {3.1}Differential Evolution}{10}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Particle Swarm Optimization}{10}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Estimation of Distribution Algorithms}{10}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Genetic programming}{8}{subsubsection.2.3.4}
+\contentsline {section}{\numberline {3}Related Work}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}Differential Evolution}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Particle Swarm Optimization}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Estimation of Distribution Algorithms}{9}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Evolutionary Algorithms in Machine Learning}{10}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Contributions}{11}{subsection.3.5}
-\contentsline {section}{\numberline {4}Problem Formulation}{11}{section.4}
-\contentsline {subsection}{\numberline {4.1}Research Questions}{11}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Motivation}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {3.5}Contributions}{10}{subsection.3.5}
+\contentsline {section}{\numberline {4}Problem Formulation}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Research Questions}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Motivation}{10}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Outcomes}{11}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Limitations}{12}{subsection.4.4}
-\contentsline {section}{\numberline {5}Method}{12}{section.5}
-\contentsline {section}{\numberline {6}Ethical and Societal Considerations}{12}{section.6}
+\contentsline {subsection}{\numberline {4.4}Limitations}{11}{subsection.4.4}
+\contentsline {section}{\numberline {5}Method}{11}{section.5}
+\contentsline {section}{\numberline {6}Ethical and Societal Considerations}{11}{section.6}
 \contentsline {section}{\numberline {7}Algorithms}{12}{section.7}
 \contentsline {subsection}{\numberline {7.1}Differential Evolution}{12}{subsection.7.1}
-\contentsline {paragraph}{Variants}{13}{section*.25}
+\contentsline {paragraph}{Variants}{12}{section*.11}
 \contentsline {subsection}{\numberline {7.2}Particle Swarm Optimization}{13}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Estimation of Distribution Algorithm}{14}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Improved Algorithm: Differential EDA}{15}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.3}Estimation of Distribution Algorithm}{13}{subsection.7.3}
+\contentsline {paragraph}{UMDA}{14}{section*.14}
+\contentsline {subsection}{\numberline {7.4}Improved Algorithm: Differential EDA}{14}{subsection.7.4}
 \contentsline {section}{\numberline {8}Mathematical Problem Set}{15}{section.8}
 \contentsline {subsection}{\numberline {8.1}$F_1$: Shifted Sphere Function}{15}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}$F_2$: Shifted Schwefel\IeC {\textquoteright }s Problem}{16}{subsection.8.2}
 \contentsline {subsection}{\numberline {8.3}$F_3$: Shifted Rotated High Conditioned Elliptic Function}{16}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}$F_4$: Shifted Schwefel\IeC {\textquoteright }s Problem with Noise in Fitness}{17}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.4}$F_4$: Shifted Schwefel\IeC {\textquoteright }s Problem with Noise in Fitness}{16}{subsection.8.4}
 \contentsline {subsection}{\numberline {8.5}$F_5$: Schwefel\IeC {\textquoteright }s Problem with Global Optimum on Bounds}{17}{subsection.8.5}
 \contentsline {subsection}{\numberline {8.6}$F_6$: Shifted Rosenbrock\IeC {\textquoteright }s Function}{17}{subsection.8.6}
-\contentsline {subsection}{\numberline {8.7}$F_7$: Shifted Rotated Griewank\IeC {\textquoteright }s Function without Bounds}{18}{subsection.8.7}
+\contentsline {subsection}{\numberline {8.7}$F_7$: Shifted Rotated Griewank\IeC {\textquoteright }s Function without Bounds}{17}{subsection.8.7}
 \contentsline {subsection}{\numberline {8.8}$F_8$: Shifted Rotated Ackley\IeC {\textquoteright }s Function with Global Optimum on Bounds}{18}{subsection.8.8}
-\contentsline {subsection}{\numberline {8.9}$F_9$: Shifted Rastrigin\IeC {\textquoteright }s Function}{19}{subsection.8.9}
+\contentsline {subsection}{\numberline {8.9}$F_9$: Shifted Rastrigin\IeC {\textquoteright }s Function}{18}{subsection.8.9}
 \contentsline {subsection}{\numberline {8.10}$F_{10}$: Shifted Rotated Rastrigin\IeC {\textquoteright }s Function}{19}{subsection.8.10}
 \contentsline {section}{\numberline {9}Machine Learning Problem Set}{19}{section.9}
 \contentsline {subsection}{\numberline {9.1}$ML_{1}$: Training FFNNs to do function approximation}{19}{subsection.9.1}
 \contentsline {subsection}{\numberline {9.2}$ML_{2}$: Training FFNNs to do classification}{20}{subsection.9.2}
 \contentsline {subsection}{\numberline {9.3}$ML_{3}$: Training FFNNs to do clustering}{20}{subsection.9.3}
-\contentsline {subsection}{\numberline {9.4}$ML_{4}$: Training a FFNN to play a simple snake game}{21}{subsection.9.4}
+\contentsline {subsection}{\numberline {9.4}$ML_{4}$: Training a FFNN to play a simple snake game}{20}{subsection.9.4}
 \contentsline {section}{\numberline {10}Results}{21}{section.10}
 \contentsline {subsection}{\numberline {10.1}Mathematical Problem Set}{21}{subsection.10.1}
 \contentsline {subsection}{\numberline {10.2}Machine Learning Problem Set}{22}{subsection.10.2}
 \contentsline {section}{\numberline {11}Discussion}{23}{section.11}
-\contentsline {section}{\numberline {12}Conclusions}{24}{section.12}
-\contentsline {section}{\numberline {13}Future Work}{24}{section.13}
-\contentsline {section}{References}{27}{section*.48}
+\contentsline {section}{\numberline {12}Conclusions}{23}{section.12}
+\contentsline {section}{\numberline {13}Future Work}{23}{section.13}
+\contentsline {section}{References}{26}{section*.37}

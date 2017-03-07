@@ -8,15 +8,15 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ./references.bib
-Repeated entry---line 224 of file ./references.bib
+Repeated entry---line 223 of file ./references.bib
  : @article{gamperle2002parameter
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 296 of file ./references.bib
+Repeated entry---line 295 of file ./references.bib
  : @article{rahnamayan2008opposition
  :                                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 572 of file ./references.bib
+Repeated entry---line 571 of file ./references.bib
  : @article{zhang2015comprehensive
  :                                ,
 I'm skipping whatever remains of this entry
@@ -28,15 +28,15 @@ Warning--empty year in unter611evolutionary
 Done.
 You've used 44 entries,
             4087 wiz_defined-function locations,
-            1085 strings with 15606 characters,
-and the built_in function-call counts, 34002 in all, are:
-= -- 2782
+            1084 strings with 15561 characters,
+and the built_in function-call counts, 33963 in all, are:
+= -- 2776
 > -- 730
 < -- 321
 + -- 401
 - -- 112
-* -- 1599
-:= -- 5042
+* -- 1594
+:= -- 5028
 add.period$ -- 98
 call.type$ -- 44
 change.case$ -- 36
@@ -45,20 +45,20 @@ cite$ -- 45
 duplicate$ -- 2391
 empty$ -- 2779
 format.name$ -- 148
-if$ -- 8014
+if$ -- 8008
 int.to.chr$ -- 0
 int.to.str$ -- 44
 missing$ -- 387
-newline$ -- 157
+newline$ -- 155
 num.names$ -- 44
-pop$ -- 869
+pop$ -- 870
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2652
+skip$ -- 2649
 stack$ -- 0
 substring$ -- 1762
-swap$ -- 2011
+swap$ -- 2010
 text.length$ -- 75
 text.prefix$ -- 0
 top$ -- 5
@@ -66,5 +66,5 @@ type$ -- 44
 warning$ -- 1
 while$ -- 178
 width$ -- 46
-write$ -- 444
+write$ -- 441
 (There were 3 error messages)

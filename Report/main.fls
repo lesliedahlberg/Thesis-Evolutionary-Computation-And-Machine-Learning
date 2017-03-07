@@ -221,6 +221,9 @@ INPUT ./ethics.tex
 INPUT ./ethics.tex
 INPUT ./work.tex
 INPUT ./work.tex
+INPUT figures/pso.png
+INPUT ./figures/pso.png
+INPUT ./figures/pso.png
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
