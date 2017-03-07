@@ -1,4 +1,4 @@
-function [ success, iterations, minimum, value ] = MY( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
+function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
     selectionThreshold = 0.5;
     selectionCount = floor(selectionThreshold * populationSize);
     population = lowerBound + (upperBound - lowerBound) * rand(populationSize, dimension);
