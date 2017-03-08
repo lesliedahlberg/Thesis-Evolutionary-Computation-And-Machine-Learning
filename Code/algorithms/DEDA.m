@@ -14,6 +14,8 @@ function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension
     population2 = zeros(selectionCount, dimension);
     samplingSize = populationSize-selectionCount;
     
+    lastBestValue = value;
+    
     %% Iteration
     iterations = 0;
     while value > objectiveValue && iterations <= maxIterations
@@ -73,6 +75,11 @@ function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension
                 bestIndividualIndex = i;
                 value = cost;
             end
+        end
+        
+        if lastBestValue ~= value
+            disp(value);
+            lastBestValue = value;
         end
 
         iterations = iterations + 1;

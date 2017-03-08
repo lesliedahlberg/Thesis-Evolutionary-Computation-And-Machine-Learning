@@ -7,10 +7,15 @@ function [ success, iterations, minimum, value ] = EDA_UMDA( CostFunction, dimen
     selectionCount = floor(selectionThreshold * populationSize);
     samplingSize = populationSize-selectionCount;
     population = lowerBound + (upperBound - lowerBound) * rand(populationSize, dimension);
+    
+   
+    
     value = inf;
     bestIndividualIndex = -1;
     sort_list = zeros(populationSize);
     population2 = zeros(selectionCount, dimension);
+    
+    lastBestValue = value;
 
     %% Iteration
     iterations = 0;
@@ -33,7 +38,7 @@ function [ success, iterations, minimum, value ] = EDA_UMDA( CostFunction, dimen
         s = std(population2);
         
         %% Sampling
-        NG = normrnd(repmat(m,selectionCount,1),repmat(s,selectionCount,1));
+        NG = normrnd(repmat(m,samplingSize,1),repmat(s,samplingSize,1));
 
         %% New generation
         population = [population2; NG];
@@ -45,6 +50,11 @@ function [ success, iterations, minimum, value ] = EDA_UMDA( CostFunction, dimen
                 bestIndividualIndex = i;
                 value = cost;
             end
+        end
+        
+        if lastBestValue ~= value
+            disp(value);
+            lastBestValue = value;
         end
 
         iterations = iterations + 1;

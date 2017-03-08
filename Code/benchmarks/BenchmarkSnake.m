@@ -1,7 +1,7 @@
 clc
-ALG = {@PSO @DE @EDA_UMDA };
-algorithms = 1;
-algNames = { 'PSO' 'DE' 'EDA_UMDA'};
+ALG = {@DE @PSO @EDA_UMDA @DEDA};
+algorithms = 4;
+algNames = {'DE' 'PSO' 'EDA_UMDA' 'DEDA'};
 
 setNames = {'snake'};
 
@@ -24,7 +24,7 @@ layers = [inputSize,hiddenSize,outputSize];
 dim = NeuralNetworkSize(layers)
 
 
-
+tic
 for alg=1:algorithms
     A = alg
     eval = @(x)ann_snake_fitness(x, snakeDimension, layers, false);
@@ -32,9 +32,8 @@ for alg=1:algorithms
     v(alg) = value;
     m{alg} = minimum;
 end
+toc
 
-
-%table(v(1)', v(2)', v(3)', 'RowNames', setNames, 'VariableNames', algNames)
-table(v(1)')
+table(v(1)', v(2)', v(3)', v(3)', 'RowNames', setNames, 'VariableNames', algNames)
 
 %ann_snake_fitness(m{1}, snakeDimension, true);

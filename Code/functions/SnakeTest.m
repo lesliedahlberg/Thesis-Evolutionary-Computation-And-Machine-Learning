@@ -1,5 +1,4 @@
 function x = SnakeTest(weights, dimension, layers, verbose)
-    %dimension = [5, 5];
     snake_length = 1;
     snake_init_head = [dimension(1)/2, dimension(2)/2];
     snake = [floor(snake_init_head)];
@@ -28,7 +27,7 @@ function x = SnakeTest(weights, dimension, layers, verbose)
         end
         
         game(food(1), food(2)) = -1;
-        snake
+        %snake
         game
     end
 
@@ -200,6 +199,7 @@ function x = SnakeTest(weights, dimension, layers, verbose)
     %x = 1/2 * moves_made * food_eaten^2;
     %x = sigmoid(moves_made)-0.5 + sigmoid(food_eaten)-0.5;
     x = food_eaten^1.25 + sigmoid(moves_made)-0.5;
+    %x = food_eaten + sigmoid(moves_made)-0.5;
     
 end
 

@@ -1,5 +1,6 @@
 function [ success, iterations, minimum, value ] = PSO( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
     
+    
     %% Parameters
     vmax = (abs(upperBound)+abs(lowerBound));
     omega = 0.8;
@@ -13,6 +14,7 @@ function [ success, iterations, minimum, value ] = PSO( CostFunction, dimension,
     bestValue = zeros(1,populationSize);
     globalBest = best(1,:);
     globalBestValue = CostFunction(globalBest);
+    lastBestValue = globalBestValue;
 
     %% Pre-Evaluation
     for i=1:populationSize
@@ -45,6 +47,11 @@ function [ success, iterations, minimum, value ] = PSO( CostFunction, dimension,
         end
         
         iterations = iterations + 1;
+        if lastBestValue ~= globalBestValue
+            disp(globalBestValue);
+            lastBestValue = globalBestValue;
+        end
+        
     end
 
     %% Success

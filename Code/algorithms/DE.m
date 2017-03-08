@@ -23,6 +23,8 @@ function [success, iterations, minimum, value] = DE(CostFunction, dimension, low
         end
     end
     
+    lastBestValue = bestIndividualCost;
+    
     %% Iteration
     for iterations=1:maxIterations
 
@@ -64,10 +66,18 @@ function [success, iterations, minimum, value] = DE(CostFunction, dimension, low
             end
         end
 
+        
+        
         %% Return values
         bestCost(iterations) = bestIndividualCost;
         minimum = bestIndividualPosition;
         value = bestIndividualCost;
+        
+        if lastBestValue ~= bestIndividualCost
+            disp(bestIndividualCost);
+            lastBestValue = bestIndividualCost;
+        end
+        
     end
 end
 
