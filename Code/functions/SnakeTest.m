@@ -1,4 +1,9 @@
-function x = SnakeTest(weights, dimension, layers, verbose)
+function x = SnakeTest(weights, dimension, layers, verbose, seed)
+    %stream = RandStream('mt19937ar','Seed',seed);
+    %prevstream = RandStream.setGlobalStream(stream);
+
+
+
     snake_length = 1;
     snake_init_head = [dimension(1)/2, dimension(2)/2];
     snake = [floor(snake_init_head)];
@@ -9,7 +14,7 @@ function x = SnakeTest(weights, dimension, layers, verbose)
     food_eaten = 0;
     moves_made = 0;
     
-    starv_th = dimension(1)*dimension(2);
+    starv_th = dimension(1) + dimension(2);
     starvation = starv_th;
     
     food = randi(min(dimension(1), dimension(2)), 1, 2);
@@ -29,6 +34,8 @@ function x = SnakeTest(weights, dimension, layers, verbose)
         game(food(1), food(2)) = -1;
         %snake
         game
+        pause(0.25);
+        clc;
     end
 
     function d = get_ai_direction(rep)
@@ -59,6 +66,8 @@ function x = SnakeTest(weights, dimension, layers, verbose)
         
         
     end
+
+
 
     function rep = get_representation()
         food_rep = 1;
@@ -113,31 +122,32 @@ function x = SnakeTest(weights, dimension, layers, verbose)
         for k=2:snake_length
             if snake(k,1) <= snake(1,1)
                 if snake(k,2) <= snake(1,2)
-                    rep(4) = rep(4) + snake_rep_diagonal;
-                else
                     rep(5) = rep(5) + snake_rep_diagonal;
+                else
+                    rep(6) = rep(6) + snake_rep_diagonal;
                 end
             else
                 if snake(k,2) <= snake(1,2)
-                    rep(6) = rep(6) + snake_rep_diagonal;
-                else
                     rep(7) = rep(7) + snake_rep_diagonal;
+                else
+                    rep(8) = rep(8) + snake_rep_diagonal;
                 end
             end
         end
         
+        
         %FOOD
         if food(1) <= snake(1,1)
             if food(2) <= snake(1,2)
-                rep(8) = rep(8) + food_rep;
-            else
                 rep(9) = rep(9) + food_rep;
+            else
+                rep(10) = rep(10) + food_rep;
             end
         else
             if food(2) <= snake(1,2)
-                rep(10) = rep(10) + food_rep;
-            else
                 rep(11) = rep(11) + food_rep;
+            else
+                rep(12) = rep(12) + food_rep;
             end
         end
     end
@@ -198,8 +208,14 @@ function x = SnakeTest(weights, dimension, layers, verbose)
     %x = food_eaten^2 + sigmoid(moves_made)-0.5;
     %x = 1/2 * moves_made * food_eaten^2;
     %x = sigmoid(moves_made)-0.5 + sigmoid(food_eaten)-0.5;
-    x = food_eaten^1.25 + sigmoid(moves_made)-0.5;
-    %x = food_eaten + sigmoid(moves_made)-0.5;
+    %x = food_eaten^1.25 + sigmoid(moves_made)-0.5;
+    x = food_eaten + sigmoid(moves_made);
+    %x = max(food_eaten, sigmoid(moves_made)-0.5);
+    %x = (sigmoid(moves_made)-0.5) + food_eaten;
+    %x = snake_length + snake_length^3/moves_made + sigmoid(moves_made)-0.5;
+    
+    
+    %localstream = RandStream.setGlobalStream(prevstream);
     
 end
 

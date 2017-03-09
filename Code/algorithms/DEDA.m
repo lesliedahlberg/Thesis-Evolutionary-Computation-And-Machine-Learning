@@ -77,10 +77,10 @@ function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension
             end
         end
         
-        if lastBestValue ~= value
-            disp(value);
-            lastBestValue = value;
-        end
+%         if lastBestValue ~= value
+%             disp(value);
+%             lastBestValue = value;
+%         end
 
         iterations = iterations + 1;
     end
