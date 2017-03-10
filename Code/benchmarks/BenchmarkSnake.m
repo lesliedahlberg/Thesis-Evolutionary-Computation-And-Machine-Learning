@@ -8,7 +8,7 @@ setNames = {'snake'};
 
 objectiveValue = -inf;
 individuals = 140;
-generations = 5000;
+generations = 1000;
 lower = -1;
 upper = 1;
 
@@ -29,7 +29,7 @@ tic
 for alg=1:algorithms
     disp(alg);
     
-    parfor i=1:10
+    for i=1:10
         disp('*');
        eval = @(x)ann_snake_fitness(x, snakeDimension, layers, false);
        [success, iterations, minimum, value] = ALG{alg}(eval, dim, lower, upper, generations, individuals, objectiveValue);

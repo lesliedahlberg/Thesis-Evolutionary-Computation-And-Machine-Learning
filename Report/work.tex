@@ -411,23 +411,122 @@ The optimization algorithm were used to train FFNNs to perform clustering tasks 
 
 The evaluation procedure is the same as for $ML_{1}$ and $ML_{2}$.
 
-\subsection{$ML_{4}$: Training a FFNN to play a simple snake game}
 
-A simple ``Snake'' game was designed for testing the evolutionary algorithms on neural networks as applied to games. The game takes it's width and height as input parameters and constructs a square-grid which the snake will be able to move in. The snake is initialized to the center of the grid and is able to move left, right, up and down. A food square is initialized to a random square and replaced with a new random food square when it is consumed by the snake. After consuming a food square the snake gain an additional tail square. The snake dies if it runs into the edge of the grid or into itself.
+\subsection{$ML_{4}$: Neuroevolution of Game Controller for ``Snake''}
 
-The neural network controlling the snake takes a 12-dimensional representation of the snake, food and playing field and outputs a 4-dimensional vector which helps the snake decide in which direction it should move next.
+Machine learning test set $ML_{1}$ uses evolutionary algorithms to evolve weights for feed-forward neural networks, which control the behavior of game-agent in the classic game of ``Snake''.
+
+\subsubsection{Game Description and Rules}
+
+The game is made up of a $n*m$ square grid through which a snake can freely move. The snake consists of a sequence of interconneted blocks and is divided into a head which moves in a certain direction and a tail which follows the head. Food blocks randomly appear on block at a time on the grid and the snake's objective is eat these blocks. When the snake's head touches the food block the block vanishes and the snake grows one square in length. If the head of the snake tries to move outside the grid it dies and the game ends. If the head of the snake collides with the tail it also and dies and the game ends. The snake's head can move in four direction: up, down, left and right. If the snake tries to move in the opposite of it's currect direction it also dies. The snake has a starvation counter which forces it to pursue food and eat. The starvation counter is initialized to the starvation threshold when the game begins and decreases by one every time the snake moves. When the snake eats, the starvation counter is increased once by the starvation threshold. Figure~\ref{snake} illustrates the game grid. Figure~\ref{snake_alg} described the algorithm for the game.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.3\linewidth]{snake}
-  \caption{Snake $8*8$ game-field with snake hunting after food (black dot)}
+  \caption{Snake $8*8$ game-field with snake hunting food}
   \label{snake}
 \end{figure}
 
-Once the snake dies and the game is over a fitness score will be returned to the optimization algorithm. The game-field is illustrated in figure~\ref{snake} The score is combination of how long the snake managed to live and how much food it ate. It is described by the equation below:
+The game has the following parameters and settings:
+
+\begin{enumerate}
+  \item Dimensions - $n*m$ blocks in the grid
+  \item Starting point $(x,y)$ for snake head
+  \item Starting direction for snake head $\{left,right,up,down\}$
+  \item Starvation threshold $t$
+\end{enumerate}
+
+\subsubsection{Representation of Game State}
+
+In order to control the snake with a neural network a representation of the state of the game has to be generated before each move. The chosen representation is a 12-dimensinal vector in the range $[0,1]$. The initial default value of all dimensions is zero. Dimensions 1-4 indicates with a value of one whether any dangerous object (the tail or the edge of the grid) is immediatly to the left, to the right, above or below the snake's head. Dimensions 5-8 indicate the distribution of the tail relative to the head of the snake. Floating-point numbers indicate how much of the tail is above, below, to the right and to the left of the head. Dimensions 9-12 indicate with a value of one when food is to the left, to the right, above or below the snake's head.
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{12.5cm}
+    \begin{algorithmic}
+      \State $initializeSnake()$
+      \State $foodEaten \gets 0$
+      \State $movesMade \gets 0$
+      \While{$alive$}
+        \State $state \gets getGameState()$
+        \State $move \gets getNextMove(state)$
+        \State $moveSnake(move)$
+        \If{$collides(head,tail)$} $die()$
+        \EndIf
+        \If{$outOfBounds(head)$} $die$
+        \EndIf
+        \If{$collides(head,food)$}
+          \State{$eatFood(food)$}
+          \State{$growSnake()$}
+          \State{$foodEaten \gets foodEaten + 1$}
+        \EndIf
+        \State{$movesMade \gets movesMade + 1$}
+      \EndWhile
+      \State{\Return $foodEaten + sigmoid(movesMade)$}
+
+    \end{algorithmic}
+  \end{minipage}
+  \caption{Snake game}
+  \label{snake_alg}
+\end{figure}
+
+\subsubsection{Neural Network Controller}
+
+The neural network which controls is a feed-forward neural network with one hidden layer. The input layer has 12 neurons which correspond to the game-state representation. The output layer has four neurons, which correspond to the decision to move left, right, up or down. The hidden layer has 8 neurons. Figure \ref{ffnn_snake} illustrates the network.
+
+
+
+
+
+\begin{figure}[H]
+  \centering
+
+  \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
+      \tikzstyle{every pin edge}=[<-,shorten <=1pt]
+      \tikzstyle{neuron}=[circle,fill=black,minimum size=14pt,inner sep=0pt]
+      \tikzstyle{input neuron}=[neuron];
+      \tikzstyle{output neuron}=[neuron];
+      \tikzstyle{hidden neuron}=[neuron];
+      \tikzstyle{annot} = [text width=2em, text centered]
+
+      % Draw the input layer nodes
+      \foreach \name / \y in {1,...,12}
+      % This is the same as writing \foreach \name / \y in {1/1,2/2,3/3,4/4}
+          \node[input neuron, pin=left:Input \#\y] (I-\name) at (0,-\y) {};
+
+      % Draw the hidden layer nodes
+      \foreach \name / \y in {1,...,8}
+          \path[yshift=-2cm]
+              node[hidden neuron] (H-\name) at (4\layersep,-\y cm) {};
+
+      % Draw the hidden layer nodes
+      \foreach \name / \y in {1,...,4}
+          \path[yshift=-4cm]
+              node[output neuron, pin={[pin edge={->}]right:Output}, right of=H-3] (O-\name) at (8\layersep,-\y cm) {};
+
+
+      % Connect every node in the input layer with every node in the
+      % hidden layer.
+      \foreach \source in {1,...,12}
+          \foreach \dest in {1,...,8}
+              \path (I-\source) edge (H-\dest);
+
+      % Connect every node in the hidden layer with the output layer
+      \foreach \source in {1,...,8}
+          \foreach \dest in {1,...,4}
+              \path (H-\source) edge (O-\dest);
+  \end{tikzpicture}
+
+  \caption{FFNN snake controller}
+  \label{ffnn_snake}
+\end{figure}
+
+\subsubsection{Fitness Function and Evaluation}
+
+The objective function, which is run by the optimization algorithms, takes the evolved weights of the neural network and attempts to play the game using them. The fitness function of gameplay if determined by the equation below:
 
 \begin{equation}
-  fitness = food^{1.5} +  \frac{1}{1-e^{-lifetime}}  - 0.5
+  fitness = \text{foodEaten} + \frac{1}{1-e^{-\text{movesMade}}}
 \end{equation}
 
-The equation was constructed to force the snake to first learn how to survive but then not rely on moving in circles instead of looking for food.
+The fitness function ensured that the snake has an ``easy start'' when it will be revarded for not dying, but then has to pursue food in order to maximize it's fitness.
