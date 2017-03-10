@@ -17,7 +17,7 @@ datasets = 8;
 
 objectiveValue = 0;
 individuals = 50;
-generations = 10000;
+generations = 100;
 lower = -1;
 upper = 1;
 repeat = 1;
@@ -25,7 +25,7 @@ repeat = 1;
 v = ones(datasets,algorithms);
 s = ones(datasets,algorithms);
 
-for ds=4:4
+for ds=1:8
     xx = xxxx{ds};
     t = tt{ds};
 
@@ -39,7 +39,7 @@ for ds=4:4
     
     g = generations;
     
-    for alg=8:8
+    for alg=1:1
         mins = zeros(1, repeat);
         fprintf(strcat('\ta=',num2str(alg),'\n'));
         for r=1:repeat
