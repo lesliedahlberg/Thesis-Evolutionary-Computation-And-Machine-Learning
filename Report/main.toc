@@ -64,12 +64,14 @@
 \contentsline {section}{\numberline {10}Results}{22}{section.10}
 \contentsline {subsection}{\numberline {10.1}Mathematical Problem Set}{23}{subsection.10.1}
 \contentsline {subsection}{\numberline {10.2}Machine Learning Problem Set}{24}{subsection.10.2}
+\contentsline {subsubsection}{\numberline {10.2.1}$ML_{4}$: Neuroevolution of Game Controller for ``Snake''}{24}{subsubsection.10.2.1}
+\contentsline {subsubsection}{\numberline {10.2.2}$ML_{1-3}$: Sample Data Sets}{24}{subsubsection.10.2.2}
 \contentsline {section}{\numberline {11}Discussion}{25}{section.11}
 \contentsline {section}{\numberline {12}Conclusions}{25}{section.12}
 \contentsline {section}{\numberline {13}Future Work}{25}{section.13}
-\contentsline {section}{References}{28}{section*.39}
-\contentsline {section}{Appendix \numberline {A}Algorithms}{29}{Appendix.a.A}
-\contentsline {subsection}{\numberline {A.1}Differential Evolution}{29}{subsection.a.A.1}
-\contentsline {subsection}{\numberline {A.2}Particle Swarm Optimization}{30}{subsection.a.A.2}
-\contentsline {subsection}{\numberline {A.3}Estimation of Distribution}{31}{subsection.a.A.3}
-\contentsline {subsection}{\numberline {A.4}Differential Estimation of Distribution}{32}{subsection.a.A.4}
+\contentsline {section}{References}{26}{section.13}
+\contentsline {section}{Appendix \numberline {A}Algorithms}{26}{Appendix.a.A}
+\contentsline {subsection}{\numberline {A.1}Differential Evolution}{26}{subsection.a.A.1}
+\contentsline {subsection}{\numberline {A.2}Particle Swarm Optimization}{27}{subsection.a.A.2}
+\contentsline {subsection}{\numberline {A.3}Estimation of Distribution}{28}{subsection.a.A.3}
+\contentsline {subsection}{\numberline {A.4}Differential Estimation of Distribution}{29}{subsection.a.A.4}
