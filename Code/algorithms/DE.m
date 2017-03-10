@@ -76,7 +76,7 @@ function [success, iterations, minimum, value] = DE(CostFunction, dimension, low
 %         if lastBestValue ~= bestIndividualCost
 %             disp(bestIndividualCost);
 %             lastBestValue = bestIndividualCost;
-%         
+%             
 %         end
         
     end
