@@ -1,16 +1,12 @@
-function fit = ann_dataset_see(weights, layers, train_input, train_output)
-    c = 0;
-    it = size(train_input,2);
-    sse = 0;
-    trainSize =floor(it/2);
-    train = randperm(it,trainSize);
-    %for i=1:it
-    for i=train
-        output = NeuralNetwork(train_input(:,i)', weights, layers);
-        c=c+size(output,2);
-        
-        sse = sse + sum((train_output(:,i)' - output).^2);
-    end
+function fit = ann_dataset_sse(weights, layers, train_input, train_output)
     
-    fit = sse/c/2;
+testCases = size(train_input,2);
+for i=1:size(train_input,2)
+    o = NeuralNetwork(train_input(:,i)', weights, layers);
+    e = train_output(:,i)' - o;
+    sses(i) = sum(e.^2);
+end
+sse = sum(sses) / (2*testCases);
+
+fit = sse;
 end

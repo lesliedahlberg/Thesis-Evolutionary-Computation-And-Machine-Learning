@@ -16,8 +16,8 @@ setNames = {'simple' 'abalone' 'bodyfat' 'building' 'chemical' 'cho' 'engine' 'h
 datasets = 8;
 
 objectiveValue = 0;
-individuals = 100;
-generations = 1000000;
+individuals = 50;
+generations = 10000;
 lower = -1;
 upper = 1;
 repeat = 1;
@@ -25,7 +25,7 @@ repeat = 1;
 v = ones(datasets,algorithms);
 s = ones(datasets,algorithms);
 
-for ds=8:8
+for ds=4:4
     xx = xxxx{ds};
     t = tt{ds};
 
@@ -39,7 +39,7 @@ for ds=8:8
     
     g = generations;
     
-    for alg=2:2
+    for alg=8:8
         mins = zeros(1, repeat);
         fprintf(strcat('\ta=',num2str(alg),'\n'));
         for r=1:repeat

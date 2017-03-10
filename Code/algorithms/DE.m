@@ -25,6 +25,7 @@ function [success, iterations, minimum, value] = DE(CostFunction, dimension, low
     
     lastBestValue = bestIndividualCost;
     
+    
     %% Iteration
     for iterations=1:maxIterations
 
@@ -43,8 +44,8 @@ function [success, iterations, minimum, value] = DE(CostFunction, dimension, low
             b=A(2);
             c=A(3);
             y = populationPosition(a,:) + F*(populationPosition(b,:) - populationPosition(c,:));
-            y = max(y, lowerBound);
-            y = min(y, upperBound);
+            %y = max(y, lowerBound);
+            %y = min(y, upperBound);
             z = zeros(size(x));
             j0 = randi([1 numel(x)]);
             for j=1:numel(x)
@@ -73,11 +74,11 @@ function [success, iterations, minimum, value] = DE(CostFunction, dimension, low
         minimum = bestIndividualPosition;
         value = bestIndividualCost;
         
-%         if lastBestValue ~= bestIndividualCost
-%             disp(bestIndividualCost);
-%             lastBestValue = bestIndividualCost;
-%             
-%         end
+        if lastBestValue ~= bestIndividualCost
+            disp(bestIndividualCost);
+            lastBestValue = bestIndividualCost;
+            
+        end
         
     end
 end
