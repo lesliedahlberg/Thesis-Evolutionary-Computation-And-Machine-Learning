@@ -47,10 +47,10 @@ function [ success, iterations, minimum, value ] = PSO( CostFunction, dimension,
         end
         
         iterations = iterations + 1;
-%         if lastBestValue ~= globalBestValue
-%             disp(globalBestValue);
-%             lastBestValue = globalBestValue;
-%         end
+        if lastBestValue ~= globalBestValue
+            disp(globalBestValue);
+            lastBestValue = globalBestValue;
+        end
         
     end
 

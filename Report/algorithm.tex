@@ -1,0 +1,21 @@
+\section{Algorithm}
+
+My improved algorithm, Differential Estimation of Distribution (DEDA), draws upon DE and EDA, applying differential mutation to the selection population of the EDA algorithm. The algorithm is described in algorithm~\ref{algo:my}. The Matlab code can be viewed in appendix~\ref{appendix:algorithms}.
+
+
+\begin{algorithm}[h]
+  \caption{Improved algorithm}
+  \label{algo:my}
+    \begin{algorithmic}
+      \State Initialize random population $P$
+      \Repeat
+        \State Sort population $P$
+        \State Select $S$ from $P$
+        \State Build probabilistic model $M$ from $S$
+        \State Sample $P'$ from $M$
+        \State Let $S_{DE}$ be DE applied to $S$
+        \State Create new generation $P$ from $P'$ and $S_{DE}$
+      \Until{Termination condition}
+    \end{algorithmic}
+
+\end{algorithm}

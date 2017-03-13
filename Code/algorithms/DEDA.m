@@ -49,8 +49,8 @@ function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension
             b=A(2);
             c=A(3);
             y = population2(a,:) + F*(population2(b,:) - population2(c,:));
-            y = max(y, lowerBound);
-            y = min(y, upperBound);
+            %y = max(y, lowerBound);
+            %y = min(y, upperBound);
             z = zeros(1, dimension);
             j0 = randi([1 numel(x)]);
             for j=1:numel(x)
@@ -77,10 +77,10 @@ function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension
             end
         end
         
-%         if lastBestValue ~= value
-%             disp(value);
-%             lastBestValue = value;
-%         end
+        if lastBestValue ~= value
+            disp(value);
+            lastBestValue = value;
+        end
 
         iterations = iterations + 1;
     end

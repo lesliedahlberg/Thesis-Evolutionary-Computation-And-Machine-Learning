@@ -2,13 +2,14 @@
 
 This section will aim to provide a general overview of the field of evolutionary compution. General terms and procedured which are often utizilied in EC will be explained and the most well known traditional approaches will be presented. Current research will also be introduced. The emerging algorithms relevant to this thesis can be found in the section ``Algorithms''.
 
-\subsection{The basic structure of evolutionary algorithms}
+\subsection{Evolutionary Algorithms}
 
 Evolutionary algorithms work on the concept of populations. A population is a set of individuals which in the case of optimization problems contain a vector of parameters which the model we wish to optimize can accept and transform into an output. The population is initialized by some procedure to contain a random set of parameter vectors, these should cover the whole parameter range of the model uniformely. The inital population is evaluated and an iterative process is started which continues as long as no suitable solution is found. During this iterative process the current population is selected, altered and evaluated. During selection a set of individuals which display promising characterisitcs are selected to live on to the next generation of the population. They are then altered randomly to create diversity in the population and evaluated. This process creates a new generation of the population on each iteration and continues until a solution is found or some other restriction is encoutered~\cite{Eiben20021}. The concept is demonstrated in figure~\ref{algo:basicevolution} with $P(t)$ representing the population at generation $t$.
 
-\begin{figure}[h]
-  \centering
-  \begin{minipage}{7.5cm}
+\begin{algorithm}[h]
+
+  \caption{Basic evolutionary algorithm}
+  \label{algo:basicevolution}
     \begin{algorithmic}
        \State $t\gets 0$
        \State initialize $P(t)$
@@ -20,12 +21,8 @@ Evolutionary algorithms work on the concept of populations. A population is a se
         \State evaluate $P(t)$
        \EndWhile
     \end{algorithmic}
-  \end{minipage}
-  \caption{Basic evolutionary algorithm}
-  \label{algo:basicevolution}
-\end{figure}
 
-\subsection{Components of evolutionary algorithms}
+\end{algorithm}
 
 Here the fundamental builing blocks of evolutionary algorithms will be presented and explained. Most of these term are universal to all approaches which will be covered in this thesis and neccesary to properly understand them.
 
@@ -96,7 +93,7 @@ The termination condidion determines for how long the algorithm is run. Four cri
   \item If the diversity of the polation drops below a given threshold
 \end{enumerate}
 
-\subsection{Main paradighms of evolutionary computation}
+\subsection{Traditional Evolutionary Algorithms}
 
 Below the main paradighms of evolutionary computation will be discussed. They include genetic algorithms, evolution strategy, evolutionary programming and genetic programming.
 
@@ -104,9 +101,10 @@ Below the main paradighms of evolutionary computation will be discussed. They in
 
 Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attempt to apply biological adaptation to computational problems. GAs are multidemensional search algorithms which use populations of binary strings called chromosomes to evolve a solution to a problem. GAs use a selection operator, a mutation operator and a cross-over operator. The selection operator select individuals which are subjected to cross-over based on their fitness and cross-over combines their genetic material to form new individuals which are then randomly mutated~\cite{mitchel1999evolutionary}. See figure~\ref{algo:geneticalgorithm} for a simple GA.
 
-\begin{figure}[h]
-  \centering
-  \begin{minipage}{12.5cm}
+\begin{algorithm}[h]
+
+  \caption{Basic genetic algorithm}
+  \label{algo:geneticalgorithm}
     \begin{algorithmic}
        \State Initialize a population of N binary chromosome with L bits
        \While{termination-condition not fulfilled}
@@ -123,10 +121,7 @@ Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attem
         \State Replace the old population with the new population
        \EndWhile
     \end{algorithmic}
-  \end{minipage}
-  \caption{Basic genetic algorithm}
-  \label{algo:geneticalgorithm}
-\end{figure}
+\end{algorithm}
 
 \subsubsection{Evolution strategy}
 
@@ -154,3 +149,148 @@ At it's most basic the programs are defines as functions which take a set of inp
 The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test cases and the programs undergo cross-over and other mutations. Cross-over is defined as the exchange of subtrees between programs and produces two offspring from two parents~\cite{Michalewicz1997}.
 
 More advanced versions of GP include function calls which enable the programs to remember useful symmetries and regularities and facilitate code reuse~\cite{Michalewicz1997}.
+
+\subsection{Emerging Evolutionary Algorithms}
+
+This section describes the three algorithms which were benchmarked together with my own algorithm contribution. The Matlab code can be viewed in appendix \ref{appendix:algorithms}.
+
+\subsubsection{Differential Evolution}
+
+Differential evolution~\cite{Storn1997} is a stochastic optimization algorithm which works on populations of parameter vectors. The problem to minimize will be denoted by $f(x)$ where $X=[x_1,x_2,x_3,...x_D]$ and $D$ is equal to the number of variables taken as input parameters by $f(x)$. The algorithm consists of multiple steps which will be described in detail below.
+
+The first step in DE is to create an initial population, the size of the population is $N$ and it will be represented by a matrix $x$ where $g$ is the generation and $n=1,2,3,...,N$:
+
+\begin{equation}
+x_{n,i}^{g} = [ x_{n,1}^{g}, x_{n,2}^{g}, x_{n,3}^{g}, ..., x_{n,D}^{g} ]
+\end{equation}
+
+The population is randomly generated to uniformly fill the entire parameter space ($x_{n,i}^U$ is the upper bound for parameter $x_i$ and $x_{n,i}^L$ is the lower bound for parameter $x_i$):
+
+Mutation is the first step when creating a new generation from the population. Mutation is performed individually for every vector $x$ in the population. The mutation procedure is as follows: select three random vectors for each parameter vector (this requires that the population has a size of $N > 3$) and create a set of new vectors $v$ called mutant vectors according to the formula below where $n=1,2,3,...,N$:
+
+\begin{equation}
+v_{n}^{g+1} = [ x_{r1n}^{g} + F(x_{r2n}^{g} - x_{r3n}^{g})
+\end{equation}
+
+The value of $F$ can be chosen from the interval $[0,2]$ and determines the influence of the differential weight $(x_{r2n}^{g} - x_{r3n}^{g})$.
+
+Crossover occurs after mutation and is applied individually to every vector $x$. A new vector $u$ called the trial vector is constructed from the mutant vector $v$ and the original vector $x$. The trial vector is produced according to the formula below with $i=1,2,3,...,D$ and $n=1,2,3,...,N$:
+
+\begin{equation}
+    u_{n,i}^{g+1} =
+    \begin{cases}
+      v_{n,i}^{g+1}, & \text{if}\ rand() \leq CR \wedge i = I_{\text{rand}} \\
+      x_{n,i}^{g}, & \text{otherwise}
+\end{cases}
+\end{equation}
+
+$I_{\text{rand}}$ is a randomly selected index from the interval $[1,D]$ and $CR$ is the crossover constant which determines the probability that an element is selected from the mutant vector.
+
+Selection is the last step in creating a new generation. The trial vector $u$ is compared with the original vector $x$ for fitness and the vector with the lost cost is selected for the generation according to the formula below where $n=1,2,3,...,N$:
+
+\begin{equation}
+    x_{n}^{g+1} =
+    \begin{cases}
+      u_{n}^{g+1}, & \text{if} f(u_{n}^{g+1}) < f(x_{n}^{g}) \\
+      x_{n,i}^{g}, & \text{otherwise}
+\end{cases}
+\end{equation}
+
+After selection is performed for every vector in the population the population is evaluated to determine if an acceptable solution has been generated. If a solution has been found the algorithm terminates, otherwise the mutation, crossover and selection is performed again until a solution is found or a maximum number of iterations has been reached.
+
+In the benchmark the parameters for DE have been set to $F = 0.6$ and $CR=0.9$ as recommended by Gamperle et al.~\cite{gamperle2002parameter}.
+
+\paragraph{Variants}
+
+Different DE schemes are classified as DE/x/y, where x symbolizes the vector which is mutated and y is the number of differential vectors used. The value of x can be ``rand'' for random vector or ``best''' for the best vector in the population. The algorithm abose is therefore classified as DE/rand/1. The variant DE/best/2 is considered to be a good alternative to DE/rand/1~\cite{qin2009differential}. It's mutation equation is described below:
+
+\begin{equation}
+v_{n}^{g+1} = [ x_{best}^{g} + F(x_{r1n}^{g} - x_{r2n}^{g}) + F(x_{r3n}^{g} - x_{r4n}^{g})
+\end{equation}
+
+\subsubsection{Particle Swarm Optimization}
+
+Particle Swarm Optimization (PSO)~\cite{Das2008} was introduced in 1995 by Kenneth and Ebenhart~\cite{eberhart1995new}. The optimization problem is represented by an n-dimensional function
+
+\begin{equation}
+  f(x_1,x_2,x_3,...x_n) = f(\vec{X})
+\end{equation}
+
+where $\vec{X}$ is a vector which represents the real parameters given to the function. The intent is to find a point in the n-dimensional parameter hyperspace that minimizes the function.
+
+PSO is a parallel search technique where a set of particles  fly through the n-dimensional search space and probe solutions along the way. Each particle $P$ has a current position $\vec{x}(t)$, a current velocity $\vec{v}(t)$, a personal best position $\vec{p}(t)$ and the neighborhoods best position $\vec{g}(t)$. A neighborhood $N$ is a collection of particles which act as independent swarms. Neigborhoods can be social or geographical. Social neigborhoods do not change and contain the same particles during the entire optimization process, while geographical neighborhoods are dynamic and consist only of particles which are near to one another. The neighborhood is often set to be identical to the whole swarm of particles, denoted $S$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.3\linewidth]{pso}
+  \caption{Illustration of particles in PSO (red represents the best particle)}
+  \label{fig:pso}
+\end{figure}
+
+The algorithm has a set of general properties: $v_{max}$ restricts the velocity of each particle to the interval $[-v_{max},v_{max}]$, an inertial factor $\omega$, two random numbers $\phi_1$ and $\phi_2$ which affect the velocity update formula by modulating the influence of $\vec{p}(t)$ and $\vec{g}(t)$, and two constants $C^2$ and $C^1$ which are termed particle “self-confidence” and “swarm confidence”.
+
+The initial values of $\vec{p}(t)$ and $\vec{g}(t)$ are equal to $\vec{x}(0)$ for each particle. After the particle have been initialized an iterative update process is started which modifies the positions and velocities of the particles. The formula below describes the process ($d$ is the dimension of the position and velocity and $i$ is the index of the particle):
+
+\begin{equation}
+  v_{id} (t+1) = \omega v_{id} (t) + C_1 \phi_1 (p_{id} (t) - x_{id} (t)) + C_2 \phi_2 (g_{id} (t) - x_{id} (t))
+\end{equation}
+
+\begin{equation}
+  x_{id} (t+1) = x_{id} (t) + v_{id} (t+1)
+\end{equation}
+
+The “self-confidence” constant affects how much self-exploration a particle is allowed to do while “swarm-confidence” affects how much a particle follows the swarm. $\phi_1$ and $\phi_2$ are random numbers which push the particle in a new direction while $\omega$ keeps a particle on the path it’s currently on. The PSO algorithm is described in algorithm~\ref{algo:pso}. See figure~\ref{fig:pso} for an illustration of PSO.
+
+\begin{algorithm}[h]
+  \caption{PSO algorithm}
+  \label{algo:pso}
+    \begin{algorithmic}
+      \State Init particals with random postitions
+      $\vec{x}(0)$ and velocities $\vec{v}(0)$
+      \Repeat
+        \ForAll{Particles $i$}
+          \State Evaluate fitness $f(\vec{x_i})$
+          \State Update $\vec{p}(t)$ and $\vec{g}(t)$
+          \State Adapt the velocity of the particle using the above-mentioned equation
+          \State Update the position of the particle
+        \EndFor
+      \Until{$\vec{g}(t)$ is a suitable solution}
+    \end{algorithmic}
+\end{algorithm}
+
+
+
+In the benchmark the parameters for PSO have been set to $\omega = 0.8$~\cite{shi1998modified}, $c_1 = c_2 = 1.494$~\cite{kennedy1999small} and $v_{max} = \text{parameter range size}$~\cite{Das2008}.
+
+\subsubsection{Estimation of Distribution Algorithm}
+
+Estimation of distribution algorithms are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best 50\% of the solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found~\cite{Hauschild2011111}.
+
+The most difficult part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Estimation of Baysian Networks (EBNA) can be used~\cite{larranaga2012review}.
+
+\paragraph{UMDA}
+The UMDA algorithm is an EDA algorithm which uses a set of independent probability distributions to sample new solution vectors. The probability model can be expressed as a product of the individual probabilities
+
+\begin{equation}
+  p(x) = \prod _{d=1}^D {p_d(x_d)}
+\end{equation}
+
+where $p(x)$ is the global multivariate density, D is the vector length and $p_d(x_d)$ are the individual univariate marginal densities~\cite{povsik2004estimation}. The algorithm is described in algorithm~\ref{algo:umda}.
+
+\begin{algorithm}[h]
+  \caption{UMDA algorithm}
+  \label{algo:umda}
+
+    \begin{algorithmic}
+      \State Initialize population P
+      \Repeat
+        \State Evaluate P
+        \State Select the best t\% of P into S
+        \State Let m be the mean S
+        \State Let s be the standard deviation of S
+        \State Sample S' from normal distribution using m and s
+        \State Create new generation of P from S' and S
+      \Until{Termination condition}
+    \end{algorithmic}
+
+\end{algorithm}

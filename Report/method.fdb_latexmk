@@ -1,10 +1,10 @@
 # Fdb version 3
-["pdflatex"] 1488383831 "method.tex" "method.pdf" "method" 1488383831
+["pdflatex"] 1489406935 "method.tex" "method.pdf" "method" 1489406935
   "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1463093894 31953 b9489e6e586f798610c60aec1f5ec548 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1484655427 3873397 2dffff4dcab4481d2e276181a9566caa ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
   "method.aux" 1488383831 8 a94a2480d3289e625eea47cd1b285758 ""
-  "method.tex" 1488383828 1149 ace5c902fb7db8a21533636f6ba40f1f ""
+  "method.tex" 1489406934 1149 ace5c902fb7db8a21533636f6ba40f1f ""
   (generated)
   "method.log"
   "method.pdf"

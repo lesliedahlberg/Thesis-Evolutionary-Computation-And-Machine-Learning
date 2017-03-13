@@ -52,10 +52,10 @@ function [ success, iterations, minimum, value ] = EDA_UMDA( CostFunction, dimen
             end
         end
         
-%         if lastBestValue ~= value
-%             disp(value);
-%             lastBestValue = value;
-%         end
+        if lastBestValue ~= value
+            disp(value);
+            lastBestValue = value;
+        end
 
         iterations = iterations + 1;
     end

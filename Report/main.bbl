@@ -73,6 +73,61 @@ D.~B. Fogel and L.~J. Fogel, \emph{An introduction to evolutionary
   programming}.\hskip 1em plus 0.5em minus 0.4em\relax Berlin, Heidelberg:
   Springer Berlin Heidelberg, 1996, pp. 21--33.
 
+\bibitem{Storn1997}
+R.~Storn and K.~Price, ``Differential evolution -- a simple and efficient
+  heuristic for global optimization over continuous spaces,'' \emph{Journal of
+  Global Optimization}, vol.~11, no.~4, pp. 341--359, 1997.
+
+\bibitem{gamperle2002parameter}
+R.~G{\"a}mperle, S.~D. M{\"u}ller, and P.~Koumoutsakos, ``A parameter study for
+  differential evolution,'' \emph{Advances in intelligent systems, fuzzy
+  systems, evolutionary computation}, vol.~10, pp. 293--298, 2002.
+
+\bibitem{qin2009differential}
+A.~K. Qin, V.~L. Huang, and P.~N. Suganthan, ``Differential evolution algorithm
+  with strategy adaptation for global numerical optimization,'' \emph{IEEE
+  transactions on Evolutionary Computation}, vol.~13, no.~2, pp. 398--417,
+  2009.
+
+\bibitem{Das2008}
+S.~Das, A.~Abraham, and A.~Konar, \emph{Particle Swarm Optimization and
+  Differential Evolution Algorithms: Technical Analysis, Applications and
+  Hybridization Perspectives}.\hskip 1em plus 0.5em minus 0.4em\relax Berlin,
+  Heidelberg: Springer Berlin Heidelberg, 2008, pp. 1--38.
+
+\bibitem{eberhart1995new}
+R.~Eberhart and J.~Kennedy, ``A new optimizer using particle swarm theory,'' in
+  \emph{Micro Machine and Human Science, 1995. MHS'95., Proceedings of the
+  Sixth International Symposium on}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 1995, pp. 39--43.
+
+\bibitem{shi1998modified}
+Y.~Shi and R.~Eberhart, ``A modified particle swarm optimizer,'' in
+  \emph{Evolutionary Computation Proceedings, 1998. IEEE World Congress on
+  Computational Intelligence., The 1998 IEEE International Conference
+  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 1998, pp. 69--73.
+
+\bibitem{kennedy1999small}
+J.~Kennedy, ``Small worlds and mega-minds: effects of neighborhood topology on
+  particle swarm performance,'' in \emph{Evolutionary Computation, 1999. CEC
+  99. Proceedings of the 1999 Congress on}, vol.~3.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 1999, pp. 1931--1938.
+
+\bibitem{Hauschild2011111}
+M.~Hauschild and M.~Pelikan, ``An introduction and survey of estimation of
+  distribution algorithms,'' \emph{Swarm and Evolutionary Computation}, vol.~1,
+  no.~3, pp. 111 -- 128, 2011.
+
+\bibitem{larranaga2012review}
+P.~Larra{\~n}aga, H.~Karshenas, C.~Bielza, and R.~Santana, ``A review on
+  probabilistic graphical models in evolutionary computation,'' \emph{Journal
+  of Heuristics}, vol.~18, no.~5, pp. 795--819, 2012.
+
+\bibitem{povsik2004estimation}
+P.~Po{\v{s}}{\i}k, ``Estimation of distribution algorithms,'' \emph{Czech
+  Technical University, Faculty of Electrical Engineering, Dept. of
+  Cybernetics}, 2004.
+
 \bibitem{dejong2009EC}
 K.~D. Jong, ``Evolutionary computation,'' \emph{Wiley Interdisciplinary
   Reviews: Computational Statistics}, vol.~1, no.~1, pp. 52--56, 2009.
@@ -91,12 +146,6 @@ K.~Price, ``Differential evolution vs. the functions of the 2nd icec,'' in
 S.~Das and P.~N. Suganthan, ``Differential evolution: A survey of the
   state-of-the-art,'' \emph{IEEE Transactions on Evolutionary Computation},
   vol.~15, no.~1, pp. 4--31, Feb 2011.
-
-\bibitem{qin2009differential}
-A.~K. Qin, V.~L. Huang, and P.~N. Suganthan, ``Differential evolution algorithm
-  with strategy adaptation for global numerical optimization,'' \emph{IEEE
-  transactions on Evolutionary Computation}, vol.~13, no.~2, pp. 398--417,
-  2009.
 
 \bibitem{rahnamayan2008opposition}
 S.~Rahnamayan, H.~R. Tizhoosh, and M.~M. Salama, ``Opposition-based
@@ -127,11 +176,6 @@ E.~Mezura-Montes, J.~Vel{\'a}zquez-Reyes, and C.~A. Coello~Coello, ``A
   and evolutionary computation}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
   2006, pp. 485--492.
 
-\bibitem{gamperle2002parameter}
-R.~G{\"a}mperle, S.~D. M{\"u}ller, and P.~Koumoutsakos, ``A parameter study for
-  differential evolution,'' \emph{Advances in intelligent systems, fuzzy
-  systems, evolutionary computation}, vol.~10, pp. 293--298, 2002.
-
 \bibitem{liu2005fuzzy}
 J.~Liu and J.~Lampinen, ``A fuzzy adaptive differential evolution algorithm,''
   \emph{Soft Computing}, vol.~9, no.~6, pp. 448--462, 2005.
@@ -157,11 +201,6 @@ W.~Zhang, Y.~Jin, X.~Li, and X.~Zhang, ``A simple way for parameter selection
 \bibitem{yang2011particle}
 H.~Yang, ``Particle swarm optimization with modified velocity strategy,''
   \emph{Energy Procedia}, no.~11, pp. 1074--1079, 2011.
-
-\bibitem{Hauschild2011111}
-M.~Hauschild and M.~Pelikan, ``An introduction and survey of estimation of
-  distribution algorithms,'' \emph{Swarm and Evolutionary Computation}, vol.~1,
-  no.~3, pp. 111 -- 128, 2011.
 
 \bibitem{sastry2007towards}
 K.~Sastry, D.~E. Goldberg, and X.~Llora, ``Towards billion-bit optimization via
@@ -194,45 +233,6 @@ P.~R. Hajare and N.~G. Bawane, ``Feed forward neural network optimization by
 P.~Larra{\~n}aga and J.~A. Lozano, \emph{Estimation of distribution algorithms:
   A new tool for evolutionary computation}.\hskip 1em plus 0.5em minus
   0.4em\relax Springer Science \& Business Media, 2001, vol.~2.
-
-\bibitem{Storn1997}
-R.~Storn and K.~Price, ``Differential evolution -- a simple and efficient
-  heuristic for global optimization over continuous spaces,'' \emph{Journal of
-  Global Optimization}, vol.~11, no.~4, pp. 341--359, 1997.
-
-\bibitem{Das2008}
-S.~Das, A.~Abraham, and A.~Konar, \emph{Particle Swarm Optimization and
-  Differential Evolution Algorithms: Technical Analysis, Applications and
-  Hybridization Perspectives}.\hskip 1em plus 0.5em minus 0.4em\relax Berlin,
-  Heidelberg: Springer Berlin Heidelberg, 2008, pp. 1--38.
-
-\bibitem{eberhart1995new}
-R.~Eberhart and J.~Kennedy, ``A new optimizer using particle swarm theory,'' in
-  \emph{Micro Machine and Human Science, 1995. MHS'95., Proceedings of the
-  Sixth International Symposium on}.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, 1995, pp. 39--43.
-
-\bibitem{shi1998modified}
-Y.~Shi and R.~Eberhart, ``A modified particle swarm optimizer,'' in
-  \emph{Evolutionary Computation Proceedings, 1998. IEEE World Congress on
-  Computational Intelligence., The 1998 IEEE International Conference
-  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 1998, pp. 69--73.
-
-\bibitem{kennedy1999small}
-J.~Kennedy, ``Small worlds and mega-minds: effects of neighborhood topology on
-  particle swarm performance,'' in \emph{Evolutionary Computation, 1999. CEC
-  99. Proceedings of the 1999 Congress on}, vol.~3.\hskip 1em plus 0.5em minus
-  0.4em\relax IEEE, 1999, pp. 1931--1938.
-
-\bibitem{larranaga2012review}
-P.~Larra{\~n}aga, H.~Karshenas, C.~Bielza, and R.~Santana, ``A review on
-  probabilistic graphical models in evolutionary computation,'' \emph{Journal
-  of Heuristics}, vol.~18, no.~5, pp. 795--819, 2012.
-
-\bibitem{povsik2004estimation}
-P.~Po{\v{s}}{\i}k, ``Estimation of distribution algorithms,'' \emph{Czech
-  Technical University, Faculty of Electrical Engineering, Dept. of
-  Cybernetics}, 2004.
 
 \bibitem{suganthan2005problem}
 P.~N. Suganthan, N.~Hansen, J.~J. Liang, K.~Deb, Y.-P. Chen, A.~Auger, and

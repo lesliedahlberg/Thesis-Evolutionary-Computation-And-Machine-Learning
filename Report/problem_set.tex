@@ -1,0 +1,478 @@
+\section{Benchmark}
+
+This section describes all benchmark components and how they will be evaluated. The benchmark consists of a mathematical function optimization component and machine learning component.
+
+\subsection{Mathematical Function Optimization ($F_{1-10}$)}
+
+The functions $F_{1-10}$ for the mathematical function optimization benchmark have been taken from the 2005 CEC conference on continuous evolutionary optimization algorithms~\cite{suganthan2005problem}. Many functions from the well known DeJong test-bed are included~\cite{Whitley1996245}.
+
+For all functions $x=[x_1,x_2,x_3,...,x_D]$ are the input parameters, $o=[o_1,o_2,o_3,...,o_D]$ is the global optimum, $D$ is the dimension and $M$ is an orthogonal matrix with parameters unique to each function. The matrices for $o$ and $M$ can be obtained from~\cite{suganthan2005problem}.
+The functions are illustrated in two dimensions in figures~\ref{f1},~\ref{f2},~\ref{f3},~\ref{f4},~\ref{f5},~\ref{f6},~\ref{f7},~\ref{f8},~\ref{f9} and~\ref{f10}. The benchmark parameters and settings are listed in table~\ref{table:f1-10_params}.
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | }
+      \hline
+      Parameter & Value (D=10) & Value (D=30) & Value (D=50) \\ \hline
+      Repeat measurements & 30 & 30 & 30 \\ \hline
+      Generations & 667 & 1200 & 1429 \\ \hline
+      Population Size & 150 & 250 & 350 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark parameters for $F_{1-10}$}
+  \label{table:f1-10_params}
+\end{table}
+
+\paragraph{Shifted Sphere Function ($F_1$)} Unimodal, Separable
+
+\begin{minipage}{.5\textwidth}
+  \[
+    F_1(x)=\sum_{i=1}^{D}{z_i^2}
+  \]
+  \[ z=x-o \]
+  \[ x \in [-100,100]^D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f1}
+    \caption{3-D map for 2-D function}
+    \label{f1}
+  \end{figure}
+\end{minipage}
+
+
+\paragraph{Shifted Schwefel’s Problem ($F_2$)} Unimodal, Non-Separable
+
+\begin{minipage}{.5\textwidth}
+\[
+  F_2(x)=\sum_{i=1}^{D}{(\sum_{j=1}^{i}{z_j})^2}
+\]
+\[ z=x-o \]
+\[ x \in [-100,100]^D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f2}
+    \caption{3-D map for 2-D function}
+    \label{f2}
+  \end{figure}
+\end{minipage}
+
+
+\paragraph{Shifted Rotated High Conditioned Elliptic Function ($F_3$)} Unimodal, Non-Separable
+
+\begin{minipage}{.5\textwidth}
+\[
+  F_3(x)=\sum_{i=1}^{D}{(10^6)^{\frac{i-1}{D-1}}z_i^2}
+\]
+\[ z=(x-o)*M \]
+\[ x \in [-100,100]^D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f3}
+    \caption{3-D map for 2-D function}
+    \label{f3}
+  \end{figure}
+\end{minipage}
+
+
+\paragraph{Shifted Schwefel’s Problem with Noise in Fitness ($F_4$)} Unimodal, Non-Separable
+
+\begin{minipage}{.5\textwidth}
+\[
+  F_4(x)=(\sum_{i=1}^{D}{(\sum_{j=1}^{i}{z_j})^2})*(1+0.4|N(0,1)|)
+\]
+\[ z=x-o \]
+\[ x \in [-100,100]^D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f4}
+    \caption{3-D map for 2-D function}
+    \label{f4}
+  \end{figure}
+\end{minipage}
+
+
+\paragraph{Schwefel’s Problem with Global Optimum on Bounds ($F_5$)} Unimodal, Non-Separable
+
+\begin{minipage}{.5\textwidth}
+\[
+  F_5(x)=max\{|A_ix-B_i|\}
+\]
+\[ i=1,...,D, x \in [-100,100]^D \]
+\[ A \text{ is a } D*D \text{ matrix}, a_{ij} = \text{ random numbers in } [-500,500],  det(A) \neq 0 \]
+\[ B_i = A_i * o, o_i = \text{ random numbers in } [-100,100] \]
+\[ o_i = -100 \text{, for } i=1,2,...,[D/4], o_i = 100 \text{, for } i=[3D/4],...,D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f5}
+    \caption{3-D map for 2-D function}
+    \label{f5}
+  \end{figure}
+\end{minipage}
+
+
+\paragraph{Shifted Rosenbrock’s Function ($F_6$)} Multimodal, Non-Separable
+
+\begin{minipage}{.5\textwidth}
+\[
+  F_6(x)=\sum_{i=1}^{D-1}{(100(z_i^2 - z_{i+1})^2 + (z_i - 1)^2)}
+\]
+\[ z=x-o+1 \]
+\[ x \in [-100,100]^D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f6}
+    \caption{3-D map for 2-D function}
+    \label{f6}
+  \end{figure}
+\end{minipage}
+
+
+\paragraph{Shifted Rotated Griewank’s Function without Bounds ($F_7$)} Multimodal, Non-Separable
+
+\begin{minipage}{.5\textwidth}
+\[
+  F_7(x)=\sum_{i=1}^{D}{\frac{z_i^2}{4000}}-\prod_{i=1}^{D}{\cos{\frac{z_i}{\sqrt{i}}}}+1
+\]
+\[ z=(x-o)*M \]
+\[ x \in [0,600]^D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f7}
+    \caption{3-D map for 2-D function}
+    \label{f7}
+  \end{figure}
+\end{minipage}
+
+\paragraph{Shifted Rotated Ackley’s Function with Global Optimum on Bounds ($F_8$)} Multimodal, Non-Separable
+
+\begin{minipage}{.5\textwidth}
+\[
+  F_8(x)=-20\exp{(-0.2\sqrt{\frac{1}{D}\sum_{i=1}^{D}{z_i^2}})}-\exp{(\frac{1}{D}\sum_{i=1}^{D}{\cos{(2\pi z_i)}})} + 20 + e
+\]
+\[ z=(x-o)*M \]
+\[ x \in [-32,32]^D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f8}
+    \caption{3-D map for 2-D function}
+    \label{f8}
+  \end{figure}
+\end{minipage}
+
+\paragraph{Shifted Rastrigin’s Function ($F_9$)} Multimodal, Separable
+
+\begin{minipage}{.5\textwidth}
+\[
+  F_9(x)=\sum_{i=1}^{D}{z_i^2 - 10\cos{(2\pi z_i)} + 10}
+\]
+\[ z=x-o \]
+\[ x \in [-5,5]^D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f9}
+    \caption{3-D map for 2-D function}
+    \label{f9}
+  \end{figure}
+\end{minipage}
+
+
+\paragraph{Shifted Rotated Rastrigin’s Function ($F_{10}$)} Multimodal, Non-Separable
+
+\begin{minipage}{.5\textwidth}
+\[
+  F_{10}(x)=\sum_{i=1}^{D}{z_i^2 - 10\cos{(2\pi z_i)} + 10}
+\]
+\[ z=(x-o)*M \]
+\[ x \in [-5,5]^D \]
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{f10}
+    \caption{3-D map for 2-D function}
+    \label{f10}
+  \end{figure}
+\end{minipage}
+
+\subsection{Machine Learning}
+
+To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN). The design of the neural network is one input layer with a size based on the problem dimension, two hidden layers and one output layer. I have chosen to use two hidden layers to make sure a good solution can be found quickly~\cite{329294}. The size of the hidden layers was set to $2/3$ and $1/3$ of the mean of the size of the input and output layers.
+
+\subsubsection{Function Approximation ($FA_{1-6}$)}
+
+The optmization algorithms were used find the optimal weights for feed-forword neural networks. The neural networks were evaluated on six function approximation data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}. The data-sets are listed in table~\ref{table:fa1-6_data-sets}.
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | }
+      \hline
+      Parameter & Value (D=10) & Value (D=30) & Value (D=50) \\ \hline
+      Repeat measurements & 30 & 30 & 30 \\ \hline
+      Generations & 667 & 1200 & 1429 \\ \hline
+      Population Size & 150 & 250 & 350 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark parameters for $FA_{1-6}$}
+  \label{table:fa1-6_params}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | }
+      \hline
+      Data-set & Description & Input-Dimension & Output-Dimension & Weight-Dimension \\ \hline
+      simplefit\_dataset & Simple fitting & 100 & 100 & 100 \\ \hline
+      bodyfat\_dataset & Body fat percentage & 100 & 100 & 100 \\ \hline
+      chemical\_dataset & Chemical sensor & 100 & 100 & 100 \\ \hline
+      cho\_dataset & Cholesterol & 100 & 100 & 100 \\ \hline
+      engine\_dataset & Engine behavior  & 100 & 100 & 100 \\ \hline
+      house\_dataset & House value & 100 & 100 & 100 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Data-sets for $FA_{1-6}$}
+  \label{table:fa1-6_data-sets}
+\end{table}
+
+\paragraph{Evalutation Procedure}
+
+The data sets contain two matrices. One with sample input vectors to the neural network and one with the expected correct output vectors. The function which the optimization algorithm directly optimizes is the sum of squared errors as defined by equation~\ref{eq:fa_fitness}
+
+\begin{equation} \label{eq:fa_fitness}
+  sse(x,t) = \frac{1}{2n} \sum_{i=1}^{n}{(y(x)-t)^2}
+\end{equation}
+
+where $x$ is the input vector to neural network $y$, $t$ is the correct expected output which $y(x)$ should produce and n is the length of vector $x$.
+
+\subsubsection{Classification ($CLS_{1-7}$)}
+
+The optmization algorithms were used find the optimal weights for feed-forword neural networks. The neural networks were evaluated on seven classification data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:cls1-7_params}. The data-sets are listed in table~\ref{table:cls1-7_data-sets}.
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | }
+      \hline
+      Parameter & Value (D=10) & Value (D=30) & Value (D=50) \\ \hline
+      Repeat measurements & 30 & 30 & 30 \\ \hline
+      Generations & 667 & 1200 & 1429 \\ \hline
+      Population Size & 150 & 250 & 350 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark parameters for $CLS_{1-7}$}
+  \label{table:cls1-7_params}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | }
+      \hline
+      Data-set & Description & Input-Dimension & Output-Dimension & Weight-Dimension \\ \hline
+      simpleclass\_dataset & imple pattern recognition & 100 & 100 & 100 \\ \hline
+      cancer\_dataset & Breast cancer & 100 & 100 & 100 \\ \hline
+      crab\_dataset & Crab gender & 100 & 100 & 100 \\ \hline
+      glass\_dataset & Glass chemical & 100 & 100 & 100 \\ \hline
+      iris\_dataset & Iris flower & 100 & 100 & 100 \\ \hline
+      thyroid\_dataset & Thyroid function  & 100 & 100 & 100 \\ \hline
+      wine\_dataset & Italian wines & 100 & 100 & 100 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Data-sets for $CLS_{1-7}$}
+  \label{table:cls1-7_data-sets}
+\end{table}
+
+
+\paragraph{Evalutation Procedure}
+
+Same as $FA_{1-6}$.
+
+\subsubsection{Clustering ($CLU_{1}$)}
+
+The optmization algorithms were used find the optimal weights for feed-forword neural networks. The neural networks were evaluated on one clustering data-set which is available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:clu1_params}. The data-sets are listed in table~\ref{table:clu1_data-sets}.
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | }
+      \hline
+      Parameter & Value (D=10) & Value (D=30) & Value (D=50) \\ \hline
+      Repeat measurements & 30 & 30 & 30 \\ \hline
+      Generations & 667 & 1200 & 1429 \\ \hline
+      Population Size & 150 & 250 & 350 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark parameters for $CLU_{1}$}
+  \label{table:clu1_params}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | }
+      \hline
+      Data-set & Description & Input-Dimension & Output-Dimension & Weight-Dimension \\ \hline
+      simplecluster\_dataset & Simple clustering & 100 & 100 & 100 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Data-sets for $CLU_{1}$}
+  \label{table:clu1_data-sets}
+\end{table}
+
+
+\paragraph{Evalutation Procedure}
+
+Same as $FA_{1-6}$.
+
+\subsubsection{Intelligent Game Controllers ($IGC_{1}$)}
+
+Machine learning test set $ML_{1}$ uses evolutionary algorithms to evolve weights for feed-forward neural networks, which control the behavior of game-agent in the classic game of ``Snake''.
+
+\paragraph{Game Description and Rules}
+
+The game is made up of a $n*m$ square grid through which a snake can freely move. The snake consists of a sequence of interconneted blocks and is divided into a head which moves in a certain direction and a tail which follows the head. Food blocks randomly appear on block at a time on the grid and the snake's objective is eat these blocks. When the snake's head touches the food block the block vanishes and the snake grows one square in length. If the head of the snake tries to move outside the grid it dies and the game ends. If the head of the snake collides with the tail it also and dies and the game ends. The snake's head can move in four direction: up, down, left and right. If the snake tries to move in the opposite of it's currect direction it also dies. The snake has a starvation counter which forces it to pursue food and eat. The starvation counter is initialized to the starvation threshold when the game begins and decreases by one every time the snake moves. When the snake eats, the starvation counter is increased once by the starvation threshold. Figure~\ref{snake} illustrates the game grid. Figure~\ref{snake_alg} described the algorithm for the game. The game's parameters are explained in table~\ref{snake_p}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.3\linewidth]{snake}
+  \caption{Snake $8*8$ game-field with snake hunting food}
+  \label{snake}
+\end{figure}
+
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \begin{tabular}{ | c | c | }
+      \hline
+      Parameter & Description \\ \hline
+      $D^2$ & Dimension of grid ($m*n$ blocks) \\ \hline
+      $(x,y)$ & Starting point for snake head \\ \hline
+      $d_s$ & Starting direction for snake head ($=\{left,right,up,down\}$) \\ \hline
+      $t$ & Starvation threshold \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Parameters snake game}
+  \label{snake_p}
+\end{table}
+
+
+\paragraph{Representation of Game State}
+
+In order to control the snake with a neural network a representation of the state of the game has to be generated before each move. The chosen representation is a 12-dimensinal vector in the range $[0,1]$. The initial default value of all dimensions is zero. Dimensions 1-4 indicates with a value of one whether any dangerous object (the tail or the edge of the grid) is immediatly to the left, to the right, above or below the snake's head. Dimensions 5-8 indicate the distribution of the tail relative to the head of the snake. Floating-point numbers indicate how much of the tail is above, below, to the right and to the left of the head. Dimensions 9-12 indicate with a value of one when food is to the left, to the right, above or below the snake's head.
+
+\begin{algorithm}[h]
+
+  \caption{Snake game}
+  \label{snake_alg}
+    \begin{algorithmic}
+      \State $initializeSnake()$
+      \State $foodEaten \gets 0$
+      \State $movesMade \gets 0$
+      \While{$alive$}
+        \State $state \gets getGameState()$
+        \State $move \gets getNextMove(state)$
+        \State $moveSnake(move)$
+        \If{$collides(head,tail)$} $die()$
+        \EndIf
+        \If{$outOfBounds(head)$} $die$
+        \EndIf
+        \If{$collides(head,food)$}
+          \State{$eatFood(food)$}
+          \State{$growSnake()$}
+          \State{$foodEaten \gets foodEaten + 1$}
+        \EndIf
+        \State{$movesMade \gets movesMade + 1$}
+      \EndWhile
+      \State{\Return $foodEaten + sigmoid(movesMade)$}
+
+    \end{algorithmic}
+\end{algorithm}
+
+\paragraph{Neural Network Controller}
+
+The neural network which controls is a feed-forward neural network with one hidden layer. The input layer has 12 neurons which correspond to the game-state representation. The output layer has four neurons, which correspond to the decision to move left, right, up or down. The hidden layer has 8 neurons. Figure \ref{ffnn_snake} illustrates the network.
+
+
+
+
+
+\begin{figure}[H]
+  \centering
+
+  \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
+      \tikzstyle{every pin edge}=[<-,shorten <=1pt]
+      \tikzstyle{neuron}=[circle,fill=black,minimum size=14pt,inner sep=0pt]
+      \tikzstyle{input neuron}=[neuron];
+      \tikzstyle{output neuron}=[neuron];
+      \tikzstyle{hidden neuron}=[neuron];
+      \tikzstyle{annot} = [text width=2em, text centered]
+
+      % Draw the input layer nodes
+      \foreach \name / \y in {1,...,12}
+      % This is the same as writing \foreach \name / \y in {1/1,2/2,3/3,4/4}
+          \node[input neuron, pin=left:Input \#\y] (I-\name) at (0,-\y) {};
+
+      % Draw the hidden layer nodes
+      \foreach \name / \y in {1,...,8}
+          \path[yshift=-2cm]
+              node[hidden neuron] (H-\name) at (4\layersep,-\y cm) {};
+
+      % Draw the hidden layer nodes
+      \foreach \name / \y in {1,...,4}
+          \path[yshift=-4cm]
+              node[output neuron, pin={[pin edge={->}]right:Output}, right of=H-3] (O-\name) at (8\layersep,-\y cm) {};
+
+
+      % Connect every node in the input layer with every node in the
+      % hidden layer.
+      \foreach \source in {1,...,12}
+          \foreach \dest in {1,...,8}
+              \path (I-\source) edge (H-\dest);
+
+      % Connect every node in the hidden layer with the output layer
+      \foreach \source in {1,...,8}
+          \foreach \dest in {1,...,4}
+              \path (H-\source) edge (O-\dest);
+  \end{tikzpicture}
+
+  \caption{FFNN snake controller}
+  \label{ffnn_snake}
+\end{figure}
+
+\paragraph{Fitness Function and Evaluation}
+
+The objective function, which is run by the optimization algorithms, takes the evolved weights of the neural network and attempts to play the game using them. The fitness function of gameplay if determined by the equation~\ref{eq:snake_fitness}.
+
+\begin{equation} \label{eq:snake_fitness}
+  fitness = \text{foodEaten} + \frac{1}{1-e^{-\text{movesMade}}}
+\end{equation}
+
+The fitness function ensured that the snake has an ``easy start'' when it will be revarded for not dying, but then has to pursue food in order to maximize it's fitness.

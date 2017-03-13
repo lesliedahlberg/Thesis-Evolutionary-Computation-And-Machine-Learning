@@ -2,11 +2,11 @@
 
 This section presents benchmarks and measurements of the four main algorithms presented in this thesis. It is divided into two parts: the function optimization benchmark and the machine learning benchmark.
 
-\subsection{Mathematical Problem Set}
+\subsection{Mathematical Function Optimization}
 
-The function test-bed was tested with dimension size $D=10$, $D=30$ and $D=50$. The parameters for different dimension sizes are presented in figure~\ref{t1}.
+The function test-bed was tested with dimension size $D=10$, $D=30$ and $D=50$. The parameters for different dimension sizes are presented in table~\ref{t1}.
 
-\begin{figure}[H]
+\begin{table}[H]
   \centering
   \begin{center}
     \begin{tabular}{ | l | c | r | }
@@ -20,14 +20,14 @@ The function test-bed was tested with dimension size $D=10$, $D=30$ and $D=50$. 
   \end{center}
   \caption{Parameters for different dimension sizes in the benchmark}
   \label{t1}
-\end{figure}
+\end{table}
 
-The benchmark ran each test-case 30 times and recorded the average minimum value of the function and the standard deviation. The results are presented in figure~\ref{r10},~\ref{r30} and~\ref{r50}. The lowest value is marked in bold font.
-
-
+The benchmark ran each test-case 30 times and recorded the average minimum value of the function and the standard deviation. The results are presented in table~\ref{r10},~\ref{r30} and~\ref{r50}. The lowest value is marked in bold font.
 
 
-\begin{figure}[H]
+
+
+\begin{table}[H]
   \centering
   \begin{center}
     \footnotesize
@@ -49,9 +49,9 @@ The benchmark ran each test-case 30 times and recorded the average minimum value
   \end{center}
   \caption{Benchmark results for $D=10$}
   \label{r10}
-\end{figure}
+\end{table}
 
-\begin{figure}[H]
+\begin{table}[H]
   \centering
   \begin{center}
     \footnotesize
@@ -73,9 +73,9 @@ The benchmark ran each test-case 30 times and recorded the average minimum value
   \end{center}
   \caption{Benchmark results for $D=30$}
   \label{r30}
-\end{figure}
+\end{table}
 
-\begin{figure}[H]
+\begin{table}[H]
   \centering
   \begin{center}
     \footnotesize
@@ -97,16 +97,19 @@ The benchmark ran each test-case 30 times and recorded the average minimum value
   \end{center}
   \caption{Benchmark results for $D=50$}
   \label{r50}
-\end{figure}
+\end{table}
 
 
-\subsection{Machine Learning Problem Set}
+\subsection{Machine Learning}
 
-\subsubsection{$ML_{4}$: Neuroevolution of Game Controller for ``Snake''}
+The algorithms were tested on four machine learning benchmarks: $ML_{1}$, $ML_{2}$, $ML_{3}$ and $ML_{4}$ as described in the section ``Method''. The dimensionality of the problem depends on the size of the input and output vectors of the data-sets and the size of the hidden layer of the neural networks. The hidden layer size was defines as the mean of the input- and output-layer sizes.
 
-The $ML_{4}$ results are shown in figure \ref{ml4}. The parameters are shown in figure \ref{ml4_p}.
 
-\begin{figure}[H]
+\subsubsection{Function Approximation}
+
+The $ML_{1-3}$ results are shown in tables~\ref{ml1},~\ref{ml2} and~\ref{ml3}. The parameters are shown in table \ref{ml1-3_p}.
+
+\begin{table}[H]
   \centering
   \begin{center}
     \footnotesize
@@ -115,38 +118,16 @@ The $ML_{4}$ results are shown in figure \ref{ml4}. The parameters are shown in 
       Parameter & Value \\ \hline
       Individuals & 140 \\ \hline
       Generations & 1000 \\ \hline
-      Grid dimension & 10*10 \\ \hline
-      Weight dimension & 140 \\ \hline
       Repeat measurements & 10 \\ \hline
-      Repeat fitness measurements & 5 \\ \hline
     \end{tabular}
   \end{center}
-  \caption{Benchmark parameters for $ML_{4}$}
-  \label{ml4_p}
-\end{figure}
+  \caption{Benchmark parameters for $ML_{1-3}$}
+  \label{ml1-3_p}
+\end{table}
 
-\begin{figure}[H]
-  \centering
-  \begin{center}
-    \footnotesize
-    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
-      \hline
-      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
-       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
-      snake & 2,32E+01 & 2,19E+00 & 2,92E+01 & 4,16E+00 & 2,78E+01 & 1,34E+01 & 2,69E+01 & 3,59E+00 \\ \hline
-    \end{tabular}
-  \end{center}
-  \caption{Benchmark results for $ML_{4}$}
-  \label{ml4}
-\end{figure}
+\subsubsection{Classification}
 
-\subsubsection{$ML_{1-3}$: Sample Data Sets}
-
-
-The algorithms were tested on four machine learning benchmarks: $ML_{1}$, $ML_{2}$, $ML_{3}$ and $ML_{4}$ as described in the section ``Method''. The dimensionality of the problem depends on the size of the input and output vectors of the data-sets and the size of the hidden layer of the neural networks. The hidden layer size was defines as the mean of the input- and output-layer sizes. The population size was set to $50$, the max. number of generations was set to $100$ and every measurement was made $5$ times. The figures~\ref{ml1},~\ref{ml2},~\ref{ml3} and~\ref{ml4} show the results obtained for problems (average minimum value and standard deviation).
-
-
-\begin{figure}[H]
+\begin{table}[H]
   \centering
   \begin{center}
     \footnotesize
@@ -166,9 +147,11 @@ The algorithms were tested on four machine learning benchmarks: $ML_{1}$, $ML_{2
   \end{center}
   \caption{Benchmark results for $ML_{1}$}
   \label{ml1}
-\end{figure}
+\end{table}
 
-\begin{figure}[H]
+\subsubsection{Clustering}
+
+\begin{table}[H]
   \centering
   \begin{center}
     \footnotesize
@@ -187,9 +170,9 @@ The algorithms were tested on four machine learning benchmarks: $ML_{1}$, $ML_{2
   \end{center}
   \caption{Benchmark results for $ML_{2}$}
   \label{ml2}
-\end{figure}
+\end{table}
 
-\begin{figure}[H]
+\begin{table}[H]
   \centering
   \begin{center}
     \footnotesize
@@ -202,4 +185,43 @@ The algorithms were tested on four machine learning benchmarks: $ML_{1}$, $ML_{2
   \end{center}
   \caption{Benchmark results for $ML_{3}$}
   \label{ml3}
-\end{figure}
+\end{table}
+
+
+\subsubsection{Intelligent Game Controllers}
+
+The $ML_{4}$ results are shown in table \ref{ml4}. The parameters are shown in table \ref{ml4_p}.
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | l | l| }
+      \hline
+      Parameter & Value \\ \hline
+      Individuals & 140 \\ \hline
+      Generations & 1000 \\ \hline
+      Grid dimension & 10*10 \\ \hline
+      Weight dimension & 140 \\ \hline
+      Repeat measurements & 10 \\ \hline
+      Repeat fitness measurements & 5 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark parameters for $ML_{4}$}
+  \label{ml4_p}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      snake & 2,32E+01 & 2,19E+00 & 2,92E+01 & 4,16E+00 & 2,78E+01 & 1,34E+01 & 2,69E+01 & 3,59E+00 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $ML_{4}$}
+  \label{ml4}
+\end{table}
