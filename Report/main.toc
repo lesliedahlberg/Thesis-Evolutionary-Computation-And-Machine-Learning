@@ -42,43 +42,37 @@
 \contentsline {section}{\numberline {5}Method}{14}{section.5}
 \contentsline {section}{\numberline {6}Ethical and Societal Considerations}{14}{section.6}
 \contentsline {section}{\numberline {7}Algorithm}{14}{section.7}
-\contentsline {section}{\numberline {8}Benchmark}{15}{section.8}
-\contentsline {subsection}{\numberline {8.1}Mathematical Function Optimization ($F_{1-10}$)}{15}{subsection.8.1}
+\contentsline {section}{\numberline {8}Benchmark}{14}{section.8}
+\contentsline {subsection}{\numberline {8.1}Mathematical Function Optimization ($F_{1-10}$)}{14}{subsection.8.1}
 \contentsline {paragraph}{Shifted Sphere Function ($F_1$)}{15}{section*.20}
 \contentsline {paragraph}{Shifted Schwefel\IeC {\textquoteright }s Problem ($F_2$)}{15}{section*.22}
 \contentsline {paragraph}{Shifted Rotated High Conditioned Elliptic Function ($F_3$)}{15}{section*.24}
-\contentsline {paragraph}{Shifted Schwefel\IeC {\textquoteright }s Problem with Noise in Fitness ($F_4$)}{16}{section*.26}
+\contentsline {paragraph}{Shifted Schwefel\IeC {\textquoteright }s Problem with Noise in Fitness ($F_4$)}{15}{section*.26}
 \contentsline {paragraph}{Schwefel\IeC {\textquoteright }s Problem with Global Optimum on Bounds ($F_5$)}{16}{section*.28}
 \contentsline {paragraph}{Shifted Rosenbrock\IeC {\textquoteright }s Function ($F_6$)}{16}{section*.30}
-\contentsline {paragraph}{Shifted Rotated Griewank\IeC {\textquoteright }s Function without Bounds ($F_7$)}{17}{section*.32}
+\contentsline {paragraph}{Shifted Rotated Griewank\IeC {\textquoteright }s Function without Bounds ($F_7$)}{16}{section*.32}
 \contentsline {paragraph}{Shifted Rotated Ackley\IeC {\textquoteright }s Function with Global Optimum on Bounds ($F_8$)}{17}{section*.34}
 \contentsline {paragraph}{Shifted Rastrigin\IeC {\textquoteright }s Function ($F_9$)}{17}{section*.36}
 \contentsline {paragraph}{Shifted Rotated Rastrigin\IeC {\textquoteright }s Function ($F_{10}$)}{17}{section*.38}
-\contentsline {subsection}{\numberline {8.2}Machine Learning}{18}{subsection.8.2}
-\contentsline {subsubsection}{\numberline {8.2.1}Function Approximation ($FA_{1-6}$)}{18}{subsubsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2}Machine Learning}{17}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {8.2.1}Function Approximation ($FA_{1-6}$)}{17}{subsubsection.8.2.1}
 \contentsline {paragraph}{Evalutation Procedure}{18}{section*.42}
-\contentsline {subsubsection}{\numberline {8.2.2}Classification ($CLS_{1-7}$)}{19}{subsubsection.8.2.2}
-\contentsline {paragraph}{Evalutation Procedure}{19}{section*.45}
+\contentsline {subsubsection}{\numberline {8.2.2}Classification ($CLS_{1-7}$)}{18}{subsubsection.8.2.2}
+\contentsline {paragraph}{Evalutation Procedure}{18}{section*.45}
 \contentsline {subsubsection}{\numberline {8.2.3}Clustering ($CLU_{1}$)}{19}{subsubsection.8.2.3}
 \contentsline {paragraph}{Evalutation Procedure}{19}{section*.48}
 \contentsline {subsubsection}{\numberline {8.2.4}Intelligent Game Controllers ($IGC_{1}$)}{19}{subsubsection.8.2.4}
-\contentsline {paragraph}{Game Description and Rules}{20}{section*.49}
-\contentsline {paragraph}{Representation of Game State}{20}{section*.52}
-\contentsline {paragraph}{Neural Network Controller}{20}{section*.53}
-\contentsline {paragraph}{Fitness Function and Evaluation}{21}{section*.55}
-\contentsline {section}{\numberline {9}Results}{22}{section.9}
-\contentsline {subsection}{\numberline {9.1}Mathematical Function Optimization}{22}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Machine Learning}{23}{subsection.9.2}
-\contentsline {subsubsection}{\numberline {9.2.1}Function Approximation}{23}{subsubsection.9.2.1}
-\contentsline {subsubsection}{\numberline {9.2.2}Classification}{24}{subsubsection.9.2.2}
-\contentsline {subsubsection}{\numberline {9.2.3}Clustering}{24}{subsubsection.9.2.3}
-\contentsline {subsubsection}{\numberline {9.2.4}Intelligent Game Controllers}{24}{subsubsection.9.2.4}
-\contentsline {section}{\numberline {10}Discussion}{25}{section.10}
-\contentsline {section}{\numberline {11}Conclusions}{25}{section.11}
-\contentsline {section}{\numberline {12}Future Work}{25}{section.12}
-\contentsline {section}{References}{28}{section*.66}
-\contentsline {section}{Appendix \numberline {A}Algorithms}{29}{Appendix.a.A}
-\contentsline {subsection}{\numberline {A.1}Differential Evolution}{29}{subsection.a.A.1}
-\contentsline {subsection}{\numberline {A.2}Particle Swarm Optimization}{30}{subsection.a.A.2}
-\contentsline {subsection}{\numberline {A.3}Estimation of Distribution}{31}{subsection.a.A.3}
-\contentsline {subsection}{\numberline {A.4}Differential Estimation of Distribution}{32}{subsection.a.A.4}
+\contentsline {paragraph}{Game Description and Rules}{19}{section*.50}
+\contentsline {paragraph}{Representation of Game State}{20}{section*.53}
+\contentsline {paragraph}{Neural Network Controller}{21}{section*.54}
+\contentsline {paragraph}{Fitness Function and Evaluation}{21}{section*.56}
+\contentsline {section}{\numberline {9}Results}{21}{section.9}
+\contentsline {section}{\numberline {10}Discussion}{23}{section.10}
+\contentsline {section}{\numberline {11}Conclusions}{23}{section.11}
+\contentsline {section}{\numberline {12}Future Work}{23}{section.12}
+\contentsline {section}{References}{26}{section*.64}
+\contentsline {section}{Appendix \numberline {A}Algorithms}{27}{Appendix.a.A}
+\contentsline {subsection}{\numberline {A.1}Differential Evolution}{27}{subsection.a.A.1}
+\contentsline {subsection}{\numberline {A.2}Particle Swarm Optimization}{28}{subsection.a.A.2}
+\contentsline {subsection}{\numberline {A.3}Estimation of Distribution}{29}{subsection.a.A.3}
+\contentsline {subsection}{\numberline {A.4}Differential Estimation of Distribution}{30}{subsection.a.A.4}

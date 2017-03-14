@@ -26,45 +26,45 @@ I'm skipping whatever remains of this entry
 Warning--empty year in unter611evolutionary
 
 Done.
-You've used 44 entries,
+You've used 43 entries,
             4087 wiz_defined-function locations,
-            1084 strings with 15561 characters,
-and the built_in function-call counts, 33963 in all, are:
-= -- 2776
-> -- 730
-< -- 321
-+ -- 401
-- -- 112
-* -- 1594
-:= -- 5028
-add.period$ -- 98
-call.type$ -- 44
-change.case$ -- 36
-chr.to.int$ -- 738
-cite$ -- 45
-duplicate$ -- 2391
-empty$ -- 2779
-format.name$ -- 148
-if$ -- 8008
+            1078 strings with 15475 characters,
+and the built_in function-call counts, 33177 in all, are:
+= -- 2706
+> -- 716
+< -- 313
++ -- 393
+- -- 110
+* -- 1555
+:= -- 4904
+add.period$ -- 96
+call.type$ -- 43
+change.case$ -- 35
+chr.to.int$ -- 723
+cite$ -- 44
+duplicate$ -- 2333
+empty$ -- 2722
+format.name$ -- 145
+if$ -- 7824
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 387
-newline$ -- 155
-num.names$ -- 44
-pop$ -- 870
+int.to.str$ -- 43
+missing$ -- 378
+newline$ -- 152
+num.names$ -- 43
+pop$ -- 856
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2649
+skip$ -- 2587
 stack$ -- 0
-substring$ -- 1762
-swap$ -- 2010
-text.length$ -- 75
+substring$ -- 1726
+swap$ -- 1957
+text.length$ -- 72
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 44
+type$ -- 43
 warning$ -- 1
-while$ -- 178
-width$ -- 46
-write$ -- 441
+while$ -- 174
+width$ -- 45
+write$ -- 430
 (There were 3 error messages)

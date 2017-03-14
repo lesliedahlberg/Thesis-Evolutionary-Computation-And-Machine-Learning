@@ -1,4 +1,4 @@
-\section{Benchmark}
+\section{Benchmark} \label{section:benchmark}
 
 This section describes all benchmark components and how they will be evaluated. The benchmark consists of a mathematical function optimization component and machine learning component.
 
@@ -216,7 +216,9 @@ The functions are illustrated in two dimensions in figures~\ref{f1},~\ref{f2},~\
 
 \subsection{Machine Learning}
 
-To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN). The design of the neural network is one input layer with a size based on the problem dimension, two hidden layers and one output layer. I have chosen to use two hidden layers to make sure a good solution can be found quickly~\cite{329294}. The size of the hidden layers was set to $2/3$ and $1/3$ of the mean of the size of the input and output layers.
+This section describes the machine learning benchmarks, which primarily utilize feed-forward neural networks.
+
+%To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN). The design of the neural network is one input layer with a size based on the problem dimension, two hidden layers and one output layer. I have chosen to use two hidden layers to make sure a good solution can be found quickly~\cite{329294}. The size of the hidden layers was set to $2/3$ and $1/3$ of the mean of the size of the input and output layers.
 
 \subsubsection{Function Approximation ($FA_{1-6}$)}
 
@@ -353,7 +355,28 @@ Same as $FA_{1-6}$.
 
 \subsubsection{Intelligent Game Controllers ($IGC_{1}$)}
 
-Machine learning test set $ML_{1}$ uses evolutionary algorithms to evolve weights for feed-forward neural networks, which control the behavior of game-agent in the classic game of ``Snake''.
+
+Machine learning test set $IGC_{1}$ uses evolutionary algorithms to evolve weights for feed-forward neural networks, which control the behavior of a game-agent in the classic game of ``Snake''. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}.
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | }
+      \hline
+      Parameter & Value  \\ \hline
+      Parameter & Value \\ \hline
+      Individuals & 140 \\ \hline
+      Generations & 1000 \\ \hline
+      Grid dimension & 10*10 \\ \hline
+      Weight dimension & 140 \\ \hline
+      Repeat measurements & 10 \\ \hline
+      Repeat fitness measurements & 5 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark parameters for $FA_{1-6}$}
+  \label{table:fa1-6_params}
+\end{table}
 
 \paragraph{Game Description and Rules}
 
@@ -427,9 +450,9 @@ The neural network which controls is a feed-forward neural network with one hidd
 \begin{figure}[H]
   \centering
 
-  \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
+  \begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=.3\layersep]
       \tikzstyle{every pin edge}=[<-,shorten <=1pt]
-      \tikzstyle{neuron}=[circle,fill=black,minimum size=14pt,inner sep=0pt]
+      \tikzstyle{neuron}=[circle,fill=black,minimum size=10pt,inner sep=0pt]
       \tikzstyle{input neuron}=[neuron];
       \tikzstyle{output neuron}=[neuron];
       \tikzstyle{hidden neuron}=[neuron];

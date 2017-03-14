@@ -1,31 +1,6 @@
 \section{Results}
 
-This section presents benchmarks and measurements of the four main algorithms presented in this thesis. It is divided into two parts: the function optimization benchmark and the machine learning benchmark.
-
-\subsection{Mathematical Function Optimization}
-
-The function test-bed was tested with dimension size $D=10$, $D=30$ and $D=50$. The parameters for different dimension sizes are presented in table~\ref{t1}.
-
-\begin{table}[H]
-  \centering
-  \begin{center}
-    \begin{tabular}{ | l | c | r | }
-      \hline
-      Dimension & Max. Generations & Population size \\ \hline
-      10 & 667 & 150 \\ \hline
-      30 & 1200 & 250 \\ \hline
-      50 & 1429 & 350 \\
-      \hline
-    \end{tabular}
-  \end{center}
-  \caption{Parameters for different dimension sizes in the benchmark}
-  \label{t1}
-\end{table}
-
-The benchmark ran each test-case 30 times and recorded the average minimum value of the function and the standard deviation. The results are presented in table~\ref{r10},~\ref{r30} and~\ref{r50}. The lowest value is marked in bold font.
-
-
-
+This section presents results for the benchmarks of the four algorithms presented in this thesis. Table~\ref{table:f_res_10},~\ref{table:f_res_30},~\ref{table:f_res_50},~\ref{table:fa_res},~\ref{table:cls_res},~\ref{table:clu_res} and~\ref{table:snake_res} present the measured data.
 
 \begin{table}[H]
   \centering
@@ -48,7 +23,7 @@ The benchmark ran each test-case 30 times and recorded the average minimum value
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $D=10$}
-  \label{r10}
+  \label{table:f_res_10}
 \end{table}
 
 \begin{table}[H]
@@ -72,7 +47,7 @@ The benchmark ran each test-case 30 times and recorded the average minimum value
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $D=30$}
-  \label{r30}
+  \label{table:f_res_30}
 \end{table}
 
 \begin{table}[H]
@@ -96,36 +71,8 @@ The benchmark ran each test-case 30 times and recorded the average minimum value
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $D=50$}
-  \label{r50}
+  \label{table:f_res_50}
 \end{table}
-
-
-\subsection{Machine Learning}
-
-The algorithms were tested on four machine learning benchmarks: $ML_{1}$, $ML_{2}$, $ML_{3}$ and $ML_{4}$ as described in the section ``Method''. The dimensionality of the problem depends on the size of the input and output vectors of the data-sets and the size of the hidden layer of the neural networks. The hidden layer size was defines as the mean of the input- and output-layer sizes.
-
-
-\subsubsection{Function Approximation}
-
-The $ML_{1-3}$ results are shown in tables~\ref{ml1},~\ref{ml2} and~\ref{ml3}. The parameters are shown in table \ref{ml1-3_p}.
-
-\begin{table}[H]
-  \centering
-  \begin{center}
-    \footnotesize
-    \begin{tabular}{ | l | l| }
-      \hline
-      Parameter & Value \\ \hline
-      Individuals & 140 \\ \hline
-      Generations & 1000 \\ \hline
-      Repeat measurements & 10 \\ \hline
-    \end{tabular}
-  \end{center}
-  \caption{Benchmark parameters for $ML_{1-3}$}
-  \label{ml1-3_p}
-\end{table}
-
-\subsubsection{Classification}
 
 \begin{table}[H]
   \centering
@@ -146,10 +93,8 @@ The $ML_{1-3}$ results are shown in tables~\ref{ml1},~\ref{ml2} and~\ref{ml3}. T
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $ML_{1}$}
-  \label{ml1}
+  \label{table:fa_res}
 \end{table}
-
-\subsubsection{Clustering}
 
 \begin{table}[H]
   \centering
@@ -169,7 +114,7 @@ The $ML_{1-3}$ results are shown in tables~\ref{ml1},~\ref{ml2} and~\ref{ml3}. T
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $ML_{2}$}
-  \label{ml2}
+  \label{table:cls_res}
 \end{table}
 
 \begin{table}[H]
@@ -184,31 +129,7 @@ The $ML_{1-3}$ results are shown in tables~\ref{ml1},~\ref{ml2} and~\ref{ml3}. T
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $ML_{3}$}
-  \label{ml3}
-\end{table}
-
-
-\subsubsection{Intelligent Game Controllers}
-
-The $ML_{4}$ results are shown in table \ref{ml4}. The parameters are shown in table \ref{ml4_p}.
-
-\begin{table}[H]
-  \centering
-  \begin{center}
-    \footnotesize
-    \begin{tabular}{ | l | l| }
-      \hline
-      Parameter & Value \\ \hline
-      Individuals & 140 \\ \hline
-      Generations & 1000 \\ \hline
-      Grid dimension & 10*10 \\ \hline
-      Weight dimension & 140 \\ \hline
-      Repeat measurements & 10 \\ \hline
-      Repeat fitness measurements & 5 \\ \hline
-    \end{tabular}
-  \end{center}
-  \caption{Benchmark parameters for $ML_{4}$}
-  \label{ml4_p}
+  \label{table:clu_res}
 \end{table}
 
 \begin{table}[H]
@@ -223,5 +144,5 @@ The $ML_{4}$ results are shown in table \ref{ml4}. The parameters are shown in t
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $ML_{4}$}
-  \label{ml4}
+  \label{table:snake_res}
 \end{table}
