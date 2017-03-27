@@ -299,6 +299,9 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT figures/GA.png
 INPUT ./figures/GA.png
 INPUT ./figures/GA.png
+INPUT figures/GP.png
+INPUT ./figures/GP.png
+INPUT ./figures/GP.png
 INPUT figures/pso.png
 INPUT ./figures/pso.png
 INPUT ./figures/pso.png

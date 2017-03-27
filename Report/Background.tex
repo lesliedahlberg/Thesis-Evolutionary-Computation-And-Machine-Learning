@@ -103,7 +103,7 @@ Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attem
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.7\linewidth]{GA}
+  \includegraphics[width=.5\linewidth]{GA}
   \caption{Stages in GA (1) Evalution (2) Selection (3) Crossover (4) Mutation}
   \label{fig:GA}
 \end{figure}
@@ -153,7 +153,14 @@ Genetic programming (GP) differs from traditional genetic algorithms by evolving
 
 At it's most basic the programs are defines as functions which take a set of input parameters and produce an output. The programs are constructed from building blocks such as variables, numbers and operators. The initial population contains a set of such programs which have been initialized as random trees~\cite{Michalewicz1997}.
 
-The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test cases and the programs undergo cross-over and other mutations. Cross-over is defined as the exchange of subtrees between programs and produces two offspring from two parents~\cite{Michalewicz1997}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{GP}
+  \caption{Crossover in GP with two parents producing two offspring}
+  \label{fig:GP}
+\end{figure}
+
+The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test cases and the programs undergo cross-over and other mutations. Cross-over is defined as the exchange of subtrees between programs and produces two offspring from two parents~\cite{Michalewicz1997}, see figure~\ref{fig:GP}.
 
 More advanced versions of GP include function calls which enable the programs to remember useful symmetries and regularities and facilitate code reuse~\cite{Michalewicz1997}.
 
