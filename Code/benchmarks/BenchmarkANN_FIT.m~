@@ -15,8 +15,8 @@ setNames = {'simple' 'bodyfat' 'chemical' 'cho' 'engine' 'house'};
 datasets = 6;
 
 objectiveValue = 0;
-individuals = 50;
-generations = 250;
+individuals = 25;
+generations = 5;
 lower = -1;
 upper = 1;
 repeat = 5;
@@ -52,7 +52,7 @@ for ds=1:datasets
         end
         v(ds,alg) = mean(mins);
         s(ds,alg) = std(mins);
-        fprintf('\n');
+        
         
         
     end

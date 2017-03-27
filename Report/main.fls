@@ -275,8 +275,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
-INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT main.toc
 INPUT main.toc
@@ -298,6 +296,9 @@ INPUT ./introduction.tex
 INPUT ./background.tex
 INPUT ./background.tex
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT figures/GA.png
+INPUT ./figures/GA.png
+INPUT ./figures/GA.png
 INPUT figures/pso.png
 INPUT ./figures/pso.png
 INPUT ./figures/pso.png
@@ -305,6 +306,8 @@ INPUT ./related.tex
 INPUT ./related.tex
 INPUT ./problem.tex
 INPUT ./problem.tex
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 INPUT ./algorithm.tex
 INPUT ./algorithm.tex
 INPUT ./work.tex

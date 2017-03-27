@@ -505,7 +505,10 @@ The fitness function ensured that the snake has an ``easy start'' when it will b
 
 \subsection{Results}
 
-This section presents results for the benchmarks of the four algorithms presented in this thesis. Table~\ref{table:f_res_10},~\ref{table:f_res_30},~\ref{table:f_res_50},~\ref{table:fa_res},~\ref{table:cls_res},~\ref{table:clu_res} and~\ref{table:snake_res} present the measured data.
+This section presents results for the benchmarks of the four algorithms presented in this thesis.
+
+\paragraph{Function Optimization}
+At D=10 DEDA significantly outperforms the other algorithms at most unimodal functions. DE significantly outperforms the others at one unimodal and one multimodal function. PSO outperforms the others by a slight margin on most multimodal function. Separability does not seem to influence the results. Table~\ref{table:f_res_10} presents the data.
 
 \begin{table}[H]
   \centering
@@ -527,9 +530,11 @@ This section presents results for the benchmarks of the four algorithms presente
       10 & 3,26E+01 & 4,25E+00 & \textbf{1,73E+01} & 7,50E+00 & 2,11E+01 & 3,43E+00 & 2,05E+01 & 3,62E+00 \\ \hline
     \end{tabular}
   \end{center}
-  \caption{Benchmark results for $D=10$}
+  \caption{Benchmark results for $F_{1-10}$ $D=10$}
   \label{table:f_res_10}
 \end{table}
+
+At D=30 DEDA moderatly outperform the other algorithms at most unimodal functions. PSO outperform all other algortihms on the multimodal functions, but the results are fairly even. DEDA significantly outperforms the others on seperable unimodal algorithms. Table~\ref{table:f_res_30} presents the data.
 
 \begin{table}[H]
   \centering
@@ -551,9 +556,11 @@ This section presents results for the benchmarks of the four algorithms presente
       10 & 2,19E+02 & 1,09E+01 & \textbf{1,14E+02} & 3,78E+01 & 1,59E+02 & 3,78E+01 & 1,60E+02 & 8,53E+00 \\ \hline
     \end{tabular}
   \end{center}
-  \caption{Benchmark results for $D=30$}
+  \caption{Benchmark results for $F_{1-10}$ $D=30$}
   \label{table:f_res_30}
 \end{table}
+
+At D=50 the results are fairly even. DEDA significantly outperforms the others on seperable unimodal algorithms. The multimodal functions favor PSO, the unimodal function favor UMDA while DEDA's results are more scattered. Table~\ref{table:f_res_50} presents the data.
 
 \begin{table}[H]
   \centering
@@ -575,9 +582,12 @@ This section presents results for the benchmarks of the four algorithms presente
       10 & 4,48E+02 & 1,87E+01 & \textbf{2,79E+02} & 6,36E+01 & 3,20E+02 & 1,17E+01 & 3,27E+02 & 9,26E+00 \\ \hline
     \end{tabular}
   \end{center}
-  \caption{Benchmark results for $D=50$}
+  \caption{Benchmark results for $F_{1-10}$ $D=50$}
   \label{table:f_res_50}
 \end{table}
+
+\paragraph{Function Approximation}
+Table~\ref{table:fa_res} presents the data.
 
 \begin{table}[H]
   \centering
@@ -597,9 +607,12 @@ This section presents results for the benchmarks of the four algorithms presente
       house\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
     \end{tabular}
   \end{center}
-  \caption{Benchmark results for $ML_{1}$}
+  \caption{Benchmark results for $F_{1-10}$}
   \label{table:fa_res}
 \end{table}
+
+\paragraph{Classification}
+Table~\ref{table:cls_res} presents the data.
 
 \begin{table}[H]
   \centering
@@ -618,9 +631,12 @@ This section presents results for the benchmarks of the four algorithms presente
       wine\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
     \end{tabular}
   \end{center}
-  \caption{Benchmark results for $ML_{2}$}
+  \caption{Benchmark results for $CLS_{1-6}$}
   \label{table:cls_res}
 \end{table}
+
+\paragraph{Clustering}
+Table~\ref{table:clu_res} presents the data.
 
 \begin{table}[H]
   \centering
@@ -633,9 +649,13 @@ This section presents results for the benchmarks of the four algorithms presente
       simplecluster\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
     \end{tabular}
   \end{center}
-  \caption{Benchmark results for $ML_{3}$}
+  \caption{Benchmark results for $CLU_{1}$}
   \label{table:clu_res}
 \end{table}
+
+\paragraph{Intelligent Game Controllers}
+DE performs signigicantly worse than the other algorithms. PSO, UMDA and DEDA performs similarly, with PSO showing the best results. Table~\ref{table:snake_res} presents the data.
+
 
 \begin{table}[H]
   \centering
@@ -648,7 +668,7 @@ This section presents results for the benchmarks of the four algorithms presente
       snake & 2,32E+01 & 2,19E+00 & 2,92E+01 & 4,16E+00 & 2,78E+01 & 1,34E+01 & 2,69E+01 & 3,59E+00 \\ \hline
     \end{tabular}
   \end{center}
-  \caption{Benchmark results for $ML_{4}$}
+  \caption{Benchmark results for $IGC_{1}$}
   \label{table:snake_res}
 \end{table}
 

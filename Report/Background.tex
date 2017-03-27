@@ -99,7 +99,14 @@ Below the main paradighms of evolutionary computation will be discussed. They in
 
 \subsubsection{Genetic algorithms}
 
-Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attempt to apply biological adaptation to computational problems. GAs are multidemensional search algorithms which use populations of binary strings called chromosomes to evolve a solution to a problem. GAs use a selection operator, a mutation operator and a cross-over operator. The selection operator select individuals which are subjected to cross-over based on their fitness and cross-over combines their genetic material to form new individuals which are then randomly mutated~\cite{mitchel1999evolutionary}. See figure~\ref{algo:geneticalgorithm} for a simple GA.
+Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attempt to apply biological adaptation to computational problems. GAs are multidemensional search algorithms which use populations of binary strings called chromosomes to evolve a solution to a problem. GAs use a selection operator, a mutation operator and a cross-over operator. The selection operator select individuals which are subjected to cross-over based on their fitness and cross-over combines their genetic material to form new individuals which are then randomly mutated~\cite{mitchel1999evolutionary}. See algorithm~\ref{algo:geneticalgorithm} and figure~\ref{fig:GA} for a simple GA.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.7\linewidth]{GA}
+  \caption{Stages in GA (1) Evalution (2) Selection (3) Crossover (4) Mutation}
+  \label{fig:GA}
+\end{figure}
 
 \begin{algorithm}[h]
 

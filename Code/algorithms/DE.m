@@ -74,11 +74,11 @@ function [success, iterations, minimum, value] = DE(CostFunction, dimension, low
         minimum = bestIndividualPosition;
         value = bestIndividualCost;
         
-        if lastBestValue ~= bestIndividualCost
-            disp(bestIndividualCost);
-            lastBestValue = bestIndividualCost;
-            
-        end
+%         if lastBestValue ~= bestIndividualCost
+%             disp(bestIndividualCost);
+%             lastBestValue = bestIndividualCost;
+%             
+%         end
         
     end
 end
