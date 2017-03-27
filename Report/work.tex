@@ -1,6 +1,10 @@
-\section{Benchmark} \label{section:benchmark}
+\section{Experimental Results and Evaluation} \label{section:benchmark}
 
-This section describes all benchmark components and how they will be evaluated. The benchmark consists of a mathematical function optimization component and machine learning component.
+This section describes the design of five benchmarks ($F_{1-10}$, $FA_{1-6}$, $CLS_{1-7}$, $CLU_{1}$, $IGC_{1}$), presents the results of the measurements and discusses their significance.
+
+%\section{Benchmark} \label{section:benchmark}
+
+%This section describes all benchmark components and how they will be evaluated. The benchmark consists of a mathematical function optimization component and machine learning component.
 
 \subsection{Mathematical Function Optimization ($F_{1-10}$)}
 
@@ -214,13 +218,13 @@ The functions are illustrated in two dimensions in figures~\ref{f1},~\ref{f2},~\
   \end{figure}
 \end{minipage}
 
-\subsection{Machine Learning}
+%\subsection{Machine Learning}
 
-This section describes the machine learning benchmarks, which primarily utilize feed-forward neural networks.
+%This section describes the machine learning benchmarks, which primarily utilize feed-forward neural networks.
 
 %To evaluate the optimization algorithms further I set have set out to apply them on a variety of machine learning problems. These will predominantly be applications of feed-forward neural networks (FFNN). The design of the neural network is one input layer with a size based on the problem dimension, two hidden layers and one output layer. I have chosen to use two hidden layers to make sure a good solution can be found quickly~\cite{329294}. The size of the hidden layers was set to $2/3$ and $1/3$ of the mean of the size of the input and output layers.
 
-\subsubsection{Function Approximation ($FA_{1-6}$)}
+\subsection{Function Approximation ($FA_{1-6}$)}
 
 The optmization algorithms were used find the optimal weights for feed-forword neural networks. The neural networks were evaluated on six function approximation data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}. The data-sets are listed in table~\ref{table:fa1-6_data-sets}.
 
@@ -269,7 +273,7 @@ The data sets contain two matrices. One with sample input vectors to the neural 
 
 where $x$ is the input vector to neural network $y$, $t$ is the correct expected output which $y(x)$ should produce and n is the length of vector $x$.
 
-\subsubsection{Classification ($CLS_{1-7}$)}
+\subsection{Classification ($CLS_{1-7}$)}
 
 The optmization algorithms were used find the optimal weights for feed-forword neural networks. The neural networks were evaluated on seven classification data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:cls1-7_params}. The data-sets are listed in table~\ref{table:cls1-7_data-sets}.
 
@@ -314,7 +318,7 @@ The optmization algorithms were used find the optimal weights for feed-forword n
 
 Same as $FA_{1-6}$.
 
-\subsubsection{Clustering ($CLU_{1}$)}
+\subsection{Clustering ($CLU_{1}$)}
 
 The optmization algorithms were used find the optimal weights for feed-forword neural networks. The neural networks were evaluated on one clustering data-set which is available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:clu1_params}. The data-sets are listed in table~\ref{table:clu1_data-sets}.
 
@@ -353,7 +357,7 @@ The optmization algorithms were used find the optimal weights for feed-forword n
 
 Same as $FA_{1-6}$.
 
-\subsubsection{Intelligent Game Controllers ($IGC_{1}$)}
+\subsection{Intelligent Game Controllers ($IGC_{1}$)}
 
 
 Machine learning test set $IGC_{1}$ uses evolutionary algorithms to evolve weights for feed-forward neural networks, which control the behavior of a game-agent in the classic game of ``Snake''. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}.
@@ -498,3 +502,159 @@ The objective function, which is run by the optimization algorithms, takes the e
 \end{equation}
 
 The fitness function ensured that the snake has an ``easy start'' when it will be revarded for not dying, but then has to pursue food in order to maximize it's fitness.
+
+\subsection{Results}
+
+This section presents results for the benchmarks of the four algorithms presented in this thesis. Table~\ref{table:f_res_10},~\ref{table:f_res_30},~\ref{table:f_res_50},~\ref{table:fa_res},~\ref{table:cls_res},~\ref{table:clu_res} and~\ref{table:snake_res} present the measured data.
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
+      & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      1 & 3,88E-17 & 3,42E-17 & 1,65E-16 & 3,64E-16 & \textbf{1,67E-27} & 4,07E-28 & 0,00E+00 & 0,00E+00 \\ \hline
+      2 & 1,83E-08 & 1,24E-08 & 2,07E-06 & 3,36E-06 & 2,51E+02 & 1,42E+02 & \textbf{4,23E-27} & 3,10E-27 \\ \hline
+      3 & 5,19E-01 & 2,29E-01 & 4,88E+05 & 7,21E+05 & 1,09E+05 & 8,32E+04 & \textbf{4,96E-02} & 3,01E-02 \\ \hline
+      4 & 3,36E-07 & 2,59E-07 & 6,31E-05 & 9,10E-05 & 3,21E+02 & 2,16E+02 & \textbf{1,73E-26} & 2,16E-26 \\ \hline
+      5 & \textbf{4,24E-13} & 7,82E-13 & 4,94E+02 & 4,49E+02 & 1,67E+02 & 1,37E+02 & 6,57E+00 & 1,26E+01 \\ \hline
+      6 & \textbf{5,43E-05} & 1,24E-04 & 2,11E+02 & 7,15E+02 & 1,34E+04 & 4,30E+04 & 6,71E+00 & 5,83E-01 \\ \hline
+      7 & 4,87E-01 & 7,61E-02 & 2,74E-01 & 1,79E-01 & \textbf{1,87E-01} & 2,23E-01 & 3,41E-01 & 1,24E-01 \\ \hline
+      8 & 2,04E+01 & 7,20E-02 & \textbf{2,03E+01} & 8,82E-02 & 2,04E+01 & 8,15E-02 & 2,04E+01 & 6,88E-02 \\ \hline
+      9 & 2,50E+01 & 4,44E+00 & \textbf{1,76E+00} & 1,49E+00 & 2,35E+01 & 3,08E+00 & 1,80E+01 & 3,52E+00 \\ \hline
+      10 & 3,26E+01 & 4,25E+00 & \textbf{1,73E+01} & 7,50E+00 & 2,11E+01 & 3,43E+00 & 2,05E+01 & 3,62E+00 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $D=10$}
+  \label{table:f_res_10}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
+      & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      1 & 1,03E+00 & 1,53E-01 & 4,54E-10 & 7,66E-10 & 1,81E-25 & 7,66E-10 & \textbf{8,58E-28} & 1,40E-28 \\ \hline
+      2 & 3,07E+03 & 6,91E+02 & 1,42E+03 & 7,01E+02 & 1,71E+03 & 7,01E+02 & \textbf{4,84E+02} & 1,80E+02 \\ \hline
+      3 & 3,28E+07 & 5,84E+06 & 1,92E+07 & 1,12E+07 & 4,93E+06 & 1,12E+07 & 1,88E+07 & 4,86E+06 \\ \hline
+      4 & 6,06E+03 & 1,23E+03 & 1,50E+04 & 6,87E+03 & \textbf{3,63E+03} & 6,87E+03 & \textbf{6,74E+02} & 1,96E+02 \\ \hline
+      5 & 1,38E+03 & 3,54E+02 & 6,92E+03 & 2,55E+03 & 2,70E+03 & 2,55E+03 & \textbf{1,31E+02} & 9,21E+01 \\ \hline
+      6 & 2,99E+03 & 1,24E+03 & \textbf{5,30E+02} & 8,60E+02 & 8,57E+04 & 8,60E+02 & 7,32E+03 & 2,21E+04 \\ \hline
+      7 & 1,22E+00 & 5,36E-02 & \textbf{5,77E-02} & 5,18E-02 & 5,86E+00 & 5,18E-02 & 2,54E-01 & 4,25E-01 \\ \hline
+      8 & 2,09E+01 & 4,24E-02 & \textbf{2,09E+01} & 5,74E-02 & 2,10E+01 & 5,74E-02 & 2,10E+01 & 5,41E-02 \\ \hline
+      9 & 1,91E+02 & 9,58E+00 & \textbf{2,53E+01} & 5,97E+00 & 1,53E+02 & 5,97E+00 & 1,60E+02 & 8,27E+00 \\ \hline
+      10 & 2,19E+02 & 1,09E+01 & \textbf{1,14E+02} & 3,78E+01 & 1,59E+02 & 3,78E+01 & 1,60E+02 & 8,53E+00 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $D=30$}
+  \label{table:f_res_30}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
+      & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      1 & 5,64E+02 & 8,54E+01 & 1,20E-04 & 1,49E-04 & 1,04E-24 & 9,53E-26 & \textbf{2,14E-26} & 4,42E-27 \\ \hline
+      2 & 5,00E+04 & 4,88E+03 & 3,69E+04 & 1,02E+04 & \textbf{3,55E+03} & 6,45E+02 & 3,96E+04 & 5,00E+03 \\ \hline
+      3 & 2,52E+08 & 3,33E+07 & 8,68E+07 & 4,64E+07 & \textbf{1,31E+07} & 2,94E+06 & 1,96E+08 & 3,16E+07 \\ \hline
+      4 & 7,02E+04 & 9,89E+03 & 1,12E+05 & 3,09E+04 & \textbf{8,17E+03} & 1,71E+03 & 5,08E+04 & 7,70E+03 \\ \hline
+      5 & 1,33E+04 & 1,03E+03 & 1,48E+04 & 3,64E+03 & 4,31E+03 & 2,95E+02 & \textbf{2,71E+03} & 3,84E+02 \\ \hline
+      6 & 7,19E+06 & 2,18E+06 & 1,62E+04 & 3,11E+04 & \textbf{1,18E+04} & 2,68E+04 & 2,23E+04 & 1,09E+05 \\ \hline
+      7 & 3,32E+01 & 6,43E+00 & 1,05E+00 & 1,24E-01 & 1,25E+01 & 3,91E+00 & \textbf{6,04E-01} & 6,19E-01 \\ \hline
+      8 & 2,12E+01 & 2,28E-02 & \textbf{2,11E+01} & 5,09E-02 & 2,11E+01 & 4,97E-02 & 2,11E+01 & 3,28E-02 \\ \hline
+      9 & 3,94E+02 & 1,24E+01 & \textbf{7,93E+01} & 1,46E+01 & 3,14E+02 & 1,41E+01 & 3,27E+02 & 1,13E+01 \\ \hline
+      10 & 4,48E+02 & 1,87E+01 & \textbf{2,79E+02} & 6,36E+01 & 3,20E+02 & 1,17E+01 & 3,27E+02 & 9,26E+00 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $D=50$}
+  \label{table:f_res_50}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      simplefit\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      abalone\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      bodyfat\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      building\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      chemical\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      cho\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      engine\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      house\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $ML_{1}$}
+  \label{table:fa_res}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      simpleclass\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      cancer\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      crab\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      glass\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      iris\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      thyroid\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      wine\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $ML_{2}$}
+  \label{table:cls_res}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      simplecluster\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $ML_{3}$}
+  \label{table:clu_res}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
+      \hline
+      F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
+       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
+      snake & 2,32E+01 & 2,19E+00 & 2,92E+01 & 4,16E+00 & 2,78E+01 & 1,34E+01 & 2,69E+01 & 3,59E+00 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Benchmark results for $ML_{4}$}
+  \label{table:snake_res}
+\end{table}
+
+
+\subsection{Discussion}
+
+
+{\color{blue}
+H\"ar presenterar du tolkning av resultaten och bed\"omer deras signifikans. Diskutera m\"ojliga konsekvenser av resultaten, och presentera eventuella rekommendationer. Det \"ar viktigt att du redog\"or f\"or om du uppn\r{a}tt de m\r{a}l du satte upp och d\"armed besvarat din fr\r{a}gest\"allning och uppn\r{a}tt syftet med arbetet. Avsnittet ska ocks\r{a} inneh\r{a}lla reflektioner kring arbetet, som till exempel dess begr\"ansningar.  Du kan ocks\r{a} diskutera l\"osningar p\r{a} problem som du identifierat och diskuterat tidigare, eller ta upp andra problem som arbetet inte behandlat, fr\r{a}gor som ej besvarats. Koppla ocks\r{a} dina resultat till tidigare arbeten. P\r{a} s\r{a} s\"att kan diskussionen bli ett samtal med det du skrev i tidigare avsnitt.  Slutligen ska du s\"atta ditt eget arbete i ett st\"orre sammanhang, bredda ditt perspektiv. Kan dina resultatet generaliseras? Kan det du gjort anv\"andas i n\r{a}got annat sammanhang?}

@@ -15,10 +15,10 @@ datasets = 6;
 
 objectiveValue = 0;
 individuals = 50;
-generations = 1;
+generations = 250;
 lower = -1;
 upper = 1;
-repeat = 10;
+repeat = 5;
 
 v = ones(datasets,algorithms);
 s = ones(datasets,algorithms);
@@ -40,7 +40,7 @@ for ds=1:datasets
     for alg=1:algorithms
         mins = zeros(1, repeat);
         fprintf(strcat('\ta=',num2str(alg),'\n'));
-        for r=1:repeat
+        parfor r=1:repeat
             
             eval = @(x)ann_dataset_sse(x, layers, xx, t);
             [success, iterations, minimum, value] = ALG{alg}(eval, dim, lower, upper, g, individuals, objectiveValue);
