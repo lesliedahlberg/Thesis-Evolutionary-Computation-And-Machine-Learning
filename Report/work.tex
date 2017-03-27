@@ -251,12 +251,12 @@ The optmization algorithms were used find the optimal weights for feed-forword n
     \begin{tabular}{ | c | c | c | c | c | }
       \hline
       Data-set & Description & Input-Dimension & Output-Dimension & Weight-Dimension \\ \hline
-      simplefit\_dataset & Simple fitting & 1 & 1 & 4 \\ \hline
-      bodyfat\_dataset & Body fat percentage & 13 & 1 & 196 \\ \hline
-      chemical\_dataset & Chemical sensor & 8 & 1 & 81 \\ \hline
-      cho\_dataset & Cholesterol & 21 & 3 & 528 \\ \hline
-      engine\_dataset & Engine behavior  & 2 & 2 & 12 \\ \hline
-      house\_dataset & House value & 13 & 1 & 196 \\ \hline
+      simplefit & Simple fitting & 1 & 1 & 4 \\ \hline
+      bodyfat & Body fat percentage & 13 & 1 & 196 \\ \hline
+      chemical & Chemical sensor & 8 & 1 & 81 \\ \hline
+      cho & Cholesterol & 21 & 3 & 528 \\ \hline
+      engine & Engine behavior  & 2 & 2 & 12 \\ \hline
+      house & House value & 13 & 1 & 196 \\ \hline
     \end{tabular}
   \end{center}
   \caption{Data-sets for $FA_{1-6}$}
@@ -300,13 +300,13 @@ The optmization algorithms were used find the optimal weights for feed-forword n
     \begin{tabular}{ | c | c | c | c | c | }
       \hline
       Data-set & Description & Input-Dimension & Output-Dimension & Weight-Dimension \\ \hline
-      simpleclass\_dataset & imple pattern recognition & 2 & 4 & 18 \\ \hline
-      cancer\_dataset & Breast cancer & 9 & 2 & 110 \\ \hline
-      crab\_dataset & Crab gender & 6 & 2 & 56 \\ \hline
-      glass\_dataset & Glass chemical & 9 & 2 & 110 \\ \hline
-      iris\_dataset & Iris flower & 4 & 3 & 35 \\ \hline
-      thyroid\_dataset & Thyroid function  & 21 & 3 & 528 \\ \hline
-      wine\_dataset & Italian wines & 13 & 3 & 224 \\ \hline
+      simpleclass & imple pattern recognition & 2 & 4 & 18 \\ \hline
+      cancer & Breast cancer & 9 & 2 & 110 \\ \hline
+      crab & Crab gender & 6 & 2 & 56 \\ \hline
+      glass & Glass chemical & 9 & 2 & 110 \\ \hline
+      iris & Iris flower & 4 & 3 & 35 \\ \hline
+      thyroid & Thyroid function  & 21 & 3 & 528 \\ \hline
+      wine & Italian wines & 13 & 3 & 224 \\ \hline
     \end{tabular}
   \end{center}
   \caption{Data-sets for $CLS_{1-7}$}
@@ -345,7 +345,7 @@ The optmization algorithms were used find the optimal weights for feed-forword n
     \begin{tabular}{ | c | c | c | c | c | }
       \hline
       Data-set & Description & Input-Dimension & Output-Dimension & Weight-Dimension \\ \hline
-      simplecluster\_dataset & Simple clustering & 2 & 4 & 18 \\ \hline
+      simplecluster & Simple clustering & 2 & 4 & 18 \\ \hline
     \end{tabular}
   \end{center}
   \caption{Data-sets for $CLU_{1}$}
@@ -507,8 +507,8 @@ The fitness function ensured that the snake has an ``easy start'' when it will b
 
 This section presents results for the benchmarks of the four algorithms presented in this thesis.
 
-\paragraph{Function Optimization}
-At D=10 DEDA significantly outperforms the other algorithms at most unimodal functions. DE significantly outperforms the others at one unimodal and one multimodal function. PSO outperforms the others by a slight margin on most multimodal function. Separability does not seem to influence the results. Table~\ref{table:f_res_10} presents the data.
+\paragraph{Function Optimization at D=10}
+DEDA significantly outperforms the other algorithms at most unimodal functions. DE significantly outperforms the others at one unimodal and one multimodal function. PSO outperforms the others by a slight margin on most multimodal function. Separability does not seem to influence the results. Table~\ref{table:f_res_10} presents the data.
 
 \begin{table}[H]
   \centering
@@ -534,7 +534,8 @@ At D=10 DEDA significantly outperforms the other algorithms at most unimodal fun
   \label{table:f_res_10}
 \end{table}
 
-At D=30 DEDA moderatly outperform the other algorithms at most unimodal functions. PSO outperform all other algortihms on the multimodal functions, but the results are fairly even. DEDA significantly outperforms the others on seperable unimodal algorithms. Table~\ref{table:f_res_30} presents the data.
+\paragraph{Function Optimization at D=30}
+DEDA moderatly outperform the other algorithms at most unimodal functions. PSO outperform all other algortihms on the multimodal functions, but the results are fairly even. DEDA significantly outperforms the others on seperable unimodal algorithms. Table~\ref{table:f_res_30} presents the data.
 
 \begin{table}[H]
   \centering
@@ -560,7 +561,8 @@ At D=30 DEDA moderatly outperform the other algorithms at most unimodal function
   \label{table:f_res_30}
 \end{table}
 
-At D=50 the results are fairly even. DEDA significantly outperforms the others on seperable unimodal algorithms. The multimodal functions favor PSO, the unimodal function favor UMDA while DEDA's results are more scattered. Table~\ref{table:f_res_50} presents the data.
+\paragraph{Function Optimization at D=50}
+The results are fairly even. DEDA significantly outperforms the others on seperable unimodal algorithms. The multimodal functions favor PSO, the unimodal function favor UMDA while DEDA's results are more scattered. Table~\ref{table:f_res_50} presents the data.
 
 \begin{table}[H]
   \centering
@@ -587,24 +589,22 @@ At D=50 the results are fairly even. DEDA significantly outperforms the others o
 \end{table}
 
 \paragraph{Function Approximation}
-Table~\ref{table:fa_res} presents the data.
+The results are fairly even but DEDA performs best overall. PSO is second best. Table~\ref{table:fa_res} presents the data.
 
 \begin{table}[H]
   \centering
   \begin{center}
-    \footnotesize
+    \scriptsize
     \begin{tabular}{ | c | c | c | c | c | c | c | c | c | }
       \hline
       F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
        & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
-      simplefit\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      abalone\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      bodyfat\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      building\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      chemical\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      cho\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      engine\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      house\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       simplefit	&	\textbf{6,91E-01}	&	1,67E-16	&	6,91E-01	&	3,90E-04	&	6,64E+00	&	7,12E-01	&	1,09E+00	&	1,13E-01 \\ \hline
+       bodyfat	&	1,92E+01	&	2,59E+00	&	1,90E+01	&	2,14E+00	&	1,96E+01	&	2,11E+00	&	\textbf{1,69E+01}	&	1,26E+00 \\ \hline
+       chemical	&	2,58E+01	&	5,53E-04	&	2,46E+01	&	1,97E+00	&	1,15E+05	&	2,38E+03	&	\textbf{2,43E+01}	&	2,11E+00 \\ \hline
+       cho	&	2,07E+03	&	2,16E+02	&	\textbf{1,86E+03}	&	4,84E+01	&	5,32E+03	&	6,24E+02	&	1,97E+03	&	1,10E+02 \\ \hline
+       engine	&	1,29E+05	&	7,09E+04	&	7,86E+04	&	6,86E+03	&	9,91E+05	&	2,59E+03	&	\textbf{5,61E+04}	&	1,27E+04 \\ \hline
+       house	&	3,19E+01	&	4,81E-01	&	\textbf{2,00E+01}	&	1,93E+00	&	2,45E+01	&	2,68E+00	&	2,03E+01	&	5,90E+00 \\ \hline
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $F_{1-10}$}
@@ -622,13 +622,13 @@ Table~\ref{table:cls_res} presents the data.
       \hline
       F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
        & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
-      simpleclass\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      cancer\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      crab\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      glass\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      iris\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      thyroid\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      wine\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      simpleclass & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      cancer & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      crab & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      glass & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      iris & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      thyroid & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      wine & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $CLS_{1-6}$}
@@ -636,7 +636,7 @@ Table~\ref{table:cls_res} presents the data.
 \end{table}
 
 \paragraph{Clustering}
-Table~\ref{table:clu_res} presents the data.
+The results are fairly even but DEDA performs best overall. Table~\ref{table:clu_res} presents the data.
 
 \begin{table}[H]
   \centering
@@ -646,7 +646,7 @@ Table~\ref{table:clu_res} presents the data.
       \hline
       F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
        & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
-      simplecluster\_dataset & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      simplecluster	&	1,65E-01	&	1,39E-02	&	1,74E-01	&	1,57E-02	&	2,17E-01	&	2,05E-02	&	\textbf{1,51E-01}	&	8,12E-03 \\ \hline
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $CLU_{1}$}
