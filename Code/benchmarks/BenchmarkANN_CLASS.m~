@@ -26,7 +26,7 @@ v = ones(datasets,algorithms);
 s = ones(datasets,algorithms);
 tic
 %for ds=1:datasets
-for ds=6:6
+for ds=:7
     xx = xxxx{ds};
     t = tt{ds};
 
@@ -40,7 +40,7 @@ for ds=6:6
 
     g = generations;
 
-    for alg=4:4
+    for alg=1:algorithms
         mins = zeros(1, repeat);
         fprintf(strcat('\ta=',num2str(alg)));
         
@@ -60,8 +60,8 @@ for ds=6:6
     end
 end
 time = toc
-tm = table(v(:,1), v(:,2), v(:,3), v(:,4))
-td = table(s(:,1), s(:,2), s(:,3), s(:,4))
+tm = table(v(:,1), v(:,2), v(:,3), v(:,4), 'VariableNames', algNames)
+td = table(s(:,1), s(:,2), s(:,3), s(:,4), 'VariableNames', algNames)
 
 %tm = table(v(:,1), v(:,2), v(:,3), v(:,4), 'RowNames', setNames, 'VariableNames', algNames)
 %td = table(s(:,1), s(:,2), s(:,3), s(:,4), 'RowNames', setNames, 'VariableNames', algNames)

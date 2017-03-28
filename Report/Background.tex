@@ -1,10 +1,10 @@
 \section{Background}
 
-This section will aim to provide a general overview of the field of evolutionary compution. General terms and procedured which are often utizilied in EC will be explained and the most well known traditional approaches will be presented. Current research will also be introduced. The emerging algorithms relevant to this thesis can be found in the section ``Algorithms''.
+This section will aim to provide a general overview of the field of evolutionary computation. General terms and procedures which are often utilized in EC will be explained and the most well known traditional approaches will be presented. Current research will also be introduced. The emerging algorithms relevant to this thesis can be found in the section ``Algorithms''.
 
 \subsection{Evolutionary Algorithms}
 
-Evolutionary algorithms work on the concept of populations. A population is a set of individuals which in the case of optimization problems contain a vector of parameters which the model we wish to optimize can accept and transform into an output. The population is initialized by some procedure to contain a random set of parameter vectors, these should cover the whole parameter range of the model uniformely. The inital population is evaluated and an iterative process is started which continues as long as no suitable solution is found. During this iterative process the current population is selected, altered and evaluated. During selection a set of individuals which display promising characterisitcs are selected to live on to the next generation of the population. They are then altered randomly to create diversity in the population and evaluated. This process creates a new generation of the population on each iteration and continues until a solution is found or some other restriction is encoutered~\cite{Eiben20021}. The concept is demonstrated in figure~\ref{algo:basicevolution} with $P(t)$ representing the population at generation $t$.
+Evolutionary algorithms work on the concept of populations. A population is a set of individuals which in the case of optimization problems contain a vector of parameters which the model we wish to optimize can accept and transform into an output. The population is initialized by some procedure to contain a random set of parameter vectors, these should cover the whole parameter range of the model uniformly. The initial population is evaluated and an iterative process is started which continues as long as no suitable solution is found. During this iterative process the current population is selected, altered and evaluated. During selection a set of individuals which display promising characteristics are selected to live on to the next generation of the population. They are then altered randomly to create diversity in the population and evaluated. This process creates a new generation of the population on each iteration and continues until a solution is found or some other restriction is encountered~\cite{Eiben20021}. The concept is demonstrated in figure~\ref{algo:basicevolution} with $P(t)$ representing the population at generation $t$.
 
 \begin{algorithm}[h]
 
@@ -24,19 +24,19 @@ Evolutionary algorithms work on the concept of populations. A population is a se
 
 \end{algorithm}
 
-Here the fundamental builing blocks of evolutionary algorithms will be presented and explained. Most of these term are universal to all approaches which will be covered in this thesis and neccesary to properly understand them.
+Here the fundamental building blocks of evolutionary algorithms will be presented and explained. Most of these term are universal to all approaches which will be covered in this thesis and necessary to properly understand them.
 
 \subsubsection{Representation}
 
-The first step in using evolutionary algorithms is creating a representation which can encode all possible solutions to the problem at hand. Here two different terms are distinguished. The term phenotype denotes the representation that can be directly applied to the problem and the genotype denotes the specific encoding of the phenotype which is manipulated inside the evolutionary algorithm. In optimization tasks a valid phenotype could be a vector of integer numbers which act as parameters to a function while the genotype would be a binary representation of the numbers which can be altered by manipulating individuals bits. The terms phenotype, candidate solution and individual are used interchangably to denote the representation as used by the model while chromosome, genotype and individual are used to refer to the representation inside the evolutionary algorithm~\cite{Eiben2015_whatevolutionary}.
+The first step in using evolutionary algorithms is creating a representation which can encode all possible solutions to the problem at hand. Here two different terms are distinguished. The term phenotype denotes the representation that can be directly applied to the problem and the genotype denotes the specific encoding of the phenotype which is manipulated inside the evolutionary algorithm. In optimization tasks a valid phenotype could be a vector of integer numbers which act as parameters to a function while the genotype would be a binary representation of the numbers which can be altered by manipulating individuals bits. The terms phenotype, candidate solution and individual are used interchangeably to denote the representation as used by the model while chromosome, genotype and individual are used to refer to the representation inside the evolutionary algorithm~\cite{Eiben2015_whatevolutionary}.
 
 \paragraph{Binary representation}
 
-Genetic algorithms (GA) traditionally use a binary representation to store individual genotypes. The representations is a string of fixed length over the alphabet $\{0,1\}$. The problem thus becomes a boolean optimziation problem of the form $ f:\{0,1\}^l \rightarrow \mathbb{R}$, where the mappings $h:M \rightarrow \{0,1\}^l$ and $h':\{0,1\}^l \rightarrow M$ are used to encode and decode the parameters and solutions~\cite{back1997evolutionary}.
+Genetic algorithms (GA) traditionally use a binary representation to store individual genotypes. The representations is a string of fixed length over the alphabet $\{0,1\}$. The problem thus becomes a boolean optimization problem of the form $ f:\{0,1\}^l \rightarrow \mathbb{R}$, where the mappings $h:M \rightarrow \{0,1\}^l$ and $h':\{0,1\}^l \rightarrow M$ are used to encode and decode the parameters and solutions~\cite{back1997evolutionary}.
 
 \paragraph{Integer representation}
 
-Integer representations have been proposed by some researches~\cite{unter611evolutionary}. This approach is usefull when dealing with problems where we need to select certain elements in a particular order, e.g. graph-problems, path-finding problems, the knapsack problem, etc.~\cite{Eiben201511}.
+Integer representations have been proposed by some researches~\cite{unter611evolutionary}. This approach is useful when dealing with problems where we need to select certain elements in a particular order, e.g. graph-problems, path-finding problems, the knapsack problem, etc.~\cite{Eiben201511}.
 
 
 \paragraph{Real-valued representation}
@@ -65,7 +65,7 @@ In the generational model the entire population is replaces at once.
 
 \subsubsection{Parent selection mechanism}
 
-Parent selection serves to improve the quality of a population by selecting which individuals will survive into the next generation. The selected individuals are called parents as they usually undergo some form of alteration or combination with other individuals before progressing to the next generation. The selection method is usually probabilistic and gives better solutions a higher probability and worse solutions a lower probability to survive. It's important that bad solutions still recieve a positive probabilty since the population might otherwise lose diversity and coalesce around a false local optimimum~\cite{Eiben2015_whatevolutionary}.
+Parent selection serves to improve the quality of a population by selecting which individuals will survive into the next generation. The selected individuals are called parents as they usually undergo some form of alteration or combination with other individuals before progressing to the next generation. The selection method is usually probabilistic and gives better solutions a higher probability and worse solutions a lower probability to survive. It's important that bad solutions still receive a positive probability since the population might otherwise lose diversity and coalesce around a false local optimum~\cite{Eiben2015_whatevolutionary}.
 
 
 \subsubsection{Variation operators}
@@ -74,13 +74,13 @@ Variation operators introduce new features into the genotypes of a population by
 
 \subsubsection{Survivor selection mechanism}
 
-Survivor selection takes place after new offspring have been generated and determines which individuals are allowed to live on into the next generation. It is often refered to as the replacement strategy and contrary to parent selection it is usually deterministic. Two popular mechanisms are fitness-based selection and age-based selection. Fitness-based selection determines the next generation by selecting the individuals with the highest fitness while age-based selection allows only the offspring to survive~\cite{Eiben2015_whatevolutionary}.
+Survivor selection takes place after new offspring have been generated and determines which individuals are allowed to live on into the next generation. It is often referred to as the replacement strategy and contrary to parent selection it is usually deterministic. Two popular mechanisms are fitness-based selection and age-based selection. Fitness-based selection determines the next generation by selecting the individuals with the highest fitness while age-based selection allows only the offspring to survive~\cite{Eiben2015_whatevolutionary}.
 
 
 
 \subsubsection{Initatilization}
 
-Initialization is the process during which the intial population is generated. The genotypes are usually generated randomly from a uniform distribution based on some range of acceptable input values. If a good solution is known before hand variations of it can be include in the initial population as a bias, but this can sometimes cause more problems than it solves~\cite{Eiben20021}.
+Initialization is the process during which the initial population is generated. The genotypes are usually generated randomly from a uniform distribution based on some range of acceptable input values. If a good solution is known before hand variations of it can be include in the initial population as a bias, but this can sometimes cause more problems than it solves~\cite{Eiben20021}.
 
 \subsubsection{Termination condition}
 
@@ -90,21 +90,21 @@ The termination condidion determines for how long the algorithm is run. Four cri
   \item If a maximum number CPU-cycles or iterations is reached
   \item If a known optimum is reached
   \item If the fitness value does not improve for a considerable amount of time
-  \item If the diversity of the polation drops below a given threshold
+  \item If the diversity of the population drops below a given threshold
 \end{enumerate}
 
 \subsection{Traditional Evolutionary Algorithms}
 
-Below the main paradighms of evolutionary computation will be discussed. They include genetic algorithms, evolution strategy, evolutionary programming and genetic programming.
+Below the main paradigms of evolutionary computation will be discussed. They include genetic algorithms, evolution strategy, evolutionary programming and genetic programming.
 
 \subsubsection{Genetic algorithms}
 
-Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attempt to apply biological adaptation to computational problems. GAs are multidemensional search algorithms which use populations of binary strings called chromosomes to evolve a solution to a problem. GAs use a selection operator, a mutation operator and a cross-over operator. The selection operator select individuals which are subjected to cross-over based on their fitness and cross-over combines their genetic material to form new individuals which are then randomly mutated~\cite{mitchel1999evolutionary}. See algorithm~\ref{algo:geneticalgorithm} and figure~\ref{fig:GA} for a simple GA.
+Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attempt to apply biological adaptation to computational problems. GAs are multidimensional search algorithms which use populations of binary strings called chromosomes to evolve a solution to a problem. GAs use a selection operator, a mutation operator and a cross-over operator. The selection operator select individuals which are subjected to cross-over based on their fitness and cross-over combines their genetic material to form new individuals which are then randomly mutated~\cite{mitchel1999evolutionary}. See algorithm~\ref{algo:geneticalgorithm} and figure~\ref{fig:GA} for a simple GA.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=.5\linewidth]{GA}
-  \caption{Stages in GA (1) Evalution (2) Selection (3) Crossover (4) Mutation}
+  \caption{Stages in GA (1) Evaluation (2) Selection (3) Crossover (4) Mutation}
   \label{fig:GA}
 \end{figure}
 
@@ -117,7 +117,7 @@ Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attem
        \While{termination-condition not fulfilled}
         \State Evaluate the fitness $F(x)$ of each chromosome $x$
         \Repeat
-          \State Select two chromosomes probabilistally from the population
+          \State Select two chromosomes probabilistically from the population
           \State based on their fitness
           \State With the cross-over probability $P_c$ create two new offspring
           \State from the two selected chromosomes using the crossover operator.
@@ -143,7 +143,7 @@ Newer versions of the algorithm include $(\mu + \lambda)-\text{ES}$ and $(\mu,\l
 
 \subsubsection{Evolutionary programming}
 
-Evolutionary programming (EP) was created as an alternative approach to artificial intelligence. The idea was to evolve finite state machines (FSM) which observe the environment and elicit appropriate responses~\cite{Fogel1996}. The environmet is modeled as a sequence of input characters selected from an alphabet and the role of the FSM is to produce the next character in sequence. The fitness of an FSM is measured by a function which tests the FSM on a sequence of input characters, starting with the first character and then progressing to include one more addition character on each iteration. The function measures the correct prediction rate of the FSM and determines it's score~\cite{Michalewicz1997}.
+Evolutionary programming (EP) was created as an alternative approach to artificial intelligence. The idea was to evolve finite state machines (FSM) which observe the environment and elicit appropriate responses~\cite{Fogel1996}. The environment is modeled as a sequence of input characters selected from an alphabet and the role of the FSM is to produce the next character in sequence. The fitness of an FSM is measured by a function which tests the FSM on a sequence of input characters, starting with the first character and then progressing to include one more addition character on each iteration. The function measures the correct prediction rate of the FSM and determines it's score~\cite{Michalewicz1997}.
 
 Each FSM creates one offspring which is mutated by one or more of the following operators: change of input symbol, change of state transition, addition of state, deletion of state and change of initial state. The next generation is then selected from the pool of parents and offspring, selecting the best 50\% of all available solutions. A general form of EP has recently been devised which can tackle continuous optimization tasks~\cite{Michalewicz1997}.
 
@@ -232,7 +232,7 @@ Particle Swarm Optimization (PSO)~\cite{Das2008} was introduced in 1995 by Kenne
 
 where $\vec{X}$ is a vector which represents the real parameters given to the function. The intent is to find a point in the n-dimensional parameter hyperspace that minimizes the function.
 
-PSO is a parallel search technique where a set of particles  fly through the n-dimensional search space and probe solutions along the way. Each particle $P$ has a current position $\vec{x}(t)$, a current velocity $\vec{v}(t)$, a personal best position $\vec{p}(t)$ and the neighborhoods best position $\vec{g}(t)$. A neighborhood $N$ is a collection of particles which act as independent swarms. Neigborhoods can be social or geographical. Social neigborhoods do not change and contain the same particles during the entire optimization process, while geographical neighborhoods are dynamic and consist only of particles which are near to one another. The neighborhood is often set to be identical to the whole swarm of particles, denoted $S$.
+PSO is a parallel search technique where a set of particles  fly through the n-dimensional search space and probe solutions along the way. Each particle $P$ has a current position $\vec{x}(t)$, a current velocity $\vec{v}(t)$, a personal best position $\vec{p}(t)$ and the neighborhoods best position $\vec{g}(t)$. A neighborhood $N$ is a collection of particles which act as independent swarms. Neighbourhoods can be social or geographical. Social neighbourhoods do not change and contain the same particles during the entire optimization process, while geographical neighborhoods are dynamic and consist only of particles which are near to one another. The neighborhood is often set to be identical to the whole swarm of particles, denoted $S$.
 
 \begin{figure}[H]
   \centering
@@ -259,7 +259,7 @@ The “self-confidence” constant affects how much self-exploration a particle 
   \caption{PSO algorithm}
   \label{algo:pso}
     \begin{algorithmic}
-      \State Init particals with random postitions
+      \State Init particles with random positions
       $\vec{x}(0)$ and velocities $\vec{v}(0)$
       \Repeat
         \ForAll{Particles $i$}
@@ -311,4 +311,4 @@ where $p(x)$ is the global multivariate density, D is the vector length and $p_d
 
 \subsection{Method}
 
-A benchmark was constructed to perform the algorithm comparison. Both mathematical function optimization and machine learning test-sets were used. These are described in detail in the section \ref{section:benchmark}. Matlab was used to implement the algorithms and benchmarks because it provides easy access to important mathematical and scientific constructs which are usually not available in conventional programming languages. Matlab is also widely used in the field of evolutinary computation.
+A benchmark was constructed to perform the algorithm comparison. Both mathematical function optimization and machine learning test-sets were used. These are described in detail in the section \ref{section:benchmark}. Matlab was used to implement the algorithms and benchmarks because it provides easy access to important mathematical and scientific constructs which are usually not available in conventional programming languages. Matlab is also widely used in the field of evolutionary computation.

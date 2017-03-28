@@ -73,11 +73,6 @@
 \contentsline {paragraph}{Clustering}{23}{section*.69}
 \contentsline {paragraph}{Intelligent Game Controllers}{23}{section*.71}
 \contentsline {subsection}{\numberline {6.7}Discussion}{23}{subsection.6.7}
-\contentsline {section}{\numberline {7}Conclusions}{24}{section.7}
+\contentsline {section}{\numberline {7}Conclusions}{23}{section.7}
 \contentsline {section}{\numberline {8}Future Work}{24}{section.8}
 \contentsline {section}{References}{27}{section*.73}
-\contentsline {section}{Appendix \numberline {A}Algorithms}{28}{Appendix.a.A}
-\contentsline {subsection}{\numberline {A.1}Differential Evolution}{28}{subsection.a.A.1}
-\contentsline {subsection}{\numberline {A.2}Particle Swarm Optimization}{29}{subsection.a.A.2}
-\contentsline {subsection}{\numberline {A.3}Estimation of Distribution}{30}{subsection.a.A.3}
-\contentsline {subsection}{\numberline {A.4}Differential Estimation of Distribution}{31}{subsection.a.A.4}

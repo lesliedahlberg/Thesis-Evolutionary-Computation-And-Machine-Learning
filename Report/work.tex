@@ -226,7 +226,7 @@ The functions are illustrated in two dimensions in figures~\ref{f1},~\ref{f2},~\
 
 \subsection{Function Approximation ($FA_{1-6}$)}
 
-The optmization algorithms were used find the optimal weights for feed-forword neural networks. The neural networks were evaluated on six function approximation data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}. The data-sets are listed in table~\ref{table:fa1-6_data-sets}.
+The optimization algorithms were used find the optimal weights for feed-forward neural networks. The neural networks were evaluated on six function approximation data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}. The data-sets are listed in table~\ref{table:fa1-6_data-sets}.
 
 \begin{table}[H]
   \centering
@@ -275,7 +275,7 @@ where $x$ is the input vector to neural network $y$, $t$ is the correct expected
 
 \subsection{Classification ($CLS_{1-7}$)}
 
-The optmization algorithms were used find the optimal weights for feed-forword neural networks. The neural networks were evaluated on seven classification data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:cls1-7_params}. The data-sets are listed in table~\ref{table:cls1-7_data-sets}.
+The optimization algorithms were used find the optimal weights for feed-forward neural networks. The neural networks were evaluated on seven classification data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:cls1-7_params}. The data-sets are listed in table~\ref{table:cls1-7_data-sets}.
 
 \begin{table}[H]
   \centering
@@ -320,7 +320,7 @@ Same as $FA_{1-6}$.
 
 \subsection{Clustering ($CLU_{1}$)}
 
-The optmization algorithms were used find the optimal weights for feed-forword neural networks. The neural networks were evaluated on one clustering data-set which is available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:clu1_params}. The data-sets are listed in table~\ref{table:clu1_data-sets}.
+The optimization algorithms were used find the optimal weights for feed-forward neural networks. The neural networks were evaluated on one clustering data-set which is available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:clu1_params}. The data-sets are listed in table~\ref{table:clu1_data-sets}.
 
 \begin{table}[H]
   \centering
@@ -383,7 +383,7 @@ Machine learning test set $IGC_{1}$ uses evolutionary algorithms to evolve weigh
 
 \paragraph{Game Description and Rules}
 
-The game is made up of a $n*m$ square grid through which a snake can freely move. The snake consists of a sequence of interconneted blocks and is divided into a head which moves in a certain direction and a tail which follows the head. Food blocks randomly appear on block at a time on the grid and the snake's objective is eat these blocks. When the snake's head touches the food block the block vanishes and the snake grows one square in length. If the head of the snake tries to move outside the grid it dies and the game ends. If the head of the snake collides with the tail it also and dies and the game ends. The snake's head can move in four direction: up, down, left and right. If the snake tries to move in the opposite of it's currect direction it also dies. The snake has a starvation counter which forces it to pursue food and eat. The starvation counter is initialized to the starvation threshold when the game begins and decreases by one every time the snake moves. When the snake eats, the starvation counter is increased once by the starvation threshold. Figure~\ref{snake} illustrates the game grid. Figure~\ref{snake_alg} described the algorithm for the game. The game's parameters are explained in table~\ref{snake_p}.
+The game is made up of a $n*m$ square grid through which a snake can freely move. The snake consists of a sequence of interconnected blocks and is divided into a head which moves in a certain direction and a tail which follows the head. Food blocks randomly appear on block at a time on the grid and the snake's objective is eat these blocks. When the snake's head touches the food block the block vanishes and the snake grows one square in length. If the head of the snake tries to move outside the grid it dies and the game ends. If the head of the snake collides with the tail it also and dies and the game ends. The snake's head can move in four direction: up, down, left and right. If the snake tries to move in the opposite of it's current direction it also dies. The snake has a starvation counter which forces it to pursue food and eat. The starvation counter is initialized to the starvation threshold when the game begins and decreases by one every time the snake moves. When the snake eats, the starvation counter is increased once by the starvation threshold. Figure~\ref{snake} illustrates the game grid. Figure~\ref{snake_alg} described the algorithm for the game. The game's parameters are explained in table~\ref{snake_p}.
 
 \begin{figure}[H]
   \centering
@@ -412,7 +412,7 @@ The game is made up of a $n*m$ square grid through which a snake can freely move
 
 \paragraph{Representation of Game State}
 
-In order to control the snake with a neural network a representation of the state of the game has to be generated before each move. The chosen representation is a 12-dimensinal vector in the range $[0,1]$. The initial default value of all dimensions is zero. Dimensions 1-4 indicates with a value of one whether any dangerous object (the tail or the edge of the grid) is immediatly to the left, to the right, above or below the snake's head. Dimensions 5-8 indicate the distribution of the tail relative to the head of the snake. Floating-point numbers indicate how much of the tail is above, below, to the right and to the left of the head. Dimensions 9-12 indicate with a value of one when food is to the left, to the right, above or below the snake's head.
+In order to control the snake with a neural network a representation of the state of the game has to be generated before each move. The chosen representation is a 12-dimensional vector in the range $[0,1]$. The initial default value of all dimensions is zero. Dimensions 1-4 indicates with a value of one whether any dangerous object (the tail or the edge of the grid) is immediately to the left, to the right, above or below the snake's head. Dimensions 5-8 indicate the distribution of the tail relative to the head of the snake. Floating-point numbers indicate how much of the tail is above, below, to the right and to the left of the head. Dimensions 9-12 indicate with a value of one when food is to the left, to the right, above or below the snake's head.
 
 \begin{algorithm}[h]
 
@@ -501,7 +501,7 @@ The objective function, which is run by the optimization algorithms, takes the e
   fitness = \text{foodEaten} + \frac{1}{1-e^{-\text{movesMade}}}
 \end{equation}
 
-The fitness function ensured that the snake has an ``easy start'' when it will be revarded for not dying, but then has to pursue food in order to maximize it's fitness.
+The fitness function ensured that the snake has an ``easy start'' when it will be rewarded for not dying, but then has to pursue food in order to maximize it's fitness.
 
 \subsection{Results}
 
@@ -535,7 +535,7 @@ DEDA significantly outperforms the other algorithms at most unimodal functions. 
 \end{table}
 
 \paragraph{Function Optimization at D=30}
-DEDA moderatly outperform the other algorithms at most unimodal functions. PSO outperform all other algortihms on the multimodal functions, but the results are fairly even. DEDA significantly outperforms the others on seperable unimodal algorithms. Table~\ref{table:f_res_30} presents the data.
+DEDA moderately outperform the other algorithms at most unimodal functions. PSO outperform all other algorithms on the multimodal functions, but the results are fairly even. DEDA significantly outperforms the others on separable unimodal algorithms. Table~\ref{table:f_res_30} presents the data.
 
 \begin{table}[H]
   \centering
@@ -562,7 +562,7 @@ DEDA moderatly outperform the other algorithms at most unimodal functions. PSO o
 \end{table}
 
 \paragraph{Function Optimization at D=50}
-The results are fairly even. DEDA significantly outperforms the others on seperable unimodal algorithms. The multimodal functions favor PSO, the unimodal function favor UMDA while DEDA's results are more scattered. Table~\ref{table:f_res_50} presents the data.
+The results are fairly even. DEDA significantly outperforms the others on separable unimodal algorithms. The multimodal functions favor PSO, the unimodal function favor UMDA while DEDA's results are more scattered. Table~\ref{table:f_res_50} presents the data.
 
 \begin{table}[H]
   \centering
@@ -612,7 +612,7 @@ The results are fairly even but DEDA performs best overall. PSO is second best. 
 \end{table}
 
 \paragraph{Classification}
-Table~\ref{table:cls_res} presents the data.
+DEDA and UMDA perform best. The results are even overall. Table~\ref{table:cls_res} presents the data.
 
 \begin{table}[H]
   \centering
@@ -622,13 +622,13 @@ Table~\ref{table:cls_res} presents the data.
       \hline
       F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
        & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
-      simpleclass & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      cancer & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      crab & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      glass & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      iris & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      thyroid & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
-      wine & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+       simpleclass & 1,76E-01	&	1,29E-02	&	1,83E-01	&	7,07E-03	&	1,97E-01	&	2,56E-02	&	\textbf{1,43E-01}	&	7,76E-03 \\ \hline
+       cancer  & 7,74E-02	&	9,95E-03	&	6,48E-02	&	1,40E-02	&	\textbf{3,23E-02}	&	9,32E-04	&	5,26E-02	&	6,65E-03 \\ \hline
+       crab  & 1,83E-01	&	3,25E-02	&	1,27E-01	&	2,54E-02	&	\textbf{1,20E-01}	&	3,70E-02	&	6,35E-02	&	5,26E-02 \\ \hline
+       glass &  1,25E-01	&	3,54E-02	&	\textbf{7,45E-02}	&	1,95E-02	&	9,71E-02	&	2,11E-02	&	9,91E-02	&	4,33E-02 \\ \hline
+       iris  & 1,63E-01	&	7,31E-03	&	1,26E-01	&	3,22E-02	&	1,31E-01	&	3,18E-02	&	\textbf{6,67E-02}	&	5,23E-02 \\ \hline
+       thyroid &  2,00E-01	&	3,66E-02	&	2,25E-01	&	4,84E-02	&	\textbf{1,17E-01}	&	1,24E-02	&	--------	&	-------- \\ \hline
+       wine  & 3,45E-01	&	2,33E-02	&	3,06E-01	&	2,25E-02	&	2,79E-01	&	2,52E-02	&	\textbf{2,59E-01}	&	7,80E-02 \\ \hline
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $CLS_{1-6}$}
@@ -654,7 +654,7 @@ The results are fairly even but DEDA performs best overall. Table~\ref{table:clu
 \end{table}
 
 \paragraph{Intelligent Game Controllers}
-DE performs signigicantly worse than the other algorithms. PSO, UMDA and DEDA performs similarly, with PSO showing the best results. Table~\ref{table:snake_res} presents the data.
+DE performs significantly worse than the other algorithms. PSO, UMDA and DEDA performs similarly, with PSO showing the best results. Table~\ref{table:snake_res} presents the data.
 
 
 \begin{table}[H]
@@ -665,7 +665,7 @@ DE performs signigicantly worse than the other algorithms. PSO, UMDA and DEDA pe
       \hline
       F & \multicolumn{2}{c|}{DE} & \multicolumn{2}{c|}{PSO} & \multicolumn{2}{c|}{EDA} & \multicolumn{2}{c |}{DEDA} \\ \hline
        & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
-      snake & 2,32E+01 & 2,19E+00 & 2,92E+01 & 4,16E+00 & 2,78E+01 & 1,34E+01 & 2,69E+01 & 3,59E+00 \\ \hline
+      snake & 2,32E+01 & 2,19E+00 & \textbf{2,92E+01} & 4,16E+00 & 2,78E+01 & 1,34E+01 & 2,69E+01 & 3,59E+00 \\ \hline
     \end{tabular}
   \end{center}
   \caption{Benchmark results for $IGC_{1}$}
@@ -675,6 +675,4 @@ DE performs signigicantly worse than the other algorithms. PSO, UMDA and DEDA pe
 
 \subsection{Discussion}
 
-
-{\color{blue}
-H\"ar presenterar du tolkning av resultaten och bed\"omer deras signifikans. Diskutera m\"ojliga konsekvenser av resultaten, och presentera eventuella rekommendationer. Det \"ar viktigt att du redog\"or f\"or om du uppn\r{a}tt de m\r{a}l du satte upp och d\"armed besvarat din fr\r{a}gest\"allning och uppn\r{a}tt syftet med arbetet. Avsnittet ska ocks\r{a} inneh\r{a}lla reflektioner kring arbetet, som till exempel dess begr\"ansningar.  Du kan ocks\r{a} diskutera l\"osningar p\r{a} problem som du identifierat och diskuterat tidigare, eller ta upp andra problem som arbetet inte behandlat, fr\r{a}gor som ej besvarats. Koppla ocks\r{a} dina resultat till tidigare arbeten. P\r{a} s\r{a} s\"att kan diskussionen bli ett samtal med det du skrev i tidigare avsnitt.  Slutligen ska du s\"atta ditt eget arbete i ett st\"orre sammanhang, bredda ditt perspektiv. Kan dina resultatet generaliseras? Kan det du gjort anv\"andas i n\r{a}got annat sammanhang?}
+PSO is the best algorithm for multimodal functions and also performs best at controlling neural networks in game controllers. DEDA performs well at unimodal function at all dimensions, while UMDA works well at higher dimensions. DEDA produces the best results when optimizing neural networks. UMDA also works well when optimizing neural networks for clustering.
