@@ -305,6 +305,9 @@ INPUT ./figures/GP.png
 INPUT figures/pso.png
 INPUT ./figures/pso.png
 INPUT ./figures/pso.png
+INPUT figures/FFNN.png
+INPUT ./figures/FFNN.png
+INPUT ./figures/FFNN.png
 INPUT ./related.tex
 INPUT ./related.tex
 INPUT ./problem.tex

@@ -1,6 +1,6 @@
 \section{Background}
 
-This section will aim to provide a general overview of the field of evolutionary computation. General terms and procedures which are often utilized in EC will be explained and the most well known traditional approaches will be presented. Current research will also be introduced. The emerging algorithms relevant to this thesis can be found in the section ``Algorithms''.
+This section will aim to provide a general overview of the field of evolutionary computation. General terms and procedures which are often utilized in EC will be explained and the most well known traditional approaches will be presented. The necessary concepts from machine learning will be presented. The emerging algorithms relevant to this thesis can be found in the section ``Algorithms''.
 
 \subsection{Evolutionary Algorithms}
 
@@ -373,6 +373,64 @@ where $p(x)$ is the global multivariate density, D is the vector length and $p_d
     \end{algorithmic}
 
 \end{algorithm}
+
+\subsection{Machine learning concepts}
+
+The machine learning concepts needed for this thesis are artificial neural networks (ANN), specifically feed-forward neural networks (FFNN). Artificial neural networks are mathematical models which are based on the functioning of biological neuron in the brain. They are usefull for predicting future behaviour and events, trends, function approximation and data-classification. FFNNs are a popular type of ANN, often reffered to as mutli-layer perceptrons.  ANNs have to be trained on training data in order to function properly and the most widely used and most popular method for this is backpropagation (BP)~\cite{gardner1998artificial}.
+
+Backpropagation is a local minimization algorithm which works in n-dimensions. It can therefore be replaced by other optimiation algorithms such as genetic and other evolutionary algorithms. This is what will be considered in my thesis~\cite{gardner1998artificial}.
+
+\subsubsection{Feed-Forward Neural Networks}
+
+ANNs usually consist of five components
+
+\begin{enumerate}
+  \item A graph containing nodes (neurons) and link between nodes
+  \item A variable which holds the state of each node
+  \item A real-valued weight for each link between nodes
+  \item A real-valued threshold for wach node
+  \item A transfer function which calculates the value of a nodes state variable based on the states of nodes which precede the node and are connected to it with links
+\end{enumerate}
+
+FFNNs consists of one input layer of neurons which accept a vector of input signals, one or more ``hidden'' layers of intermediary neurons which process the signal and one output layer which produces the final result in the form of an output vector. In FFNNs all neurons are interconnected with all neurons in neigboring layers. These connections have weights which modulate the strenghs of the respective connections~\cite{montana1989training}. See figur~\ref{figure:FFNN} for a simple FFNN with two neurons ($z_1$ and $z_2$) in the input layer, which are linked to three hidden neurons ($y_1$, $y_2$ and $y_3$), which are in turn linked to two output neurons ($o_1$ and $o_2$). The weights are represented by $v_{ij}$ and $w_{ij}$.
+
+\paragraph{Evaluating the neural network}
+
+The value of a neuron $x_i$ in the network is determined according to the equations
+
+\begin{equation}
+  x_i = f(\xi_i)
+  \label{neuron}
+\end{equation}
+
+\begin{equation}
+  \xi_i = v_i + \sum_{j = 0}^{n} {\omega_{ij}x_{j}}
+  \label{neuron_sum}
+\end{equation}
+
+\noindent
+where $n$ is the number of neurons in the preceding layer, $x_j$ are the neurons in the preceding layer and $v_i$ are the weights between $x_i$ and $x_j$.
+
+The function $f$ is the transfer function and is defines as
+
+\begin{equation}
+  f(\xi) = \frac {1} {1 + exp(-\xi)}
+\end{equation}
+
+The threshold is added as an extra neurons to each layer except the output layer to simplify the calculations. The threshold neuron always has the value of $-1$. The actuall threshold value is determined by the weights of the link going out of the threshold neuron.~\cite{svozil1997introduction}.
+
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=10cm]{FFNN}
+    \caption{Feed-Forward Neural Network}
+    \label{figure:FFNN}
+\end{figure}
+
+
+\paragraph{Backpropagation}
+
+Backpropagation (BP) is the most popular method for training neuron networks. Training data is send through the network and the output vector is subtracted from a result vector which contain the correct output values. An error value is then calculated by the means of the sum of squared errors. Subsequently all weights in the network are sligtly adjusted to accomodate the calculated error. After a number of iterations this process produces the correct combination of weights~\cite{engelbrecht2007computational}.
 
 \subsection{Method}
 
