@@ -218,7 +218,24 @@ This section describes the three algorithms which were benchmarked together with
 
 \subsubsection{Differential Evolution}
 
-Differential evolution~\cite{Storn1997} is a stochastic optimization algorithm which works on populations of parameter vectors. The problem to minimize will be denoted by $f(x)$ where $X=[x_1,x_2,x_3,...x_D]$ and $D$ is equal to the number of variables taken as input parameters by $f(x)$. The algorithm consists of multiple steps which will be described in detail below.
+Differential evolution~\cite{Storn1997} is a stochastic optimization algorithm which works on populations of parameter vectors. The problem to minimize will be denoted by $f(x)$ where $X=[x_1,x_2,x_3,...x_D]$ and $D$ is equal to the number of variables taken as input parameters by $f(x)$. The algorithm consists of multiple steps which will be described in detail below. See algorithm~\ref{algo:de}
+
+\begin{algorithm}[h]
+  \caption{DE algorithm}
+  \label{algo:de}
+    \begin{algorithmic}
+      \State Init population within bounds
+      \State Evaluate fitness of populationCost
+      \Repeat
+        \ForAll{Individuals $x$}
+          \State Select three other random individuals a, b and c
+          \State Create mutant vector $v=a+F(b-c)$
+          \State Create trial vector $u$ by blending $x$ with $v$ (taking at least one gene from $u$)
+          \State Replace $x$ with $u$ if $fitness(u) > fitness(x)$
+        \EndFor
+      \Until{End condition}
+    \end{algorithmic}
+\end{algorithm}
 
 The first step in DE is to create an initial population, the size of the population is $N$ and it will be represented by a matrix $x$ where $g$ is the generation and $n=1,2,3,...,N$:
 
@@ -348,7 +365,7 @@ where $p(x)$ is the global multivariate density, D is the vector length and $p_d
       \Repeat
         \State Evaluate P
         \State Select the best t\% of P into S
-        \State Let m be the mean S
+        \State Let m be the mean of S
         \State Let s be the standard deviation of S
         \State Sample S' from normal distribution using m and s
         \State Create new generation of P from S' and S

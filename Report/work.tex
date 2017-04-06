@@ -503,12 +503,15 @@ The objective function, which is run by the optimization algorithms, takes the e
 
 The fitness function ensured that the snake has an ``easy start'' when it will be rewarded for not dying, but then has to pursue food in order to maximize it's fitness.
 
+
 \subsection{Results}
 
 This section presents results for the benchmarks of the four algorithms presented in this thesis.
 
 \paragraph{Function Optimization at D=10}
 DEDA significantly outperforms the other algorithms at most unimodal functions. DE significantly outperforms the others at one unimodal and one multimodal function. PSO outperforms the others by a slight margin on most multimodal function. Separability does not seem to influence the results. Table~\ref{table:f_res_10} presents the data.
+
+For $F_1$ EDA significantly outperforms DE and PSO, while DEDA lags far behind. For $F_2$ DEDA finds significantly better results than the rests, while EDA performs the worst. For $F_3$ DEDA performs best followed by DE, but PSO and EDA do not find good solutions at all. For $F_4$ DEDA significantly outperforms the rest and EDA does not find any good results at all. For $F_5$ DE significantly outperforms the rest, DEDA finds an acceptable results and PSO and EDA do not find any good results. For $F_6$ DE significantly outperforms the rest, DEDA finds an acceptable results and PSO and EDA do not find any good results. For $F_7$ EDA find the best solution but all algorithms achieve similar results. For $F_8$ PSO find the best solution but all algorithms achieve similar results. For $F_9$ PSO find the best solution but all algorithms achieve similar results. For $F_{10}$ PSO find the best solution but all algorithms achieve similar results.
 
 \begin{table}[H]
   \centering
@@ -537,6 +540,8 @@ DEDA significantly outperforms the other algorithms at most unimodal functions. 
 \paragraph{Function Optimization at D=30}
 DEDA moderately outperform the other algorithms at most unimodal functions. PSO outperform all other algorithms on the multimodal functions, but the results are fairly even. DEDA significantly outperforms the others on separable unimodal algorithms. Table~\ref{table:f_res_30} presents the data.
 
+For $F_1$ DEDA performs best closely followed by EDA. PSO also finds a good result but DE finds a significantly worse result. For $F_2$ all algorithms find similar solutions and DEDA finds the best one. For $F_3$ all algorithms find similar solutions and EDA finds the best one. For $F_4$ all algorithms find somewhat similar solutions and DEDA finds the best one. For $F_5$ all algorithms find somewhat similar solutions and DEDA finds the best one. For $F_6$ all algorithms find somewhat similar solutions and DEDA finds the best one. For $F_7$ PSO finds the best solution followed EDA and DE and  DEDA find worse solutions. For $F_8$ all algorithms find similar solutions and PSO finds the best one. For $F_9$ DE, EDA and DEDA find similar solutions, but PSO finds a somewhat better solution. For $F_{10}$ all algorithms find similar solutions and PSO finds the best one.
+
 \begin{table}[H]
   \centering
   \begin{center}
@@ -547,8 +552,8 @@ DEDA moderately outperform the other algorithms at most unimodal functions. PSO 
       & Avg & Std & Avg & Std & Avg & Std & Avg & Std \\ \hline
       1 & 1,03E+00 & 1,53E-01 & 4,54E-10 & 7,66E-10 & 1,81E-25 & 7,66E-10 & \textbf{8,58E-28} & 1,40E-28 \\ \hline
       2 & 3,07E+03 & 6,91E+02 & 1,42E+03 & 7,01E+02 & 1,71E+03 & 7,01E+02 & \textbf{4,84E+02} & 1,80E+02 \\ \hline
-      3 & 3,28E+07 & 5,84E+06 & 1,92E+07 & 1,12E+07 & 4,93E+06 & 1,12E+07 & 1,88E+07 & 4,86E+06 \\ \hline
-      4 & 6,06E+03 & 1,23E+03 & 1,50E+04 & 6,87E+03 & \textbf{3,63E+03} & 6,87E+03 & \textbf{6,74E+02} & 1,96E+02 \\ \hline
+      3 & 3,28E+07 & 5,84E+06 & 1,92E+07 & 1,12E+07 & \textbf{4,93E+06} & 1,12E+07 & 1,88E+07 & 4,86E+06 \\ \hline
+      4 & 6,06E+03 & 1,23E+03 & 1,50E+04 & 6,87E+03 & 3,63E+03 & 6,87E+03 & \textbf{6,74E+02} & 1,96E+02 \\ \hline
       5 & 1,38E+03 & 3,54E+02 & 6,92E+03 & 2,55E+03 & 2,70E+03 & 2,55E+03 & \textbf{1,31E+02} & 9,21E+01 \\ \hline
       6 & 2,99E+03 & 1,24E+03 & \textbf{5,30E+02} & 8,60E+02 & 8,57E+04 & 8,60E+02 & 7,32E+03 & 2,21E+04 \\ \hline
       7 & 1,22E+00 & 5,36E-02 & \textbf{5,77E-02} & 5,18E-02 & 5,86E+00 & 5,18E-02 & 2,54E-01 & 4,25E-01 \\ \hline
@@ -563,6 +568,17 @@ DEDA moderately outperform the other algorithms at most unimodal functions. PSO 
 
 \paragraph{Function Optimization at D=50}
 The results are fairly even. DEDA significantly outperforms the others on separable unimodal algorithms. The multimodal functions favor PSO, the unimodal function favor UMDA while DEDA's results are more scattered. Table~\ref{table:f_res_50} presents the data.
+
+For $F_1$ DEDA find the best results closely followed by EDA. DE finds a bad solution and PSO is in-between DE and EDA.
+For $F_2$ DE, PSO and DEDA find similar solutions. EDA outperforms the all by a moderate margin.
+For $F_3$ all algorithms perform similarly. EDA performs best, followed by PSO.
+For $F_4$ EDA performs best, followed by DE and DEDA. PSO finds the worst solution.
+For $F_5$ DEDA finds the best solution, closely followed by EDA, while DE and PSO find somewhat worse solutions.
+For $F_6$ DE performs signigicantly worse than the rest, which perform very similarly. EDA finds the best solution.
+For $F_7$ DEDA finds a good solution while PSO performs somewhat poorer and DE and EDA find the worst solutions.
+For $F_8$ all algorithms find similar solutions. PSO finds the best solution.
+For $F_9$ all algorithms find somewhat similar solutions. PSO finds the best solution.
+For $F_{10}$ all algorithms find similar solutions. PSO finds the best solution.
 
 \begin{table}[H]
   \centering
@@ -591,6 +607,8 @@ The results are fairly even. DEDA significantly outperforms the others on separa
 \paragraph{Function Approximation}
 The results are fairly even but DEDA performs best overall. PSO is second best. Table~\ref{table:fa_res} presents the data.
 
+For $simplefit$ DE and PSO find the best solutions. For $bodyfat$ DEDA finds the best solution but all algorithms deliver similar results. For $chemical$ DEDA, PSO and DE find similar solutions. DEDA performs best and EDA finds a much worse solution. For $cho$ PSO finds the best solution but all algorithms deliver similar results. For $engine$ DEDA performs best, closelly followed by PSO. DE and EDA perform somewhat worse. For $house$ PSO finds the best solution but all algorithms deliver similar results.
+
 \begin{table}[H]
   \centering
   \begin{center}
@@ -614,6 +632,8 @@ The results are fairly even but DEDA performs best overall. PSO is second best. 
 \paragraph{Classification}
 DEDA and UMDA perform best. The results are even overall. Table~\ref{table:cls_res} presents the data.
 
+For $simpleclass$ DEDA finds the best solution but all algorithms deliver similar results. All algorithms find good solution for $cancer$ but EDA has a slight edge. For $crab$ EDA finds the best solutions, closely followed by PSO and DE, while DEDA finds a somewhat worse solution. For $glass$ PSO finds the best solutions, closely followed by EDA and DEDA, while DE finds a somewhat worse solution. For $iris$ DEDA finds the best solution and DE, PSO and EDA find somewhat worse solutions. For $thyroid$ EDA finds the best solution but all algorithms deliver similar results. For $wine$ DEDA finds the best solution but all algorithms deliver similar results.
+
 \begin{table}[H]
   \centering
   \begin{center}
@@ -627,7 +647,7 @@ DEDA and UMDA perform best. The results are even overall. Table~\ref{table:cls_r
        crab  & 1,83E-01	&	3,25E-02	&	1,27E-01	&	2,54E-02	&	\textbf{1,20E-01}	&	3,70E-02	&	6,35E-02	&	5,26E-02 \\ \hline
        glass &  1,25E-01	&	3,54E-02	&	\textbf{7,45E-02}	&	1,95E-02	&	9,71E-02	&	2,11E-02	&	9,91E-02	&	4,33E-02 \\ \hline
        iris  & 1,63E-01	&	7,31E-03	&	1,26E-01	&	3,22E-02	&	1,31E-01	&	3,18E-02	&	\textbf{6,67E-02}	&	5,23E-02 \\ \hline
-       thyroid &  2,00E-01	&	3,66E-02	&	2,25E-01	&	4,84E-02	&	\textbf{1,17E-01}	&	1,24E-02	&	--------	&	-------- \\ \hline
+       thyroid &  2,00E-01	&	3,66E-02	&	2,25E-01	&	4,84E-02	&	\textbf{1,17E-01}	&	1,24E-02	&	1,80E-01	&	3,57E-02 \\ \hline
        wine  & 3,45E-01	&	2,33E-02	&	3,06E-01	&	2,25E-02	&	2,79E-01	&	2,52E-02	&	\textbf{2,59E-01}	&	7,80E-02 \\ \hline
     \end{tabular}
   \end{center}
