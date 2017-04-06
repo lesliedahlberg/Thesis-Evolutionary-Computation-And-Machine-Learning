@@ -8,15 +8,15 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: ./references.bib
-Repeated entry---line 223 of file ./references.bib
+Repeated entry---line 239 of file ./references.bib
  : @article{gamperle2002parameter
  :                               ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 295 of file ./references.bib
+Repeated entry---line 311 of file ./references.bib
  : @article{rahnamayan2008opposition
  :                                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 571 of file ./references.bib
+Repeated entry---line 587 of file ./references.bib
  : @article{zhang2015comprehensive
  :                                ,
 I'm skipping whatever remains of this entry
@@ -26,45 +26,45 @@ I'm skipping whatever remains of this entry
 Warning--empty year in unter611evolutionary
 
 Done.
-You've used 43 entries,
+You've used 44 entries,
             4087 wiz_defined-function locations,
-            1078 strings with 15475 characters,
-and the built_in function-call counts, 33177 in all, are:
-= -- 2706
-> -- 716
-< -- 313
-+ -- 393
-- -- 110
-* -- 1555
-:= -- 4904
-add.period$ -- 96
-call.type$ -- 43
+            1083 strings with 15603 characters,
+and the built_in function-call counts, 33929 in all, are:
+= -- 2767
+> -- 731
+< -- 320
++ -- 401
+- -- 112
+* -- 1590
+:= -- 5015
+add.period$ -- 98
+call.type$ -- 44
 change.case$ -- 35
-chr.to.int$ -- 723
-cite$ -- 44
-duplicate$ -- 2333
-empty$ -- 2722
-format.name$ -- 145
-if$ -- 7824
+chr.to.int$ -- 741
+cite$ -- 45
+duplicate$ -- 2380
+empty$ -- 2789
+format.name$ -- 148
+if$ -- 8004
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 378
-newline$ -- 152
-num.names$ -- 43
-pop$ -- 856
+int.to.str$ -- 44
+missing$ -- 385
+newline$ -- 157
+num.names$ -- 44
+pop$ -- 876
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2587
+skip$ -- 2645
 stack$ -- 0
-substring$ -- 1726
-swap$ -- 1957
-text.length$ -- 72
+substring$ -- 1768
+swap$ -- 1998
+text.length$ -- 73
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 43
+type$ -- 44
 warning$ -- 1
-while$ -- 174
-width$ -- 45
-write$ -- 430
+while$ -- 179
+width$ -- 46
+write$ -- 441
 (There were 3 error messages)

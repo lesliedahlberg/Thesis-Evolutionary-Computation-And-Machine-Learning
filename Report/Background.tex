@@ -68,14 +68,62 @@ In the generational model the entire population is replaces at once.
 Parent selection serves to improve the quality of a population by selecting which individuals will survive into the next generation. The selected individuals are called parents as they usually undergo some form of alteration or combination with other individuals before progressing to the next generation. The selection method is usually probabilistic and gives better solutions a higher probability and worse solutions a lower probability to survive. It's important that bad solutions still receive a positive probability since the population might otherwise lose diversity and coalesce around a false local optimum~\cite{Eiben2015_whatevolutionary}.
 
 
+
+\paragraph{Fitness proportional selection}
+
+Fitness proportional selection (FPS) assigns a selection probability to an individual based on it's absolute fitness. This results in very good individuals overtaking the population quickly and premature convergence. If individuals have very similar fitness values the selection pressure becomes low. This mechanism is also very dependent on the exact form the of the fitness function~\cite{Eiben2015asdfasd}.
+
+\paragraph{Ranking selection}
+
+In ranking selection the population if sorted according to the individuals fitness values and the selection pressure is kept constant. A constant number of the best individuals is the selected from the sorted list~\cite{Eiben2015asdfasd}.
+
+\paragraph{Tournament selection}
+
+Tournament selection enables selection without global knowledge of the population's fitness. A number of individuals are chosen at random and the best one is selected. This process is repeated until the desired number of individuals is selected~\cite{Eiben2015asdfasd}.
+
+
 \subsubsection{Variation operators}
 
 Variation operators introduce new features into the genotypes of a population by modifying or mixing existing genotypes. They can be divided into two types: unary operators which take one genotype and stochastically alter it to introduce random change and n-ary operators which mix the features of 2 or more genotypes. Unary operators are called mutation operators while n-ary operators are called cross-over or recombination operators. The biological equivalents to these are random mutation and sexual reproduction. Mutation operators allow evolutionary algorithms to theoretically span the whole continuum of the search space by giving a non-zero probability that a genotype mutates into any other other genotype. This has been used to formally prove that evolutionary algorithms will always reach the desired optimum given enough time. Recombination tries to create new superior individuals by combining the genes of two good parent genotypes~\cite{Eiben2015_whatevolutionary, Eiben20021}.
 
+\paragraph{Binary mutation}
+
+The most commonly used mutation scheme for binary representations consists of randomly flipping bits (genes) in a chromosome with a certain probability. The number of alterations is not fixed with this approach, but the common procedures used can often be set to change a certain number of bits on average~\cite{Eiben201511}.
+
+\paragraph{Binary recombination}
+
+Three approached are normally used to recombine binary chromosomes. One-point crossover divides the chromosome into two sections, picking a random intersection point, and swaps the tails of the two chromosomes creating two offspring. N-point crossover generalizes this behavior by picking n random splitting points and assembling new chromosome by taking alternate sections of the parent chromosomes. Uniform crossover creates an array of uniform numbers from a probability distribution and chooses which parent to take a gene from by comparing the random value to a probability threshold~\cite{Eiben201511}.
+
+\paragraph{Integer mutation}
+
+Random resetting and creep mutation are used to mutate integer chromosomes. In random resetting integer values are changed with a certain probability. The new values are chosen at random from the pool of permissible values. Creep mutation samples small numbers from distributions and adds or subtracts them from genes at random~\cite{Eiben201511}.
+
+\paragraph{Integer recombination}
+
+For integer representations the same techniques that are used for binary representations apply~\cite{Eiben201511}.
+
+
+\paragraph{Real-valued mutation}
+
+For real-valued representations mutations is similar to integer mutation with the exception that new random values are drawn from continuous distributions and creep mutation used a gaussian distribution to sample values. A lower and upper bound is used to limit the span of the generated random numbers~\cite{Eiben201511}.
+
+\paragraph{Real-valued recombination}
+
+There are three common ways to recombine real-valued chromosomes. Discreet recombination work like n-point crossover and thus does not alter the values in the offspring chromosomes. Arithmetic recombination chooses values which fall in-between the values of the parent chromosomes for it's offspring. Blend recombination works like arithmetic recombination but allow for values which lie slightly outside of the interval defines by the parent genes~\cite{Eiben201511}.
+
+
+\paragraph{Tree mutation}
+
+Trees are usually mutated by selecting a node at random and re-generating it's subtree using the same approach which was used to generate the initial population~\cite{Eiben201511}.
+
+\paragraph{Tree recombination}
+
+Subtree crossover is commonly used to recombine trees. It randomly selects a node in each tree and then swaps the respective subtrees creating two new offspring~\cite{Eiben201511}.
+
+
 \subsubsection{Survivor selection mechanism}
 
 Survivor selection takes place after new offspring have been generated and determines which individuals are allowed to live on into the next generation. It is often referred to as the replacement strategy and contrary to parent selection it is usually deterministic. Two popular mechanisms are fitness-based selection and age-based selection. Fitness-based selection determines the next generation by selecting the individuals with the highest fitness while age-based selection allows only the offspring to survive~\cite{Eiben2015_whatevolutionary}.
-
 
 
 \subsubsection{Initatilization}

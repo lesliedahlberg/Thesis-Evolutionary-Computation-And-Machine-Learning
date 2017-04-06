@@ -11,68 +11,79 @@
 \contentsline {paragraph}{Steady-state model}{5}{section*.7}
 \contentsline {paragraph}{Generational model}{5}{section*.8}
 \contentsline {subsubsection}{\numberline {2.1.4}Parent selection mechanism}{5}{subsubsection.2.1.4}
+\contentsline {paragraph}{Fitness proportional selection}{5}{section*.9}
+\contentsline {paragraph}{Ranking selection}{5}{section*.10}
+\contentsline {paragraph}{Tournament selection}{5}{section*.11}
 \contentsline {subsubsection}{\numberline {2.1.5}Variation operators}{5}{subsubsection.2.1.5}
-\contentsline {subsubsection}{\numberline {2.1.6}Survivor selection mechanism}{5}{subsubsection.2.1.6}
-\contentsline {subsubsection}{\numberline {2.1.7}Initatilization}{5}{subsubsection.2.1.7}
-\contentsline {subsubsection}{\numberline {2.1.8}Termination condition}{6}{subsubsection.2.1.8}
-\contentsline {subsection}{\numberline {2.2}Traditional Evolutionary Algorithms}{6}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Genetic algorithms}{6}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Evolution strategy}{6}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Evolutionary programming}{7}{subsubsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.4}Genetic programming}{7}{subsubsection.2.2.4}
-\contentsline {subsection}{\numberline {2.3}Emerging Evolutionary Algorithms}{8}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Differential Evolution}{8}{subsubsection.2.3.1}
-\contentsline {paragraph}{Variants}{9}{section*.11}
-\contentsline {subsubsection}{\numberline {2.3.2}Particle Swarm Optimization}{9}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Estimation of Distribution Algorithm}{10}{subsubsection.2.3.3}
-\contentsline {paragraph}{UMDA}{10}{section*.13}
-\contentsline {subsection}{\numberline {2.4}Method}{11}{subsection.2.4}
-\contentsline {section}{\numberline {3}Related Work}{11}{section.3}
-\contentsline {subsection}{\numberline {3.1}Recent Research}{11}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Emerging Evolutionary Algorithms}{11}{subsection.3.2}
-\contentsline {paragraph}{Differential Evolution}{11}{section*.14}
-\contentsline {paragraph}{Particle Swarm Optimization}{12}{section*.15}
-\contentsline {paragraph}{Estimation of Distribution Algorithms}{12}{section*.16}
-\contentsline {subsection}{\numberline {3.3}Evolutionary Algorithms and Machine Learning}{12}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Contributions}{12}{subsection.3.4}
-\contentsline {section}{\numberline {4}Problem Formulation}{13}{section.4}
-\contentsline {paragraph}{Research Questions}{13}{section*.17}
-\contentsline {paragraph}{Motivation}{13}{section*.18}
-\contentsline {paragraph}{Outcomes}{13}{section*.19}
-\contentsline {paragraph}{Limitations}{13}{section*.20}
-\contentsline {section}{\numberline {5}Algorithm}{13}{section.5}
-\contentsline {section}{\numberline {6}Experimental Results and Evaluation}{14}{section.6}
-\contentsline {subsection}{\numberline {6.1}Mathematical Function Optimization ($F_{1-10}$)}{14}{subsection.6.1}
-\contentsline {paragraph}{Shifted Sphere Function ($F_1$)}{14}{section*.22}
-\contentsline {paragraph}{Shifted Schwefel\IeC {\textquoteright }s Problem ($F_2$)}{14}{section*.24}
-\contentsline {paragraph}{Shifted Rotated High Conditioned Elliptic Function ($F_3$)}{15}{section*.26}
-\contentsline {paragraph}{Shifted Schwefel\IeC {\textquoteright }s Problem with Noise in Fitness ($F_4$)}{15}{section*.28}
-\contentsline {paragraph}{Schwefel\IeC {\textquoteright }s Problem with Global Optimum on Bounds ($F_5$)}{15}{section*.30}
-\contentsline {paragraph}{Shifted Rosenbrock\IeC {\textquoteright }s Function ($F_6$)}{16}{section*.32}
-\contentsline {paragraph}{Shifted Rotated Griewank\IeC {\textquoteright }s Function without Bounds ($F_7$)}{16}{section*.34}
-\contentsline {paragraph}{Shifted Rotated Ackley\IeC {\textquoteright }s Function with Global Optimum on Bounds ($F_8$)}{16}{section*.36}
-\contentsline {paragraph}{Shifted Rastrigin\IeC {\textquoteright }s Function ($F_9$)}{16}{section*.38}
-\contentsline {paragraph}{Shifted Rotated Rastrigin\IeC {\textquoteright }s Function ($F_{10}$)}{17}{section*.40}
-\contentsline {subsection}{\numberline {6.2}Function Approximation ($FA_{1-6}$)}{17}{subsection.6.2}
-\contentsline {paragraph}{Evalutation Procedure}{17}{section*.44}
-\contentsline {subsection}{\numberline {6.3}Classification ($CLS_{1-7}$)}{18}{subsection.6.3}
-\contentsline {paragraph}{Evalutation Procedure}{18}{section*.47}
-\contentsline {subsection}{\numberline {6.4}Clustering ($CLU_{1}$)}{18}{subsection.6.4}
-\contentsline {paragraph}{Evalutation Procedure}{18}{section*.50}
-\contentsline {subsection}{\numberline {6.5}Intelligent Game Controllers ($IGC_{1}$)}{19}{subsection.6.5}
-\contentsline {paragraph}{Game Description and Rules}{19}{section*.52}
-\contentsline {paragraph}{Representation of Game State}{19}{section*.55}
-\contentsline {paragraph}{Neural Network Controller}{20}{section*.56}
-\contentsline {paragraph}{Fitness Function and Evaluation}{21}{section*.58}
-\contentsline {subsection}{\numberline {6.6}Results}{21}{subsection.6.6}
-\contentsline {paragraph}{Function Optimization at D=10}{21}{section*.59}
-\contentsline {paragraph}{Function Optimization at D=30}{22}{section*.61}
-\contentsline {paragraph}{Function Optimization at D=50}{22}{section*.63}
-\contentsline {paragraph}{Function Approximation}{22}{section*.65}
-\contentsline {paragraph}{Classification}{23}{section*.67}
-\contentsline {paragraph}{Clustering}{23}{section*.69}
-\contentsline {paragraph}{Intelligent Game Controllers}{23}{section*.71}
-\contentsline {subsection}{\numberline {6.7}Discussion}{23}{subsection.6.7}
-\contentsline {section}{\numberline {7}Conclusions}{23}{section.7}
-\contentsline {section}{\numberline {8}Future Work}{24}{section.8}
-\contentsline {section}{References}{27}{section*.73}
+\contentsline {paragraph}{Binary mutation}{6}{section*.12}
+\contentsline {paragraph}{Binary recombination}{6}{section*.13}
+\contentsline {paragraph}{Integer mutation}{6}{section*.14}
+\contentsline {paragraph}{Integer recombination}{6}{section*.15}
+\contentsline {paragraph}{Real-valued mutation}{6}{section*.16}
+\contentsline {paragraph}{Real-valued recombination}{6}{section*.17}
+\contentsline {paragraph}{Tree mutation}{6}{section*.18}
+\contentsline {paragraph}{Tree recombination}{6}{section*.19}
+\contentsline {subsubsection}{\numberline {2.1.6}Survivor selection mechanism}{6}{subsubsection.2.1.6}
+\contentsline {subsubsection}{\numberline {2.1.7}Initatilization}{6}{subsubsection.2.1.7}
+\contentsline {subsubsection}{\numberline {2.1.8}Termination condition}{7}{subsubsection.2.1.8}
+\contentsline {subsection}{\numberline {2.2}Traditional Evolutionary Algorithms}{7}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Genetic algorithms}{7}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Evolution strategy}{7}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Evolutionary programming}{8}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Genetic programming}{8}{subsubsection.2.2.4}
+\contentsline {subsection}{\numberline {2.3}Emerging Evolutionary Algorithms}{9}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Differential Evolution}{9}{subsubsection.2.3.1}
+\contentsline {paragraph}{Variants}{10}{section*.22}
+\contentsline {subsubsection}{\numberline {2.3.2}Particle Swarm Optimization}{10}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Estimation of Distribution Algorithm}{11}{subsubsection.2.3.3}
+\contentsline {paragraph}{UMDA}{11}{section*.24}
+\contentsline {subsection}{\numberline {2.4}Method}{12}{subsection.2.4}
+\contentsline {section}{\numberline {3}Related Work}{12}{section.3}
+\contentsline {subsection}{\numberline {3.1}Recent Research}{12}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Emerging Evolutionary Algorithms}{12}{subsection.3.2}
+\contentsline {paragraph}{Differential Evolution}{12}{section*.25}
+\contentsline {paragraph}{Particle Swarm Optimization}{13}{section*.26}
+\contentsline {paragraph}{Estimation of Distribution Algorithms}{13}{section*.27}
+\contentsline {subsection}{\numberline {3.3}Evolutionary Algorithms and Machine Learning}{13}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Contributions}{13}{subsection.3.4}
+\contentsline {section}{\numberline {4}Problem Formulation}{14}{section.4}
+\contentsline {paragraph}{Research Questions}{14}{section*.28}
+\contentsline {paragraph}{Motivation}{14}{section*.29}
+\contentsline {paragraph}{Outcomes}{14}{section*.30}
+\contentsline {paragraph}{Limitations}{14}{section*.31}
+\contentsline {section}{\numberline {5}Algorithm}{14}{section.5}
+\contentsline {section}{\numberline {6}Experimental Results and Evaluation}{15}{section.6}
+\contentsline {subsection}{\numberline {6.1}Mathematical Function Optimization ($F_{1-10}$)}{15}{subsection.6.1}
+\contentsline {paragraph}{Shifted Sphere Function ($F_1$)}{15}{section*.33}
+\contentsline {paragraph}{Shifted Schwefel\IeC {\textquoteright }s Problem ($F_2$)}{15}{section*.35}
+\contentsline {paragraph}{Shifted Rotated High Conditioned Elliptic Function ($F_3$)}{16}{section*.37}
+\contentsline {paragraph}{Shifted Schwefel\IeC {\textquoteright }s Problem with Noise in Fitness ($F_4$)}{16}{section*.39}
+\contentsline {paragraph}{Schwefel\IeC {\textquoteright }s Problem with Global Optimum on Bounds ($F_5$)}{16}{section*.41}
+\contentsline {paragraph}{Shifted Rosenbrock\IeC {\textquoteright }s Function ($F_6$)}{17}{section*.43}
+\contentsline {paragraph}{Shifted Rotated Griewank\IeC {\textquoteright }s Function without Bounds ($F_7$)}{17}{section*.45}
+\contentsline {paragraph}{Shifted Rotated Ackley\IeC {\textquoteright }s Function with Global Optimum on Bounds ($F_8$)}{17}{section*.47}
+\contentsline {paragraph}{Shifted Rastrigin\IeC {\textquoteright }s Function ($F_9$)}{17}{section*.49}
+\contentsline {paragraph}{Shifted Rotated Rastrigin\IeC {\textquoteright }s Function ($F_{10}$)}{18}{section*.51}
+\contentsline {subsection}{\numberline {6.2}Function Approximation ($FA_{1-6}$)}{18}{subsection.6.2}
+\contentsline {paragraph}{Evalutation Procedure}{18}{section*.55}
+\contentsline {subsection}{\numberline {6.3}Classification ($CLS_{1-7}$)}{19}{subsection.6.3}
+\contentsline {paragraph}{Evalutation Procedure}{19}{section*.58}
+\contentsline {subsection}{\numberline {6.4}Clustering ($CLU_{1}$)}{19}{subsection.6.4}
+\contentsline {paragraph}{Evalutation Procedure}{19}{section*.61}
+\contentsline {subsection}{\numberline {6.5}Intelligent Game Controllers ($IGC_{1}$)}{20}{subsection.6.5}
+\contentsline {paragraph}{Game Description and Rules}{20}{section*.63}
+\contentsline {paragraph}{Representation of Game State}{20}{section*.66}
+\contentsline {paragraph}{Neural Network Controller}{21}{section*.67}
+\contentsline {paragraph}{Fitness Function and Evaluation}{22}{section*.69}
+\contentsline {subsection}{\numberline {6.6}Results}{22}{subsection.6.6}
+\contentsline {paragraph}{Function Optimization at D=10}{22}{section*.70}
+\contentsline {paragraph}{Function Optimization at D=30}{23}{section*.72}
+\contentsline {paragraph}{Function Optimization at D=50}{23}{section*.74}
+\contentsline {paragraph}{Function Approximation}{23}{section*.76}
+\contentsline {paragraph}{Classification}{24}{section*.78}
+\contentsline {paragraph}{Clustering}{24}{section*.80}
+\contentsline {paragraph}{Intelligent Game Controllers}{24}{section*.82}
+\contentsline {subsection}{\numberline {6.7}Discussion}{24}{subsection.6.7}
+\contentsline {section}{\numberline {7}Conclusions}{24}{section.7}
+\contentsline {section}{\numberline {8}Future Work}{25}{section.8}
+\contentsline {section}{References}{28}{section*.84}

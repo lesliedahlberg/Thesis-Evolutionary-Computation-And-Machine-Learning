@@ -64,6 +64,14 @@ A.~E. Eiben and J.~E. Smith, \emph{Representation, Mutation, and
   Recombination}.\hskip 1em plus 0.5em minus 0.4em\relax Berlin, Heidelberg:
   Springer Berlin Heidelberg, 2015, pp. 49--78.
 
+\bibitem{Eiben2015asdfasd}
+\BIBentryALTinterwordspacing
+------, \emph{Fitness, Selection, and Population Management}.\hskip 1em plus
+  0.5em minus 0.4em\relax Berlin, Heidelberg: Springer Berlin Heidelberg, 2015,
+  pp. 79--98. [Online]. Available:
+  \url{http://dx.doi.org/10.1007/978-3-662-44874-8_5}
+\BIBentrySTDinterwordspacing
+
 \bibitem{mitchel1999evolutionary}
 M.~Mitchell and C.~E. Taylor, ``Evolutionary computation: An overview,''
   \emph{Annual Review of Ecology and Systematics}, vol.~30, pp. 593--616, 1999.
