@@ -1,0 +1,59 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Background}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Evolutionary Algorithms}{3}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Representation}{3}{subsubsection.2.1.1}
+\contentsline {paragraph}{Binary representation}{3}{section*.3}
+\contentsline {paragraph}{Integer representation}{4}{section*.4}
+\contentsline {paragraph}{Real-valued representation}{4}{section*.5}
+\contentsline {paragraph}{Tree representation}{4}{section*.6}
+\contentsline {subsubsection}{\numberline {2.1.2}Evaluation function}{4}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Population}{4}{subsubsection.2.1.3}
+\contentsline {paragraph}{Steady-state model}{4}{section*.7}
+\contentsline {paragraph}{Generational model}{4}{section*.8}
+\contentsline {subsubsection}{\numberline {2.1.4}Parent selection mechanism}{4}{subsubsection.2.1.4}
+\contentsline {paragraph}{Fitness proportional selection}{4}{section*.9}
+\contentsline {paragraph}{Ranking selection}{4}{section*.10}
+\contentsline {paragraph}{Tournament selection}{5}{section*.11}
+\contentsline {subsubsection}{\numberline {2.1.5}Variation operators}{5}{subsubsection.2.1.5}
+\contentsline {paragraph}{Binary mutation}{5}{section*.12}
+\contentsline {paragraph}{Binary recombination}{5}{section*.13}
+\contentsline {paragraph}{Integer mutation}{5}{section*.14}
+\contentsline {paragraph}{Integer recombination}{5}{section*.15}
+\contentsline {paragraph}{Real-valued mutation}{5}{section*.16}
+\contentsline {paragraph}{Real-valued recombination}{5}{section*.17}
+\contentsline {paragraph}{Tree mutation}{5}{section*.18}
+\contentsline {paragraph}{Tree recombination}{5}{section*.19}
+\contentsline {subsubsection}{\numberline {2.1.6}Survivor selection mechanism}{6}{subsubsection.2.1.6}
+\contentsline {subsubsection}{\numberline {2.1.7}Initatilization}{6}{subsubsection.2.1.7}
+\contentsline {subsubsection}{\numberline {2.1.8}Termination condition}{6}{subsubsection.2.1.8}
+\contentsline {subsection}{\numberline {2.2}Traditional Evolutionary Algorithms}{6}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Genetic algorithms}{6}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Evolution strategy}{7}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Evolutionary programming}{7}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Genetic programming}{7}{subsubsection.2.2.4}
+\contentsline {subsection}{\numberline {2.3}Emerging Evolutionary Algorithms}{8}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Differential Evolution}{8}{subsubsection.2.3.1}
+\contentsline {paragraph}{Variants}{9}{section*.22}
+\contentsline {subsubsection}{\numberline {2.3.2}Particle Swarm Optimization}{9}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Estimation of Distribution Algorithm}{10}{subsubsection.2.3.3}
+\contentsline {paragraph}{UMDA}{11}{section*.24}
+\contentsline {subsection}{\numberline {2.4}Machine learning concepts}{11}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Feed-Forward Neural Networks}{11}{subsubsection.2.4.1}
+\contentsline {paragraph}{Evaluating the neural network}{12}{section*.25}
+\contentsline {paragraph}{Back-propagation}{12}{section*.27}
+\contentsline {subsection}{\numberline {2.5}Method}{13}{subsection.2.5}
+\contentsline {section}{\numberline {3}Related Work}{14}{section.3}
+\contentsline {subsection}{\numberline {3.1}Recent Research}{14}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Emerging Evolutionary Algorithms}{14}{subsection.3.2}
+\contentsline {paragraph}{Differential Evolution}{14}{section*.28}
+\contentsline {paragraph}{Particle Swarm Optimization}{14}{section*.29}
+\contentsline {paragraph}{Estimation of Distribution Algorithms}{15}{section*.30}
+\contentsline {subsection}{\numberline {3.3}Evolutionary Algorithms and Machine Learning}{15}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Contributions}{15}{subsection.3.4}
+\contentsline {section}{\numberline {4}Problem Formulation}{16}{section.4}
+\contentsline {paragraph}{Research Questions}{16}{section*.31}
+\contentsline {paragraph}{Motivation}{16}{section*.32}
+\contentsline {paragraph}{Outcomes}{16}{section*.33}
+\contentsline {paragraph}{Limitations}{16}{section*.34}
+\contentsline {section}{\numberline {5}Time plan}{17}{section.5}
+\contentsline {section}{References}{20}{section*.35}

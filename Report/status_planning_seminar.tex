@@ -1,0 +1,166 @@
+%!TEX option = -shell-escape
+% Document type
+\documentclass[10pt, titlepage, a4paper]{article}
+
+
+
+	% Packages
+
+
+  \usepackage{graphicx}
+	\usepackage{amsmath}
+  \usepackage[utf8]{inputenc}
+	\usepackage{amsfonts}
+	\usepackage{fancyhdr}
+	\usepackage{enumerate}
+	\usepackage{listings}
+    \usepackage{minted}
+	\usepackage[titletoc]{appendix}
+	\usepackage[pdfborder={0 0 0},colorlinks=true, urlcolor=blue, citecolor=red, bookmarks=false]{hyperref}
+	\usepackage[margin=3cm]{geometry}
+\usepackage[absolute]{textpos}
+	\usepackage[section]{placeins}
+	\usepackage{url}
+  \usepackage{algorithm}
+	\usepackage{tabularx}
+%	\usepackage{gensymb}
+	\usepackage{caption}
+  \usepackage{subcaption}
+  \usepackage{float}
+  \usepackage{mathtools}
+  \usepackage{amssymb}
+  \usepackage{tikz}
+  \usepackage{algpseudocode}
+  \usepackage{listings}
+
+%	\usepackage{xltxtra}
+	% Page style
+	\pagestyle{fancy}
+	\marginparsep = 0pt
+  \graphicspath{ {figures/} }
+
+
+
+	% Set font
+	%\setromanfont{Calibri}
+
+	\renewcommand\contentsname{Contents}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+	\renewcommand{\abstractname}{Abstract}
+
+
+	\newcommand{\circR}{\textsuperscript{\textregistered}}
+
+	% Code style
+	\lstset{
+		backgroundcolor=\color[rgb]{0.92,0.92,0.92},
+		basicstyle=\footnotesize,
+		showspaces=false,
+		showstringspaces=false,
+		showtabs=false,
+		tabsize=2,
+		captionpos=b,
+		breaklines=true,
+		keywordstyle=\color[rgb]{0,0,1},
+		commentstyle=\color[rgb]{0.133,0.545,0.133}
+	}
+
+\begin{document}
+\begin{titlepage}
+% Title
+\input{./title.tex}
+\end{titlepage}
+%\date{}
+%\maketitle
+
+% Page style
+\thispagestyle{fancy}
+\fancyhead[R]{Leslie Dahlberg}
+\fancyhead[L]{M\"{a}lardalen University}
+\fancyfoot[L]{}
+%\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Begin actual text
+
+\def\abstract{
+   \vfil
+\begin{center}%
+{\bfseries\abstractname\vspace{-.5em}}
+\end{center}
+\itshape
+}
+
+\def\endabstract{\par
+}
+
+
+\newpage
+
+
+
+
+
+
+
+% ========================== Document version ===========================
+%\begin{center}
+%	\begin{tabular}{|l|l|l|}
+ %
+	%	\multicolumn{3}{c}{\textbf{{\large Document version}}} \\
+	%	\hline
+ 	%	Version & Date & Note \\ \hline
+ 	%	 &  &  \\ \hline
+	%	 &  &  \\ \hline
+	%	 &  &  \\ \hline
+	%	 &  &   \\ \hline
+	%	 &  &   \\ \hline
+	%	 &  &   \\ \hline
+%	\end{tabular}
+%\end{center}
+%\newpage
+%========================== Table of contents ===========================
+\hypersetup{linkcolor=black}
+\tableofcontents
+\hypersetup{linkcolor=red}
+
+\newpage
+
+% ============================== Intro ===============================
+
+\input{./introduction}
+\newpage
+\input{./background}
+\newpage
+\input{./related}
+\newpage
+\input{./problem}
+\newpage
+
+\section{Time plan}
+
+The thesis work planing will be based upon the structure of the written report to ensure that the final product is delivered in time. The first two weeks will serve as an introduction to the topic and the introduction and background section of the report will be completed during this period. This will guarantee that they will be available in time for the status and planning seminary. After this, deeper inquiry into the main algorithms of the thesis will be conducted and the first implementation prototypes will be constructed. During this time a benchmark methodology will also be decided. This phase might occupy 1 - 3 weeks and will be followed by a benchmark and an investigation of how to apply the algorithms to machine learning problems. This will probably occupy one week and will be followed by the development of an improved algorithm and the implementation of the machine learning benchmarks. After this a complete benchmark of all four algorithms on both standard functions and machine learning problems will be conducted. This should leave enough time over to fine tune the new algorithm and finalize the report before the end of the course/project period.
+
+\newpage
+
+% ============================= References ============================
+
+%\input{./references_info}
+
+\bibliographystyle{IEEEtran}
+\bibliography{./references}
+\addcontentsline{toc}{section}{References}
+
+% ============================ Appendices =============================
+\newpage
+%\begin{appendices}
+
+
+
+	%\input{./Appendices/algorithms}
+	%\clearpage
+
+%\end{appendices}
+
+\end{document}
