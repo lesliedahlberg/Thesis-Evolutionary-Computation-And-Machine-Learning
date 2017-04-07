@@ -40,7 +40,7 @@
 \contentsline {subsection}{\numberline {2.4}Machine learning concepts}{12}{subsection.2.4}
 \contentsline {subsubsection}{\numberline {2.4.1}Feed-Forward Neural Networks}{12}{subsubsection.2.4.1}
 \contentsline {paragraph}{Evaluating the neural network}{13}{section*.25}
-\contentsline {paragraph}{Backpropagation}{13}{section*.27}
+\contentsline {paragraph}{Back-propagation}{13}{section*.27}
 \contentsline {subsection}{\numberline {2.5}Method}{14}{subsection.2.5}
 \contentsline {section}{\numberline {3}Related Work}{15}{section.3}
 \contentsline {subsection}{\numberline {3.1}Recent Research}{15}{subsection.3.1}

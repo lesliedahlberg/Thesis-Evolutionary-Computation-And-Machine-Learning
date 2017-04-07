@@ -1,10 +1,10 @@
 \section{Background}
 
-This section will aim to provide a general overview of the field of evolutionary computation. General terms and procedures which are often utilized in EC will be explained and the most well known traditional approaches will be presented. The necessary concepts from machine learning will be presented. The emerging algorithms relevant to this thesis can be found in the section ``Algorithms''.
+This section will aim to provide a general overview of the field of evolutionary computation. General terms and procedures which are often utilized in EC will be explained and the most well known traditional approaches will be presented. The necessary concepts from machine learning will be presented.
 
 \subsection{Evolutionary Algorithms}
 
-Evolutionary algorithms work on the concept of populations. A population is a set of individuals which in the case of optimization problems contain a vector of parameters which the model we wish to optimize can accept and transform into an output. The population is initialized by some procedure to contain a random set of parameter vectors, these should cover the whole parameter range of the model uniformly. The initial population is evaluated and an iterative process is started which continues as long as no suitable solution is found. During this iterative process the current population is selected, altered and evaluated. During selection a set of individuals which display promising characteristics are selected to live on to the next generation of the population. They are then altered randomly to create diversity in the population and evaluated. This process creates a new generation of the population on each iteration and continues until a solution is found or some other restriction is encountered~\cite{Eiben20021}. The concept is demonstrated in figure~\ref{algo:basicevolution} with $P(t)$ representing the population at generation $t$.
+Evolutionary algorithms work on the concept of populations. A population is a set of individuals which in the case of optimization problems contain a vector of parameters which the model we wish to optimize can accept and transform into an output. The population is initialized by some procedure to contain a random set of parameter vectors, these should cover the whole parameter range of the model uniformly. The initial population is evaluated and an iterative process is started which continues as long as no suitable solution is found. During this iterative process the current population is selected, altered and evaluated. During selection a set of individuals which display promising characteristics are selected to live on into the next generation of the population. They are then altered randomly to create diversity in the population and evaluated. This process creates a new generation of the population on each iteration and continues until a solution is found or some other restriction is encountered~\cite{Eiben20021}. The concept is demonstrated in figure~\ref{algo:basicevolution} with $P(t)$ representing the population at generation $t$.
 
 \begin{algorithm}[h]
 
@@ -24,11 +24,11 @@ Evolutionary algorithms work on the concept of populations. A population is a se
 
 \end{algorithm}
 
-Here the fundamental building blocks of evolutionary algorithms will be presented and explained. Most of these term are universal to all approaches which will be covered in this thesis and necessary to properly understand them.
+Here the fundamental building blocks of evolutionary algorithms will be presented and explained. Most of these term are universal to all approaches which will be covered in this thesis.
 
 \subsubsection{Representation}
 
-The first step in using evolutionary algorithms is creating a representation which can encode all possible solutions to the problem at hand. Here two different terms are distinguished. The term phenotype denotes the representation that can be directly applied to the problem and the genotype denotes the specific encoding of the phenotype which is manipulated inside the evolutionary algorithm. In optimization tasks a valid phenotype could be a vector of integer numbers which act as parameters to a function while the genotype would be a binary representation of the numbers which can be altered by manipulating individuals bits. The terms phenotype, candidate solution and individual are used interchangeably to denote the representation as used by the model while chromosome, genotype and individual are used to refer to the representation inside the evolutionary algorithm~\cite{Eiben2015_whatevolutionary}.
+The first step in using evolutionary algorithms is creating a representation which can encode all possible solutions to the problem. Here two different terms are distinguished. The term phenotype denotes the representation that can be directly applied to the problem and the genotype denotes the specific encoding of the phenotype which is manipulated inside the evolutionary algorithm. In optimization tasks a valid phenotype could be a vector of integer numbers which act as parameters to a function while the genotype would be a binary representation of the numbers which can be altered by manipulating individuals bits. The terms phenotype, candidate solution and individual are used interchangeably to denote the representation as used by the model while chromosome, genotype and individual are used to refer to the representation inside the evolutionary algorithm~\cite{Eiben2015_whatevolutionary}.
 
 \paragraph{Binary representation}
 
@@ -45,23 +45,23 @@ Real-valued or floating-point representations were originally used in evolutiona
 
 \paragraph{Tree representation}
 
-Tree representations are mainly used in genetic programming to capture the structure of programs. The econding varies but S-expressions are generally used. The tree structure is defined by a function-set and a terminal-set. The function-set defines the types of nodes in the tree, while the terminal-set contains the types of leaves the tree can contain~\cite{Eiben201511}.
+Tree representations are mainly used in genetic programming to capture the structure of programs. The encoding varies but S-expressions are generally used. The tree structure is defined by a function-set and a terminal-set. The function-set defines the types of nodes in the tree, while the terminal-set contains the types of leaves the tree can contain~\cite{Eiben201511}.
 
 \subsubsection{Evaluation function}
 
-The evalutation function is responsible for improvement in the population. It is a function which assigns a fitness or cost value to every genotype and thus enables us to compare the quality of the genotypes in the population. It is also the only information about the problem that is available to the evolutionary algorithm and should therefore include all domain knowledge which is available about the problem~\cite{Eiben2015_whatevolutionary}. The evaluation is also the process which takes up the most computational resources, 99\% of the total computational cost in real-world problems~\cite{Eiben20021}.
+Evaluation function is responsible for improvement in the population. It is a function which assigns a fitness or cost value to every genotype and thus enables us to compare the quality of the genotypes in the population. It is also the only information about the problem that is available to the evolutionary algorithm and should therefore include all domain knowledge which is available about the problem~\cite{Eiben2015_whatevolutionary}. The evaluation is also the process which takes up the most computational resources, 99\% of the total computational cost in real-world problems~\cite{Eiben20021}.
 
 \subsubsection{Population}
 
-The population is a set of genotypes which contain the current best solutions to a problem. While genotypes remain stable and unchanging, the population continually changes through the application of selection mechanisms which decide which genotypes are allowed into the next generation of the population. The size of the population almost always remains constant during the lifetime of the algorithm. This in turn creates selection pressure which pushes the population to improve. A population's diversity is the measure of difference amoung the genotypes, phenotypes and fitness values~\cite{Eiben2015_whatevolutionary}.
+The population is a set of genotypes which contain the current best solutions to a problem. While genotypes remain stable and unchanging, the population continually changes through the application of selection mechanisms which decide which genotypes are allowed into the next generation of the population. The size of the population almost always remains constant during the lifetime of the algorithm. This in turn creates selection pressure which pushes the population towards improvement. A population's diversity is the measure of difference among the genotypes, phenotypes and fitness values~\cite{Eiben2015_whatevolutionary}.
 
 \paragraph{Steady-state model}
 
-In the steady-state model the entire population isn't replaces at once, rather only a fraction of the population is replaces a one time.
+In the steady-state model the entire population isn't replaced at once. Only a fraction of the population is replaced at one time.
 
 \paragraph{Generational model}
 
-In the generational model the entire population is replaces at once.
+In the generational model the entire population is replaced at once.
 
 \subsubsection{Parent selection mechanism}
 
@@ -71,11 +71,11 @@ Parent selection serves to improve the quality of a population by selecting whic
 
 \paragraph{Fitness proportional selection}
 
-Fitness proportional selection (FPS) assigns a selection probability to an individual based on it's absolute fitness. This results in very good individuals overtaking the population quickly and premature convergence. If individuals have very similar fitness values the selection pressure becomes low. This mechanism is also very dependent on the exact form the of the fitness function~\cite{Eiben2015asdfasd}.
+Fitness proportional selection (FPS) assigns a selection probability to an individual based on it's absolute fitness. This results in very good individuals overtaking the population quickly and premature convergence. If individuals have very similar fitness values the selection pressure becomes low. This mechanism is also very dependent on the exact form of the fitness function~\cite{Eiben2015asdfasd}.
 
 \paragraph{Ranking selection}
 
-In ranking selection the population if sorted according to the individuals fitness values and the selection pressure is kept constant. A constant number of the best individuals is the selected from the sorted list~\cite{Eiben2015asdfasd}.
+In ranking selection the population is sorted according to the individual's fitness values and the selection pressure is kept constant. A constant number of the best individuals is then selected from the sorted list~\cite{Eiben2015asdfasd}.
 
 \paragraph{Tournament selection}
 
@@ -105,11 +105,11 @@ For integer representations the same techniques that are used for binary represe
 
 \paragraph{Real-valued mutation}
 
-For real-valued representations mutations is similar to integer mutation with the exception that new random values are drawn from continuous distributions and creep mutation used a gaussian distribution to sample values. A lower and upper bound is used to limit the span of the generated random numbers~\cite{Eiben201511}.
+For real-valued representations mutation is similar to integer mutation with the exception that new random values are drawn from continuous distributions and creep mutation uses a gaussian distribution to sample values. A lower and upper bound is used to limit the span of the generated random numbers~\cite{Eiben201511}.
 
 \paragraph{Real-valued recombination}
 
-There are three common ways to recombine real-valued chromosomes. Discreet recombination work like n-point crossover and thus does not alter the values in the offspring chromosomes. Arithmetic recombination chooses values which fall in-between the values of the parent chromosomes for it's offspring. Blend recombination works like arithmetic recombination but allow for values which lie slightly outside of the interval defines by the parent genes~\cite{Eiben201511}.
+There are three common ways to recombine real-valued chromosomes. Discreet recombination works like n-point crossover and thus does not alter the values in the offspring chromosomes. Arithmetic recombination chooses values which fall in-between the values of the parent chromosomes for it's offspring. Blend recombination works like arithmetic recombination but allow for values which lie slightly outside of the interval defines by the parent genes~\cite{Eiben201511}.
 
 
 \paragraph{Tree mutation}
@@ -224,8 +224,8 @@ Differential evolution~\cite{Storn1997} is a stochastic optimization algorithm w
   \caption{DE algorithm}
   \label{algo:de}
     \begin{algorithmic}
-      \State Init population within bounds
-      \State Evaluate fitness of populationCost
+      \State Initialize population within bounds
+      \State Evaluate fitness of population
       \Repeat
         \ForAll{Individuals $x$}
           \State Select three other random individuals a, b and c
@@ -302,7 +302,7 @@ PSO is a parallel search technique where a set of particles  fly through the n-d
 \begin{figure}[H]
   \centering
   \includegraphics[width=.3\linewidth]{pso}
-  \caption{Illustration of particles in PSO (red represents the best particle)}
+  \caption{Illustration of particles in PSO}
   \label{fig:pso}
 \end{figure}
 
@@ -376,23 +376,23 @@ where $p(x)$ is the global multivariate density, D is the vector length and $p_d
 
 \subsection{Machine learning concepts}
 
-The machine learning concepts needed for this thesis are artificial neural networks (ANN), specifically feed-forward neural networks (FFNN). Artificial neural networks are mathematical models which are based on the functioning of biological neuron in the brain. They are usefull for predicting future behaviour and events, trends, function approximation and data-classification. FFNNs are a popular type of ANN, often reffered to as mutli-layer perceptrons.  ANNs have to be trained on training data in order to function properly and the most widely used and most popular method for this is backpropagation (BP)~\cite{gardner1998artificial}.
+The machine learning concepts needed for this thesis are artificial neural networks (ANN), specifically feed-forward neural networks (FFNN). Artificial neural networks are mathematical models which are based on the functioning of biological neurons in the brain. They are useful for predicting future behavior and events, trends, function approximation and data-classification. FFNNs are a popular type of ANN, often referred to as multi-layer perceptrons.  ANNs have to be trained on training data in order to function properly and the most widely used and most popular method for this is back-propagation (BP)~\cite{gardner1998artificial}.
 
-Backpropagation is a local minimization algorithm which works in n-dimensions. It can therefore be replaced by other optimiation algorithms such as genetic and other evolutionary algorithms. This is what will be considered in my thesis~\cite{gardner1998artificial}.
+Back-propagation is a local minimization algorithm which works in n-dimensions. It can therefore be replaced by other optimization algorithms such as genetic algorithms. This is what will be considered in the thesis~\cite{gardner1998artificial}.
 
 \subsubsection{Feed-Forward Neural Networks}
 
 ANNs usually consist of five components
 
 \begin{enumerate}
-  \item A graph containing nodes (neurons) and link between nodes
+  \item A graph containing nodes (neurons) and links between nodes
   \item A variable which holds the state of each node
   \item A real-valued weight for each link between nodes
-  \item A real-valued threshold for wach node
-  \item A transfer function which calculates the value of a nodes state variable based on the states of nodes which precede the node and are connected to it with links
+  \item A real-valued threshold for each node
+  \item A transfer function which calculates the value of a node's state variable based on the states of nodes which precede the node and are connected to it through links
 \end{enumerate}
 
-FFNNs consists of one input layer of neurons which accept a vector of input signals, one or more ``hidden'' layers of intermediary neurons which process the signal and one output layer which produces the final result in the form of an output vector. In FFNNs all neurons are interconnected with all neurons in neigboring layers. These connections have weights which modulate the strenghs of the respective connections~\cite{montana1989training}. See figur~\ref{figure:FFNN} for a simple FFNN with two neurons ($z_1$ and $z_2$) in the input layer, which are linked to three hidden neurons ($y_1$, $y_2$ and $y_3$), which are in turn linked to two output neurons ($o_1$ and $o_2$). The weights are represented by $v_{ij}$ and $w_{ij}$.
+FFNNs consists of one input layer of neurons which accept a vector of input signals, one or more ``hidden'' layers of intermediary neurons which process the signal and one output layer which produces the final result in the form of an output vector. In FFNNs all neurons are interconnected with all other neurons in neighbouring layers. These connections have weights which modulate the strenghs of the respective connections~\cite{montana1989training}. See figur~\ref{figure:FFNN} for a simple FFNN with two neurons ($z_1$ and $z_2$) in the input layer, which are linked to three hidden neurons ($y_1$, $y_2$ and $y_3$), which are in turn linked to two output neurons ($o_1$ and $o_2$). The weights are represented by $v_{ij}$ and $w_{ij}$.
 
 \paragraph{Evaluating the neural network}
 
@@ -411,13 +411,13 @@ The value of a neuron $x_i$ in the network is determined according to the equati
 \noindent
 where $n$ is the number of neurons in the preceding layer, $x_j$ are the neurons in the preceding layer and $v_i$ are the weights between $x_i$ and $x_j$.
 
-The function $f$ is the transfer function and is defines as
+The function $f$ is the transfer function and is defined as
 
 \begin{equation}
   f(\xi) = \frac {1} {1 + exp(-\xi)}
 \end{equation}
 
-The threshold is added as an extra neurons to each layer except the output layer to simplify the calculations. The threshold neuron always has the value of $-1$. The actuall threshold value is determined by the weights of the link going out of the threshold neuron.~\cite{svozil1997introduction}.
+The threshold is added as an extra neuron to each layer except the output layer to simplify the calculations. The threshold neuron always has a value of $-1$. The actual threshold value is determined by the weights of the link going out of the threshold neuron.~\cite{svozil1997introduction}.
 
 
 \begin{figure}[H]
@@ -428,9 +428,9 @@ The threshold is added as an extra neurons to each layer except the output layer
 \end{figure}
 
 
-\paragraph{Backpropagation}
+\paragraph{Back-propagation}
 
-Backpropagation (BP) is the most popular method for training neuron networks. Training data is send through the network and the output vector is subtracted from a result vector which contain the correct output values. An error value is then calculated by the means of the sum of squared errors. Subsequently all weights in the network are sligtly adjusted to accomodate the calculated error. After a number of iterations this process produces the correct combination of weights~\cite{engelbrecht2007computational}.
+Back-propagation (BP) is the most popular method for training neuron networks. Training data is send through the network and the output vector is subtracted from a result vector which contain the correct output values producing the error difference. An error value is then calculated by the means of the sum of squared errors from the individual error differences. Subsequently all weights in the network are slightly adjusted to accommodate the calculated error. After a number of iterations this process produces the correct combination of weights~\cite{engelbrecht2007computational}.
 
 \subsection{Method}
 
