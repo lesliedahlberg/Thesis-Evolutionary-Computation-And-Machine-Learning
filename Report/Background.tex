@@ -343,7 +343,7 @@ In the benchmark the parameters for PSO have been set to $\omega = 0.8$~\cite{sh
 
 \subsubsection{Estimation of Distribution Algorithm}
 
-Estimation of distribution algorithms are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best 50\% of the solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found~\cite{Hauschild2011111}.
+Estimation of distribution algorithms~\cite{Hauschild2011111} are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best 50\% of the solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found~\cite{Hauschild2011111}.
 
 The most difficult part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Estimation of Baysian Networks (EBNA) can be used~\cite{larranaga2012review}.
 
@@ -361,14 +361,15 @@ where $p(x)$ is the global multivariate density, D is the vector length and $p_d
   \label{algo:umda}
 
     \begin{algorithmic}
-      \State Initialize population P
+      \State Initialize population P with size D
       \Repeat
         \State Evaluate P
-        \State Select the best t\% of P into S
+        \State Select the best t\% * D individuals from P into S
         \State Let m be the mean of S
         \State Let s be the standard deviation of S
-        \State Sample S' from normal distribution using m and s
-        \State Create new generation of P from S' and S
+        \State Create a normal distribution ND from m and s
+        \State Sample (100\%-t\%) * D individuals into S' from ND
+        \State Create new generation of P by combining S' and S
       \Until{Termination condition}
     \end{algorithmic}
 
@@ -431,7 +432,3 @@ The threshold is added as an extra neuron to each layer except the output layer 
 \paragraph{Back-propagation}
 
 Back-propagation (BP) is the most popular method for training neuron networks. Training data is send through the network and the output vector is subtracted from a result vector which contain the correct output values producing the error difference. An error value is then calculated by the means of the sum of squared errors from the individual error differences. Subsequently all weights in the network are slightly adjusted to accommodate the calculated error. After a number of iterations this process produces the correct combination of weights~\cite{engelbrecht2007computational}.
-
-\subsection{Method}
-
-A benchmark was constructed to perform the algorithm comparison. Both mathematical function optimization and machine learning test-sets were used. These are described in detail in the section \ref{section:benchmark}. Matlab was used to implement the algorithms and benchmarks because it provides easy access to important mathematical and scientific constructs which are usually not available in conventional programming languages. Matlab is also widely used in the field of evolutionary computation.
