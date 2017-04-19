@@ -381,45 +381,42 @@ The machine learning concepts needed for this thesis are artificial neural netwo
 
 Back-propagation is a local minimization algorithm which works in n-dimensions. It can therefore be replaced by other optimization algorithms such as genetic algorithms. This is what will be considered in the thesis~\cite{gardner1998artificial}.
 
-\subsubsection{Feed-Forward Neural Networks}
+\subsubsection{Artificial Neuron}
 
-ANNs usually consist of five components
+An artificial neuron is a non-linear function with a restricted output range. The unit can take multiple input signals, one threshold signal and produces one output signal. Each input signal has a corresponding weight associated to it which modulates the impact of the input signals by being multiplied with it before entering the unit. The threshold is also represented as a signal with a weight, but the signal's value is always $1$ or $-1$. This means that the threshold signal's weight in fact determines the threshold~\cite{koehn1994combining}. The neuron is illustrated in figure~\ref{figure:artificial_neuron} and equation~\ref{eq:artificial_neuron_math} presents the formula for calculating it's value.
 
+\begin{equation} \label{eq:artificial_neuron_math}
+  y = f(-1*w_0+\sum_{i=1}^{n-1}{w_ix_i})
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=7.5cm]{artificial-neuron}
+    \caption{Artificial Neuron}
+    \label{figure:artificial_neuron}
+\end{figure}
+
+The function $f$ is the so called transfer function, which takes widely ranging input values and maps them to a predetermined output range. The sigmoid function (see equation~\ref{eg:ann_sigmoid_math} and figure~\ref{figure:ann_sigmoid}) is one of the most popular choices for the transfer function because it creates a smooth transition from un-activated to activated neural activity~\cite{koehn1994combining}.
+
+\begin{equation} \label{eg:ann_sigmoid_math}
+  \sigma(x)=\frac{1}{1+e^{-x}}
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=7.5cm]{sigmoid}
+    \caption{Sigmoid function}
+    \label{figure:ann_sigmoid}
+\end{figure}
+
+\subsubsection{Artificial Neural Networks}
+Artificial Neural Networks(ANN) consists of multiple neurons grouped together. In the widely used version called Feed-Forward Neural Network(FFNN)~\cite{montana1989training} the network is grouped into three basic layers:
 \begin{enumerate}
-  \item A graph containing nodes (neurons) and links between nodes
-  \item A variable which holds the state of each node
-  \item A real-valued weight for each link between nodes
-  \item A real-valued threshold for each node
-  \item A transfer function which calculates the value of a node's state variable based on the states of nodes which precede the node and are connected to it through links
+  \item An input layer, which takes a vector of inputs
+  \item One or more hidden layers, which process the data
+  \item An output layer, which produces usable output data
 \end{enumerate}
-
-FFNNs consists of one input layer of neurons which accept a vector of input signals, one or more ``hidden'' layers of intermediary neurons which process the signal and one output layer which produces the final result in the form of an output vector. In FFNNs all neurons are interconnected with all other neurons in neighbouring layers. These connections have weights which modulate the strenghs of the respective connections~\cite{montana1989training}. See figur~\ref{figure:FFNN} for a simple FFNN with two neurons ($z_1$ and $z_2$) in the input layer, which are linked to three hidden neurons ($y_1$, $y_2$ and $y_3$), which are in turn linked to two output neurons ($o_1$ and $o_2$). The weights are represented by $v_{ij}$ and $w_{ij}$.
-
-\paragraph{Evaluating the neural network}
-
-The value of a neuron $x_i$ in the network is determined according to the equations
-
-\begin{equation}
-  x_i = f(\xi_i)
-  \label{neuron}
-\end{equation}
-
-\begin{equation}
-  \xi_i = v_i + \sum_{j = 0}^{n} {\omega_{ij}x_{j}}
-  \label{neuron_sum}
-\end{equation}
-
-\noindent
-where $n$ is the number of neurons in the preceding layer, $x_j$ are the neurons in the preceding layer and $v_i$ are the weights between $x_i$ and $x_j$.
-
-The function $f$ is the transfer function and is defined as
-
-\begin{equation}
-  f(\xi) = \frac {1} {1 + exp(-\xi)}
-\end{equation}
-
-The threshold is added as an extra neuron to each layer except the output layer to simplify the calculations. The threshold neuron always has a value of $-1$. The actual threshold value is determined by the weights of the link going out of the threshold neuron.~\cite{svozil1997introduction}.
-
+Neurons in FFNNs are always connected to all neurons in the preceding and succeeding layers and the connection form no closed loops~\cite{yao1999evolving}. Figure~\ref{figure:FFNN} shows a simple network with two neurons ($z_1$ and $z_2$) in the input layer, which are linked to three hidden neurons ($y_1$, $y_2$ and $y_3$), which are in turn linked to two output neurons ($o_1$ and $o_2$). The weights are represented by $v_{ij}$ and $w_{ij}$.
 
 \begin{figure}[H]
   \centering
@@ -428,7 +425,32 @@ The threshold is added as an extra neuron to each layer except the output layer 
     \label{figure:FFNN}
 \end{figure}
 
+The FFNN is evaluated by evaluating the individual neurons in each layers beginning from the input layer and moving successively forward until the output layer is reached. The values calculated at the output neurons is treated as the output from the network.
 
-\paragraph{Back-propagation}
+\subsubsection{Back-propagation}
 
-Back-propagation (BP) is the most popular method for training neuron networks. Training data is send through the network and the output vector is subtracted from a result vector which contain the correct output values producing the error difference. An error value is then calculated by the means of the sum of squared errors from the individual error differences. Subsequently all weights in the network are slightly adjusted to accommodate the calculated error. After a number of iterations this process produces the correct combination of weights~\cite{engelbrecht2007computational}.
+Back-propagation~\cite{koehn1994combining} is a neural network training algorithm which uses sets of training data to teach a neural network different patterns. The training data consists of a set inputs and corresponding outputs. Initially the network will have random weights and the network will not yield the correct output for most of the training inputs. Back-propagation works by slightly adjusting the weights for each training sample. This is done repeatedly and once cycle through all training samples is referred to as an epoch.
+
+The gradient descent algorithms is used to accomplish this by optimizing the error function of the network (see equation~\ref{eg:bp_error}) which is the sum of squared errors, the error being the difference between the actual network outputs ($o_k$) and the correct training outputs($t_k$).
+
+\begin{equation} \label{eg:bp_error}
+  E=\frac{1}{2}\sum_{k\in outputs}^{}{(t_k-o_k)^2}
+\end{equation}
+
+The equations for updating the weights~\cite{koehn1994combining} are dependent on the transfer function's derivative. Equation~\ref{eg:sigmoid_d} shows the sigmoids derivative which is basis for the weight update formulae in equationa~\ref{eg:w_update1},~\ref{eg:w_update2} and~\ref{eg:w_update3}.
+
+\begin{equation} \label{eg:sigmoid_d}
+  \frac{d}{dx}\sigma(x)=\sigma(x)(1-\sigma(x))
+\end{equation}
+
+\begin{equation} \label{eg:w_update1}
+  \Delta w_{from,to} = -\lambda o_{from}\delta_{to}
+\end{equation}
+
+\begin{equation} \label{eg:w_update2}
+  \delta_{output} = -(t_{output}-o_{output})
+\end{equation}
+
+\begin{equation} \label{eg:w_update3}
+  \delta_{hidden} = \delta'(s_{hidden})\sum_{i}^{}{\delta_{i}w_{hidden,i}}
+\end{equation}

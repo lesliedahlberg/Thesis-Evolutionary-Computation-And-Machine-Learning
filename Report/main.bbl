@@ -144,14 +144,17 @@ M.~W. Gardner and S.~Dorling, ``Artificial neural networks (the multilayer
   perceptron)—a review of applications in the atmospheric sciences,''
   \emph{Atmospheric environment}, vol.~32, no.~14, pp. 2627--2636, 1998.
 
+\bibitem{koehn1994combining}
+P.~Koehn, ``Combining genetic algorithms and neural networks: The encoding
+  problem,'' 1994.
+
 \bibitem{montana1989training}
 D.~J. Montana and L.~Davis, ``Training feedforward neural networks using
   genetic algorithms.'' in \emph{IJCAI}, vol.~89, 1989, pp. 762--767.
 
-\bibitem{svozil1997introduction}
-D.~Svozil, V.~Kvasnicka, and J.~Pospichal, ``Introduction to multi-layer
-  feed-forward neural networks,'' \emph{Chemometrics and intelligent laboratory
-  systems}, vol.~39, no.~1, pp. 43--62, 1997.
+\bibitem{yao1999evolving}
+X.~Yao, ``Evolving artificial neural networks,'' \emph{Proceedings of the
+  IEEE}, vol.~87, no.~9, pp. 1423--1447, 1999.
 
 \bibitem{dejong2009EC}
 K.~D. Jong, ``Evolutionary computation,'' \emph{Wiley Interdisciplinary

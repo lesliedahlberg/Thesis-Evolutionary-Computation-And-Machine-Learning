@@ -305,6 +305,12 @@ INPUT ./figures/GP.png
 INPUT figures/pso.png
 INPUT ./figures/pso.png
 INPUT ./figures/pso.png
+INPUT figures/artificial-neuron.png
+INPUT ./figures/artificial-neuron.png
+INPUT ./figures/artificial-neuron.png
+INPUT figures/sigmoid.png
+INPUT ./figures/sigmoid.png
+INPUT ./figures/sigmoid.png
 INPUT figures/FFNN.png
 INPUT ./figures/FFNN.png
 INPUT ./figures/FFNN.png
