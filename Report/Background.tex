@@ -32,16 +32,37 @@ The first step in using evolutionary algorithms is creating a representation whi
 
 \paragraph{Binary representation}
 
-Genetic algorithms (GA) traditionally use a binary representation to store individual genotypes. The representations is a string of fixed length over the alphabet $\{0,1\}$. The problem thus becomes a boolean optimization problem of the form $ f:\{0,1\}^l \rightarrow \mathbb{R}$, where the mappings $h:M \rightarrow \{0,1\}^l$ and $h':\{0,1\}^l \rightarrow M$ are used to encode and decode the parameters and solutions~\cite{back1997evolutionary}.
+Genetic algorithms (GA) traditionally use a binary representation to store individual genotypes. The representations is a string of fixed length over the alphabet $\{0,1\}$. The problem thus becomes a boolean optimization problem of the form $ f:\{0,1\}^l \rightarrow \mathbb{R}$, where the mappings $h:M \rightarrow \{0,1\}^l$ and $h':\{0,1\}^l \rightarrow M$ are used to encode and decode the parameters and solutions~\cite{back1997evolutionary}. See figure~\ref{fig:bin} for an example.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.7\linewidth]{binary}
+  \caption{Binary representation of chromosome with four genes}
+  \label{fig:bin}
+\end{figure}
 
 \paragraph{Integer representation}
 
-Integer representations have been proposed by some researches~\cite{unter611evolutionary}. This approach is useful when dealing with problems where we need to select certain elements in a particular order, e.g. graph-problems, path-finding problems, the knapsack problem, etc.~\cite{Eiben201511}.
+Integer representations have been proposed by some researches~\cite{unter611evolutionary}. This approach is useful when dealing with problems where we need to select certain elements in a particular order, e.g. graph-problems, path-finding problems, the knapsack problem, etc.~\cite{Eiben201511}. See figure~\ref{fig:int} for an example.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.7\linewidth]{integer}
+  \caption{Integer representation of chromosome with four genes}
+  \label{fig:int}
+\end{figure}
 
 
 \paragraph{Real-valued representation}
 
-Real-valued or floating-point representations were originally used in evolutionary programming and evolution strategies and work well for problems located in continuous search-spaces. The problems take the form $f:M\subseteq \mathbb{R}^n \rightarrow \mathbb{R} $~\cite{back1997evolutionary}.
+Real-valued or floating-point representations were originally used in evolutionary programming and evolution strategies and work well for problems located in continuous search-spaces. The problems take the form $f:M\subseteq \mathbb{R}^n \rightarrow \mathbb{R} $~\cite{back1997evolutionary}. See figure~\ref{fig:float} for an example.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.7\linewidth]{float}
+  \caption{Real-valued representation of chromosome with four genes}
+  \label{fig:float}
+\end{figure}
 
 \paragraph{Tree representation}
 

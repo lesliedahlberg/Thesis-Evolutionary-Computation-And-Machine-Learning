@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.17)  19 APR 2017 09:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.17)  19 APR 2017 16:07
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1275,62 +1275,75 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (./introduction.tex) [3] (./background.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 11.
- [4] [5] [6]
-<figures/GA.png, id=205, 1987.425pt x 1490.56876pt>
+
+<figures/binary.png, id=142, 1027.84pt x 123.46124pt>
+File: figures/binary.png Graphic file (type png)
+ <use figures/binary.png>
+Package pdftex.def Info: figures/binary.png used on input line 39.
+(pdftex.def)             Requested size: 298.75264pt x 35.88573pt.
+
+[4] <figures/integer.png, id=159, 501.875pt x 60.225pt>
+File: figures/integer.png Graphic file (type png)
+
+<use figures/integer.png>
+Package pdftex.def Info: figures/integer.png used on input line 50.
+(pdftex.def)             Requested size: 298.75264pt x 35.85222pt.
+ <figures/float.png, id=162, 501.875pt x 60.225pt>
+File: figures/float.png Graphic file (type png)
+
+<use figures/float.png>
+Package pdftex.def Info: figures/float.png used on input line 62.
+(pdftex.def)             Requested size: 298.75264pt x 35.85222pt.
+ [5 <./figures/binary.png> <./figures/integer.png> <./figures/float.png>] [6] [
+7] <figures/GA.png, id=229, 1987.425pt x 1490.56876pt>
 File: figures/GA.png Graphic file (type png)
- <use figures/GA.png>
-Package pdftex.def Info: figures/GA.png used on input line 154.
+
+<use figures/GA.png>
+Package pdftex.def Info: figures/GA.png used on input line 175.
 (pdftex.def)             Requested size: 213.39568pt x 160.02832pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[7 <./figures/GA.png>] [8] <figures/GP.png, id=232, 1927.2pt x 1445.4pt>
+ [8 <./figures/GA.png>]
+<figures/GP.png, id=247, 1927.2pt x 1445.4pt>
 File: figures/GP.png Graphic file (type png)
-
-<use figures/GP.png>
-Package pdftex.def Info: figures/GP.png used on input line 206.
+ <use figures/GP.png>
+Package pdftex.def Info: figures/GP.png used on input line 227.
 (pdftex.def)             Requested size: 213.39568pt x 160.03107pt.
-
-
-LaTeX Warning: Reference `appendix:algorithms' on page 9 undefined on input lin
-e 217.
-
-[9 <./figures/GP.png>] [10] <figures/pso.png, id=266, 1124.2pt x 843.15pt>
+ [9 <./figures/GP.png>] [10] <figures/pso.png, id=276, 1124.2pt x 843.15pt>
 File: figures/pso.png Graphic file (type png)
 
 <use figures/pso.png>
-Package pdftex.def Info: figures/pso.png used on input line 304.
+Package pdftex.def Info: figures/pso.png used on input line 325.
 (pdftex.def)             Requested size: 128.0387pt x 96.02747pt.
- [11 <./figures/pso.png (PNG copy)>] [12]
-<figures/artificial-neuron.png, id=305, 1027.84pt x 739.76375pt>
+ [11 <./figures/pso.png (PNG copy)>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] <figures/artificial-neuron.png, id=321, 1027.84pt x 739.76375pt>
 File: figures/artificial-neuron.png Graphic file (type png)
 
 <use figures/artificial-neuron.png>
-Package pdftex.def Info: figures/artificial-neuron.png used on input line 394.
+Package pdftex.def Info: figures/artificial-neuron.png used on input line 415.
 (pdftex.def)             Requested size: 213.39566pt x 153.58276pt.
 
-<figures/sigmoid.png, id=309, 1028.84375pt x 544.0325pt>
+<figures/sigmoid.png, id=325, 1028.84375pt x 544.0325pt>
 File: figures/sigmoid.png Graphic file (type png)
 
 <use figures/sigmoid.png>
-Package pdftex.def Info: figures/sigmoid.png used on input line 407.
+Package pdftex.def Info: figures/sigmoid.png used on input line 428.
 (pdftex.def)             Requested size: 213.39566pt x 112.83897pt.
-
-<figures/FFNN.png, id=313, 506.89375pt x 386.44376pt>
+ [13 <./figures/artificial-neuron.png>]
+<figures/FFNN.png, id=340, 506.89375pt x 386.44376pt>
 File: figures/FFNN.png Graphic file (type png)
  <use figures/FFNN.png>
-Package pdftex.def Info: figures/FFNN.png used on input line 423.
+Package pdftex.def Info: figures/FFNN.png used on input line 444.
 (pdftex.def)             Requested size: 284.52756pt x 216.92003pt.
 
-[13 <./figures/artificial-neuron.png> <./figures/sigmoid.png>]) [14 <./figures/
-FFNN.png>] (./related.tex
+[14 <./figures/sigmoid.png> <./figures/FFNN.png>]) [15] (./related.tex
 Overfull \hbox (2.18167pt too wide) in paragraph at lines 9--10
 \OT1/cmr/m/n/10 Recent re-search has fo-cused, among oth-ers, on par-al-lelism,
  multi-population mod-els, multi-objective
  []
 
-[15]) [16] (./problem.tex
+[16]) [17] (./problem.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
@@ -1338,16 +1351,18 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
-) [17]
-(./algorithm.tex
-
-LaTeX Warning: Reference `appendix:algorithms' on page 18 undefined on input li
-ne 5.
-
-) [18] (./work.tex <figures/f1.png, id=441, 1124.2pt x 843.15pt>
+) [18]
+(./method.tex) [19] (./algorithm.tex
+<figures/DEDA.png, id=446, 1027.84pt x 1027.84pt>
+File: figures/DEDA.png Graphic file (type png)
+ <use figures/DEDA.png>
+Package pdftex.def Info: figures/DEDA.png used on input line 7.
+(pdftex.def)             Requested size: 213.39568pt x 213.39044pt.
+)
+[20 <./figures/DEDA.png>] [21] (./work.tex
+<figures/f1.png, id=475, 1124.2pt x 843.15pt>
 File: figures/f1.png Graphic file (type png)
-
-<use figures/f1.png>
+ <use figures/f1.png>
 Package pdftex.def Info: figures/f1.png used on input line 44.
 (pdftex.def)             Requested size: 149.37631pt x 112.03204pt.
 
@@ -1355,7 +1370,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 34--49
 []$[]$$[]$ 
  []
 
-<figures/f2.png, id=442, 1124.2pt x 843.15pt>
+<figures/f2.png, id=476, 1124.2pt x 843.15pt>
 File: figures/f2.png Graphic file (type png)
  <use figures/f2.png>
 Package pdftex.def Info: figures/f2.png used on input line 63.
@@ -1365,7 +1380,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 53--68
 []$[]$$[]$ 
  []
 
-<figures/f3.png, id=443, 1124.2pt x 843.15pt>
+<figures/f3.png, id=477, 1124.2pt x 843.15pt>
 File: figures/f3.png Graphic file (type png)
  <use figures/f3.png>
 Package pdftex.def Info: figures/f3.png used on input line 82.
@@ -1375,8 +1390,8 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 72--87
 []$[]$$[]$ 
  []
 
-[19 <./figures/f1.png (PNG copy)> <./figures/f2.png (PNG copy)>]
-<figures/f4.png, id=467, 1124.2pt x 843.15pt>
+[22 <./figures/f1.png (PNG copy)> <./figures/f2.png (PNG copy)>]
+<figures/f4.png, id=501, 1124.2pt x 843.15pt>
 File: figures/f4.png Graphic file (type png)
  <use figures/f4.png>
 Package pdftex.def Info: figures/f4.png used on input line 101.
@@ -1403,7 +1418,7 @@ cmm/m/it/10 ; o[] \OT1/cmr/m/n/10 = 100[]\OML/cmm/m/it/10 i \OT1/cmr/m/n/10 = [
 3\OML/cmm/m/it/10 D=\OT1/cmr/m/n/10 4]\OML/cmm/m/it/10 ; :::; D
  []
 
-<figures/f5.png, id=468, 1124.2pt x 843.15pt>
+<figures/f5.png, id=502, 1124.2pt x 843.15pt>
 File: figures/f5.png Graphic file (type png)
  <use figures/f5.png>
 Package pdftex.def Info: figures/f5.png used on input line 122.
@@ -1413,7 +1428,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 110--127
 []$[]$$[]$ 
  []
 
-<figures/f6.png, id=469, 1124.2pt x 843.15pt>
+<figures/f6.png, id=503, 1124.2pt x 843.15pt>
 File: figures/f6.png Graphic file (type png)
  <use figures/f6.png>
 Package pdftex.def Info: figures/f6.png used on input line 141.
@@ -1423,9 +1438,9 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 131--146
 []$[]$$[]$ 
  []
 
-[20 <./figures/f3.png (PNG copy)> <./figures/f4.png (PNG copy)> <./figures/f5.p
+[23 <./figures/f3.png (PNG copy)> <./figures/f4.png (PNG copy)> <./figures/f5.p
 ng (PNG copy)> <./figures/f6.png (PNG copy)>]
-<figures/f7.png, id=480, 1124.2pt x 843.15pt>
+<figures/f7.png, id=514, 1124.2pt x 843.15pt>
 File: figures/f7.png Graphic file (type png)
  <use figures/f7.png>
 Package pdftex.def Info: figures/f7.png used on input line 160.
@@ -1442,7 +1457,7 @@ Overfull \hbox (71.2551pt too wide) detected at line 171
 n/10 + 20 + \OML/cmm/m/it/10 e
  []
 
-<figures/f8.png, id=481, 1124.2pt x 843.15pt>
+<figures/f8.png, id=515, 1124.2pt x 843.15pt>
 File: figures/f8.png Graphic file (type png)
  <use figures/f8.png>
 Package pdftex.def Info: figures/f8.png used on input line 178.
@@ -1452,7 +1467,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 168--183
 []$[]$$[]$ 
  []
 
-<figures/f9.png, id=482, 1124.2pt x 843.15pt>
+<figures/f9.png, id=516, 1124.2pt x 843.15pt>
 File: figures/f9.png Graphic file (type png)
  <use figures/f9.png>
 Package pdftex.def Info: figures/f9.png used on input line 196.
@@ -1462,7 +1477,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 186--201
 []$[]$$[]$ 
  []
 
-<figures/f10.png, id=483, 1124.2pt x 843.15pt>
+<figures/f10.png, id=517, 1124.2pt x 843.15pt>
 File: figures/f10.png Graphic file (type png)
  <use figures/f10.png>
 Package pdftex.def Info: figures/f10.png used on input line 215.
@@ -1472,9 +1487,9 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 205--220
 []$[]$$[]$ 
  []
 
-[21 <./figures/f7.png (PNG copy)> <./figures/f8.png (PNG copy)> <./figures/f9.p
-ng (PNG copy)>] [22 <./figures/f10.png (PNG copy)>] [23]
-<figures/snake.png, id=522, 445.665pt x 443.6575pt>
+[24 <./figures/f7.png (PNG copy)> <./figures/f8.png (PNG copy)> <./figures/f9.p
+ng (PNG copy)>] [25 <./figures/f10.png (PNG copy)>] [26]
+<figures/snake.png, id=558, 445.665pt x 443.6575pt>
 File: figures/snake.png Graphic file (type png)
  <use figures/snake.png>
 Package pdftex.def Info: figures/snake.png used on input line 390.
@@ -1483,7 +1498,7 @@ Package pdftex.def Info: figures/snake.png used on input line 390.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24 <./figures/snake.png>]
+[27 <./figures/snake.png>]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1708,8 +1723,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[25] [26] [27] [28]) [29] (./conclusion.tex) [30] (./future.tex) [31]
-(./main.bbl [32] [33]
+[28] [29] [30] [31]) [32] (./conclusion.tex) [33] (./future.tex) [34]
+(./main.bbl [35] [36]
 
 ! Package inputenc Error: Unicode char  (U+80)
 (inputenc)                not set up for use with LaTeX.
@@ -1738,28 +1753,40 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) [34]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 191.
+) [37] (./Appendices/algorithms.tex
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(../Code/algorithms/DEDA.m
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 21.
 
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 21.
+ [38])) [39]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 192.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 192.
 
-LaTeX Warning: There were undefined references.
+(./main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 192.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 192.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23403 strings out of 493014
- 423253 string characters out of 6133351
- 578711 words of memory out of 5000000
- 26239 multiletter control sequences out of 15000+600000
+ 24464 strings out of 493014
+ 435152 string characters out of 6133351
+ 682240 words of memory out of 5000000
+ 27176 multiletter control sequences out of 15000+600000
  13242 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,68p,1507b,1028s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,68p,1507b,2472s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></
@@ -1769,22 +1796,23 @@ r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/l
 ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (35 pages, 3168794 bytes).
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (40 pages, 3240013 bytes).
 PDF statistics:
- 725 PDF objects out of 1000 (max. 8388607)
- 635 compressed objects within 7 object streams
- 246 named destinations out of 1000 (max. 500000)
- 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 888 PDF objects out of 1000 (max. 8388607)
+ 783 compressed objects within 8 object streams
+ 349 named destinations out of 1000 (max. 500000)
+ 123 words of extra memory for PDF output out of 10000 (max. 10000000)
 

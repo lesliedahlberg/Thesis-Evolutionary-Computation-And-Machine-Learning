@@ -1,9 +1,9 @@
 function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension, lowerBound, upperBound, maxIterations, populationSize, objectiveValue )
-    
+
     %% Parameters
     selectionThreshold = 0.5;
     F = 0.6;
-    pCR=0.9; 
+    pCR=0.9;
 
     %% Initialization
     selectionCount = floor(selectionThreshold * populationSize);
@@ -13,19 +13,19 @@ function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension
     sort_list = zeros(populationSize);
     population2 = zeros(selectionCount, dimension);
     samplingSize = populationSize-selectionCount;
-    
+
     lastBestValue = value;
-    
+
     %% Iteration
     iterations = 0;
     while value > objectiveValue && iterations <= maxIterations
-        
+
         %% Sorting & Evaluation
         for i = 1:populationSize
-            sort_list(i) = CostFunction(population(i,:));    
+            sort_list(i) = CostFunction(population(i,:));
         end
         [~, ids] = sort(sort_list);
-        
+
         %% Selection
         for i = 1:selectionCount
             ii = ids(i);
@@ -35,7 +35,7 @@ function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension
         %% Model building
         m = mean(population2);
         s = std(population2);
-        
+
 
         %% Sampling
         NG = normrnd(repmat(m,samplingSize,1),repmat(s,samplingSize,1));
@@ -76,11 +76,6 @@ function [ success, iterations, minimum, value ] = DEDA( CostFunction, dimension
                 value = cost;
             end
         end
-        
-%         if lastBestValue ~= value
-%             disp(value);
-%             lastBestValue = value;
-%         end
 
         iterations = iterations + 1;
     end

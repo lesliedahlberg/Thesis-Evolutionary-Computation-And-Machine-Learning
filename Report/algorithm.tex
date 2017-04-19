@@ -2,7 +2,14 @@
 
 The motivation behind the new algorithm is that EDA produces useful new genetic material when sampling it's probability model $M$ but fails to create anything new from the selected population which is permitted to proceed into the next generation unaltered. By applying the principles of differential evolution, which only alter a chromosome if the alteration improves the individual, the selected population can be further improved before entering the next generation without risking any detrimental effects. Furthermore, the new algorithm will be able to approach problems from two perspectives at once, possibly enlarging it's area of applicability.
 
-The proposed improved algorithm, Differential Estimation of Distribution (DEDA), draws upon DE and EDA, applying differential mutation to the selected population of the EDA algorithm. The algorithm is described in algorithm~\ref{algo:my}. The Matlab code can be viewed in appendix~\ref{appendix:algorithms}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.5\linewidth]{DEDA}
+  \caption{Flow-diagram for algorithm}
+  \label{fig:flowalg}
+\end{figure}
+
+The proposed improved algorithm, Differential Estimation of Distribution (DEDA), draws upon DE and EDA, applying differential mutation to the selected population of the EDA algorithm. The algorithm is described in algorithm~\ref{algo:my} and illustrated in figure~\ref{fig:flowalg}. The Matlab code can be viewed in appendix~\ref{appendix:algorithms}.
 
 
 \begin{algorithm}[h]
