@@ -674,7 +674,7 @@ The results are fairly even but DEDA performs best overall. Table~\ref{table:clu
 \end{table}
 
 \paragraph{Intelligent Game Controllers}
-DE performs significantly worse than the other algorithms. PSO, UMDA and DEDA performs similarly, with PSO showing the best results. Table~\ref{table:snake_res} presents the data.
+DE performs significantly worse than the other algorithms. PSO, UMDA and DEDA performs similarly, with PSO showing the best results. Table~\ref{table:snake_res} presents the data. Note that the game controllers measure fitness differently from the other benchmarks. The fitness value here is roughly the number of food blocks the game agent has eaten and therefore large positive numbers signal higher fitness. In the actual benchmark, however, the game controllers returned negative fitness values so that smaller values (larger absolute values) would yield higher fitness and the game controllers could therefore be optimized using the same algorithms benchmark set-ups as in the other benchmarks.
 
 
 \begin{table}[H]
@@ -695,4 +695,8 @@ DE performs significantly worse than the other algorithms. PSO, UMDA and DEDA pe
 
 \subsection{Discussion}
 
-PSO is the best algorithm for multimodal functions and also performs best at controlling neural networks in game controllers. DEDA performs well at unimodal function at all dimensions, while EDA works well at higher dimensions. DEDA produces the best results when optimizing neural networks.
+The algorithms performed very similarly on many of the test cases in the benchmarks, which hints that they are all capable optimization algorithms. Some algorithms, notably PSO and the proposed DEDA, performed better on average than the rest. On some test cases the differences were much more pronounced, however. DE, for instance, performed very well on two functions in the 10-dimensional mathematical test set.
+
+Overall, PSO is the best algorithm for multimodal functions and also performs best at controlling neural networks in game controllers. DEDA performs well at unimodal function at all dimensions, while EDA works well at higher dimensions. DEDA produces the best results when optimizing neural networks, followed by EDA.
+
+When optimizing mathematical functions, the best performers are PSO and DEDA but at higher dimension (50) EDA start to gain an advantage. A similar trend can be observed even in the machine learning benchmarks with the exception of classification, where EDA also performs well.
