@@ -392,8 +392,6 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT ./conclusion.tex
 INPUT ./conclusion.tex
-INPUT ./future.tex
-INPUT ./future.tex
 INPUT main.bbl
 INPUT main.bbl
 INPUT ./Appendices/algorithms.tex

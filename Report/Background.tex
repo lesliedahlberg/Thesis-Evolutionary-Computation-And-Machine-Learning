@@ -235,7 +235,7 @@ More advanced versions of GP include function calls which enable the programs to
 
 \subsection{Emerging Evolutionary Algorithms}
 
-This section describes the three algorithms which were benchmarked together with my own algorithm contribution. 
+This section describes the three algorithms which were benchmarked together with my own algorithm contribution.
 
 \subsubsection{Differential Evolution}
 
@@ -458,7 +458,7 @@ The gradient descent algorithms is used to accomplish this by optimizing the err
   E=\frac{1}{2}\sum_{k\in outputs}^{}{(t_k-o_k)^2}
 \end{equation}
 
-The equations for updating the weights~\cite{koehn1994combining} are dependent on the transfer function's derivative. Equation~\ref{eg:sigmoid_d} shows the sigmoids derivative which is basis for the weight update formulae in equationa~\ref{eg:w_update1},~\ref{eg:w_update2} and~\ref{eg:w_update3}.
+The equations for updating the weights~\cite{koehn1994combining} are dependent on the transfer function's derivative. Equation~\ref{eg:sigmoid_d} shows the sigmoids derivative which is basis for the weight update formulae in equations~\ref{eg:w_update1},~\ref{eg:w_update2} and~\ref{eg:w_update3}.
 
 \begin{equation} \label{eg:sigmoid_d}
   \frac{d}{dx}\sigma(x)=\sigma(x)(1-\sigma(x))
@@ -469,9 +469,9 @@ The equations for updating the weights~\cite{koehn1994combining} are dependent o
 \end{equation}
 
 \begin{equation} \label{eg:w_update2}
-  \delta_{output} = -(t_{output}-o_{output})
+  \delta_{output} = (t_{output}-o_{output})o_{output}(1-o_{output})
 \end{equation}
 
 \begin{equation} \label{eg:w_update3}
-  \delta_{hidden} = \delta'(s_{hidden})\sum_{i}^{}{\delta_{i}w_{hidden,i}}
+  \delta_{hidden} = -(1-o_{hidden})o_{hidden} \sum_{i}^{}{\delta_{i}w_{hidden,i}}
 \end{equation}

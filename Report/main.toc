@@ -89,7 +89,7 @@
 \contentsline {paragraph}{Intelligent Game Controllers}{32}{section*.89}
 \contentsline {subsection}{\numberline {6.7}Discussion}{32}{subsection.6.7}
 \contentsline {section}{\numberline {7}Conclusions}{33}{section.7}
-\contentsline {section}{\numberline {8}Future Work}{34}{section.8}
-\contentsline {section}{References}{37}{section*.91}
-\contentsline {section}{Appendix \numberline {A}Algorithms}{38}{Appendix.a.A}
-\contentsline {subsection}{\numberline {A.1}Differential Estimation of Distribution}{38}{subsection.a.A.1}
+\contentsline {subsection}{\numberline {7.1}Future Work}{33}{subsection.7.1}
+\contentsline {section}{References}{36}{section*.91}
+\contentsline {section}{Appendix \numberline {A}Algorithms}{37}{Appendix.a.A}
+\contentsline {subsection}{\numberline {A.1}Differential Estimation of Distribution}{37}{subsection.a.A.1}
