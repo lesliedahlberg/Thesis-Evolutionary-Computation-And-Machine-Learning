@@ -24,7 +24,7 @@
 \contentsline {paragraph}{Tree mutation}{7}{section*.21}
 \contentsline {paragraph}{Tree recombination}{7}{section*.22}
 \contentsline {subsubsection}{\numberline {2.1.6}Survivor selection mechanism}{7}{subsubsection.2.1.6}
-\contentsline {subsubsection}{\numberline {2.1.7}Initatilization}{7}{subsubsection.2.1.7}
+\contentsline {subsubsection}{\numberline {2.1.7}Initialization}{7}{subsubsection.2.1.7}
 \contentsline {subsubsection}{\numberline {2.1.8}Termination condition}{7}{subsubsection.2.1.8}
 \contentsline {subsection}{\numberline {2.2}Traditional Evolutionary Algorithms}{7}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Genetic algorithms}{8}{subsubsection.2.2.1}

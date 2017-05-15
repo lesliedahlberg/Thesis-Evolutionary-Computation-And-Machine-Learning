@@ -226,7 +226,7 @@ The functions are illustrated in two dimensions in figures~\ref{f1},~\ref{f2},~\
 
 \subsection{Function Approximation ($FA_{1-6}$)}
 
-The optimization algorithms were used find the optimal weights for feed-forward neural networks. The neural networks were evaluated on six function approximation data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}. The data-sets are listed in table~\ref{table:fa1-6_data-sets}.
+The optimization algorithms were used to find the optimal weights for feed-forward neural networks. The neural networks were evaluated on six function approximation data-sets which are available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}. The data-sets are listed in table~\ref{table:fa1-6_data-sets}.
 
 \begin{table}[H]
   \centering
@@ -300,7 +300,7 @@ The optimization algorithms were used find the optimal weights for feed-forward 
     \begin{tabular}{ | c | c | c | c | c | }
       \hline
       Data-set & Description & Input-Dimension & Output-Dimension & Weight-Dimension \\ \hline
-      simpleclass & imple pattern recognition & 2 & 4 & 18 \\ \hline
+      simpleclass & Simple pattern recognition & 2 & 4 & 18 \\ \hline
       cancer & Breast cancer & 9 & 2 & 110 \\ \hline
       crab & Crab gender & 6 & 2 & 56 \\ \hline
       glass & Glass chemical & 9 & 2 & 110 \\ \hline
@@ -320,7 +320,7 @@ Same as $FA_{1-6}$.
 
 \subsection{Clustering ($CLU_{1}$)}
 
-The optimization algorithms were used find the optimal weights for feed-forward neural networks. The neural networks were evaluated on one clustering data-set which is available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:clu1_params}. The data-sets are listed in table~\ref{table:clu1_data-sets}.
+The optimization algorithms were used to find the optimal weights for feed-forward neural networks. The neural networks were evaluated on one clustering data-set which is available in Matlab's Neural Network Toolbox. The benchmark parameters and settings are listed in table~\ref{table:clu1_params}. The data-sets are listed in table~\ref{table:clu1_data-sets}.
 
 \begin{table}[H]
   \centering
@@ -360,7 +360,7 @@ Same as $FA_{1-6}$.
 \subsection{Intelligent Game Controllers ($IGC_{1}$)}
 
 
-Machine learning test set $IGC_{1}$ uses evolutionary algorithms to evolve weights for feed-forward neural networks, which control the behavior of a game-agent in the classic game of ``Snake''. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}.
+Machine-learning test-set $IGC_{1}$ uses evolutionary algorithms to evolve weights for feed-forward neural networks, which control the behavior of a game-agent in the classic game of ``Snake''. The benchmark parameters and settings are listed in table~\ref{table:fa1-6_params}.
 
 \begin{table}[H]
   \centering
@@ -383,7 +383,7 @@ Machine learning test set $IGC_{1}$ uses evolutionary algorithms to evolve weigh
 
 \paragraph{Game Description and Rules}
 
-The game is made up of a $n*m$ square grid through which a snake can freely move. The snake consists of a sequence of interconnected blocks and is divided into a head which moves in a certain direction and a tail which follows the head. Food blocks randomly appear on block at a time on the grid and the snake's objective is eat these blocks. When the snake's head touches the food block the block vanishes and the snake grows one square in length. If the head of the snake tries to move outside the grid it dies and the game ends. If the head of the snake collides with the tail it also and dies and the game ends. The snake's head can move in four direction: up, down, left and right. If the snake tries to move in the opposite of it's current direction it also dies. The snake has a starvation counter which forces it to pursue food and eat. The starvation counter is initialized to the starvation threshold when the game begins and decreases by one every time the snake moves. When the snake eats, the starvation counter is increased once by the starvation threshold. Figure~\ref{snake} illustrates the game grid. Figure~\ref{snake_alg} described the algorithm for the game. The game's parameters are explained in table~\ref{snake_p}.
+The game is made up of a $n*m$ square grid through which a snake can freely move. The snake consists of a sequence of interconnected blocks and is divided into a head which moves in a certain direction and a tail which follows the head. Food blocks randomly appear one block at a time on the grid and the snake's objective is to eat these blocks. When the snake's head touches the food block the block vanishes and the snake grows one square in length. If the head of the snake tries to move outside the grid it dies and the game ends. If the head of the snake collides with the tail it also dies and the game ends. The snake's head can move in four directions: up, down, left and right. If the snake tries to move in the opposite of it's current direction it also dies. The snake has a starvation counter which forces it to pursue food and eat. The starvation counter is initialized to the starvation threshold when the game begins and decreases by one every time the snake moves. When the snake eats, the starvation counter is increased once by the starvation threshold. Figure~\ref{snake} illustrates the game grid. Figure~\ref{snake_alg} describes the algorithm for the game. The game's parameters are explained in table~\ref{snake_p}.
 
 \begin{figure}[H]
   \centering
@@ -444,7 +444,7 @@ In order to control the snake with a neural network a representation of the stat
 
 \paragraph{Neural Network Controller}
 
-The neural network which controls is a feed-forward neural network with one hidden layer. The input layer has 12 neurons which correspond to the game-state representation. The output layer has four neurons, which correspond to the decision to move left, right, up or down. The hidden layer has 8 neurons. Figure \ref{ffnn_snake} illustrates the network.
+The neural network which controls the game is a feed-forward neural network with one hidden layer. The input layer has 12 neurons which correspond to the game-state representation. The output layer has four neurons, which correspond to the decision to move left, right, up or down. The hidden layer has 8 neurons. Figure \ref{ffnn_snake} illustrates the network.
 
 
 
@@ -495,13 +495,13 @@ The neural network which controls is a feed-forward neural network with one hidd
 
 \paragraph{Fitness Function and Evaluation}
 
-The objective function, which is run by the optimization algorithms, takes the evolved weights of the neural network and attempts to play the game using them. The fitness function of gameplay if determined by the equation~\ref{eq:snake_fitness}.
+The objective function, which is run by the optimization algorithms, takes the evolved weights of the neural network and attempts to play the game using them. The fitness-function of gameplay is determined by the equation~\ref{eq:snake_fitness}.
 
 \begin{equation} \label{eq:snake_fitness}
   fitness = \text{foodEaten} + \frac{1}{1-e^{-\text{movesMade}}}
 \end{equation}
 
-The fitness function ensured that the snake has an ``easy start'' when it will be rewarded for not dying, but then has to pursue food in order to maximize it's fitness.
+The fitness-function ensured that the snake has an ``easy start'' during which it will be rewarded for not dying, but then has to pursue food in order to maximize it's fitness.
 
 
 \subsection{Results}
@@ -511,7 +511,7 @@ This section presents results for the benchmarks of the four algorithms presente
 \paragraph{Function Optimization at D=10}
 DEDA significantly outperforms the other algorithms at most unimodal functions. DE significantly outperforms the others at one unimodal and one multimodal function. PSO outperforms the others by a slight margin on most multimodal function. Separability does not seem to influence the results. Table~\ref{table:f_res_10} presents the data.
 
-For $F_1$ EDA significantly outperforms DE and PSO, while DEDA lags far behind. For $F_2$ DEDA finds significantly better results than the rest, while EDA performs the worst. For $F_3$ DEDA performs best followed by DE, but PSO and EDA do not find good solutions at all. For $F_4$ DEDA significantly outperforms the rest and EDA does not find any good results at all. For $F_5$ DE significantly outperforms the rest, DEDA finds an acceptable results and PSO and EDA do not find any good results. For $F_6$ DE significantly outperforms the rest, DEDA finds an acceptable results and PSO and EDA do not find any good results. For $F_7$ EDA find the best solution but all algorithms achieve similar results. For $F_8$ PSO find the best solution but all algorithms achieve similar results. For $F_9$ PSO find the best solution but all algorithms achieve similar results. For $F_{10}$ PSO find the best solution but all algorithms achieve similar results.
+For $F_1$ EDA significantly outperforms DE and PSO, while DEDA lags far behind. For $F_2$ DEDA finds significantly better results than the rest, while EDA performs the worst. For $F_3$ DEDA performs best followed by DE, but PSO and EDA do not find good solutions at all. For $F_4$ DEDA significantly outperforms the rest and EDA does not find any good results at all. For $F_5$ DE significantly outperforms the rest, DEDA finds acceptable results and PSO and EDA do not find any good results. For $F_6$ DE significantly outperforms the rest, DEDA finds acceptable results and PSO and EDA do not find any good results. For $F_7$ EDA find the best solution but all algorithms achieve similar results. For $F_8$ PSO find the best solution but all algorithms achieve similar results. For $F_9$ PSO find the best solution but all algorithms achieve similar results. For $F_{10}$ PSO find the best solution but all algorithms achieve similar results.
 
 \begin{table}[H]
   \centering
@@ -538,9 +538,9 @@ For $F_1$ EDA significantly outperforms DE and PSO, while DEDA lags far behind. 
 \end{table}
 
 \paragraph{Function Optimization at D=30}
-DEDA moderately outperform the other algorithms at most unimodal functions. PSO outperform all other algorithms on the multimodal functions, but the results are fairly even. DEDA significantly outperforms the others on separable unimodal algorithms. Table~\ref{table:f_res_30} presents the data.
+DEDA moderately outperform the other algorithms at most unimodal functions. PSO outperform all other algorithms on the multimodal functions, but the results are fairly even. DEDA significantly outperforms the others on separable unimodal functions. Table~\ref{table:f_res_30} presents the data.
 
-For $F_1$ DEDA performs best closely followed by EDA. PSO also finds a good result but DE finds a significantly worse result. For $F_2$ all algorithms find similar solutions and DEDA finds the best one. For $F_3$ all algorithms find similar solutions and EDA finds the best one. For $F_4$ all algorithms find somewhat similar solutions and DEDA finds the best one. For $F_5$ all algorithms find somewhat similar solutions and DEDA finds the best one. For $F_6$ all algorithms find somewhat similar solutions and DEDA finds the best one. For $F_7$ PSO finds the best solution followed EDA and DE and  DEDA find worse solutions. For $F_8$ all algorithms find similar solutions and PSO finds the best one. For $F_9$ DE, EDA and DEDA find similar solutions, but PSO finds a somewhat better solution. For $F_{10}$ all algorithms find similar solutions and PSO finds the best one.
+For $F_1$ DEDA performs best closely followed by EDA. PSO also finds a good result though DE finds a significantly worse result. For $F_2$ all algorithms find similar solutions and DEDA finds the best one. For $F_3$ all algorithms find similar solutions and EDA finds the best one. For $F_4$ all algorithms find somewhat similar solutions and DEDA finds the best one. For $F_5$ all algorithms find somewhat similar solutions and DEDA finds the best one. For $F_6$ all algorithms find somewhat similar solutions and DEDA finds the best one. For $F_7$ PSO finds the best solution followed EDA and DE and  DEDA find worse solutions. For $F_8$ all algorithms find similar solutions and PSO finds the best one. For $F_9$ DE, EDA and DEDA find similar solutions, but PSO finds a somewhat better solution. For $F_{10}$ all algorithms find similar solutions and PSO finds the best one.
 
 \begin{table}[H]
   \centering
@@ -567,14 +567,14 @@ For $F_1$ DEDA performs best closely followed by EDA. PSO also finds a good resu
 \end{table}
 
 \paragraph{Function Optimization at D=50}
-The results are fairly even. DEDA significantly outperforms the others on separable unimodal algorithms. The multimodal functions favor PSO, the unimodal function favor UMDA while DEDA's results are more scattered. Table~\ref{table:f_res_50} presents the data.
+The results are fairly even. DEDA significantly outperforms the others on separable unimodal algorithms. The multimodal functions favor PSO, the unimodal functions favor UMDA while DEDA's results are more scattered. Table~\ref{table:f_res_50} presents the data.
 
 For $F_1$ DEDA find the best results closely followed by EDA. DE finds a bad solution and PSO is in-between DE and EDA.
-For $F_2$ DE, PSO and DEDA find similar solutions. EDA outperforms the all by a moderate margin.
+For $F_2$ DE, PSO and DEDA find similar solutions. EDA outperforms them all by a moderate margin.
 For $F_3$ all algorithms perform similarly. EDA performs best, followed by PSO.
 For $F_4$ EDA performs best, followed by DE and DEDA. PSO finds the worst solution.
 For $F_5$ DEDA finds the best solution, closely followed by EDA, while DE and PSO find somewhat worse solutions.
-For $F_6$ DE performs signigicantly worse than the rest, which perform very similarly. EDA finds the best solution.
+For $F_6$ DE performs significantly worse than the rest, which perform very similarly. EDA finds the best solution.
 For $F_7$ DEDA finds a good solution while PSO performs somewhat poorer and DE and EDA find the worst solutions.
 For $F_8$ all algorithms find similar solutions. PSO finds the best solution.
 For $F_9$ all algorithms find somewhat similar solutions. PSO finds the best solution.
@@ -607,7 +607,7 @@ For $F_{10}$ all algorithms find similar solutions. PSO finds the best solution.
 \paragraph{Function Approximation}
 The results are fairly even but DEDA performs best overall. PSO is second best. Table~\ref{table:fa_res} presents the data.
 
-For $simplefit$ DE and PSO find the best solutions. For $bodyfat$ DEDA finds the best solution but all algorithms deliver similar results. For $chemical$ DEDA, PSO and DE find similar solutions. DEDA performs best and EDA finds a much worse solution. For $cho$ PSO finds the best solution but all algorithms deliver similar results. For $engine$ DEDA performs best, closelly followed by PSO. DE and EDA perform somewhat worse. For $house$ PSO finds the best solution but all algorithms deliver similar results.
+For $simplefit$ DE and PSO find the best solutions. For $bodyfat$ DEDA finds the best solution but all algorithms deliver similar results. For $chemical$ DEDA, PSO and DE find similar solutions. DEDA performs best and EDA finds a much worse solution. For $cho$ PSO finds the best solution but all algorithms deliver similar results. For $engine$ DEDA performs best, closely followed by PSO. DE and EDA perform somewhat worse. For $house$ PSO finds the best solution but all algorithms deliver similar results.
 
 \begin{table}[H]
   \centering
@@ -674,7 +674,7 @@ The results are fairly even but DEDA performs best overall. Table~\ref{table:clu
 \end{table}
 
 \paragraph{Intelligent Game Controllers}
-DE performs significantly worse than the other algorithms. PSO, UMDA and DEDA performs similarly, with PSO showing the best results. Table~\ref{table:snake_res} presents the data. Note that the game controllers measure fitness differently from the other benchmarks. The fitness value here is roughly the number of food blocks the game agent has eaten and therefore large positive numbers signal higher fitness. In the actual benchmark, however, the game controllers returned negative fitness values so that smaller values (larger absolute values) would yield higher fitness and the game controllers could therefore be optimized using the same algorithms benchmark set-ups as in the other benchmarks.
+DE performs significantly worse than the other algorithms. PSO, UMDA and DEDA perform similarly, with PSO showing the best results. Table~\ref{table:snake_res} presents the data. Note that the game controllers measure fitness differently from the other benchmarks. The fitness value here is roughly the number of food blocks the game agent has eaten and therefore large positive numbers signal higher fitness. In the actual benchmark, however, the game controllers returned negative fitness values so that smaller values (larger absolute values) would yield higher fitness and the game controllers could therefore be optimized using the same algorithms benchmark set-ups as in the other benchmarks.
 
 
 \begin{table}[H]
@@ -695,8 +695,8 @@ DE performs significantly worse than the other algorithms. PSO, UMDA and DEDA pe
 
 \subsection{Discussion}
 
-The algorithms performed very similarly on many of the test cases in the benchmarks, which hints that they are all capable optimization algorithms. Some algorithms, notably PSO and the proposed DEDA, performed better on average than the rest. On some test cases the differences were much more pronounced, however. DE, for instance, performed very well on two functions in the 10-dimensional mathematical test set.
+The algorithms performed very similarly on many of the test-cases in the benchmarks, which hints that they are all capable optimization algorithms. Some algorithms, notably PSO and the proposed DEDA, performed better on average than the rest. On some test cases the differences were much more pronounced, however. DE, for instance, performed very well on two functions in the 10-dimensional mathematical test set.
 
-Overall, PSO is the best algorithm for multimodal functions and also performs best at controlling neural networks in game controllers. DEDA performs well at unimodal function at all dimensions, while EDA works well at higher dimensions. DEDA produces the best results when optimizing neural networks, followed by EDA.
+Overall, PSO is the best algorithm for multimodal functions and also performs best at controlling neural networks in game controllers. DEDA performs well at unimodal functions at all dimensions, while EDA works well at higher dimensions. DEDA produces the best results when optimizing neural networks, followed by EDA.
 
 When optimizing mathematical functions, the best performers are PSO and DEDA but at higher dimension (50) EDA start to gain an advantage. A similar trend can be observed even in the machine learning benchmarks with the exception of classification, where EDA also performs well.

@@ -24,7 +24,7 @@ Evolutionary algorithms work on the concept of populations. A population is a se
 
 \end{algorithm}
 
-Here the fundamental building blocks of evolutionary algorithms will be presented and explained. Most of these term are universal to all approaches which will be covered in this thesis.
+Here the fundamental building-blocks of evolutionary algorithms will be presented and explained. Most of these term are universal to all approaches which will be covered in this thesis.
 
 \subsubsection{Representation}
 
@@ -55,7 +55,7 @@ Integer representations have been proposed by some researches~\cite{unter611evol
 
 \paragraph{Real-valued representation}
 
-Real-valued or floating-point representations were originally used in evolutionary programming and evolution strategies and work well for problems located in continuous search-spaces. The problems take the form $f:M\subseteq \mathbb{R}^n \rightarrow \mathbb{R} $~\cite{back1997evolutionary}. See figure~\ref{fig:float} for an example.
+Real-valued or floating-point representations were originally used in evolutionary programming and evolution strategies, and work well for problems located in continuous search-spaces. The problems take the form $f:M\subseteq \mathbb{R}^n \rightarrow \mathbb{R} $~\cite{back1997evolutionary}. See figure~\ref{fig:float} for an example.
 
 \begin{figure}[H]
   \centering
@@ -92,7 +92,7 @@ Parent selection serves to improve the quality of a population by selecting whic
 
 \paragraph{Fitness proportional selection}
 
-Fitness proportional selection (FPS) assigns a selection probability to an individual based on it's absolute fitness. This results in very good individuals overtaking the population quickly and premature convergence. If individuals have very similar fitness values the selection pressure becomes low. This mechanism is also very dependent on the exact form of the fitness function~\cite{Eiben2015asdfasd}.
+Fitness proportional selection (FPS) assigns a selection probability to an individual based on it's absolute fitness. This results in very good individuals overtaking the population quickly and premature convergence. If individuals have very similar fitness values the selection pressure becomes low. This mechanism is also very dependent on the exact form of the fitness-function~\cite{Eiben2015asdfasd}.
 
 \paragraph{Ranking selection}
 
@@ -105,15 +105,15 @@ Tournament selection enables selection without global knowledge of the populatio
 
 \subsubsection{Variation operators}
 
-Variation operators introduce new features into the genotypes of a population by modifying or mixing existing genotypes. They can be divided into two types: unary operators which take one genotype and stochastically alter it to introduce random change and n-ary operators which mix the features of 2 or more genotypes. Unary operators are called mutation operators while n-ary operators are called cross-over or recombination operators. The biological equivalents to these are random mutation and sexual reproduction. Mutation operators allow evolutionary algorithms to theoretically span the whole continuum of the search space by giving a non-zero probability that a genotype mutates into any other other genotype. This has been used to formally prove that evolutionary algorithms will always reach the desired optimum given enough time. Recombination tries to create new superior individuals by combining the genes of two good parent genotypes~\cite{Eiben2015_whatevolutionary, Eiben20021}.
+Variation operators introduce new features into the genotypes of a population by modifying or mixing existing genotypes. They can be divided into two types: unary operators which take one genotype and stochastically alter it to introduce random change and n-ary operators which mix the features of 2 or more genotypes. Unary operators are called mutation operators while n-ary operators are called cross-over or recombination operators. The biological equivalents to these are random mutation and sexual reproduction. Mutation operators allow evolutionary algorithms to theoretically span the whole continuum of the search space by giving a non-zero probability that a genotype mutates into any other genotype. This has been used to formally prove that evolutionary algorithms will always reach the desired optimum given enough time. Recombination tries to create new superior individuals by combining the genes of two good parent genotypes~\cite{Eiben2015_whatevolutionary, Eiben20021}.
 
 \paragraph{Binary mutation}
 
-The most commonly used mutation scheme for binary representations consists of randomly flipping bits (genes) in a chromosome with a certain probability. The number of alterations is not fixed with this approach, but the common procedures used can often be set to change a certain number of bits on average~\cite{Eiben201511}.
+The most commonly used mutation scheme for binary representations consists of randomly flipping bits (genes) in a chromosome with a certain probability. The number of alterations is not fixed with this approach, but the common procedures used can often be set to change a certain number of bits on-average~\cite{Eiben201511}.
 
 \paragraph{Binary recombination}
 
-Three approached are normally used to recombine binary chromosomes. One-point crossover divides the chromosome into two sections, picking a random intersection point, and swaps the tails of the two chromosomes creating two offspring. N-point crossover generalizes this behavior by picking n random splitting points and assembling new chromosome by taking alternate sections of the parent chromosomes. Uniform crossover creates an array of uniform numbers from a probability distribution and chooses which parent to take a gene from by comparing the random value to a probability threshold~\cite{Eiben201511}.
+Three approaches are normally used to recombine binary chromosomes. One-point crossover divides the chromosome into two sections, picking a random intersection point, and swaps the tails of the two chromosomes creating two offspring. N-point crossover generalizes this behavior by picking $n$ random splitting points and assembling new chromosomes by taking alternate sections of the parent chromosomes. Uniform crossover creates an array of uniform numbers from a probability distribution and chooses which parent to take a gene from by comparing the random value to a probability threshold~\cite{Eiben201511}.
 
 \paragraph{Integer mutation}
 
@@ -130,7 +130,7 @@ For real-valued representations mutation is similar to integer mutation with the
 
 \paragraph{Real-valued recombination}
 
-There are three common ways to recombine real-valued chromosomes. Discreet recombination works like n-point crossover and thus does not alter the values in the offspring chromosomes. Arithmetic recombination chooses values which fall in-between the values of the parent chromosomes for it's offspring. Blend recombination works like arithmetic recombination but allow for values which lie slightly outside of the interval defines by the parent genes~\cite{Eiben201511}.
+There are three common ways to recombine real-valued chromosomes. Discreet recombination works like n-point crossover and thus does not alter the values in the offspring chromosomes. Arithmetic recombination chooses values which fall in-between the values of the parent chromosomes for it's offspring. Blend recombination works like arithmetic recombination but allow for values which lie slightly outside of the interval defined by the parent genes~\cite{Eiben201511}.
 
 
 \paragraph{Tree mutation}
@@ -147,9 +147,9 @@ Subtree crossover is commonly used to recombine trees. It randomly selects a nod
 Survivor selection takes place after new offspring have been generated and determines which individuals are allowed to live on into the next generation. It is often referred to as the replacement strategy and contrary to parent selection it is usually deterministic. Two popular mechanisms are fitness-based selection and age-based selection. Fitness-based selection determines the next generation by selecting the individuals with the highest fitness while age-based selection allows only the offspring to survive~\cite{Eiben2015_whatevolutionary}.
 
 
-\subsubsection{Initatilization}
+\subsubsection{Initialization}
 
-Initialization is the process during which the initial population is generated. The genotypes are usually generated randomly from a uniform distribution based on some range of acceptable input values. If a good solution is known before hand variations of it can be include in the initial population as a bias, but this can sometimes cause more problems than it solves~\cite{Eiben20021}.
+Initialization is the process during which the initial population is generated. The genotypes are usually generated randomly from a uniform distribution based on some range of acceptable input values. If a good solution is known beforehand variations of it can be included in the initial population as a bias, but this can sometimes cause more problems than it solves~\cite{Eiben20021}.
 
 \subsubsection{Termination condition}
 
@@ -182,7 +182,7 @@ Genetic algorithms (GA) were introduced by John Holland in the 1960s as an attem
   \caption{Basic genetic algorithm}
   \label{algo:geneticalgorithm}
     \begin{algorithmic}
-       \State Initialize a population of N binary chromosome with L bits
+       \State Initialize a population of N binary chromosomes with L bits
        \While{termination-condition not fulfilled}
         \State Evaluate the fitness $F(x)$ of each chromosome $x$
         \Repeat
@@ -220,7 +220,7 @@ Each FSM creates one offspring which is mutated by one or more of the following 
 
 Genetic programming (GP) differs from traditional genetic algorithms by evolving computer programs which solve problems instead of directly finding the solution to a problem. The individuals in the population are therefore data-structures which encode computer programs, usually rooted trees representing expressions~\cite{Michalewicz1997}.
 
-At it's most basic the programs are defines as functions which take a set of input parameters and produce an output. The programs are constructed from building blocks such as variables, numbers and operators. The initial population contains a set of such programs which have been initialized as random trees~\cite{Michalewicz1997}.
+At it's most basic the programs are defined as functions which take a set of input parameters and produce an output. The programs are constructed from building blocks such as variables, numbers and operators. The initial population contains a set of such programs which have been initialized as random trees~\cite{Michalewicz1997}.
 
 \begin{figure}[H]
   \centering
@@ -229,7 +229,7 @@ At it's most basic the programs are defines as functions which take a set of inp
   \label{fig:GP}
 \end{figure}
 
-The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test cases and the programs undergo cross-over and other mutations. Cross-over is defined as the exchange of subtrees between programs and produces two offspring from two parents~\cite{Michalewicz1997}, see figure~\ref{fig:GP}.
+The evolution process is similar to GAs in that the programs are evaluated using a function which runs a set of test-cases and the programs undergo cross-over and other mutations. Cross-over is defined as the exchange of subtrees between programs and produces two offspring from two parents~\cite{Michalewicz1997}, see figure~\ref{fig:GP}.
 
 More advanced versions of GP include function calls which enable the programs to remember useful symmetries and regularities and facilitate code reuse~\cite{Michalewicz1997}.
 
@@ -286,7 +286,7 @@ Crossover occurs after mutation and is applied individually to every vector $x$.
 
 $I_{\text{rand}}$ is a randomly selected index from the interval $[1,D]$ and $CR$ is the crossover constant which determines the probability that an element is selected from the mutant vector.
 
-Selection is the last step in creating a new generation. The trial vector $u$ is compared with the original vector $x$ for fitness and the vector with the lost cost is selected for the generation according to the formula below where $n=1,2,3,...,N$:
+Selection is the last step in creating a new generation. The trial vector $u$ is compared with the original vector $x$ for fitness and the vector with the least cost is selected for the generation according to the formula below where $n=1,2,3,...,N$:
 
 \begin{equation}
     x_{n}^{g+1} =
@@ -302,7 +302,7 @@ In the benchmark the parameters for DE have been set to $F = 0.6$ and $CR=0.9$ a
 
 \paragraph{Variants}
 
-Different DE schemes are classified as DE/x/y, where x symbolizes the vector which is mutated and y is the number of differential vectors used. The value of x can be ``rand'' for random vector or ``best''' for the best vector in the population. The algorithm abose is therefore classified as DE/rand/1. The variant DE/best/2 is considered to be a good alternative to DE/rand/1~\cite{qin2009differential}. It's mutation equation is described below:
+Different DE schemes are classified as DE/x/y, where x symbolizes the vector which is mutated and y is the number of differential vectors used. The value of x can be ``rand'' for random vector or ``best''' for the best vector in the population. The algorithm above is therefore classified as DE/rand/1. The variant DE/best/2 is considered to be a good alternative to DE/rand/1~\cite{qin2009differential}. It's mutation equation is described below:
 
 \begin{equation}
 v_{n}^{g+1} = [ x_{best}^{g} + F(x_{r1n}^{g} - x_{r2n}^{g}) + F(x_{r3n}^{g} - x_{r4n}^{g})
@@ -329,7 +329,7 @@ PSO is a parallel search technique where a set of particles  fly through the n-d
 
 The algorithm has a set of general properties: $v_{max}$ restricts the velocity of each particle to the interval $[-v_{max},v_{max}]$, an inertial factor $\omega$, two random numbers $\phi_1$ and $\phi_2$ which affect the velocity update formula by modulating the influence of $\vec{p}(t)$ and $\vec{g}(t)$, and two constants $C^2$ and $C^1$ which are termed particle “self-confidence” and “swarm confidence”.
 
-The initial values of $\vec{p}(t)$ and $\vec{g}(t)$ are equal to $\vec{x}(0)$ for each particle. After the particle have been initialized an iterative update process is started which modifies the positions and velocities of the particles. The formula below describes the process ($d$ is the dimension of the position and velocity and $i$ is the index of the particle):
+The initial values of $\vec{p}(t)$ and $\vec{g}(t)$ are equal to $\vec{x}(0)$ for each particle. After the particle has been initialized an iterative update-process is started which modifies the positions and velocities of the particles. The formula below describes the process ($d$ is the dimension of the position and velocity and $i$ is the index of the particle):
 
 \begin{equation}
   v_{id} (t+1) = \omega v_{id} (t) + C_1 \phi_1 (p_{id} (t) - x_{id} (t)) + C_2 \phi_2 (g_{id} (t) - x_{id} (t))
@@ -366,7 +366,7 @@ In the benchmark the parameters for PSO have been set to $\omega = 0.8$~\cite{sh
 
 Estimation of distribution algorithms~\cite{Hauschild2011111} are stochastic search algorithms which try to find the optimal value of a function by creating and sampling probability distributions repeatedly. The first step is creating population $P(0)$ and filling it with solution parameter vectors created from a probability distribution which covers the whole search space uniformly. Then all solutions in $P(g)$ are evaluated and the best solutions $S(g)$ are selected (a threshold variable $t$ is used to determine how many solutions are selected, setting $t=50\%$ means that the best 50\% of the solutions are selected). After selection a probabilistic model $M(g)$ is constructed from $S(g)$ and new solutions $O(g)$ are sampled from $M(g)$. Finally $O(g)$ is incorporated into $P(g)$ The generation counter is incremented $g = g + 1$ and the selection, model and sampling stages are repeated until a suitable solution is found~\cite{Hauschild2011111}.
 
-The most difficult part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However depending on the complexity of the problem other methods such as Estimation of Baysian Networks (EBNA) can be used~\cite{larranaga2012review}.
+The most difficult part is constructing the probabilistic model, this will differ for continuous and discreet optimization and a model of appropriate complexity has to be chosen depending on the nature of the problem. The simplest method for continuous EDAs is using a continuous Univariate Marginal Density Algorithm (UMDA). However, depending on the complexity of the problem other methods such as Estimation of Baysian Networks (EBNA) can be used~\cite{larranaga2012review}.
 
 \paragraph{UMDA}
 The UMDA algorithm is an EDA algorithm which uses a set of independent probability distributions to sample new solution vectors. The probability model can be expressed as a product of the individual probabilities
@@ -398,9 +398,9 @@ where $p(x)$ is the global multivariate density, D is the vector length and $p_d
 
 \subsection{Machine learning concepts}
 
-The machine learning concepts needed for this thesis are artificial neural networks (ANN), specifically feed-forward neural networks (FFNN). Artificial neural networks are mathematical models which are based on the functioning of biological neurons in the brain. They are useful for predicting future behavior and events, trends, function approximation and data-classification. FFNNs are a popular type of ANN, often referred to as multi-layer perceptrons.  ANNs have to be trained on training data in order to function properly and the most widely used and most popular method for this is back-propagation (BP)~\cite{gardner1998artificial}.
+The machine learning concepts needed for this thesis are artificial neural networks (ANN) and specifically feed-forward neural networks (FFNN). Artificial neural networks are mathematical models which are based on the functioning of biological neurons in the brain. They are useful for predicting future behavior and events, trends, function approximation and data-classification. FFNNs are a popular type of ANN, often referred to as multi-layer perceptrons.  ANNs have to be trained on training data in order to function properly and the most widely used and most popular method for this is back-propagation (BP)~\cite{gardner1998artificial}.
 
-Back-propagation is a local minimization algorithm which works in n-dimensions. It can therefore be replaced by other optimization algorithms such as genetic algorithms. This is what will be considered in the thesis~\cite{gardner1998artificial}.
+Back-propagation is a local minimization algorithm which works in n-dimensions. It can therefore be replaced by other optimization algorithms such as genetic algorithms. This will be of interest in this thesis work.~\cite{gardner1998artificial}.
 
 \subsubsection{Artificial Neuron}
 
@@ -446,11 +446,11 @@ Neurons in FFNNs are always connected to all neurons in the preceding and succee
     \label{figure:FFNN}
 \end{figure}
 
-The FFNN is evaluated by evaluating the individual neurons in each layers beginning from the input layer and moving successively forward until the output layer is reached. The values calculated at the output neurons is treated as the output from the network.
+The FFNN is evaluated by evaluating the individual neurons in each layer beginning from the input layer and moving successively forward until the output layer is reached. The values calculated at the output neurons constitute the final values of the entire network.
 
 \subsubsection{Back-propagation}
 
-Back-propagation~\cite{koehn1994combining} is a neural network training algorithm which uses sets of training data to teach a neural network different patterns. The training data consists of a set inputs and corresponding outputs. Initially the network will have random weights and the network will not yield the correct output for most of the training inputs. Back-propagation works by slightly adjusting the weights for each training sample. This is done repeatedly and once cycle through all training samples is referred to as an epoch.
+Back-propagation~\cite{koehn1994combining} is a neural network training algorithm which uses sets of training data to teach a neural network different patterns. The training data consists of a set of inputs and corresponding outputs. Initially the network will have random weights and the network will not yield the correct output for most of the training inputs. Back-propagation works by slightly adjusting the weights for each training sample. This is done repeatedly and one cycle through all training samples is referred to as an epoch.
 
 The gradient descent algorithms is used to accomplish this by optimizing the error function of the network (see equation~\ref{eg:bp_error}) which is the sum of squared errors, the error being the difference between the actual network outputs ($o_k$) and the correct training outputs($t_k$).
 
